@@ -177,6 +177,29 @@ header{padding-top:calc(18px + env(safe-area-inset-top));border-bottom:1px solid
 .bridge-stat:nth-child(3) strong{color:#9ae9fa!important}.bridge-stat:nth-child(4) strong{color:#ffdaa5!important}
 .cosmic-bridge .refresh{font-family:'Oxanium',sans-serif!important;font-weight:800!important;letter-spacing:1.2px!important;background:linear-gradient(105deg,#e4b9fb,#a6e5f3 58%,#ffe1a9)!important;border-color:#f0e3ff!important}
 @media(max-width:420px){.bridge-content h2{font-size:clamp(45px,11.4vw,63px)!important}}
+</style><style>
+/* PROJECT SIGNAL 6.6 / LUMINOUS UPLINK — home hero motion only */
+.bridge-content h2{position:relative;isolation:isolate;animation:signalTitleFloat 7s ease-in-out infinite,signalTitleGlow 5.5s ease-in-out infinite!important;background-size:210% 100%!important;animation-composition:replace;will-change:filter,transform}
+.bridge-content h2 span{background-size:220% 100%!important;animation:signalSpectralFlow 8s ease-in-out infinite!important;filter:drop-shadow(0 0 17px #eeafe52a)}
+@keyframes signalTitleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes signalTitleGlow{0%,100%{filter:drop-shadow(0 0 8px #a4dfff20)}50%{filter:drop-shadow(0 0 26px #a9b7ff6a)}}
+@keyframes signalSpectralFlow{0%,100%{background-position:0% 50%;filter:drop-shadow(0 0 9px #f4b5ec25)}50%{background-position:100% 50%;filter:drop-shadow(0 0 22px #ffc0e977)}}
+.cosmic-bridge .refresh{isolation:isolate;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:14px!important;position:relative;box-shadow:0 0 0 1px #ffe6fd48,0 0 28px #a9dfff5e,0 0 62px #e2b5ff2a,inset 0 1px #ffffffbb!important;animation:scanButtonBreath 3.8s ease-in-out infinite!important}
+.cosmic-bridge .refresh::before{content:'';position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:linear-gradient(110deg,transparent 15%,#ffffff80 46%,transparent 65%);transform:translateX(-145%);animation:scanButtonShimmer 4.4s ease-in-out infinite}
+.cosmic-bridge .refresh::after{display:none!important}
+.scan-button-label{display:flex;align-items:center;gap:13px;min-width:0;text-align:left;position:relative;z-index:1}
+.scan-button-text{font-family:'Oxanium',sans-serif;line-height:1.25}
+.scan-glyph{width:23px;height:23px;flex:none;filter:drop-shadow(0 0 5px #267b9b55);animation:scanGlyphOrbit 9s linear infinite}
+.scan-arrow-shell{width:36px;height:36px;display:grid;place-items:center;flex:none;border-radius:10px;background:#0b26372a;border:1px solid #2e5a704d;position:relative;z-index:1;transition:transform .25s ease,background .25s ease}
+.scan-arrow{width:23px;height:23px;filter:drop-shadow(0 0 6px #437bb777)}
+.cosmic-bridge .refresh:hover .scan-arrow-shell{transform:translate(2px,-2px);background:#ffffff58}
+.cosmic-bridge .refresh:active .scan-arrow-shell{transform:translate(3px,-3px)}
+.cosmic-bridge .refresh.is-scanning .scan-glyph{animation:scanGlyphOrbit 1.5s linear infinite}
+@keyframes scanGlyphOrbit{to{transform:rotate(360deg)}}
+@keyframes scanButtonBreath{0%,100%{box-shadow:0 0 0 1px #ffe6fd48,0 0 22px #a9dfff45,0 0 48px #e2b5ff20,inset 0 1px #ffffffbb}50%{box-shadow:0 0 0 1px #fff3ff9e,0 0 38px #9bdfff88,0 0 85px #e8b6ff55,inset 0 1px #ffffffed}}
+@keyframes scanButtonShimmer{0%,23%{transform:translateX(-145%)}55%,100%{transform:translateX(145%)}}
+@media(max-width:520px){.scan-button-label{gap:8px}.scan-glyph{width:19px;height:19px}.scan-arrow-shell{width:30px;height:30px}.scan-arrow{width:19px;height:19px}.scan-button-text{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.bridge-content h2,.bridge-content h2 span,.cosmic-bridge .refresh,.cosmic-bridge .refresh::before,.scan-glyph{animation:none!important;transform:none!important}}
 </style></head>
 <body><div class="wrap"><header><div><div class="eyebrow">COMMANDER SAGE // OBSERVATION NETWORK</div><h1 class="brand">PROJECT SIGNAL<span style="color:#d9b47b">.</span></h1></div><div class="status">● SYSTEM STANDBY</div></header><nav aria-label="Primary navigation" class="primary-nav legacy-hidden"><button class="nav-item active" id="nav-command" type="button">◈ COMMAND CENTER</button><button class="nav-item stream-link" id="nav-stream" type="button">↟ SIGNAL STREAM</button><button class="nav-item" id="nav-ai" type="button">✧ AI INTELLIGENCE</button></nav><div class="mode-intro legacy-hidden"><div><div class="eyebrow">THE UNEXPLAINED, UNDER EXAMINATION</div><h2>Intelligence, without the noise.</h2><p>Live reporting · Original sources · Evidence over speculation</p></div><button class="open-stream" id="open-stream" type="button">↟ ENTER SIGNAL STREAM</button></div>
 <div class="mission-intro"><span class="mission-index">PS / 006.3 — OBSERVATION DECK</span><span class="mission-date">UNIDENTIFIED ANOMALOUS PHENOMENA · LIVE INTELLIGENCE</span></div><section aria-label="PROJECT SIGNAL mission control" class="hero cosmic-bridge">
@@ -191,7 +214,7 @@ header{padding-top:calc(18px + env(safe-area-inset-top));border-bottom:1px solid
 <div class="bridge-hud-top"><span><i class="bridge-pulse"></i> OBSERVATION DECK / ONLINE</span><span class="bridge-hud-right">PS-007   //   COSMIC ODYSSEY</span></div>
 <div class="bridge-content"><div class="bridge-kicker">COMMANDER SAGE   /   MISSION CONTROL</div><h2>THE UNKNOWN<br/><span>AWAITS.</span></h2><p class="bridge-description">Beyond the horizon of what we know.<br/>Your live intelligence uplink to unexplained phenomena.</p>
 <div class="bridge-console"><div class="bridge-console-label"><span>◉   DEEP SPACE INTELLIGENCE UPLINK</span><span>CHANNEL 01 // READY</span></div>
-<button class="refresh" id="refresh">◉   INITIATE FRESH INTEL SCAN <span class="bridge-button-arrow">↗</span></button>
+<button class="refresh" id="refresh"><span class="scan-button-label"><svg class="scan-glyph" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="9.3" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".7"/><path d="M14 2.5v5M14 20.5v5M2.5 14h5M20.5 14h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="14" cy="14" r="3" fill="currentColor"/><path d="M14 14L22 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span class="scan-button-text">INITIATE FRESH INTEL SCAN</span></span><span class="scan-arrow-shell"><svg class="scan-arrow" viewBox="0 0 28 28" aria-hidden="true"><path d="M6 22L22 6M10 6h12v12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
 <div aria-live="polite" id="scan-console" role="status"><div class="scan-line"><span id="scan-phase">ESTABLISHING UPLINK</span><strong id="scan-percent">0%</strong></div><div class="scan-track"><div class="scan-fill" id="scan-fill"></div></div><div id="scan-result">Awaiting response from intelligence sources.</div></div>
 <div class="bridge-console-bottom"><span class="tiny" id="notice" role="status">Awaiting first intelligence scan.</span><span class="tiny" id="last">LAST SCAN: NEVER</span></div></div></div>
 <div class="bridge-telemetry"><div class="bridge-radar"><div class="radar"><div class="scope"><i class="blip b1"></i><i class="blip b2"></i><i class="blip b3"></i><i class="blip b4"></i></div></div><span>◉ ARRAY 07 / ACTIVE</span></div><div class="bridge-stat"><strong id="count">00</strong><small>SIGNALS DETECTED</small></div><div class="bridge-stat"><strong id="critical">00</strong><small>PRIORITY SIGNALS</small></div><div class="bridge-stat"><strong id="sources">00</strong><small>ACTIVE SOURCES</small></div></div>
@@ -217,7 +240,7 @@ let scanning=false;
 function scanProgress(n,phase,message){const box=$('#scan-console');box.classList.add('active');$('#scan-fill').style.width=n+'%';$('#scan-percent').textContent=n+'%';$('#scan-phase').textContent=phase;$('#scan-result').textContent=message;}
 async function refresh(){
  if(scanning)return;
- scanning=true;const btn=$('#refresh');btn.disabled=true;btn.textContent='◉ SCANNING INTELLIGENCE SOURCES…';
+ scanning=true;const btn=$('#refresh');btn.disabled=true;btn.classList.add('is-scanning');btn.querySelector('.scan-button-text').textContent='SCANNING INTELLIGENCE SOURCES…';
  scanProgress(4,'ESTABLISHING UPLINK','Connecting to public RSS intelligence gateways…');
  $('#notice').textContent='Scanning public news sources…';
  const began=Date.now();let progress=4;
@@ -234,7 +257,7 @@ async function refresh(){
   const remaining=Math.max(0,1100-(Date.now()-began));if(remaining)await new Promise(resolve=>setTimeout(resolve,remaining));
   clearInterval(timer);scanProgress(100,incoming.length?'SCAN COMPLETE':online?'NO RECENT SIGNALS':'SOURCE CONNECTION FAILED',result);render();
  }catch(error){clearInterval(timer);scanProgress(100,'SCAN ERROR','An unexpected error interrupted the scan. Saved reports were not erased.');$('#notice').textContent='SCAN ERROR · Please try again.';console.error('PROJECT SIGNAL scan error:',error)}
- finally{clearInterval(timer);btn.disabled=false;btn.textContent='⟳ INITIATE FRESH INTEL SCAN';scanning=false}
+ finally{clearInterval(timer);btn.disabled=false;btn.classList.remove('is-scanning');btn.querySelector('.scan-button-text').textContent='INITIATE FRESH INTEL SCAN';scanning=false}
 }
 $('#refresh').addEventListener('click',launchSignal);$$('[data-tab]').forEach(b=>b.addEventListener('click',()=>{tab=b.dataset.tab;$$('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));render()}));$$('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;$$('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));render()}));$('#feed').addEventListener('click',e=>{const b=e.target.closest('[data-select]');if(!b)return;selected=data.stories.find(s=>s.id===b.dataset.select)||null;if(!selected)return;$('#selected-story').textContent=selected.title;$('#analysis-output').textContent='REPORT QUEUED // '+selected.source+'\n\nAI analysis remains locked until secure authentication and usage controls are configured.';$('#intelligence').scrollIntoView({behavior:'smooth',block:'start'})});$('#analyze').addEventListener('click',()=>{$('#analysis-output').textContent=selected?'PREVIEW READY // '+selected.title+'\n\nWhen enabled, Grok will assess the provided report and identify facts, claims, missing evidence, and uncertainty. No analysis has been performed.':'Select a report from the Intel Feed first. No AI request has been sent.'});$('#ask').addEventListener('click',()=>{const q=$('#question').value.trim();$('#chat-output').textContent=q?'QUERY STAGED // '+q+'\n\nLive Grok access is locked pending secure authentication and usage controls. Your question has not been transmitted.':'Enter a question to preview the command terminal.'});render();
 
