@@ -2,14 +2,9 @@ name: diag-cf (temporary, read-only)
 on:
   push:
     branches: ["diag-cf"]
-permissions:
-  contents: write
 jobs:
-  fixtures:
+  reddit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: node .github/scripts/diag-fixtures.mjs
-      - run: |
-          git config user.name diag; git config user.email actions@users.noreply.github.com
-          git checkout -B sentinel-fixtures; git add sentinel/test/fixtures; git commit -qm "test fixtures: real feed samples $(date -u +%F)"; git push -qf origin sentinel-fixtures
+      - run: node .github/scripts/diag-reddit.mjs
