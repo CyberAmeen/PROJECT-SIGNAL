@@ -131,7 +131,9 @@
         <svg class="hx-arc" viewBox="0 0 400 200">${Array.from({ length: 4 }, (_, r) => Array.from({ length: 11 + r * 3 }, (_, i) => { const cnt = 11 + r * 3; const ang = Math.PI * (0.1 + 0.8 * i / (cnt - 1)); const R = 80 + r * 26; return `<circle cx="${(200 - Math.cos(ang) * R).toFixed(1)}" cy="${(190 - Math.sin(ang) * R * 0.62).toFixed(1)}" r="3" style="--k:${((i * 7 + r * 3) % 11)}"/>`; }).join('')).join('')}</svg>
         <div class="hx-wave">${Array.from({ length: 24 }, (_, i) => `<i style="--k:${i};--a:${(0.3 + rng() * 0.7).toFixed(2)}"></i>`).join('')}</div>
         <div class="hx-lines"><i></i><i></i><i></i></div><div class="hx-tag">TESTIMONY · RECORDED</div>`;
-      default: return `
+      default:
+        if (X() && X().SCENES[c.scene]) return X().html(c.scene, rng);
+        return `
         <div class="ox-planet"><i></i></div><div class="ox-sat"><i></i><b></b></div>
         <div class="ox-rings"><i></i><i></i><i></i></div>`;
     }
@@ -175,6 +177,55 @@
   }
   const regionOf = i => REGIONS[regionSeq[i] ?? 0];
   function rgAttr(i) { const r = regionOf(i); return `data-region="${h(r.name)}" style="--rg-a:${r.a};--rg-b:${r.b};--rg-c:${r.c};--rg-acc:${r.acc};--rg-pan:${r.pan};--rg-sat:${r.sat};--rg-bri:${r.bri}"`; }
+  /* ---------------------------------------------------------------- NEW HORIZONS: scene rotation
+     Topical scenes (vault, tracker, specimen, dossier, testimony, salvage, nightwatch) still answer stories that match them,
+     but no scene may return within the last 8 slides. Everything else draws from a seeded per-session shuffle-bag of the
+     ambient scenes, never repeating a scene + region pair in a session, and preferring a different family and tone
+     from the slide before it. */
+  const X = () => window.PSScenesX;
+  const TOPICAL = ['facility', 'sensor', 'bio', 'files', 'hearing', 'craft', 'sighting'];
+  const OLD_META = { deep: ['planet', 'dark'], cosmos: ['dish', 'dark'], facility: ['hud', 'bright'], sensor: ['hud', 'dark'], bio: ['lab', 'bright'], files: ['docs', 'bright'], hearing: ['docs', 'dark'], craft: ['holo', 'bright'], sighting: ['earth', 'dark'] };
+  const metaOf = id => { const m = X() && X().SCENES[id]; return m ? [id === 'array' ? 'dish' : m.family, m.tone] : (OLD_META[id] || ['planet', 'dark']); };
+  let sceneSeq = [];
+  function buildScenes(items) {
+    const rng = rngFrom(sessionSeed() ^ 0x5bd1), pool = ['deep', 'cosmos', ...(X() ? X().ids : [])];
+    const used = new Set(), out = []; let bag = [];
+    const refill = () => { bag = pool.slice(); for (let k = bag.length - 1; k > 0; k--) { const j = Math.floor(rng() * (k + 1)); [bag[k], bag[j]] = [bag[j], bag[k]]; } };
+    const windowN = Math.min(8, pool.length - 2);
+    items.forEach((c, i) => {
+      const recent = out.slice(Math.max(0, i - windowN)), prev = out[i - 1], pm = prev ? metaOf(prev) : null, rg = regionSeq[i] ?? 0;
+      const want = c && c.scene;
+      if (want && TOPICAL.includes(want) && !recent.includes(want)) { out.push(want); used.add(want + '@' + rg); return; }
+      if (!bag.length) refill();
+      const ok = (id, lvl) => !recent.includes(id) && (lvl > 2 || !used.has(id + '@' + rg)) && (lvl > 1 || !pm || metaOf(id)[0] !== pm[0]) && (lvl > 0 || !pm || metaOf(id)[1] !== pm[1]);
+      let pick = -1;
+      for (let lvl = 0; lvl < 4 && pick < 0; lvl++) { pick = bag.findIndex(id => ok(id, lvl)); if (pick < 0 && lvl === 1) { const extra = pool.filter(id => !bag.includes(id)); bag.push(...extra); } }
+      const id = pick < 0 ? bag[0] : bag[pick]; bag.splice(bag.indexOf(id), 1);
+      out.push(id); used.add(id + '@' + rg);
+    });
+    return out;
+  }
+  const withScene = (c, i) => sceneSeq[i] && sceneSeq[i] !== c.scene ? Object.assign({}, c, { scene: sceneSeq[i] }) : c;
+  let xLoad = null;
+  function loadScenesX() {
+    if (X()) return Promise.resolve(true);
+    if (xLoad) return xLoad;
+    const v = (document.querySelector('script[src*="intel-signal.js"]')?.src.match(/v=([^&]+)/) || [])[1] || '';
+    xLoad = new Promise(res => {
+      const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'intel-scenes-x.css?v=' + v; document.head.appendChild(l);
+      const s = document.createElement('script'); s.src = 'intel-scenes-x.js?v=' + v; s.async = true;
+      s.onload = () => res(true); s.onerror = () => { xLoad = null; res(false); }; document.head.appendChild(s);
+    });
+    return xLoad;
+  }
+  // If the stream opened before the scene pack arrived, re-deal the off-screen slides once it lands.
+  window.addEventListener('ps:scenesx', () => {
+    if (!list.length || shell.hidden) return;
+    const keep = sceneSeq[idx]; sceneSeq = buildScenes(list); if (idx >= 0 && idx < list.length) sceneSeq[idx] = keep;
+    sceneCache = list.map((c, i) => i === idx ? sceneCache[i] : sceneHTML(withScene(c, i), i));
+    $$('.ix-scene-slot', view).forEach(slot => { const k = Number(slot.dataset.slot); if (k !== idx && slot.firstElementChild) slot.textContent = ''; });
+    mountScenes(idx);
+  });
   function sceneHTML(c, i) {
     try { return sceneInner(c, i); } catch (err) { console.error(err); return sceneInner(Object.assign({}, c, { scene: 'deep' }), i); }
   }
@@ -182,7 +233,7 @@
     const rng = rngFrom(c.seed + 17);
     const R = regionOf(i), hue = Math.round(R.hue + rng() * 12 - 6), tilt = (rng() * 10 - 5).toFixed(1);
     const neb = `--nx:${(20 + rng() * 60).toFixed(0)}%;--ny:${(15 + rng() * 40).toFixed(0)}%;--nx2:${(10 + rng() * 80).toFixed(0)}%;--ny2:${(40 + rng() * 40).toFixed(0)}%`;
-    return `<div class="ix-scene sc-${c.scene}" aria-hidden="true" style="--hue:${hue}deg;--tilt:${tilt}deg;${neb};--spd:${(0.85 + rng() * 0.4).toFixed(2)}">
+    return `<div class="ix-scene sc-${c.scene}${X() && X().SCENES[c.scene] ? ' nx' : ''}" aria-hidden="true" style="--hue:${hue}deg;--tilt:${tilt}deg;${neb};--spd:${(0.85 + rng() * 0.4).toFixed(2)}">
       <div class="ix-px" style="--d:.25"><div class="ix-stars s1" style="box-shadow:${stars(rng, 70, ['#9fd8ff', '#ffffff', '#7da7ff'])}"></div></div>
       <div class="ix-px" style="--d:.55"><div class="ix-nebula"></div><div class="ix-stars s2" style="box-shadow:${stars(rng, 36, ['#cfe9ff', '#8fb8ff', '#b9a8ff'])}"></div></div>
       <div class="ix-px ix-core" style="--d:1">${centerpiece(c, rng)}</div>
@@ -387,7 +438,8 @@
     }
     regionSeq = buildRegions(list.length + 1); regionSeq[list.length] = 0;
     if (regionSeq[list.length - 1] === 0 && list.length > 1) regionSeq[list.length - 1] = 4; // keep the home-base end card distinct
-    sceneCache = list.map((c, i) => sceneHTML(c, i));
+    sceneSeq = buildScenes(list);
+    sceneCache = list.map((c, i) => sceneHTML(withScene(c, i), i));
     view.innerHTML = list.map((c, i) => slideHTML(c, i, list.length, i === 0)).join('') + endHTML(list.length);
     buildRail(); idx = -1;
   }
@@ -509,6 +561,7 @@
 
   /* ---------------------------------------------------------------- OPEN / CLOSE */
   function openIntel() {
+    loadScenesX();
     setupChrome();
     const st = document.getElementById('snapshot-state'); if (st) st.textContent = streamMessage;
     renderStream();
@@ -700,7 +753,9 @@
     if (Sound.on) Sound.ensure();
     const ready = (async () => {
       let failed = false;
+      loadScenesX();
       try { await refresh(); } catch { failed = true; }
+      await Promise.race([loadScenesX(), new Promise(r => setTimeout(r, 2500))]);
       if (/failed/i.test(streamMessage || '')) failed = true;
       const m = C.build(Array.isArray(data.stories) ? data.stories : []);
       m.failed = failed; return m;
