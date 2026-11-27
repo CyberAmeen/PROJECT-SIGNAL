@@ -30,7 +30,7 @@
   /* ---------------------------------------------------------------- STATE */
   let lastSnap = null, model = { clusters: [], filtered: 0, total: 0 }, list = [], idx = -1, busy = false, settleTimer = 0, dwellTimer = 0, ticker = 0;
   const prevVisit = store.get('ps-intel-lastvisit', 0);
-  let order = store.get('ps-intel-order', 'latest');
+  let order = store.get('ps-intel-order2', 'top'); if (!['top', 'latest', 'shuffle'].includes(order)) order = 'top';
   if (typeof readSnapshot === 'function') { const orig = readSnapshot; readSnapshot = async p => { const r = await orig(p); lastSnap = r; return r; }; } // eslint-disable-line no-global-assign
 
   /* saved transmissions (full copies, so they survive after a story leaves the feed) */
@@ -146,19 +146,48 @@
       else if (!want && slot.firstElementChild) slot.textContent = '';
     });
   }
+  /* ---------------------------------------------------------------- GALACTIC REGIONS
+     Each slide is lit by a region: scene hue/saturation, background, glows, accent lines and a decorative HUD.
+     Pure gold is reserved for Gold Signal. Colour is atmosphere only — credibility and verification badges keep
+     their own colours. Accent colours were checked for WCAG AA (≥4.5:1) against each region's panel and HUD chip. */
+  const ORDER_UI = { top: { icon: '★', label: 'Top stories', text: 'top stories first' }, latest: { icon: '⇣', label: 'Latest first', text: 'latest first' }, shuffle: { icon: '⤨', label: 'Shuffled', text: 'shuffled' } };
+  const REGIONS = [
+    { name: 'Emerald Core', code: 'EC', hue: -62, sat: 1.05, bri: 1.00, a: '#0b4a39', b: '#3dffb2', c: '#8affd9', acc: '#7dffc8', pan: '#03120e' },
+    { name: 'Rose Nebula', code: 'RN', hue: 112, sat: 1.10, bri: 1.02, a: '#57123f', b: '#ff6fb5', c: '#ffb3d9', acc: '#ffa3d1', pan: '#14040e' },
+    { name: 'Violet Deep', code: 'VD', hue: 44, sat: 1.15, bri: 0.96, a: '#1f1063', b: '#8f6bff', c: '#c3b1ff', acc: '#bfadff', pan: '#080418' },
+    { name: 'Pulsar Ice', code: 'PI', hue: -26, sat: 0.55, bri: 1.14, a: '#0b3550', b: '#bff4ff', c: '#ffffff', acc: '#c6f5ff', pan: '#03101a' },
+    { name: 'Aurora Drift', code: 'AD', hue: -48, sat: 1.15, bri: 1.02, a: '#053f46', b: '#3fffd8', c: '#a8ffb8', acc: '#82f7e3', pan: '#021214' },
+    { name: 'Red Giant', code: 'RG', hue: 142, sat: 1.15, bri: 0.94, a: '#4a0710', b: '#ff4d3d', c: '#ff9a6b', acc: '#ffa090', pan: '#140305' },
+    { name: 'Solar Wind', code: 'SW', hue: 166, sat: 1.00, bri: 1.00, a: '#4a2208', b: '#ff8a3d', c: '#ffc49a', acc: '#ffb98c', pan: '#140903' },
+    { name: 'Andromeda Dusk', code: 'AN', hue: 66, sat: 0.62, bri: 1.06, a: '#3a2550', b: '#ffb8a0', c: '#c7a6ff', acc: '#efcdf5', pan: '#0f0814' },
+    { name: 'Cobalt Drift', code: 'CD', hue: 0, sat: 1.00, bri: 1.00, a: '#0a1a4c', b: '#3d8bff', c: '#9fd8ff', acc: '#9ccaff', pan: '#030817' }
+  ];
+  let regionSeq = [];
+  function sessionSeed() { try { let s = sessionStorage.getItem('ps-intel-region-seed'); if (!s) { s = String(Math.floor(Math.random() * 1e9)); sessionStorage.setItem('ps-intel-region-seed', s); } return +s; } catch { return 7; } }
+  // Emerald Core is home base (first transmission); after that a fresh shuffled journey each session, never the same region twice in a row.
+  function buildRegions(n) {
+    const rng = rngFrom(sessionSeed()), seq = [0]; let bag = [];
+    while (seq.length < n) {
+      if (!bag.length) { bag = REGIONS.map((_, k) => k); for (let k = bag.length - 1; k > 0; k--) { const j = Math.floor(rng() * (k + 1)); [bag[k], bag[j]] = [bag[j], bag[k]]; } }
+      let k = bag.findIndex(x => x !== seq[seq.length - 1]); if (k < 0) k = 0; seq.push(bag.splice(k, 1)[0]);
+    }
+    return seq;
+  }
+  const regionOf = i => REGIONS[regionSeq[i] ?? 0];
+  function rgAttr(i) { const r = regionOf(i); return `data-region="${h(r.name)}" style="--rg-a:${r.a};--rg-b:${r.b};--rg-c:${r.c};--rg-acc:${r.acc};--rg-pan:${r.pan};--rg-sat:${r.sat};--rg-bri:${r.bri}"`; }
   function sceneHTML(c, i) {
     try { return sceneInner(c, i); } catch (err) { console.error(err); return sceneInner(Object.assign({}, c, { scene: 'deep' }), i); }
   }
   function sceneInner(c, i) {
     const rng = rngFrom(c.seed + 17);
-    const hue = Math.round((rng() * 46) - 18), tilt = (rng() * 10 - 5).toFixed(1);
+    const R = regionOf(i), hue = Math.round(R.hue + rng() * 12 - 6), tilt = (rng() * 10 - 5).toFixed(1);
     const neb = `--nx:${(20 + rng() * 60).toFixed(0)}%;--ny:${(15 + rng() * 40).toFixed(0)}%;--nx2:${(10 + rng() * 80).toFixed(0)}%;--ny2:${(40 + rng() * 40).toFixed(0)}%`;
     return `<div class="ix-scene sc-${c.scene}" aria-hidden="true" style="--hue:${hue}deg;--tilt:${tilt}deg;${neb};--spd:${(0.85 + rng() * 0.4).toFixed(2)}">
       <div class="ix-px" style="--d:.25"><div class="ix-stars s1" style="box-shadow:${stars(rng, 70, ['#9fd8ff', '#ffffff', '#7da7ff'])}"></div></div>
       <div class="ix-px" style="--d:.55"><div class="ix-nebula"></div><div class="ix-stars s2" style="box-shadow:${stars(rng, 36, ['#cfe9ff', '#8fb8ff', '#b9a8ff'])}"></div></div>
       <div class="ix-px ix-core" style="--d:1">${centerpiece(c, rng)}</div>
       <div class="ix-hud"><s></s><s></s><s></s><s></s>
-        <span class="ix-hud-tl">SECTOR ${pad(i + 1)} · RX ${(1420.4 + rng() * 0.009).toFixed(3)} MHz</span>
+        <span class="ix-hud-tl" title="Decorative navigation readout — not where the story came from">◈ ${h(R.name.toUpperCase())} · SECTOR ${R.code}-${String(100 + Math.floor(rng() * 900))}</span>
         <span class="ix-hud-bl">ARTIST RENDER · NOT EVIDENCE</span></div>
       <div class="ix-scanlines"></div></div>`;
   }
@@ -174,7 +203,7 @@
     const chip = (o, k) => `<a class="ix-chip c-${h(o.tier || 'web')}${k >= SHOW ? ' ix-extra' : ''}" href="${h(o.url)}" target="_blank" rel="noopener noreferrer" title="${h(tierText(o.tier))}"><i class="ix-dot" aria-hidden="true"></i>${h(o.name)} ↗</a>`;
     const chips = c.outlets.map(chip).join('') + (c.outlets.length > SHOW ? `<button type="button" class="ix-chip ix-more" data-ix-more aria-expanded="false">+${c.outlets.length - SHOW} more</button>` : '');
     const cred = `<span class="ix-cred c-${h(c.tier || 'web')}" title="Credibility describes the publisher, not whether the claim is true">◇ ${h(tierText(c.tier))}${c.topTier && c.topTier !== c.tier && C.TIERS && C.TIERS[c.topTier] && C.TIERS[c.topTier].rank > C.TIERS[c.tier || 'web'].rank ? ` · also ${h(tierText(c.topTier))}` : ''}</span>`;
-    return `<article class="stream-slide ix-slide${sotd ? ' ix-sotd' : ''}" data-index="${i}" data-cluster="${h(c.id)}" aria-label="Transmission ${i + 1} of ${total}">
+    return `<article ${rgAttr(i)} class="stream-slide ix-slide${sotd ? ' ix-sotd' : ''}" data-index="${i}" data-cluster="${h(c.id)}" aria-label="Transmission ${i + 1} of ${total}">
       <div class="ix-scene-slot" data-slot="${i}"></div>
       <div class="ix-panel">
         ${sotd ? `<div class="ix-sotd-banner"><span>◆ SIGNAL OF THE DAY</span><small>${c.count > 1 ? 'Most-covered story in this scan' : 'Lead transmission'}</small></div>` : ''}
@@ -214,7 +243,7 @@
       const thumb = /^https:\/\/[a-z0-9.-]*(?:redditmedia\.com|redd\.it)\//i.test(p.thumbnail || '') ? `<img class="ix-cc-thumb" src="${h(p.thumbnail)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : '<span class="ix-cc-thumb ix-cc-none" aria-hidden="true">◎</span>';
       return `<li><a class="ix-cc-post" href="${h(p.url)}" target="_blank" rel="noopener noreferrer">${thumb}<span class="ix-cc-body"><small>${h(p.subreddit || '')} · ▲ ${fmt(p.upvotes)} · ${fmt(p.comments)} comments · ${h(ago(Date.parse(p.date) || Date.now()))}</small><b>${h(p.title)}</b></span><span class="ix-cc-go" aria-hidden="true">↗</span></a></li>`;
     }).join('');
-    return `<article class="stream-slide ix-slide ix-community" data-index="${i}" data-cluster="${h(c.id)}" aria-label="Community chatter, unverified. Transmission ${i + 1} of ${total}">
+    return `<article ${rgAttr(i)} class="stream-slide ix-slide ix-community" data-index="${i}" data-cluster="${h(c.id)}" aria-label="Community chatter, unverified. Transmission ${i + 1} of ${total}">
       <div class="ix-scene-slot" data-slot="${i}"></div>
       <div class="ix-panel">
         <div class="ix-kicker"><span class="ix-label t-warn">◆ COMMUNITY CHATTER — UNVERIFIED</span><span class="ix-num">TX ${pad(i + 1)}/${pad(total)}</span></div>
@@ -229,7 +258,7 @@
     const todayRead = list.filter(c => rank.today.includes(c.id)).length;
     const pct = next ? Math.round(((rank.n - RANKS[r][1]) / (next[1] - RANKS[r][1])) * 100) : 100;
     const merged = model.total - model.clusters.length;
-    return `<article class="stream-slide ix-slide ix-end" data-index="${total}" aria-label="End of transmissions">
+    return `<article ${rgAttr(total)} class="stream-slide ix-slide ix-end" data-index="${total}" aria-label="End of transmissions">
       <div class="ix-scene sc-deep" aria-hidden="true" style="--hue:0deg"><div class="ix-px" style="--d:.3"><div class="ix-stars s1" style="box-shadow:${stars(rngFrom(99), 80, ['#9fd8ff', '#fff'])}"></div></div><div class="ix-nebula"></div><div class="ix-px ix-core" style="--d:1"><div class="ox-rings big"><i></i><i></i><i></i></div></div><div class="ix-scanlines"></div></div>
       <div class="ix-end-card">
         <div class="ix-end-kicker">◆ END OF TRANSMISSIONS</div>
@@ -275,7 +304,7 @@
   }
   function refreshTools() {
     const s = $('[data-ix-sound]', shell); if (s) { s.textContent = Sound.on ? '🔊' : '🔈'; s.setAttribute('aria-pressed', String(Sound.on)); s.title = Sound.on ? 'Sound on' : 'Sound off'; }
-    const o = $('[data-ix-order]', shell); if (o) { o.textContent = order === 'latest' ? '⇣' : '⤨'; o.title = order === 'latest' ? 'Order: latest first' : 'Order: shuffled'; }
+    const o = $('[data-ix-order]', shell); if (o) { o.textContent = ORDER_UI[order].icon; o.title = 'Order: ' + ORDER_UI[order].text; }
     $$('.ix-saved-n', shell).forEach(n => { n.textContent = saved.length ? String(saved.length) : ''; }); $$('.ix-saved-count', shell).forEach(n => { n.textContent = String(saved.length); });
     if (badge) { const r = rankOf(rank.n); const todayRead = list.filter(c => rank.today.includes(c.id)).length; $('.ix-chev', badge).textContent = '▲'.repeat(r + 1); $('.ix-badge-name', badge).textContent = RANKS[r][0]; $('.ix-badge-txt', badge).textContent = `${todayRead}/${list.length}`; badge.title = `Observer rank: ${RANKS[r][0]}`; }
   }
@@ -302,7 +331,7 @@
     if (t.matches('[data-ix-go]')) return go(Number(t.dataset.ixGo));
     if (t.matches('[data-ix-top]')) return go(0);
     if (t.matches('[data-ix-sound]')) { const on = Sound.toggle(); refreshTools(); toast(on ? '🔊 Audio on' : '🔈 Audio off'); return; }
-    if (t.matches('[data-ix-order]')) { order = order === 'latest' ? 'shuffle' : 'latest'; store.set('ps-intel-order', order); renderStream(); go(0, true); refreshTools(); toast(order === 'latest' ? '⇣ Latest first' : '⤨ Shuffled'); return; }
+    if (t.matches('[data-ix-order]')) { order = { top: 'latest', latest: 'shuffle', shuffle: 'top' }[order]; store.set('ps-intel-order2', order); renderStream(); go(0, true); refreshTools(); toast(ORDER_UI[order].icon + ' ' + ORDER_UI[order].label); return; }
     if (t.matches('[data-ix-rank]')) { const r = rankOf(rank.n), next = RANKS[r + 1]; toast(`<b>${RANKS[r][0]}</b> · ${rank.n} transmissions reviewed${next ? `<br>${next[1] - rank.n} more to ${next[0]}` : ''}`); return; }
     if (t.matches('[data-ix-saved]')) return openSheet();
     if (t.matches('[data-ix-sheet-close]')) return closeSheet();
@@ -327,12 +356,22 @@
   function syncSaveButtons() { $$('[data-ix-save]', view).forEach(b => { const on = isSaved(b.dataset.ixSave); b.textContent = on ? '★ Saved' : '☆ Save'; b.setAttribute('aria-pressed', String(on)); }); $$('.ix-saved-n', shell).forEach(n => { n.textContent = saved.length ? String(saved.length) : ''; }); $$('.ix-saved-count', shell).forEach(n => { n.textContent = String(saved.length); }); }
 
   /* ---------------------------------------------------------------- ORDER, RENDER, NAVIGATION */
+  /* "Top stories" blend: coverage (how many outlets) + who published (official/major press above web/tabloid)
+     + freshness that halves every ~30 hours, plus a lift for stories new since your last visit.
+     Credibility here ranks publishers, never whether a claim is true. */
+  const TIER_W = { official: 2.5, press: 2, specialist: 1.5, web: 0.5, tabloid: 0, witness: 0, community: 0 };
+  function topScore(c, now) {
+    const ageH = Math.max(0, (now - c.newest) / 3600e3);
+    const base = 1 + Math.log2(1 + (c.count || 1)) * 3 + (TIER_W[c.topTier || c.tier] ?? 0.5) + Math.min(2, (c.memberIds.length - (c.count || 1)) * 0.25);
+    return base * Math.pow(0.5, ageH / 30) + (prevVisit && c.newest > prevVisit ? 2.5 : 0);
+  }
   function arrange() {
     const cl = model.clusters.slice(); if (!cl.length) return [];
-    const strength = c => c.count * 3 + c.memberIds.length + Math.max(0, 36 - (Date.now() - c.newest) / 3600e3) / 12;
-    const sotd = cl.slice().sort((a, b) => strength(b) - strength(a) || b.newest - a.newest)[0];
+    const now = Date.now(), sc = new Map(cl.map(c => [c, topScore(c, now)]));
+    const sotd = cl.slice().sort((a, b) => sc.get(b) - sc.get(a) || b.newest - a.newest)[0];
     let rest = cl.filter(c => c !== sotd);
     if (order === 'shuffle') { for (let i = rest.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [rest[i], rest[j]] = [rest[j], rest[i]]; } }
+    else if (order === 'top') rest.sort((a, b) => sc.get(b) - sc.get(a) || b.newest - a.newest);
     else rest.sort((a, b) => b.newest - a.newest);
     const out = [sotd, ...rest], cc = communityItem();
     if (cc) out.splice(Math.min(3, out.length), 0, cc);
@@ -346,6 +385,8 @@
       view.innerHTML = '<div class="stream-empty ix-empty"><div class="ix-empty-orb">◎</div><h2>No signals received.</h2><p>The public snapshot is unavailable and nothing is saved on this device yet. Try another scan in a few minutes.</p><button type="button" id="stream-go-scan">Return to scanner</button></div>';
       if (rail) rail.innerHTML = ''; idx = -1; return;
     }
+    regionSeq = buildRegions(list.length + 1); regionSeq[list.length] = 0;
+    if (regionSeq[list.length - 1] === 0 && list.length > 1) regionSeq[list.length - 1] = 4; // keep the home-base end card distinct
     sceneCache = list.map((c, i) => sceneHTML(c, i));
     view.innerHTML = list.map((c, i) => slideHTML(c, i, list.length, i === 0)).join('') + endHTML(list.length);
     buildRail(); idx = -1;
@@ -359,7 +400,7 @@
     mountScenes(i); saveResume();
     s.forEach((el, k) => el.classList.toggle('is-visible', k === i));
     const el = s[i];
-    if (!initial && !reduced()) { burst(i > prev ? 1 : -1); Sound.play('whoosh', { dir: i > prev ? 1 : -1 }); el.classList.remove('ix-arrive'); void el.offsetWidth; el.classList.add('ix-arrive'); }
+    if (!initial && !reduced()) { burst(i > prev ? 1 : -1, regionOf(i), Math.abs(swipeV) > 1.6); Sound.play('whoosh', { dir: i > prev ? 1 : -1 }); el.classList.remove('ix-arrive'); void el.offsetWidth; el.classList.add('ix-arrive'); }
     const title = $('.ix-title span', el); if (title) holo(title);
     updateRail();
     try { window.dispatchEvent(new CustomEvent('intel:slide', { detail: { index: i, initial: !!initial, sotd: i === 0 && list.length > 0, end: i === list.length } })); } catch {}
@@ -422,14 +463,15 @@
 
   /* hyperspace streak burst between transmissions */
   let burstRaf = 0;
-  function burst(dir) {
+  const rgbOf = hx => { const n = parseInt(hx.slice(1), 16); return `${n >> 16 & 255},${n >> 8 & 255},${n & 255}`; };
+  function burst(dir, R, fast) {
     if (!warp) return;
     const dpr = Math.min(2, devicePixelRatio || 1), w = shell.clientWidth, hgt = shell.clientHeight;
     if (warp.width !== Math.round(w * dpr) || warp.height !== Math.round(hgt * dpr)) { warp.width = Math.round(w * dpr); warp.height = Math.round(hgt * dpr); }
     const ctx = warp.getContext('2d'); if (!ctx) return; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     const cx = w / 2, cy = hgt * (dir > 0 ? 0.42 : 0.58), N = 150, max = Math.hypot(w, hgt) * 0.6;
-    const parts = Array.from({ length: N }, () => ({ a: Math.random() * Math.PI * 2, r: Math.random() * max * 0.25, v: 0.6 + Math.random() * 1.6, c: Math.random() < 0.7 ? '159,216,255' : (Math.random() < 0.5 ? '255,255,255' : '160,140,255') }));
-    const t0 = performance.now(), D = 520; cancelAnimationFrame(burstRaf); warp.classList.add('on');
+    const parts = Array.from({ length: N }, () => ({ a: Math.random() * Math.PI * 2, r: Math.random() * max * 0.25, v: 0.6 + Math.random() * 1.6, c: Math.random() < 0.55 ? rgbOf((R || REGIONS[8]).b) : (Math.random() < 0.5 ? '255,255,255' : rgbOf((R || REGIONS[8]).c)) }));
+    const t0 = performance.now(), D = fast ? 360 : 560; cancelAnimationFrame(burstRaf); warp.classList.add('on');
     const frame = now => {
       const p = Math.min(1, (now - t0) / D), e = p * p;
       ctx.clearRect(0, 0, w, hgt);
@@ -482,10 +524,24 @@
   // neutralise the old stream renderer and route its navigation through this one
   try { goStreamIndex = (i) => go(i); } catch {}
   try { activateVisibleSlide = () => {}; } catch {}
+  /* region bleed: a light veil whose colours follow the finger between two regions; streaks scale with speed */
+  let veil = null, veilRaf = 0, lastTop = 0, lastT = 0, swipeV = 0;
+  function paintVeil() {
+    veilRaf = 0; if (!veil || !list.length) return;
+    const H = Math.max(1, view.clientHeight), f = view.scrollTop / H, i0 = Math.floor(f), t = f - i0;
+    const A = regionOf(i0), B = regionOf(Math.min(i0 + 1, list.length)), mid = Math.sin(Math.PI * Math.min(1, Math.max(0, t)));
+    veil.style.setProperty('--va', A.b); veil.style.setProperty('--vb', B.b); veil.style.setProperty('--vc', B.c);
+    veil.style.setProperty('--seam', ((1 - t) * 100).toFixed(1) + '%');
+    veil.style.opacity = (mid * (reduced() ? 0.3 : 0.55)).toFixed(3);
+    veil.style.setProperty('--streak', reduced() ? 0 : Math.min(1, Math.abs(swipeV) / 2.2).toFixed(3));
+  }
   view.addEventListener('scroll', () => {
     if (!list.length) return;
+    const now = performance.now(); if (now - lastT > 8) { swipeV = swipeV * 0.5 + 0.5 * (view.scrollTop - lastTop) / (now - lastT); lastTop = view.scrollTop; lastT = now; }
+    if (!veil) { veil = document.createElement('div'); veil.className = 'ix-veil'; veil.setAttribute('aria-hidden', 'true'); veil.innerHTML = '<i></i>'; shell.appendChild(veil); }
+    if (!veilRaf) veilRaf = requestAnimationFrame(paintVeil);
     const i = indexFromScroll(); if (i !== idx) setIndex(i);
-    clearTimeout(settleTimer); settleTimer = setTimeout(() => setIndex(indexFromScroll()), 90);
+    clearTimeout(settleTimer); settleTimer = setTimeout(() => { setIndex(indexFromScroll()); swipeV = 0; paintVeil(); }, 90);
   }, { passive: true });
   document.addEventListener('keydown', e => {
     if (shell.hidden) return;
