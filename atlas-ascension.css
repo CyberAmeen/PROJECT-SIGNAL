@@ -148,3 +148,41 @@
   .ax-link{stroke-dashoffset:0}
   .ax-field::after{display:none}
 }
+
+/* ---------- Relief, toolbar, 3D terrain (7.5) ---------- */
+.ax-relief{mix-blend-mode:overlay;opacity:.95;pointer-events:none}
+.ax-layers{position:relative!important;left:auto!important;top:auto!important;max-width:none!important;display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:10px 14px;border-top:1px solid var(--ax-line);background:linear-gradient(180deg,rgba(3,22,18,.9),rgba(3,18,15,.9));z-index:2}
+.ax-layers button:disabled,.ax-layers select:disabled{opacity:.45;cursor:not-allowed}
+.ax-layers .ax-3d{border-color:var(--ax-line-strong)!important}
+.ax-layers .ax-3d[aria-pressed="true"]{background:linear-gradient(110deg,#9ee7ff,#7dffb8)!important;color:#03231b!important}
+.atlas-map-frame.ax-3d-on .atlas-map-svg{visibility:hidden}
+.atlas-map-frame.ax-3d-on .map-tools,.atlas-map-frame.ax-3d-on .atlas-map-overlay,.atlas-map-frame.ax-3d-on .ax-reticle{display:none!important}
+.ax-terrain{position:absolute;left:0;width:100%;z-index:3;display:block;touch-action:none;cursor:grab;outline:none;animation:axFade .5s ease}
+.ax-terrain:active{cursor:grabbing}
+.ax-terrain:focus-visible{box-shadow:inset 0 0 0 2px #c8ff7a}
+.ax-terrain-labels{position:absolute;left:0;right:0;z-index:4;pointer-events:none;overflow:hidden}
+.ax-terrain-labels span{position:absolute;left:0;top:0;margin:-26px 0 0 8px;white-space:nowrap;font:700 11px var(--ax-mono);letter-spacing:.8px;color:#ffd6dc;text-shadow:0 0 6px #021310,0 0 2px #021310}
+.ax-terrain-labels span.sel{color:#f0ffc8;font-size:12px}
+.ax-terrain-hint{position:absolute;z-index:4;left:14px;top:14px;padding:5px 9px;border-radius:8px;background:rgba(2,16,13,.7);border:1px solid var(--ax-line);font:700 9px var(--ax-mono);letter-spacing:1.4px;color:var(--ax-mint);pointer-events:none}
+.ax-terrain-credit{position:absolute;z-index:4;right:14px;top:14px;font:600 9px var(--ax-mono);letter-spacing:.8px;color:#8fbfa9;pointer-events:none;text-align:right;max-width:46%}
+@keyframes axFade{from{opacity:0}}
+@media (max-width:760px){.ax-layers{padding:8px 10px}.ax-layers button{padding:6px 8px;font-size:10px}.ax-terrain-credit{display:none}.ax-terrain-hint{font-size:8px}}
+
+/* ---------- Case imagery (7.5) ---------- */
+.atlas-shell .atlas-case.has-media{padding-top:0!important;overflow:hidden}
+.atlas-case-media{position:relative;margin:0 -1px 12px;height:150px;overflow:hidden;border-bottom:1px solid rgba(110,255,180,.18);background:#02110e}
+.atlas-case-media img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85) contrast(1.05);transition:transform .6s ease,filter .4s}
+.atlas-case:hover .atlas-case-media img{transform:scale(1.04);filter:saturate(1) contrast(1.08)}
+.atlas-case-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(2,14,12,.85)),repeating-linear-gradient(0deg,transparent 0 3px,rgba(160,255,200,.04) 3px 4px);pointer-events:none}
+.atlas-case-media figcaption{position:absolute;left:10px;bottom:8px;z-index:1;padding:3px 7px;border-radius:6px;background:rgba(2,16,13,.78);border:1px solid rgba(140,255,200,.35);font:700 9px var(--ax-mono);letter-spacing:1.2px;text-transform:uppercase;color:#c8ff7a}
+.atlas-shell .atlas-case.has-media .atlas-case-top,.atlas-shell .atlas-case.has-media>h4,.atlas-shell .atlas-case.has-media>small,.atlas-shell .atlas-case.has-media>p,.atlas-shell .atlas-case.has-media>.atlas-case-sources{margin-left:0}
+.ax-hero{margin:4px 0 14px;border-radius:16px;overflow:hidden;border:1px solid var(--ax-line);background:#010c0a}
+.ax-hero a{display:block}
+.ax-hero img{display:block;width:100%;max-height:300px;object-fit:contain;background:#010c0a}
+.ax-hero figcaption{padding:10px 12px 12px;font-size:13px;line-height:1.45;color:#d6efe3;border-top:1px solid rgba(110,255,180,.15)}
+.ax-hero-kind{display:inline-block;margin-right:8px;padding:2px 6px;border-radius:5px;border:1px solid rgba(200,255,122,.5);font:700 9px var(--ax-mono);letter-spacing:1.2px;text-transform:uppercase;color:#c8ff7a;vertical-align:1px}
+.ax-hero small{display:block;margin-top:5px;font-size:11px;color:#8fbfa9}
+.ax-hero small a{color:#a7ffcf}
+.ax-dossier.ax-in .ax-hero{animation:axHero .6s .15s both ease}
+@keyframes axHero{from{opacity:0;filter:blur(6px) brightness(1.8)}}
+@media (prefers-reduced-motion:reduce){.ax-dossier.ax-in .ax-hero{animation:none}.atlas-case-media img{transition:none}}
