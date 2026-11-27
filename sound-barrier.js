@@ -176,7 +176,7 @@
   const Z = { name: null, g: null, bed: null };
   const streamShell = document.getElementById('stream-shell'), atlasShell = document.getElementById('atlas-shell');
   function zoneNow() {
-    if (document.querySelector('.ixl:not(.ixl-out)') || document.querySelector('.ax-boot:not(.ax-leave)')) return 'loader';
+    if (document.querySelector('.pg-gate:not(.pg-opening)') || document.querySelector('.ixl:not(.ixl-out)') || document.querySelector('.ax-boot:not(.ax-leave)')) return 'loader';
     if (streamShell && !streamShell.hidden) return 'stream';
     if (atlasShell && !atlasShell.hidden) return 'atlas';
     return 'hub';
@@ -213,6 +213,16 @@
   document.addEventListener('visibilitychange', () => { if (!SA.ctx) return; if (document.hidden) SA.ctx.suspend(); else { const p = SA.ctx.resume(); if (p && p.then) p.then(() => { if (!Z.bed) setZone(true); }, () => {}); } });
   window.addEventListener('signal-audio-change', e => { if (e.detail.on) { SA.unlock(); setZone(true); if (streamShell && !streamShell.hidden) Scene.restart(); } else { Scene.stop(); if (Z.bed) { Z.bed.stop(0.3); Z.bed = null; } Z.name = null; } });
 
+
+  /* FM bell — the voice of the Signal Motif (shared by the Ignition logo and the hub theme) */
+  function fmBell(at, m, holdS, gain, pan, g, rev = 0.6) {
+    const c = SA.ctx; if (!c || (g && g.dead)) return; const t = c.currentTime + at, f = 440 * Math.pow(2, (m - 69) / 12);
+    const car = c.createOscillator(), mod = c.createOscillator(), mi = c.createGain(), v = c.createGain(), oct = c.createOscillator(), ov = c.createGain();
+    car.frequency.value = f; mod.frequency.value = f * 3.5; mi.gain.setValueAtTime(f * 2.4, t); mi.gain.exponentialRampToValueAtTime(f * 0.12, t + 0.9);
+    mod.connect(mi); mi.connect(car.frequency); car.connect(v); oct.type = 'triangle'; oct.frequency.value = f; ov.gain.value = 0.35; oct.connect(ov); ov.connect(v);
+    v.gain.setValueAtTime(0.0001, t); v.gain.exponentialRampToValueAtTime(gain, t + 0.008); v.gain.exponentialRampToValueAtTime(gain * 0.5, t + 0.3); v.gain.setValueAtTime(gain * 0.5, t + holdS); v.gain.exponentialRampToValueAtTime(0.0001, t + holdS + 1.6);
+    SA.route(v, { pan, rev, dly: 0.28 }, g); [car, mod, oct].forEach(o => { o.start(t); o.stop(t + holdS + 1.7); });
+  }
   /* ---------------------------------------------------------------- UI cue library */
   let uiG = null;
   SA.ui = function (name, o = {}) {
@@ -220,6 +230,18 @@
     const pan = o.pan || 0;
     switch (name) {
       // hub
+      case 'ignite': { // Power-On Gate: click → charge → ignition → Signal Motif startup chime
+        const g = SA.ui.g(), mt = m => 440 * Math.pow(2, (m - 69) / 12);
+        T({ f: 2600, dur: 0.012, gain: 0.07, type: 'square', a: 0.001 }); T({ f: 150, to: 60, dur: 0.26, gain: 0.14, a: 0.002 }); N({ f: 1200, ft: 'lowpass', dur: 0.12, gain: 0.08, a: 0.002 });
+        T({ at: 0.02, f: 55, to: 220, glide: 1.2, dur: 1.26, gain: 0.07, type: 'sawtooth', lp: 260, lpTo: 3200, a: 1.05, rev: 0.3 });
+        T({ at: 0.02, f: 440, to: 1760, glide: 1.2, dur: 1.24, gain: 0.012, a: 1.0, rev: 0.3 });
+        N({ at: 0.02, f: 300, to: 6500, q: 1.1, dur: 1.23, gain: 0.07, swell: true, rev: 0.5 });
+        [62, 64, 66, 68, 69, 71, 73, 74, 76, 78, 80, 81, 83, 85].forEach((m, k, arr) => { const at = 0.05 + 1.15 * (1 - Math.pow(1 - k / arr.length, 1.7)); T({ at, f: mt(m), dur: 0.16, gain: 0.016 + k * 0.0012, type: 'triangle', a: 0.003, pan: k % 2 ? 0.35 : -0.35, rev: 0.4, dly: 0.15 }); });
+        SA.impact({ at: 1.25, gain: 0.5 }, g);
+        N({ at: 1.25, f: 9000, to: 220, ft: 'lowpass', dur: 2.4, gain: 0.14, a: 0.004, rev: 0.85 });
+        [62, 69, 73, 76, 78].forEach((m, i) => SA.bell(mt(m), { at: 1.26 + i * 0.02, dur: 3.4, gain: 0.02, pan: (i - 2) * 0.3, rev: 0.9 }, g));
+        [[69, 0], [76, 1], [74, 2], [80, 3]].forEach(([m, k]) => { fmBell(1.34 + k * 0.178, m, k === 3 ? 1.6 : 0.16, 0.075, (k - 1.5) * 0.2, g, 0.65); fmBell(1.34 + k * 0.178, m + 12, k === 3 ? 1.2 : 0.1, 0.018, (k - 1.5) * -0.2, g, 0.8); });
+        break; }
       case 'hoverScan': T({ f: 1760, to: 2637, dur: 0.35, gain: 0.012, a: 0.02, pan, rev: 0.6 }); T({ f: 880, dur: 0.4, gain: 0.008, type: 'triangle', a: 0.03, pan, rev: 0.6 }); break;
       case 'hoverAtlas': T({ f: 1396.9, dur: 0.5, gain: 0.012, a: 0.005, pan, rev: 0.7, dly: 0.2 }); break;
       case 'home': [D * 4, D * 5.04, D * 6, D * 8].forEach((f, i) => SA.bell(f, { at: 0.25 + i * 0.07, dur: 2.2, gain: 0.014, pan: (i - 1.5) * 0.3, rev: 0.85 }, SA.ui.g())); N({ f: 4000, to: 300, q: 0.8, dur: 0.7, gain: 0.05, a: 0.01, rev: 0.4 }); break;
