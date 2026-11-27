@@ -265,6 +265,7 @@
       <div class="ax-stamp" aria-hidden="true">DECLASSIFIED · ARCHIVE COPY</div>
       <div class="ax-caseid">${esc(caseId)}</div>
       <h3 id="ax-dossier-title">${esc(r.title)}</h3>
+      ${a && a.image ? `<figure class="ax-hero"><a href="${esc(a.image.page)}" target="_blank" rel="noopener noreferrer" aria-label="Open image on Wikimedia Commons"><img src="${esc(a.image.full)}" alt="${esc(a.image.caption)}" decoding="async" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"></a><figcaption><span class="ax-hero-kind">${esc(a.image.kind)}</span>${esc(a.image.caption)}<small>${esc(a.image.credit)} · <a href="${esc(a.image.page)}" target="_blank" rel="noopener noreferrer">Wikimedia Commons ↗</a></small></figcaption></figure>` : ''}
       <dl class="ax-fields">
         ${field('Date', r.date)}
         ${field('Location', r.place)}
