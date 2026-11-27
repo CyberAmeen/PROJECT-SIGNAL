@@ -64,7 +64,7 @@
     return { id: hub.id, label: stateName.replace(/\b\w/g, m => m.toUpperCase()) };
   }
   function openAtlasAt(id) {
-    closeStream();
+    clearResume(); closeStream();
     const btn = document.getElementById('atlas-launch'); if (!btn) return;
     btn.click();
     setTimeout(() => { try { window.__atlasAscension && window.__atlasAscension.skipBoot && window.__atlasAscension.skipBoot(); } catch {} try { window.__atlas && window.__atlas.choose(id, true); } catch {} }, 140);
@@ -136,6 +136,16 @@
         <div class="ox-rings"><i></i><i></i><i></i></div>`;
     }
   }
+  /* Only the visible transmission and its neighbours keep a live scene (memory: iOS reloads the tab
+     when too many composited layers pile up). Everything else is an empty, cheap slot. */
+  let sceneCache = [];
+  function mountScenes(center) {
+    $$('.ix-scene-slot', view).forEach(slot => {
+      const k = Number(slot.dataset.slot), want = Math.abs(k - center) <= 1;
+      if (want && !slot.firstElementChild && sceneCache[k]) slot.innerHTML = sceneCache[k];
+      else if (!want && slot.firstElementChild) slot.textContent = '';
+    });
+  }
   function sceneHTML(c, i) {
     try { return sceneInner(c, i); } catch (err) { console.error(err); return sceneInner(Object.assign({}, c, { scene: 'deep' }), i); }
   }
@@ -159,9 +169,9 @@
     const at = atlasTarget(c), reports = c.memberIds.length;
     const meter = Array.from({ length: 5 }, (_, k) => `<i class="${k < Math.min(5, c.count) ? 'on' : ''}"></i>`).join('');
     const brief = c.desc ? `<p class="ix-brief">${h(c.desc)}</p>` : `<p class="ix-brief ix-brief-thin">Headline only — the feed didn't include article details. Open a report below for the full story.</p>`;
-    const chips = c.outlets.slice(0, 6).map(o => `<a class="ix-chip" href="${h(o.url)}" target="_blank" rel="noopener noreferrer">${h(o.name)} ↗</a>`).join('') + (c.outlets.length > 6 ? `<span class="ix-chip ix-more">+${c.outlets.length - 6} more</span>` : '');
+    const chips = c.outlets.slice(0, 4).map(o => `<a class="ix-chip" href="${h(o.url)}" target="_blank" rel="noopener noreferrer">${h(o.name)} ↗</a>`).join('') + (c.outlets.length > 4 ? `<span class="ix-chip ix-more">+${c.outlets.length - 4} more</span>` : '');
     return `<article class="stream-slide ix-slide${sotd ? ' ix-sotd' : ''}" data-index="${i}" data-cluster="${h(c.id)}" aria-label="Transmission ${i + 1} of ${total}">
-      ${sceneHTML(c, i)}
+      <div class="ix-scene-slot" data-slot="${i}"></div>
       <div class="ix-panel">
         ${sotd ? `<div class="ix-sotd-banner"><span>◆ SIGNAL OF THE DAY</span><small>${c.count > 1 ? 'Most-covered story in this scan' : 'Lead transmission'}</small></div>` : ''}
         <div class="ix-kicker"><span class="ix-label t-${c.label.tone}">◆ ${h(c.label.text)}</span>${isNew(c) ? '<span class="ix-new">NEW</span>' : ''}<span class="ix-num">TX ${pad(i + 1)}/${pad(total)}</span></div>
@@ -265,7 +275,7 @@
     if (t.matches('[data-ix-sheet-close]')) return closeSheet();
     if (t.matches('[data-ix-unsave]')) { saved = saved.filter(s => s.id !== t.dataset.ixUnsave); persistSaved(); renderSheet(); syncSaveButtons(); refreshTools(); return; }
     if (t.matches('[data-ix-tilt]')) return enableTilt(true);
-    if (t.matches('[data-ix-atlas-open]')) { closeStream(); document.getElementById('atlas-launch')?.click(); return; }
+    if (t.matches('[data-ix-atlas-open]')) { clearResume(); closeStream(); document.getElementById('atlas-launch')?.click(); return; }
     if (t.matches('[data-ix-atlas]')) return openAtlasAt(t.dataset.ixAtlas);
     const c = list.find(x => x.id === (t.dataset.ixSave || t.dataset.ixShare));
     if (t.matches('[data-ix-save]') && c) {
@@ -300,6 +310,7 @@
       view.innerHTML = '<div class="stream-empty ix-empty"><div class="ix-empty-orb">◎</div><h2>No signals received.</h2><p>The public snapshot is unavailable and nothing is saved on this device yet. Try another scan in a few minutes.</p><button type="button" id="stream-go-scan">Return to scanner</button></div>';
       if (rail) rail.innerHTML = ''; idx = -1; return;
     }
+    sceneCache = list.map((c, i) => sceneHTML(c, i));
     view.innerHTML = list.map((c, i) => slideHTML(c, i, list.length, i === 0)).join('') + endHTML(list.length);
     buildRail(); idx = -1;
   }
@@ -309,6 +320,7 @@
   function setIndex(i, initial) {
     const s = slides(); if (!s.length) return; i = Math.max(0, Math.min(i, s.length - 1)); if (i === idx) return;
     const prev = idx; idx = i; try { streamIndex = i; } catch {}
+    mountScenes(i); saveResume();
     s.forEach((el, k) => el.classList.toggle('is-visible', k === i));
     const el = s[i];
     if (!initial && !reduced()) { burst(i > prev ? 1 : -1); Sound.play('whoosh', { dir: i > prev ? 1 : -1 }); el.classList.remove('ix-arrive'); void el.offsetWidth; el.classList.add('ix-arrive'); }
@@ -377,7 +389,8 @@
   function burst(dir) {
     if (!warp) return;
     const dpr = Math.min(2, devicePixelRatio || 1), w = shell.clientWidth, hgt = shell.clientHeight;
-    warp.width = w * dpr; warp.height = hgt * dpr; const ctx = warp.getContext('2d'); if (!ctx) return; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    if (warp.width !== Math.round(w * dpr) || warp.height !== Math.round(hgt * dpr)) { warp.width = Math.round(w * dpr); warp.height = Math.round(hgt * dpr); }
+    const ctx = warp.getContext('2d'); if (!ctx) return; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     const cx = w / 2, cy = hgt * (dir > 0 ? 0.42 : 0.58), N = 150, max = Math.hypot(w, hgt) * 0.6;
     const parts = Array.from({ length: N }, () => ({ a: Math.random() * Math.PI * 2, r: Math.random() * max * 0.25, v: 0.6 + Math.random() * 1.6, c: Math.random() < 0.7 ? '159,216,255' : (Math.random() < 0.5 ? '255,255,255' : '160,140,255') }));
     const t0 = performance.now(), D = 520; cancelAnimationFrame(burstRaf); warp.classList.add('on');
@@ -441,7 +454,7 @@
     if (e.key === 'Escape' && sheet && !sheet.hidden) { e.stopImmediatePropagation(); e.preventDefault(); closeSheet(); }
     if ((e.key === 'ArrowDown' || e.key === 'ArrowUp') && !e.defaultPrevented) { e.stopImmediatePropagation(); e.preventDefault(); go(idx + (e.key === 'ArrowDown' ? 1 : -1)); }
   }, true);
-  $('#stream-close')?.addEventListener('click', () => { clearInterval(ticker); clearTimeout(dwellTimer); if (sheet) { sheet.hidden = true; sheet.classList.remove('open'); } });
+  $('#stream-close')?.addEventListener('click', () => { clearResume(); clearInterval(ticker); clearTimeout(dwellTimer); if (sheet) { sheet.hidden = true; sheet.classList.remove('open'); } });
 
   /* ---------------------------------------------------------------- SIGNAL LOCK LOADER */
   function loaderHTML() {
@@ -579,7 +592,7 @@
         if (done) return; done = true; removeEventListener('resize', fit); clearTimeout(safety);
         el.classList.add('ixl-out'); document.body.style.overflow = '';
         if (!flashed) { if (AU) AU.stop(0.3); try { openIntel(); } catch (err) { console.error(err); } }
-        setTimeout(() => el.remove(), 520); resolve();
+        setTimeout(() => { try { bg.width = bg.height = 0; wave.width = wave.height = 0; } catch {} el.remove(); }, 520); resolve();
       };
       const safety = setTimeout(() => { if (!done) { ready = true; finish(); } }, 26000);
       requestAnimationFrame(frame);
@@ -605,6 +618,32 @@
   const oldBtn = document.getElementById('refresh');
   if (oldBtn) { const btn = oldBtn.cloneNode(true); oldBtn.replaceWith(btn); btn.addEventListener('click', launch); }
   ['open-stream', 'nav-stream'].forEach(id => { const b = document.getElementById(id); if (b) { const n = b.cloneNode(true); b.replaceWith(n); n.addEventListener('click', () => openIntel()); } });
+
+  /* ---------------------------------------------------------------- RELOAD GUARD
+     If the tab reloads while the feed is open (e.g. iOS reclaiming memory), put the person back
+     on the transmission they were reading instead of dropping them on the hub. */
+  const RESUME = 'ps-intel-resume';
+  let resumeT = 0;
+  function saveResume() {
+    clearTimeout(resumeT);
+    resumeT = setTimeout(() => { try { if (shell.hidden || !list.length) return; const c = list[Math.min(idx, list.length - 1)]; sessionStorage.setItem(RESUME, JSON.stringify({ open: true, id: c && c.id, idx, order, t: Date.now() })); } catch {} }, 150);
+  }
+  function clearResume() { clearTimeout(resumeT); try { sessionStorage.removeItem(RESUME); } catch {} }
+  function readResume() { try { const r = JSON.parse(sessionStorage.getItem(RESUME) || 'null'); return r && r.open && Date.now() - r.t < 15 * 60e3 ? r : null; } catch { return null; } }
+  ['open-stream', 'nav-stream', 'atlas-launch'].forEach(id => document.getElementById(id)?.addEventListener('click', clearResume));
+  async function resume(r) {
+    try { await refresh(); } catch {}
+    openIntel();
+    let k = list.findIndex(c => c.id === r.id); if (k < 0) k = Math.min(r.idx || 0, list.length);
+    if (k > 0) { go(k, true); }
+    toast('◎ Signal restored — back where you left off');
+  }
+  new MutationObserver(() => { if (shell.hidden) clearResume(); }).observe(shell, { attributes: true, attributeFilter: ['hidden'] });
+  const pendingResume = readResume();
+  if (pendingResume) {
+    if (document.getElementById('power-gate')) window.addEventListener('pg:done', () => resume(pendingResume), { once: true });
+    else resume(pendingResume);
+  }
   window.addEventListener('signal-audio-change', () => { if (chrome) refreshTools(); });
   window.__intel = { launch, openIntel, get model() { return model; }, get list() { return list; }, go, get index() { return idx; } };
 })();

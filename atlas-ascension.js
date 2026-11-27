@@ -449,7 +449,7 @@
     b.el.classList.add('ax-leave');
     frame.classList.remove('ax-arrive'); void frame.offsetWidth;
     if (!skipped && !reduced()) frame.classList.add('ax-arrive');
-    setTimeout(() => b.el.remove(), 420);
+    setTimeout(() => { try { const cv = b.el.querySelector('canvas'); if (cv) cv.width = cv.height = 0; } catch {} b.el.remove(); }, 420);
     setTimeout(signalPulse, skipped ? 80 : 420);
     setTimeout(() => frame.classList.remove('ax-arrive'), 1600);
   }

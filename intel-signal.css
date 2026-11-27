@@ -36,13 +36,13 @@
 .ix .stream-scanline,.ix .stream-ambient,.ix .ix-slide::before,.ix .ix-slide::after,.ix .stream-view::before,.ix .stream-view::after{display:none!important}
 .ix .ix-slide{display:block;position:relative;height:100%;min-height:100%;overflow:hidden;background:var(--ix-bg)!important;isolation:isolate}
 .ix-scene{position:absolute;inset:0;overflow:hidden;filter:hue-rotate(var(--hue,0deg));background:radial-gradient(ellipse at 50% 30%,#0a1a3c 0%,#040b1e 45%,#02060f 80%)}
-.ix-px{position:absolute;inset:0;transform:translate3d(calc(var(--tx,0) * var(--d,0) * 1px),calc(var(--ty,0) * var(--d,0) * 1px),0);transition:transform .35s cubic-bezier(.2,.7,.3,1);will-change:transform}
+.ix-px{position:absolute;inset:0;transform:translate3d(calc(var(--tx,0) * var(--d,0) * 1px),calc(var(--ty,0) * var(--d,0) * 1px),0);transition:transform .35s cubic-bezier(.2,.7,.3,1)}
 .ix-stars{position:absolute;left:0;top:0;width:1px;height:1px;border-radius:50%;background:transparent}
 .ix-stars.s1{animation:ixDrift 90s linear infinite alternate}
 .ix-stars.s2{width:1.6px;height:1.6px;animation:ixTwinkle 4s ease-in-out infinite,ixDrift 60s linear infinite alternate-reverse}
 @keyframes ixDrift{to{transform:translate3d(-3vw,-4vh,0)}}
 @keyframes ixTwinkle{50%{opacity:.35}}
-.ix-nebula{position:absolute;inset:-25%;background:radial-gradient(circle at var(--nx,30%) var(--ny,30%),rgba(61,139,255,.34),transparent 38%),radial-gradient(circle at var(--nx2,70%) var(--ny2,60%),rgba(155,139,255,.24),transparent 42%),radial-gradient(ellipse at 50% 115%,rgba(20,70,170,.45),transparent 58%);filter:blur(14px);animation:ixNeb 26s ease-in-out infinite alternate}
+.ix-nebula{position:absolute;inset:-10%;background:radial-gradient(circle at var(--nx,30%) var(--ny,30%),rgba(61,139,255,.34),transparent 38%),radial-gradient(circle at var(--nx2,70%) var(--ny2,60%),rgba(155,139,255,.24),transparent 42%),radial-gradient(ellipse at 50% 115%,rgba(20,70,170,.45),transparent 58%);animation:ixNeb 26s ease-in-out infinite alternate}
 @keyframes ixNeb{to{transform:scale(1.12) rotate(4deg) translate3d(2%,-2%,0)}}
 .ix-core{inset:0 0 40% 0}
 .ix-scanlines{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(180deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px),radial-gradient(ellipse at 50% 45%,transparent 50%,rgba(0,0,0,.55) 100%)}
@@ -434,3 +434,24 @@
 .sb-atlas-toggle[aria-pressed="false"]{opacity:.65}
 @media (prefers-reduced-motion:reduce){.sb-toggle i{animation:none}}
 .sb-atlas-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.sb-atlas-actions .sb-atlas-toggle{margin-left:0}
+
+/* ===== WIDE SIGNAL P1 — feed stability on iPhone (memory + gestures) */
+.ix-scene-slot{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,#0a1a3c 0%,#040b1e 45%,#02060f 80%)}
+.ix .ix-slide{content-visibility:auto;contain-intrinsic-size:auto 100vh}
+.ix .stream-view{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+html:has(body.stream-active),body.stream-active{overscroll-behavior:none}
+@media (max-width:899px){
+  .ix-panel{overflow:hidden;max-height:76%;touch-action:pan-y}
+  .ix-title{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
+  .ix-brief{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+}
+@media (max-width:899px) and (max-height:720px){
+  .ix-title{-webkit-line-clamp:3;font-size:clamp(21px,5.6vw,30px)}
+  .ix-brief{-webkit-line-clamp:2}
+  .ix-swipe,.ix-sotd-banner small{display:none}
+  .ix-panel{padding-top:18px}
+}
+/* the hub is completely covered while the feed is open: stop rendering it (big memory saving on iPhone) */
+body.stream-active > .wrap{content-visibility:hidden}
+.ix-sheet[hidden]{display:none}
+.ix .ix-brand{white-space:nowrap}

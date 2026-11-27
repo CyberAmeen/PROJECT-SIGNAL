@@ -11,6 +11,8 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const power = $('.pg-power'), silent = $('.pg-silent'), prog = $('.pg-prog'), pct = $('.pg-pct'), lines = $('.pg-lines');
   setTimeout(() => { try { power.focus({ preventScroll: true }); } catch {} }, 300);
+  // returning after an unexpected reload mid-feed → say so on the button prompt
+  try { const r = JSON.parse(sessionStorage.getItem('ps-intel-resume') || 'null'); if (r && r.open && Date.now() - r.t < 15 * 60e3) { gate.querySelectorAll('.pg-cta span').forEach(x => { x.textContent = x.classList.contains('pg-cta-fine') ? 'CLICK OR PRESS ENTER TO RESUME TRANSMISSION' : 'TAP TO RESUME TRANSMISSION'; }); } } catch {}
 
   /* ---- starfield (slow drift; streaks while charging) */
   const cv = $('.pg-stars'), cx2 = cv.getContext('2d'), dpr = Math.min(2, devicePixelRatio || 1);
@@ -84,6 +86,8 @@
   }
   function finish() {
     alive = false; cancelAnimationFrame(raf); removeEventListener('resize', fit);
+    try { cv.width = cv.height = 0; } catch {}
+    setTimeout(() => { try { window.dispatchEvent(new Event('pg:done')); } catch {} }, 60);
     document.documentElement.classList.remove('pg-lock');
     gate.classList.add('pg-done');
     setTimeout(() => { gate.remove(); if (SA && SA.zone) SA.zone(true); }, 320);
