@@ -10,7 +10,7 @@ enabled = true
 head_sampling_rate = 1
 
 [triggers]
-crons = ["*/15 * * * *"]
+crons = ["*/10 * * * *"]
 
 [[kv_namespaces]]
 binding = "SENTINEL_KV"
