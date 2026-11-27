@@ -7,5 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: git fetch -q origin sentinel-v5 && git checkout origin/sentinel-v5 -- sentinel
-      - run: node .github/scripts/diag-bing.mjs
+      - run: node .github/scripts/diag-stg.mjs
