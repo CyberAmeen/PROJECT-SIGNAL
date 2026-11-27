@@ -4,7 +4,7 @@ name: SENTINEL staging test
 
 on:
   push:
-    branches: ["sentinel-v5"]
+    branches: ["sentinel-v5", "google-relay"]
     paths: ["sentinel/**", ".github/workflows/sentinel-staging.yml"]
   workflow_dispatch:
 

@@ -24,6 +24,10 @@ globalThis.fetch = async (url, opts = {}) => {
 const store = new Map();
 const kv = { get: async (k, t) => { const v = store.get(k); return v == null ? null : t === 'json' ? JSON.parse(v) : v; }, put: async (k, v) => { store.set(k, v); } };
 const env = { SENTINEL_KV: kv };
+// Google relay deliveries (what .github/scripts/google-relay.mjs writes), using the real Google samples.
+const relayAt = '2026-11-27T18:55:00Z';
+for (const [id, f] of [['gn-ufo-uap','google-ufo-uap.xml'],['gn-aaro','google-ufo-uap.xml'],['gn-disclosure','google-disclosure.xml'],['gn-sightings','google-ufo-uap.xml'],['gn-science','google-science.xml'],['gn-specialist','google-specialist.xml']])
+  store.set('relay:google:' + id, JSON.stringify({ fetchedAt: relayAt, source: id, xml: fx(f) }));
 // Fixtures were captured 2026-11-27 ~18:54Z: pin the clock there so the 10-day window matches.
 const realNow = Date.now; let clock = Date.parse('2026-11-27T19:00:00Z'); Date.now = () => clock;
 const t0 = performance.now();

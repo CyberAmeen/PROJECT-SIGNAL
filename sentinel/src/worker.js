@@ -8,7 +8,7 @@
  * Secrets (never in code): SERPER_API_KEY, SENTINEL_ADMIN_TOKEN, REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET.
  */
 
-const VERSION = '5.0';
+const VERSION = '5.1';
 const ORIGIN = 'https://cyberameen.github.io';
 const DAY_MS = 86400000;
 const WINDOW_DAYS = 10;
@@ -16,8 +16,8 @@ const FAIL_AFTER_MS = DAY_MS;
 const SNAPSHOT_FRESH_MS = 60 * 60 * 1000;
 const MAX_STORIES = 220;
 const MAX_DROPPED = 300;
-const MAX_SOURCES_PER_RUN = 4;
-const RULES_VERSION = 'r5.0.4'; // bump when relevance rules change → stored stories get re-checked
+const MAX_SOURCES_PER_RUN = 5;
+const RULES_VERSION = 'r5.0.5'; // bump when relevance rules change → stored stories get re-checked
 const SERPER_INTERVAL_MS = 4 * 60 * 60 * 1000;
 const MANUAL_INTERVAL_MS = 5 * 60 * 1000;
 const REDDIT_HOUR_UTC = 15; // 7am Pacific
@@ -47,6 +47,13 @@ const DOD = type => 'https://www.defense.gov/DesktopModules/ArticleCS/RSS.ashx?C
 const SOURCES = [
  // Google News blocks Cloudflare Workers (HTTP 503 / timeouts on staging, 2026-11-27), so news discovery uses
  // Bing News sorted newest-first. Each query returns ~12 items; together they give ~100+ distinct relevant stories.
+ // Google News via the GitHub relay (.github/workflows/google-relay.yml). Same 5 searches as before; relay runs every 30 min.
+ {id:'gn-ufo-uap', name:'Google News · UFO/UAP', category:'news', every:30, aggregator:true, relay:'relay:google:gn-ufo-uap'},
+ {id:'gn-aaro', name:'Google News · AARO & government', category:'government', every:30, aggregator:true, relay:'relay:google:gn-aaro'},
+ {id:'gn-disclosure', name:'Google News · Disclosure', category:'government', every:30, aggregator:true, relay:'relay:google:gn-disclosure'},
+ {id:'gn-sightings', name:'Google News · Sightings', category:'news', every:30, aggregator:true, relay:'relay:google:gn-sightings'},
+ {id:'gn-science', name:'Google News · Science & SETI', category:'research', every:60, aggregator:true, relay:'relay:google:gn-science'},
+ {id:'gn-specialist', name:'Google News · The Debrief / Black Vault / Liberation Times', category:'news', every:60, aggregator:true, relay:'relay:google:gn-specialist'},
  {id:'bing-ufo', name:'Bing News · UFO', category:'news', every:30, aggregator:true, url:B('UFO')},
  {id:'bing-uap', name:'Bing News · UAP', category:'news', every:30, aggregator:true, url:B('UAP')},
  {id:'bing-ufo-news', name:'Bing News · UFO news', category:'news', every:60, aggregator:true, url:B('UFO news')},
@@ -251,7 +258,17 @@ function parseFeed(xml, source, nowMs, drops) {
  return {stories: out, raw};
 }
 
-async function fetchSource(source, nowMs, drops) {
+const RELAY_STALE_MS = 3 * 60 * 60 * 1000;
+async function fetchSource(source, nowMs, drops, kv) {
+ if (source.relay) {
+  // Google News blocks Cloudflare, so a GitHub Actions job fetches these feeds and drops the raw XML into KV.
+  const got = kv ? await kv.get(source.relay, 'json') : null;
+  if (!got || typeof got.xml !== 'string') throw new Error('Relay has not delivered yet');
+  if (got.error) throw new Error('Relay: ' + got.error);
+  const age = nowMs - Date.parse(got.fetchedAt);
+  if (!(age <= RELAY_STALE_MS)) throw new Error('Relay stale (last delivery ' + Math.round(age / 60000) + ' min ago)');
+  return parseFeed(got.xml, source, nowMs, drops);
+ }
  const controller = new AbortController();
  const timer = setTimeout(() => controller.abort(), 7000);
  try {
@@ -497,7 +514,7 @@ async function collect(env, {force = false} = {}) {
  const due = SOURCES.map(s => ({s, last: Date.parse(srcState[s.id]?.lastFetchAt) || 0}))
   .filter(x => force || nowMs - x.last >= x.s.every * 60000 - 90000)
   .sort((a, b) => a.last - b.last).slice(0, force ? SOURCES.length : MAX_SOURCES_PER_RUN).map(x => x.s);
- const results = await Promise.allSettled(due.map(s => fetchSource(s, nowMs, drops)));
+ const results = await Promise.allSettled(due.map(s => fetchSource(s, nowMs, drops, kv)));
  const collected = [];
  results.forEach((r, i) => {
   const s = due[i];
@@ -639,4 +656,4 @@ export default {
  }
 };
 
-export const __test = {community, keysFor, parseFeed, evaluate, credibility, unwrapLink, splitOutlet, clusterStories, pickRedditPosts, statusOf, health, collect, SOURCES, topic, strip};
+export const __test = {community, keysFor, fetchSource, parseFeed, evaluate, credibility, unwrapLink, splitOutlet, clusterStories, pickRedditPosts, statusOf, health, collect, SOURCES, topic, strip};

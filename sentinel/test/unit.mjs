@@ -61,4 +61,11 @@ const env = { REDDIT_CLIENT_ID: 'id', REDDIT_CLIENT_SECRET: 'sec' }, keys = T.ke
 const r1 = await T.community(env, kv, keys, now); ok(r1.status.ok && r1.state.posts.length >= 1, 'reddit daily ok');
 fetches = []; const r2 = await T.community(env, kv, keys, now + 3600e3); ok(fetches.length === 0 && r2.status.ok, 'no refetch same day');
 const r0 = await T.community({}, kv, keys, now); ok(r0.status.status === 'not-configured', 'not configured without secrets');
+// Google relay: fresh delivery parses, stale delivery reports why
+{ const src = T.SOURCES.find(s => s.id === 'gn-ufo-uap'); const now0 = Date.parse('2026-11-27T19:00:00Z');
+  const xml = '<rss><channel><item><title>Pentagon releases new UAP files - Reuters</title><link>https://www.reuters.com/x</link><pubDate>Thu, 27 Nov 2026 12:00:00 GMT</pubDate></item></channel></rss>';
+  const mk = at => ({ get: async () => ({ fetchedAt: at, xml }) });
+  const got = await T.fetchSource(src, now0, [], mk('2026-11-27T18:40:00Z')); ok(got.stories.length === 1 && got.stories[0].outlet === 'Reuters', 'relay parses');
+  let err = ''; try { await T.fetchSource(src, now0, [], mk('2026-11-27T12:00:00Z')); } catch (e) { err = e.message; } ok(/stale/.test(err), 'stale relay is an error');
+  err = ''; try { await T.fetchSource(src, now0, [], { get: async () => null }); } catch (e) { err = e.message; } ok(/not delivered/.test(err), 'missing relay is an error'); }
 console.log('unit tests passed:', n);
