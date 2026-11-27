@@ -300,12 +300,13 @@
     const band = svgEl('rect', { class: 'ax-sweep', x: -120, y: -20, width: 120, height: 650, fill: 'url(#axSweep)' });
     contents.insertBefore(band, pins);
     const dur = 1900, t0 = performance.now(), hit = new Set(), groups = $$('.atlas-city', pins);
+    let swept = false; try { swept = !!(window.SignalAudio && window.SignalAudio.ctx && window.SignalAudio.atlas.sweep()); } catch {}
     const step = now => {
       const p = Math.min(1, (now - t0) / dur), front = -20 + p * 1015;
       band.setAttribute('x', (front - 120).toFixed(1));
       for (const g of groups) {
         if (hit.has(g)) continue;
-        if (A.positions[g.dataset.id][0] <= front) { hit.add(g); g.classList.remove('ax-hit'); g.getBoundingClientRect(); g.classList.add('ax-hit'); setTimeout(() => g.classList.remove('ax-hit'), 1300); }
+        if (A.positions[g.dataset.id][0] <= front) { hit.add(g); if (swept) { const cc = A.cities.find(x => x.id === g.dataset.id); window.SignalAudio.atlas.hit(A.positions[g.dataset.id][0] / 975 * 1.8 - 0.9, !!(cc && cc.priority)); } g.classList.remove('ax-hit'); g.getBoundingClientRect(); g.classList.add('ax-hit'); setTimeout(() => g.classList.remove('ax-hit'), 1300); }
       }
       if (p < 1) pulseRaf = requestAnimationFrame(step); else band.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 350 }).onfinish = () => band.remove();
     };
@@ -444,6 +445,7 @@
     if (!boot) return;
     const b = boot; boot = null;
     cancelAnimationFrame(b.raf); clearTimeout(b.timer);
+    try { window.SignalAudio && window.SignalAudio.ctx && window.SignalAudio.atlas.finish(skipped); } catch {}
     b.el.classList.add('ax-leave');
     frame.classList.remove('ax-arrive'); void frame.offsetWidth;
     if (!skipped && !reduced()) frame.classList.add('ax-arrive');
@@ -468,6 +470,9 @@
     boot = { el, raf: 0, timer: 0 };
     $('.ax-skip', el).addEventListener('click', () => { try { sessionStorage.setItem('ps-atlas-intro', 'skip'); } catch {} finishBoot(true); });
     $('.ax-skip', el).focus({ preventScroll: true });
+    const S = window.SignalAudio, AU = S && S.ctx ? S.atlas : null;
+    if (AU) AU.start(); if (S) el.append(S.muteButton('ax-mute'));
+    let gratN = 0, outlinesSnd = false, markersSnd = false;
     const t0 = performance.now(); let phaseIdx = -1;
     const frameFn = now => {
       if (!boot) return;
@@ -475,8 +480,15 @@
       try { drawGlobe(ctx, innerWidth, innerHeight, t); } catch { finishBoot(true); return; }
       bar.style.transform = `scaleX(${clamp01(t / DURATION)})`;
       while (phaseIdx + 1 < PHASES.length && t >= PHASES[phaseIdx + 1][0]) {
-        phaseIdx++; phaseEl.textContent = PHASES[phaseIdx][1];
+        phaseIdx++; phaseEl.textContent = PHASES[phaseIdx][1]; if (AU) AU.phase(phaseIdx, PHASES[phaseIdx][1].length);
         const line = document.createElement('div'); line.innerHTML = `<span>T+${PHASES[phaseIdx][0].toFixed(1)}s</span> ${esc(PHASES[phaseIdx][1])}`; hudR.append(line);
+      }
+      if (AU) {
+        const gs = Math.floor(35 * clamp01((t - 0.3) / 1.6)); while (gratN < gs) { gratN++; AU.grat(gratN, 35); }
+        if (!outlinesSnd && t >= 2.1) { outlinesSnd = true; AU.outlines(); }
+        AU.servo(t > 1.6 && t < 4.6 ? Math.sin(Math.PI * (t - 1.6) / 3) : 0);
+        if (t > 2.9 && t < 5.2) for (let k = 0; k < 3; k++) if (t >= AU.satNext[k]) { AU.satNext[k] += 0.75 + k * 0.2; AU.sat(k, Math.cos(t * (0.9 + k * .35) + k) * 0.8); }
+        if (!markersSnd && t >= 4.5) { markersSnd = true; AU.markers([...A.cities].sort((a, b) => a.lon - b.lon).map(c => ({ pan: Math.max(-0.95, Math.min(0.95, (c.lon + 113) / 46 * 0.9)), pri: !!c.priority }))); }
       }
       if (t > 5.2) el.classList.add('ax-descend');
       if (t >= DURATION) { finishBoot(false); return; }
@@ -485,9 +497,9 @@
     boot.raf = requestAnimationFrame(frameFn);
     boot.timer = setTimeout(() => finishBoot(true), (DURATION + 4) * 1000); // safety net if rAF is throttled
   }
-  $('#atlas-launch')?.addEventListener('click', () => requestAnimationFrame(startBoot));
+  $('#atlas-launch')?.addEventListener('click', () => { const S = window.SignalAudio; if (S) { S.unlock(); S.atlas.arm(); } requestAnimationFrame(startBoot); });
   // Close the Atlas mid-boot → tidy up
-  $('#atlas-exit')?.addEventListener('click', () => { if (boot) { boot.el.remove(); cancelAnimationFrame(boot.raf); clearTimeout(boot.timer); boot = null; } closeDossier(); });
+  $('#atlas-exit')?.addEventListener('click', () => { if (boot) { try { window.SignalAudio && window.SignalAudio.ctx && window.SignalAudio.atlas.stop(); } catch {} boot.el.remove(); cancelAnimationFrame(boot.raf); clearTimeout(boot.timer); boot = null; } closeDossier(); });
 
   /* Escape: skip boot → close dossier → (index.html) close Atlas */
   document.addEventListener('keydown', e => {

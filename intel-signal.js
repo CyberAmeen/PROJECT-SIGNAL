@@ -524,34 +524,38 @@
       let ready = false, failed = false, model2 = null, lockedAt = 0, jumped = false, flashed = false, skipped = false, checksShown = 0, termIdx = 0, lastTerm = 0, done = false;
       const timer0 = performance.now();
       dataReady.then(m => { ready = true; model2 = m; failed = !!m.failed; }).catch(() => { ready = true; failed = true; model2 = { clusters: [], total: 0 }; });
-      $('.ixl-skip', el).addEventListener('click', () => { try { sessionStorage.setItem('short-scan', 'yes'); } catch {} skipped = true; Sound.play('blip'); });
+      $('.ixl-skip', el).addEventListener('click', () => { try { sessionStorage.setItem('short-scan', 'yes'); } catch {} if (!skipped && AU) AU.skip(); skipped = true; });
       $('.ixl-skip', el).focus({ preventScroll: true });
-      Sound.play('boot');
+      const SA = window.SignalAudio, AU = SA && SA.ctx ? SA.intel : null; if (AU) AU.start(); if (SA) el.append(SA.muteButton('ixl-mute'));
+      let onSnd = false, needleSnd = false, orbitN = 0, riserOn = false;
       const setPhase = t => { if (phaseEl.textContent !== t) phaseEl.textContent = t; };
-      const countUp = (key, to, ms) => { const b = $(`[data-stat="${key}"]`, el); const t0 = performance.now(); const f = now => { const p = Math.min(1, (now - t0) / ms); b.textContent = pad(Math.round(to * (1 - Math.pow(1 - p, 3)))); if (p < 1 && !done) requestAnimationFrame(f); }; requestAnimationFrame(f); };
+      const countUp = (key, to, ms) => { const b = $(`[data-stat="${key}"]`, el); const t0 = performance.now(); let last = 0; const f = now => { const p = Math.min(1, (now - t0) / ms), v = Math.round(to * (1 - Math.pow(1 - p, 3))); b.textContent = pad(v); if (v !== last) { last = v; if (AU) AU.count(v, to); } if (p < 1 && !done) requestAnimationFrame(f); }; requestAnimationFrame(f); };
       let counted = false;
-      const decodeLine = (txt) => { const line = document.createElement('div'); line.className = 'ixl-line'; term.append(line); while (term.children.length > 4) term.firstChild.remove(); const full = '› ' + txt.toUpperCase().slice(0, 64) + (txt.length > 64 ? '…' : ''); const t0 = performance.now(); const f = now => { const p = Math.min(1, (now - t0) / 420), n = Math.floor(p * full.length); let o = full.slice(0, n); for (let k = n; k < Math.min(full.length, n + 5); k++) o += GLYPHS[Math.floor(Math.random() * GLYPHS.length)]; line.textContent = o; if (p < 1 && !done) requestAnimationFrame(f); else line.textContent = full; }; requestAnimationFrame(f); };
+      const decodeLine = (txt) => { if (AU) AU.line(); const line = document.createElement('div'); line.className = 'ixl-line'; term.append(line); while (term.children.length > 4) term.firstChild.remove(); const full = '› ' + txt.toUpperCase().slice(0, 64) + (txt.length > 64 ? '…' : ''); const t0 = performance.now(); const f = now => { const p = Math.min(1, (now - t0) / 420), n = Math.floor(p * full.length); let o = full.slice(0, n); for (let k = n; k < Math.min(full.length, n + 5); k++) o += GLYPHS[Math.floor(Math.random() * GLYPHS.length)]; line.textContent = o; if (p < 1 && !done) requestAnimationFrame(f); else line.textContent = full; }; requestAnimationFrame(f); };
 
       const frame = now => {
         if (done) return;
         let t = (now - timer0) / 1000;
         const c = new Date(); clock.textContent = `${pad(c.getHours())}:${pad(c.getMinutes())}:${pad(c.getSeconds())}`;
-        if (t >= T.boot) el.classList.add('ixl-on');
-        while (checksShown < 4 && t >= T.checks[checksShown]) { const row = $(`.ixl-check[data-k="${checksShown}"]`, el); row.classList.add('in'); if (checksShown < 3) Sound.play('check'); checksShown++; }
+        if (t >= T.boot) { el.classList.add('ixl-on'); if (!onSnd) { onSnd = true; if (AU) { AU.deviceOn(); AU.rings(); } } }
+        if (AU && !needleSnd && t >= T.boot + 0.7) { needleSnd = true; AU.needle(); }
+        if (AU && !lockedAt && Math.floor(t / 2.6) > orbitN) { orbitN = Math.floor(t / 2.6); AU.orbit(0); }
+        while (checksShown < 4 && t >= T.checks[checksShown]) { const row = $(`.ixl-check[data-k="${checksShown}"]`, el); row.classList.add('in'); if (checksShown < 3 && AU) AU.check(checksShown); checksShown++; }
         if (t >= T.tune && !lockedAt) setPhase(ready ? 'TUNING · DEEP SPACE BAND' : (t > T.lock ? 'SEARCHING FOR CARRIER…' : 'TUNING · DEEP SPACE BAND'));
         if (ready && !counted && t >= T.tune) {
           counted = true;
           const up = $('.ixl-check[data-k="3"] b', el); up.textContent = failed ? 'CACHED' : 'ONLINE'; up.parentElement.classList.toggle('warn', failed); up.parentElement.classList.add('ok');
           countUp('sources', (lastSnap && lastSnap.sourcesChecked) || new Set((data.stories || []).map(s => s.source)).size, 900);
           countUp('reports', model2.total || 0, 1000); countUp('signals', (model2.clusters || []).length, 1100);
-          Sound.play('check');
+          if (AU) AU.uplink(!failed);
         }
         if (ready && counted && model2.clusters && termIdx < Math.min(5, model2.clusters.length) && now - lastTerm > 380 * S) { decodeLine(model2.clusters[termIdx].title); termIdx++; lastTerm = now; }
+        if (AU && ready && !lockedAt && !riserOn && !skipped && !calm && T.lock - t <= 0.9 && T.lock - t > 0.15) { riserOn = true; AU.riser(T.lock - t); }
         // lock: needs data, and either time or a skip
         if (!lockedAt && ready && (t >= T.lock || skipped || calm)) {
           lockedAt = now; el.classList.add('ixl-locked'); if (failed) el.classList.add('ixl-weak');
           $('.ixl-stamp span', el).textContent = failed ? 'SIGNAL WEAK · CACHE' : 'SIGNAL ACQUIRED';
-          setPhase(failed ? 'PUBLIC SNAPSHOT UNAVAILABLE · USING SAVED' : 'CARRIER LOCKED · DECRYPTED'); Sound.play('lock');
+          setPhase(failed ? 'PUBLIC SNAPSHOT UNAVAILABLE · USING SAVED' : 'CARRIER LOCKED · DECRYPTED'); if (AU) AU.lock(!failed);
           $('.ixl-title', el).textContent = 'SIGNAL LOCKED'; $('.ixl-title', el).dataset.text = 'SIGNAL LOCKED';
           if (skipped || calm) { T.jump = t + (calm ? 0.6 : 0.15); T.flash = T.jump + (calm ? 0.2 : 0.4); T.end = T.flash + 0.45; }
           else { T.jump = Math.max(T.jump, t + 0.8); T.flash = T.jump + 0.5; T.end = T.flash + 0.5; }
@@ -561,8 +565,9 @@
         const target = 1420.405;
         freq.textContent = (lockedAt ? target : target + (1 - lockP) * (Math.sin(t * 7.3) * 38 + (Math.random() - 0.5) * 9)).toFixed(3);
         needle.style.transform = `rotate(${lockedAt ? 0 : ((1 - lockP) * Math.sin(t * 2.6) * 58 + (Math.random() - 0.5) * 4 * (1 - lockP)).toFixed(2)}deg)`;
-        if (!jumped && lockedAt && t >= T.jump) { jumped = true; el.classList.add('ixl-jump'); Sound.play('jump'); }
-        if (!flashed && jumped && t >= T.flash) { flashed = true; el.classList.add('ixl-flashing'); try { openIntel(); } catch (err) { console.error(err); } }
+        if (AU && t >= T.tune && !lockedAt) AU.tune(parseFloat(needle.style.transform.slice(7)) || 0, parseFloat(freq.textContent) - target, lockP, ready);
+        if (!jumped && lockedAt && t >= T.jump) { jumped = true; el.classList.add('ixl-jump'); if (AU) AU.jump(Math.max(0.2, T.flash - T.jump)); }
+        if (!flashed && jumped && t >= T.flash) { flashed = true; el.classList.add('ixl-flashing'); if (AU) AU.flash(); try { openIntel(); } catch (err) { console.error(err); } }
         // background starfield → hyperspace
         if (bctx && !calm) {
           const jp = jumped ? Math.min(1, (t - T.jump) / Math.max(0.2, T.flash - T.jump)) : 0;
@@ -603,7 +608,7 @@
       const finish = () => {
         if (done) return; done = true; removeEventListener('resize', fit); clearTimeout(safety);
         el.classList.add('ixl-out'); document.body.style.overflow = '';
-        if (!flashed) { try { openIntel(); } catch (err) { console.error(err); } }
+        if (!flashed) { if (AU) AU.stop(0.3); try { openIntel(); } catch (err) { console.error(err); } }
         setTimeout(() => el.remove(), 520); resolve();
       };
       const safety = setTimeout(() => { if (!done) { ready = true; finish(); } }, 26000);
@@ -614,6 +619,7 @@
   async function launch(e) {
     if (e) { e.preventDefault(); e.stopImmediatePropagation(); }
     if (busy) return; busy = true;
+    if (window.SignalAudio) window.SignalAudio.unlock();
     if (Sound.on) Sound.ensure();
     const ready = (async () => {
       let failed = false;
