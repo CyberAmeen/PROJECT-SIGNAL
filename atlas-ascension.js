@@ -81,12 +81,7 @@
       for (const p of $$('path.state', contents)) svgEl('path', { d: p.getAttribute('d') }, coast);
       contents.insertBefore(coast, firstState);
     }
-    const defs2 = $('defs', svg);
-    const clip = svgEl('clipPath', { id: 'axLand' }, defs2);
-    for (const p of $$('path.state', contents)) svgEl('path', { d: p.getAttribute('d') }, clip);
-    const lastState = $$('path.state', contents).pop();
-    const relief = svgEl('image', { class: 'ax-relief', href: 'atlas-relief.webp', x: 0, y: 0, width: 975, height: 610, preserveAspectRatio: 'none', 'clip-path': 'url(#axLand)', 'aria-hidden': 'true' });
-    lastState.after(relief);
+    // (2D relief shading removed by owner request — the 2D map keeps its flat radar look; relief lives only in the optional 3D view)
   }
 
   /* ------------------------------------------------------------------ *
