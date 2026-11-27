@@ -40,21 +40,30 @@ const keysFor = env => {
  };
 };
 
-const G = q => 'https://news.google.com/rss/search?q=' + encodeURIComponent(q) + '&hl=en-US&gl=US&ceid=US:en';
-const B = q => 'https://www.bing.com/news/search?q=' + encodeURIComponent(q) + '&format=rss&setlang=en-US';
+const B = q => 'https://www.bing.com/news/search?q=' + encodeURIComponent(q) + '&format=rss&setlang=en-US&qft=sortbydate%3d%221%22';
 const DOD = type => 'https://www.defense.gov/DesktopModules/ArticleCS/RSS.ashx?ContentType=' + type + '&Site=945&max=40';
 
 /* every = minutes between fetches. tier = default credibility when the outlet is unknown. */
 const SOURCES = [
- {id:'gn-ufo-uap', name:'Google News · UFO/UAP', category:'news', every:20, aggregator:true, url:G('(UFO OR UAP) when:7d')},
- {id:'gn-aaro', name:'Google News · AARO & government', category:'government', every:30, aggregator:true, url:G('("All-domain Anomaly Resolution Office" OR AARO OR "unidentified anomalous phenomena") when:7d')},
- {id:'gn-disclosure', name:'Google News · Disclosure', category:'government', every:30, aggregator:true, url:G('("non-human intelligence" OR "UAP disclosure" OR "UAP hearing" OR "UFO hearing" OR "UAP whistleblower") when:7d')},
- {id:'gn-sightings', name:'Google News · Sightings', category:'news', every:30, aggregator:true, url:G('("UFO sighting" OR "UAP sighting" OR "unidentified object" OR "mysterious lights") when:7d')},
- {id:'gn-science', name:'Google News · Science & SETI', category:'research', every:60, aggregator:true, url:G('(technosignature OR SETI OR "alien life" OR biosignature OR "interstellar object") when:7d')},
- {id:'gn-specialist', name:'Google News · The Debrief / Black Vault / Liberation Times', category:'news', every:60, aggregator:true, url:G('(site:thedebrief.org OR site:theblackvault.com OR site:liberationtimes.com) when:14d')},
- {id:'bing-uap', name:'Bing News · UAP', category:'news', every:30, aggregator:true, url:B('UAP unidentified anomalous phenomena sightings investigation')},
- {id:'bing-ufo', name:'Bing News · UFO', category:'news', every:30, aggregator:true, url:B('UFO sighting pilot radar investigation')},
- {id:'bing-aaro', name:'Bing News · AARO', category:'government', every:60, aggregator:true, url:B('AARO Pentagon UAP report')},
+ // Google News blocks Cloudflare Workers (HTTP 503 / timeouts on staging, 2026-11-27), so news discovery uses
+ // Bing News sorted newest-first. Each query returns ~12 items; together they give ~100+ distinct relevant stories.
+ {id:'bing-ufo', name:'Bing News · UFO', category:'news', every:30, aggregator:true, url:B('UFO')},
+ {id:'bing-uap', name:'Bing News · UAP', category:'news', every:30, aggregator:true, url:B('UAP')},
+ {id:'bing-ufo-news', name:'Bing News · UFO news', category:'news', every:60, aggregator:true, url:B('UFO news')},
+ {id:'bing-uap-news', name:'Bing News · UAP news', category:'news', every:60, aggregator:true, url:B('UAP news')},
+ {id:'bing-sightings', name:'Bing News · UFO sightings', category:'news', every:60, aggregator:true, url:B('UFO sighting')},
+ {id:'bing-uap-sightings', name:'Bing News · UAP sightings', category:'news', every:120, aggregator:true, url:B('UAP sighting')},
+ {id:'bing-pentagon', name:'Bing News · UAP & Pentagon', category:'government', every:60, aggregator:true, url:B('UAP Pentagon')},
+ {id:'bing-aaro', name:'Bing News · AARO', category:'government', every:60, aggregator:true, url:B('AARO')},
+ {id:'bing-files', name:'Bing News · UFO files', category:'government', every:60, aggregator:true, url:B('UFO files')},
+ {id:'bing-disclosure', name:'Bing News · UAP disclosure', category:'government', every:90, aggregator:true, url:B('UAP disclosure')},
+ {id:'bing-hearing', name:'Bing News · Congress hearings', category:'government', every:120, aggregator:true, url:B('UFO Congress hearing')},
+ {id:'bing-whistleblower', name:'Bing News · Whistleblowers', category:'government', every:120, aggregator:true, url:B('UFO whistleblower')},
+ {id:'bing-video', name:'Bing News · UFO video', category:'news', every:120, aggregator:true, url:B('UFO video')},
+ {id:'bing-drones', name:'Bing News · Unidentified drones', category:'news', every:120, aggregator:true, url:B('unidentified drones')},
+ {id:'bing-science', name:'Bing News · Alien life & SETI', category:'research', every:120, aggregator:true, url:B('alien life')},
+ {id:'bing-blackvault', name:'Bing News · The Black Vault', category:'news', every:180, aggregator:true, url:B('Black Vault UFO')},
+ {id:'bing-debrief', name:'Bing News · The Debrief', category:'news', every:180, aggregator:true, url:B('The Debrief UAP')},
  {id:'liberationtimes', name:'Liberation Times', category:'news', every:60, tier:'specialist', outlet:'Liberation Times', url:'https://www.liberationtimes.com/home?format=rss'},
  {id:'blackvault', name:'The Black Vault · Documents', category:'government', every:120, tier:'specialist', outlet:'The Black Vault', url:'https://www.theblackvault.com/documentarchive/feed/'},
  {id:'dod-news', name:'U.S. Department of Defense · News', category:'government', every:60, tier:'official', outlet:'U.S. Department of Defense', url:DOD(1)},
@@ -471,6 +480,7 @@ async function collect(env, {force = false} = {}) {
  const previous = await kv.get(keys.snap, 'json');
  const nowMs = Date.now(), now = new Date(nowMs).toISOString();
  const srcState = {...(previous?.sourceState || {})};
+ if (!previous?.sourceState || previous.version !== VERSION) force = true; // first run of a new version: fill every source once
  const drops = [];
 
  // pick the most overdue sources (bounded per run to stay inside CPU/subrequest limits)
