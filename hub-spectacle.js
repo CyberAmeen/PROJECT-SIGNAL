@@ -278,7 +278,7 @@
     moon1: { name: 'KORE', kind: 'Inner moon', rows: [['ORBIT', '46 s (time-lapse)'], ['SURFACE', 'Basalt plains'], ['ALBEDO', '0.31']] },
     moon2: { name: 'THALIA', kind: 'Outer moon', rows: [['ORBIT', '92 s (time-lapse)'], ['SURFACE', 'Ice and dust'], ['ALBEDO', '0.62']] },
     giant: { name: 'HELIOS MAJOR', kind: 'Distant gas giant', rows: [['DISTANCE', '4.2 AU'], ['BANDS', 'Ammonia storms'], ['MOONS', '61 catalogued']] },
-    ship: { name: 'SAGE-07', kind: 'Observation vessel', rows: [['STATUS', 'Holding orbit'], ['ARRAY', 'Deep-space uplink'], ['CREW', 'Commander Sage']] }
+    ship: { name: 'BEAN-07', kind: 'Observation vessel', rows: [['STATUS', 'Holding orbit'], ['ARRAY', 'Deep-space uplink'], ['CREW', 'Commander Bean']] }
   };
   let readout = null, readTimer = 0;
   function showReadout(key, x, y) {
@@ -367,6 +367,13 @@
   const atlasShell = document.getElementById('atlas-shell'); if (atlasShell) new MutationObserver(sync).observe(atlasShell, { attributes: true, attributeFilter: ['hidden'] });
   let rz = 0; window.addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => { if (alive) resize(); }, 120); }, { passive: true });
   RM.addEventListener && RM.addEventListener('change', () => { if (alive) { dispose(); sync(); } });
+
+  /* portal buttons: a soft light ripple from the exact press point */
+  document.addEventListener('pointerdown', e => {
+    const b = e.target.closest && e.target.closest('.ps-portal'); if (!b || reduced()) return;
+    const r = b.getBoundingClientRect(), d = document.createElement('i'); d.className = 'ps-ripple';
+    d.style.left = (e.clientX - r.left) + 'px'; d.style.top = (e.clientY - r.top) + 'px'; b.appendChild(d); setTimeout(() => d.remove(), 760);
+  }, { passive: true });
 
   /* ---------------------------------------------------------------- BOOT */
   card.classList.add('hs-ready');

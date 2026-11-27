@@ -335,7 +335,7 @@
       <div class="ax-hud ax-hud-l" aria-hidden="true">
         <div>ARCHIVE INDEX // LOCAL</div><div>HUBS <b>${STATS.hubs}</b></div><div>RECORDS <b>${STATS.records}</b></div>
         <div>SOURCED CASES <b>${STATS.cases}</b></div><div>CITED SOURCES <b>${STATS.sources}</b></div><div>NUFORC SUBMISSIONS <b>${STATS.nuforc}</b></div>
-        <div>SPAN <b>${STATS.first}–${STATS.last}</b></div><div>PROJECTION <b>ALBERS USA</b></div>
+        <div>SPAN <b>${STATS.first}–${STATS.last}</b></div><div>GLOBE <b>ORTHOGRAPHIC · NE 1:50M</b></div><div>MAP <b>ALBERS USA</b></div>
       </div>
       <div class="ax-hud ax-hud-r" aria-hidden="true"></div>
       <div class="ax-boot-center">
@@ -362,6 +362,7 @@
   const clamp01 = v => Math.max(0, Math.min(1, v));
 
   function drawGlobe(ctx, w, h, t) {
+    if (window.PSGlobe) return window.PSGlobe.draw(ctx, w, h, t, A); // whole-Earth globe (atlas-globe.js)
     ctx.clearRect(0, 0, w, h);
     const r = Math.PI / 180;
     const turn = ease(clamp01((t - 1.6) / 3.0));
@@ -476,7 +477,7 @@
     const t0 = performance.now(); let phaseIdx = -1;
     const frameFn = now => {
       if (!boot) return;
-      const t = (now - t0) / 1000;
+      const t = (performance.now() - t0) / 1000;
       try { drawGlobe(ctx, innerWidth, innerHeight, t); } catch { finishBoot(true); return; }
       bar.style.transform = `scaleX(${clamp01(t / DURATION)})`;
       while (phaseIdx + 1 < PHASES.length && t >= PHASES[phaseIdx + 1][0]) {
