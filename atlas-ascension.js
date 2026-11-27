@@ -81,12 +81,6 @@
       for (const p of $$('path.state', contents)) svgEl('path', { d: p.getAttribute('d') }, coast);
       contents.insertBefore(coast, firstState);
     }
-    const defs2 = $('defs', svg);
-    const clip = svgEl('clipPath', { id: 'axLand' }, defs2);
-    for (const p of $$('path.state', contents)) svgEl('path', { d: p.getAttribute('d') }, clip);
-    const lastState = $$('path.state', contents).pop();
-    const relief = svgEl('image', { class: 'ax-relief', href: 'atlas-relief.webp', x: 0, y: 0, width: 975, height: 610, preserveAspectRatio: 'none', 'clip-path': 'url(#axLand)', 'aria-hidden': 'true' });
-    lastState.after(relief);
   }
 
   /* ------------------------------------------------------------------ *
@@ -164,12 +158,11 @@
   const layerBar = document.createElement('div');
   layerBar.className = 'ax-layers';
   layerBar.setAttribute('role', 'toolbar'); layerBar.setAttribute('aria-label', 'Map views and layers');
-  layerBar.innerHTML = `<button type="button" data-view="terrain" aria-pressed="false" class="ax-3d">◭ 3D terrain</button><button type="button" data-layer="density" aria-pressed="false">◉ Encounter density</button><button type="button" data-layer="constellations" aria-pressed="false">✦ Signal constellations</button><select aria-label="Constellation connection criterion" hidden>${Object.entries(CRITERIA).map(([k, v]) => `<option value="${k}">${esc(v.label)}</option>`).join('')}</select>`;
+  layerBar.innerHTML = `<button type="button" data-layer="density" aria-pressed="false">◉ Encounter density</button><button type="button" data-layer="constellations" aria-pressed="false">✦ Signal constellations</button><select aria-label="Constellation connection criterion" hidden>${Object.entries(CRITERIA).map(([k, v]) => `<option value="${k}">${esc(v.label)}</option>`).join('')}</select>`;
   svg.after(layerBar);
   const legendBox = document.createElement('div');
   legendBox.className = 'ax-legend'; legendBox.hidden = true; legendBox.setAttribute('role', 'note');
   frame.append(legendBox);
-  let terrainOn = false, terrain = null, terrainLoading = null;
   function applyLayers() {
     densG.classList.toggle('on', layerState.density);
     const groups = drawConstellations();
@@ -182,37 +175,13 @@
       html += `<section><h4>Signal constellations · ${esc(crit.label)}</h4><p>${esc(crit.note)} ${total} link${total === 1 ? '' : 's'}.</p><ul>${groups.slice(0, 7).map(([k], i) => `<li><i style="background:${PALETTE[i % PALETTE.length]}"></i>${esc(k)}</li>`).join('')}${groups.length > 7 ? `<li class="more">+${groups.length - 7} more groups</li>` : ''}</ul><p class="ax-caveat">Lines mark shared documented attributes only. They do not imply the events are connected or caused by one another.</p></section>`;
     }
     legendBox.innerHTML = html; legendBox.hidden = !html;
-    const modes = [terrainOn && '3D TERRAIN', !terrainOn && layerState.density && 'DENSITY', !terrainOn && layerState.constellations && `CONSTELLATIONS · ${CRITERIA[layerState.criterion].label.toUpperCase()}`].filter(Boolean);
+    const modes = [layerState.density && 'DENSITY', layerState.constellations && `CONSTELLATIONS · ${CRITERIA[layerState.criterion].label.toUpperCase()}`].filter(Boolean);
     window.__atlasMode = modes.length ? modes.join(' + ') : 'STANDARD';
     refreshHud();
   }
   layerBar.addEventListener('click', e => { const b = e.target.closest('button[data-layer]'); if (!b) return; layerState[b.dataset.layer] = !layerState[b.dataset.layer]; applyLayers(); });
   $('select', layerBar).addEventListener('change', e => { layerState.criterion = e.target.value; applyLayers(); });
 
-  /* 3D TERRAIN VIEW — WebGL heightfield from real elevation data (atlas-terrain.js, loaded on demand) */
-  const btn3d = $('button[data-view="terrain"]', layerBar);
-  const loadTerrain = () => terrainLoading || (terrainLoading = new Promise((res, rej) => {
-    if (window.createAtlasTerrain) return res();
-    const sc = document.createElement('script'); sc.src = 'atlas-terrain.js'; sc.onload = res; sc.onerror = rej; document.head.append(sc);
-  }).then(() => window.createAtlasTerrain({ frame, svg, A, onPick: id => A.choose(id) })));
-  async function setTerrain(on) {
-    if (on === terrainOn) return;
-    if (on) {
-      btn3d.disabled = true; btn3d.textContent = '◭ Loading terrain…';
-      try { terrain = await loadTerrain(); } catch (err) {
-        btn3d.disabled = false; btn3d.textContent = '◭ 3D unavailable'; btn3d.title = '3D terrain needs WebGL, which this browser could not start.'; terrainLoading = null; return;
-      }
-      btn3d.disabled = false; btn3d.textContent = '◭ 2D map';
-      terrainOn = true; frame.classList.add('ax-3d-on'); terrain.mount();
-    } else {
-      terrainOn = false; frame.classList.remove('ax-3d-on'); terrain && terrain.unmount(); btn3d.textContent = '◭ 3D terrain';
-    }
-    btn3d.setAttribute('aria-pressed', String(terrainOn));
-    $$('button[data-layer], select', layerBar).forEach(b => b.disabled = terrainOn);
-    applyLayers();
-  }
-  btn3d.addEventListener('click', () => setTerrain(!terrainOn));
-  $('#atlas-controls')?.addEventListener('click', () => setTimeout(() => terrainOn && terrain.select(A.active), 0));
 
   /* ------------------------------------------------------------------ *
    * 4. TARGETING CURSOR (desktop) + TAP TARGETING (touch)
@@ -518,7 +487,7 @@
   }
   $('#atlas-launch')?.addEventListener('click', () => requestAnimationFrame(startBoot));
   // Close the Atlas mid-boot → tidy up
-  $('#atlas-exit')?.addEventListener('click', () => { if (terrainOn) setTerrain(false); if (boot) { boot.el.remove(); cancelAnimationFrame(boot.raf); clearTimeout(boot.timer); boot = null; } closeDossier(); });
+  $('#atlas-exit')?.addEventListener('click', () => { if (boot) { boot.el.remove(); cancelAnimationFrame(boot.raf); clearTimeout(boot.timer); boot = null; } closeDossier(); });
 
   /* Escape: skip boot → close dossier → (index.html) close Atlas */
   document.addEventListener('keydown', e => {
