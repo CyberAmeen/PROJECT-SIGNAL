@@ -31,17 +31,129 @@
     };
   }
 
+
+  /* ---------------------------------------------------------------- "OBSERVATION DECK" — the hub theme
+     Original composition, D Lydian (the raised 4th, G#, is the "wonder" note), 84 BPM.
+     Intro (pad + rising arpeggio) → Theme (signature 'Signal Motif' on an FM bell, bass, heartbeat kick)
+     → Drift (motif echoes, starlight) → back to Theme. Scheduled sample-accurately with a look-ahead clock. */
+  function hubTheme(g) {
+    const c = SA.ctx, mtof = m => 440 * Math.pow(2, (m - 69) / 12);
+    const BPM = 84, S16 = 60 / BPM / 4;
+    const CHORDS = [ // pad voicing, arp notes, bass root
+      { pad: [50, 57, 61, 64, 66], arp: [62, 66, 69, 73, 76], bass: 38 },   // Dmaj9
+      { pad: [47, 54, 57, 61, 62], arp: [59, 62, 66, 69, 73], bass: 35 },   // Bm9
+      { pad: [43, 50, 54, 59, 61], arp: [62, 66, 68, 71, 74], bass: 31 },   // Gmaj7#11 (G# = Lydian sparkle)
+      { pad: [45, 52, 54, 59, 62], arp: [64, 66, 69, 71, 76], bass: 33 }    // A6sus
+    ];
+    const ARP = [0, 2, 4, 2, 1, 3, 4, 3, 0, 2, 4, 2, 1, 4, 3, 2];
+    // Signal Motif: [midi, start16, len16] over two bars
+    const MOTIF = {
+      A: [[69, 0, 3], [76, 3, 3], [74, 6, 2], [80, 8, 8], [78, 16, 4], [76, 20, 4], [73, 24, 8]],
+      B: [[71, 0, 3], [78, 3, 3], [76, 6, 2], [73, 8, 8], [74, 16, 2], [76, 18, 2], [81, 20, 12]],
+      C: [[69, 0, 3], [76, 3, 3], [74, 6, 2], [80, 8, 6], [81, 14, 2], [85, 16, 8], [81, 24, 8]],
+      D: [[83, 0, 3], [81, 3, 3], [78, 6, 2], [80, 8, 8], [76, 16, 4], [78, 20, 2], [74, 22, 10]]
+    };
+    const mix = { dry: g.dry.gain, rev: g.rev.gain, dly: g.dly.gain };
+    const now0 = c.currentTime;
+    Object.values(mix).forEach(p => { p.setValueAtTime(0.0001, now0); p.linearRampToValueAtTime(1, now0 + 2.5); });
+    const arpCut = c.createBiquadFilter(); arpCut.type = 'lowpass'; arpCut.Q.value = 3; arpCut.frequency.value = 600;
+    const arpBus = c.createGain(); arpBus.gain.value = 1; arpCut.connect(arpBus); SA.route(arpBus, { rev: 0.3, dly: 0.38 }, g);
+    const voice = (t, end) => ({ t, end });
+    const env = (gain, t, a, peak, d, sus, rel) => { gain.setValueAtTime(0.0001, t); gain.exponentialRampToValueAtTime(peak, t + a); gain.exponentialRampToValueAtTime(Math.max(0.0001, peak * sus), t + a + d); gain.exponentialRampToValueAtTime(0.0001, t + a + d + rel); return t + a + d + rel; };
+    function pluck(t, m, gain, pan) {
+      const f = mtof(m), v = c.createGain(), fl = c.createBiquadFilter(); fl.type = 'lowpass'; fl.Q.value = 6;
+      fl.frequency.setValueAtTime(4200, t); fl.frequency.exponentialRampToValueAtTime(700, t + 0.22);
+      [['sawtooth', -7], ['square', 6]].forEach(([type, dt]) => { const o = c.createOscillator(); o.type = type; o.frequency.value = f; o.detune.value = dt; o.connect(fl); o.start(t); o.stop(t + 0.6); });
+      fl.connect(v); const end = env(v.gain, t, 0.003, gain, 0.12, 0.25, 0.3);
+      if (c.createStereoPanner) { const p = c.createStereoPanner(); p.pan.value = pan; v.connect(p); p.connect(arpCut); } else v.connect(arpCut);
+      return end;
+    }
+    function lead(t, m, len, gain, pan) {
+      const f = mtof(m), car = c.createOscillator(), mod = c.createOscillator(), mi = c.createGain(), v = c.createGain(), oct = c.createOscillator(), ov = c.createGain();
+      car.frequency.value = f; mod.frequency.value = f * 3.5; mi.gain.setValueAtTime(f * 2.4, t); mi.gain.exponentialRampToValueAtTime(f * 0.12, t + 0.9);
+      mod.connect(mi); mi.connect(car.frequency); car.connect(v);
+      oct.type = 'triangle'; oct.frequency.value = f; ov.gain.value = 0.35; oct.connect(ov); ov.connect(v);
+      const hold = Math.max(0.2, len * S16);
+      v.gain.setValueAtTime(0.0001, t); v.gain.exponentialRampToValueAtTime(gain, t + 0.008); v.gain.exponentialRampToValueAtTime(gain * 0.5, t + 0.3); v.gain.setValueAtTime(gain * 0.5, t + hold); v.gain.exponentialRampToValueAtTime(0.0001, t + hold + 1.4);
+      SA.route(v, { pan, rev: 0.55, dly: 0.28 }, g);
+      [car, mod, oct].forEach(o => { o.start(t); o.stop(t + hold + 1.5); });
+    }
+    function pad(t, notes, dur) {
+      const v = c.createGain(), fl = c.createBiquadFilter(); fl.type = 'lowpass'; fl.frequency.setValueAtTime(700, t); fl.frequency.linearRampToValueAtTime(1500, t + dur * 0.6); fl.Q.value = 0.8;
+      notes.forEach((m, i) => [-11, 11].forEach(dt => { const o = c.createOscillator(); o.type = 'sawtooth'; o.frequency.value = mtof(m); o.detune.value = dt + (i - 2) * 1.5; o.connect(fl); o.start(t); o.stop(t + dur + 1.8); }));
+      fl.connect(v); v.gain.setValueAtTime(0.0001, t); v.gain.linearRampToValueAtTime(0.0105, t + 0.9); v.gain.setValueAtTime(0.0105, t + dur); v.gain.linearRampToValueAtTime(0.0001, t + dur + 1.7);
+      SA.route(v, { rev: 0.6 }, g);
+    }
+    function bass(t, m, len, gain) {
+      const f = mtof(m), o = c.createOscillator(), o2 = c.createOscillator(), fl = c.createBiquadFilter(), v = c.createGain();
+      o.type = 'sine'; o.frequency.value = f; o2.type = 'triangle'; o2.frequency.value = f * 2; fl.type = 'lowpass'; fl.frequency.value = 420;
+      const v2 = c.createGain(); v2.gain.value = 0.35; o2.connect(v2); v2.connect(fl); o.connect(fl); fl.connect(v);
+      const d = len * S16; v.gain.setValueAtTime(0.0001, t); v.gain.exponentialRampToValueAtTime(gain, t + 0.02); v.gain.exponentialRampToValueAtTime(gain * 0.55, t + 0.18); v.gain.setValueAtTime(gain * 0.55, t + d); v.gain.exponentialRampToValueAtTime(0.0001, t + d + 0.25);
+      SA.route(v, { rev: 0.08 }, g); [o, o2].forEach(x => { x.start(t); x.stop(t + d + 0.3); });
+    }
+    function kick(t, gain) {
+      const o = c.createOscillator(), v = c.createGain(); o.frequency.setValueAtTime(120, t); o.frequency.exponentialRampToValueAtTime(44, t + 0.16);
+      v.gain.setValueAtTime(0.0001, t); v.gain.exponentialRampToValueAtTime(gain, t + 0.004); v.gain.exponentialRampToValueAtTime(0.0001, t + 0.42);
+      o.connect(v); SA.route(v, { rev: 0.05 }, g); o.start(t); o.stop(t + 0.45);
+      // gentle "pump": duck the pad bus slightly
+    }
+    function tick(t, gain, pan) {
+      const s = c.createBufferSource(), f = c.createBiquadFilter(), v = c.createGain(); s.buffer = SA.noiseBuf; f.type = 'highpass'; f.frequency.value = 7500;
+      v.gain.setValueAtTime(0.0001, t); v.gain.exponentialRampToValueAtTime(gain, t + 0.002); v.gain.exponentialRampToValueAtTime(0.0001, t + 0.05);
+      s.connect(f); f.connect(v); SA.route(v, { pan, rev: 0.15 }, g); s.start(t, Math.random()); s.stop(t + 0.06);
+    }
+    function star(t) { const m = [81, 83, 85, 86, 88, 90, 93][Math.floor(Math.random() * 7)]; lead(t, m, 2, 0.014, rnd(-0.8, 0.8)); }
+    function riser(t, d) {
+      const s = c.createBufferSource(), f = c.createBiquadFilter(), v = c.createGain(); s.buffer = SA.noiseBuf; s.loop = true; f.type = 'bandpass'; f.Q.value = 1.2;
+      f.frequency.setValueAtTime(400, t); f.frequency.exponentialRampToValueAtTime(7000, t + d);
+      v.gain.setValueAtTime(0.0001, t); v.gain.exponentialRampToValueAtTime(0.045, t + d * 0.96); v.gain.linearRampToValueAtTime(0.0001, t + d);
+      s.connect(f); f.connect(v); SA.route(v, { rev: 0.5 }, g); s.start(t); s.stop(t + d + 0.05);
+    }
+    let step = 0, next = c.currentTime + 0.12, timer = 0, stopped = false;
+    const PHRASES = ['A', 'B', 'C', 'D'];
+    function play(st, t) {
+      const bar = Math.floor(st / 16), s = st % 16, ch = CHORDS[bar % 4];
+      const intro = bar < 4, cyc = intro ? -1 : (bar - 4) % 12, theme = cyc >= 0 && cyc < 8, drift = cyc >= 8;
+      if (s === 0) {
+        pad(t, ch.pad, 16 * S16);
+        if (intro) arpCut.frequency.setTargetAtTime(700 + bar * 700, t, 1.2);
+        if (cyc === 0) arpCut.frequency.setTargetAtTime(3600, t, 0.6);
+        if (drift && cyc === 8) arpCut.frequency.setTargetAtTime(1500, t, 1.5);
+        if (theme && cyc % 2 === 0) { const ph = MOTIF[PHRASES[(cyc / 2) % 4]]; ph.forEach(([m, at, len], k) => lead(t + at * S16, m, len, 0.05, (k % 2 ? 0.18 : -0.18))); }
+        if (drift && cyc % 2 === 0) MOTIF.A.slice(0, 4).forEach(([m, at, len]) => lead(t + at * S16 * 1.5, m + 12, len, 0.016, rnd(-0.6, 0.6)));
+        if (cyc === 11) riser(t, 16 * S16);
+      }
+      // arpeggio
+      const arpGain = intro ? 0.02 + bar * 0.004 : drift ? 0.02 : 0.03;
+      pluck(t, ch.arp[ARP[s]] + (s >= 8 && !intro && bar % 2 ? 12 : 0), arpGain, Math.sin(st * 0.9) * 0.5);
+      // bass + heartbeat kick + ticks (theme and drift)
+      if (!intro) {
+        if (s === 0) bass(t, ch.bass, 5, theme ? 0.11 : 0.08);
+        if (s === 6) bass(t, ch.bass, 2, theme ? 0.08 : 0.06);
+        if (s === 8) bass(t, ch.bass + 12, 3, theme ? 0.07 : 0.05);
+        if (s === 14) bass(t, ch.bass + 7, 2, theme ? 0.06 : 0.04);
+        if (theme && (s === 0 || s === 8)) kick(t, 0.16);
+        if (theme && s % 4 === 2) tick(t, 0.011, s === 2 ? -0.4 : 0.4);
+        if (theme && s % 2 === 1) tick(t, 0.004, rnd(-0.6, 0.6));
+      } else if (bar === 3 && s === 0) riser(t, 16 * S16);
+      if (drift && s === 0 && Math.random() < 0.8) star(t + rnd(0.2, 2));
+    }
+    function pump() {
+      if (stopped) return;
+      const now = c.currentTime;
+      if (document.hidden) { next = now + 0.1; return; }
+      if (next < now - 0.05) next = now + 0.06;
+      while (next < now + 0.3) { try { play(step, next); } catch (e) { console.warn(e); } step++; next += S16; }
+    }
+    timer = setInterval(pump, 40); pump();
+    return {
+      stop(fade = 1.4) { stopped = true; clearInterval(timer); const t = c.currentTime; Object.values(mix).forEach(p => { p.cancelScheduledValues(t); p.setValueAtTime(p.value, t); p.linearRampToValueAtTime(0, t + fade); }); },
+      get step() { return step; }
+    };
+  }
+
   const ZONES = {
-    hub(g) {
-      const b = bed(g, 0.5);
-      const glass = b.filter('lowpass', 1300, 0.9); b.lfo(glass.frequency, 0.045, 420);
-      [D * 2, D * 3, D * 3.775, D * 4.49, D * 5.04].forEach((f, i) => { b.osc(f, 'triangle', 0.016, glass, -6 + i * 3); b.osc(f * 1.002, 'sine', 0.012, glass); });
-      b.osc(A1, 'sine', 0.035); b.noise('lowpass', 220, 0.6, 0.05);
-      const twinkle = [1174.7, 1318.5, 1480, 1760, 1975.5, 2349.3];
-      b.every(2.2, 5.5, () => SA.bell(pick(twinkle), { dur: 2.6, gain: 0.011, pan: rnd(-0.8, 0.8), rev: 0.9, dly: 0.35 }, g));
-      b.every(14, 24, () => T({ f: rnd(180, 240), to: rnd(120, 160), dur: 3.5, gain: 0.012, type: 'sawtooth', lp: 700, lpTo: 300, a: 1.2, pan: rnd(-0.9, 0.9), rev: 0.7 }, g)); // distant craft pass
-      return b;
-    },
+    hub(g) { return hubTheme(g); },
     stream(g) {
       const b = bed(g, 0.45);
       const lp = b.filter('lowpass', 420, 1.6); b.lfo(lp.frequency, 0.06, 120);
@@ -64,13 +176,13 @@
   const Z = { name: null, g: null, bed: null };
   const streamShell = document.getElementById('stream-shell'), atlasShell = document.getElementById('atlas-shell');
   function zoneNow() {
-    if (document.querySelector('.ixl:not(.ixl-out)') || document.querySelector('.ax-boot:not(.ax-leave)')) return 'loader';
+    if (document.querySelector('.pg-gate:not(.pg-opening)') || document.querySelector('.ixl:not(.ixl-out)') || document.querySelector('.ax-boot:not(.ax-leave)')) return 'loader';
     if (streamShell && !streamShell.hidden) return 'stream';
     if (atlasShell && !atlasShell.hidden) return 'atlas';
     return 'hub';
   }
   function setZone(force) {
-    const z = zoneNow(); if (z === Z.name && !force) return;
+    const z = zoneNow(); if (z === Z.name && !force && (Z.bed || !ZONES[z] || !live())) return;
     const prev = Z.name; Z.name = z;
     if (Z.bed) { Z.bed.stop(1.4); const g = Z.g; setTimeout(() => g.kill(0.5), 2500); Z.bed = null; Z.g = null; }
     if (!live()) return;
@@ -85,12 +197,32 @@
   setInterval(() => { if (SA.ctx) setZone(); }, 1500); // safety net for class-only changes (loader ending)
 
   /* first tap anywhere unlocks audio (browsers forbid sound before a gesture) */
-  const unlockOnce = () => { SA.unlock(); setTimeout(() => setZone(true), 30); };
-  document.addEventListener('pointerdown', unlockOnce, { capture: true, once: true });
-  document.addEventListener('keydown', unlockOnce, { capture: true, once: true });
-  document.addEventListener('visibilitychange', () => { if (!SA.ctx) return; if (document.hidden) SA.ctx.suspend(); else SA.ctx.resume(); });
+  /* iOS only lets audio start on touchend/click (not touchstart/pointerdown), and can leave the context
+     'suspended' or 'interrupted' after a Home Screen launch or app switch. Retry on every gesture until it runs. */
+  const kick = () => {
+    if (SA.ctx && SA.ctx.state === 'running') { if (SA.enabled && !Z.bed && ZONES[zoneNow()]) setZone(true); return; }
+    const fresh = !SA.ctx; SA.unlock();
+    const c = SA.ctx; if (!c) return;
+    const go = () => setZone(true);
+    if (c.state === 'running') { if (fresh || !Z.bed) go(); }
+    else { const p = c.resume && c.resume(); if (p && p.then) p.then(go, () => {}); }
+  };
+  ['pointerup', 'touchend', 'click', 'keydown'].forEach(ev => document.addEventListener(ev, kick, { capture: true, passive: true }));
+  document.addEventListener('pointerdown', () => { if (!SA.ctx) SA.unlock(); }, { capture: true, passive: true });
+  setInterval(() => { const c = SA.ctx; if (c && !c._sbWatch) { c._sbWatch = true; c.addEventListener('statechange', () => { if (c.state === 'running' && SA.enabled && !Z.bed && ZONES[zoneNow()]) setZone(true); }); } }, 500);
+  document.addEventListener('visibilitychange', () => { if (!SA.ctx) return; if (document.hidden) SA.ctx.suspend(); else { const p = SA.ctx.resume(); if (p && p.then) p.then(() => { if (!Z.bed) setZone(true); }, () => {}); } });
   window.addEventListener('signal-audio-change', e => { if (e.detail.on) { SA.unlock(); setZone(true); if (streamShell && !streamShell.hidden) Scene.restart(); } else { Scene.stop(); if (Z.bed) { Z.bed.stop(0.3); Z.bed = null; } Z.name = null; } });
 
+
+  /* FM bell — the voice of the Signal Motif (shared by the Ignition logo and the hub theme) */
+  function fmBell(at, m, holdS, gain, pan, g, rev = 0.6) {
+    const c = SA.ctx; if (!c || (g && g.dead)) return; const t = c.currentTime + at, f = 440 * Math.pow(2, (m - 69) / 12);
+    const car = c.createOscillator(), mod = c.createOscillator(), mi = c.createGain(), v = c.createGain(), oct = c.createOscillator(), ov = c.createGain();
+    car.frequency.value = f; mod.frequency.value = f * 3.5; mi.gain.setValueAtTime(f * 2.4, t); mi.gain.exponentialRampToValueAtTime(f * 0.12, t + 0.9);
+    mod.connect(mi); mi.connect(car.frequency); car.connect(v); oct.type = 'triangle'; oct.frequency.value = f; ov.gain.value = 0.35; oct.connect(ov); ov.connect(v);
+    v.gain.setValueAtTime(0.0001, t); v.gain.exponentialRampToValueAtTime(gain, t + 0.008); v.gain.exponentialRampToValueAtTime(gain * 0.5, t + 0.3); v.gain.setValueAtTime(gain * 0.5, t + holdS); v.gain.exponentialRampToValueAtTime(0.0001, t + holdS + 1.6);
+    SA.route(v, { pan, rev, dly: 0.28 }, g); [car, mod, oct].forEach(o => { o.start(t); o.stop(t + holdS + 1.7); });
+  }
   /* ---------------------------------------------------------------- UI cue library */
   let uiG = null;
   SA.ui = function (name, o = {}) {
@@ -98,6 +230,18 @@
     const pan = o.pan || 0;
     switch (name) {
       // hub
+      case 'ignite': { // Power-On Gate: click → charge → ignition → Signal Motif startup chime
+        const g = SA.ui.g(), mt = m => 440 * Math.pow(2, (m - 69) / 12);
+        T({ f: 2600, dur: 0.012, gain: 0.07, type: 'square', a: 0.001 }); T({ f: 150, to: 60, dur: 0.26, gain: 0.14, a: 0.002 }); N({ f: 1200, ft: 'lowpass', dur: 0.12, gain: 0.08, a: 0.002 });
+        T({ at: 0.02, f: 55, to: 220, glide: 1.2, dur: 1.26, gain: 0.07, type: 'sawtooth', lp: 260, lpTo: 3200, a: 1.05, rev: 0.3 });
+        T({ at: 0.02, f: 440, to: 1760, glide: 1.2, dur: 1.24, gain: 0.012, a: 1.0, rev: 0.3 });
+        N({ at: 0.02, f: 300, to: 6500, q: 1.1, dur: 1.23, gain: 0.07, swell: true, rev: 0.5 });
+        [62, 64, 66, 68, 69, 71, 73, 74, 76, 78, 80, 81, 83, 85].forEach((m, k, arr) => { const at = 0.05 + 1.15 * (1 - Math.pow(1 - k / arr.length, 1.7)); T({ at, f: mt(m), dur: 0.16, gain: 0.016 + k * 0.0012, type: 'triangle', a: 0.003, pan: k % 2 ? 0.35 : -0.35, rev: 0.4, dly: 0.15 }); });
+        SA.impact({ at: 1.25, gain: 0.5 }, g);
+        N({ at: 1.25, f: 9000, to: 220, ft: 'lowpass', dur: 2.4, gain: 0.14, a: 0.004, rev: 0.85 });
+        [62, 69, 73, 76, 78].forEach((m, i) => SA.bell(mt(m), { at: 1.26 + i * 0.02, dur: 3.4, gain: 0.02, pan: (i - 2) * 0.3, rev: 0.9 }, g));
+        [[69, 0], [76, 1], [74, 2], [80, 3]].forEach(([m, k]) => { fmBell(1.34 + k * 0.178, m, k === 3 ? 1.6 : 0.16, 0.075, (k - 1.5) * 0.2, g, 0.65); fmBell(1.34 + k * 0.178, m + 12, k === 3 ? 1.2 : 0.1, 0.018, (k - 1.5) * -0.2, g, 0.8); });
+        break; }
       case 'hoverScan': T({ f: 1760, to: 2637, dur: 0.35, gain: 0.012, a: 0.02, pan, rev: 0.6 }); T({ f: 880, dur: 0.4, gain: 0.008, type: 'triangle', a: 0.03, pan, rev: 0.6 }); break;
       case 'hoverAtlas': T({ f: 1396.9, dur: 0.5, gain: 0.012, a: 0.005, pan, rev: 0.7, dly: 0.2 }); break;
       case 'home': [D * 4, D * 5.04, D * 6, D * 8].forEach((f, i) => SA.bell(f, { at: 0.25 + i * 0.07, dur: 2.2, gain: 0.014, pan: (i - 1.5) * 0.3, rev: 0.85 }, SA.ui.g())); N({ f: 4000, to: 300, q: 0.8, dur: 0.7, gain: 0.05, a: 0.01, rev: 0.4 }); break;
@@ -306,5 +450,5 @@
     atlasShell.addEventListener('change', e => { if (e.target.matches('select')) SA.ui('select', { pan: panEl(e.target) }); }, true);
   }
 
-  SA.zone = setZone; SA.scene = Scene;
+  SA.zone = setZone; SA.scene = Scene; SA._z = Z;
 })();

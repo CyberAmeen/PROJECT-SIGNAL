@@ -88,8 +88,8 @@
     },
     impact(o, g) {
       const at = o.at || 0, k = o.gain || 0.5, pan = o.pan || 0;
-      this.tone({ f: 150, to: 38, glide: 0.45, dur: 1.1, gain: k, a: 0.003, pan, rev: 0.25 }, g);
-      this.tone({ f: 300, to: 80, glide: 0.25, dur: 0.5, gain: k * 0.45, type: 'triangle', a: 0.002, pan, rev: 0.3 }, g);
+      this.tone({ at, f: 150, to: 38, glide: 0.45, dur: 1.1, gain: k, a: 0.003, pan, rev: 0.25 }, g);
+      this.tone({ at, f: 300, to: 80, glide: 0.25, dur: 0.5, gain: k * 0.45, type: 'triangle', a: 0.002, pan, rev: 0.3 }, g);
       this.noise({ f: 1400, to: 160, ft: 'lowpass', dur: 0.55, gain: k * 0.5, a: 0.002, pan, rev: 0.45, at }, g);
       this.tone({ f: 2400, dur: 0.02, gain: k * 0.25, type: 'square', a: 0.001, pan, at }, g);
     },
