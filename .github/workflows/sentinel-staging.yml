@@ -1,0 +1,73 @@
+# Deploys SENTINEL to the STAGING Worker only (project-signal-sentinel-staging).
+# Never touches the live Worker. Runs on pushes to the sentinel-v5 work branch.
+name: SENTINEL staging test
+
+on:
+  push:
+    branches: ["sentinel-v5"]
+    paths: ["sentinel/**", ".github/workflows/sentinel-staging.yml"]
+  workflow_dispatch:
+
+concurrency:
+  group: sentinel-staging
+  cancel-in-progress: false
+
+jobs:
+  staging:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Offline tests
+        working-directory: sentinel
+        run: node test/unit.mjs && node test/run.mjs > /dev/null
+      - name: Guard — staging only
+        run: |
+          grep -q 'name = "project-signal-sentinel-staging"' sentinel/wrangler.toml || { echo "::error::no staging env"; exit 1; }
+          grep -q 'KEY_PREFIX = "staging:"' sentinel/wrangler.toml || { echo "::error::staging KEY_PREFIX missing"; exit 1; }
+      - name: Deploy to staging
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: sentinel
+          environment: staging
+          command: deploy --env staging
+      - name: Staging secrets (one-time admin token; Reddit only if provided)
+        working-directory: sentinel
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+        run: |
+          tok=$(openssl rand -hex 24); echo "::add-mask::$tok"; echo "STAGING_ADMIN=$tok" >> "$GITHUB_ENV"
+          printf '%s' "$tok" | npx wrangler secret put SENTINEL_ADMIN_TOKEN --env staging > /dev/null
+          if [ -n "$REDDIT_CLIENT_ID" ] && [ -n "$REDDIT_CLIENT_SECRET" ]; then
+            printf '%s' "$REDDIT_CLIENT_ID" | npx wrangler secret put REDDIT_CLIENT_ID --env staging > /dev/null
+            printf '%s' "$REDDIT_CLIENT_SECRET" | npx wrangler secret put REDDIT_CLIENT_SECRET --env staging > /dev/null
+            echo "Reddit secrets set on staging"
+          else echo "Reddit secrets not provided — community slide stays not-configured"; fi
+      - name: Scan staging and compare with live
+        run: |
+          S=https://project-signal-sentinel-staging.aminhersi10.workers.dev
+          L=https://project-signal-sentinel.aminhersi10.workers.dev
+          sleep 20
+          curl -s -X POST -H "X-Sentinel-Admin-Token: $STAGING_ADMIN" "$S/admin/scan" -o scan.json -w "scan HTTP %{http_code}\n"
+          curl -s "$S/v1/status" -o staging.json; curl -s "$L/v1/status" -o live.json; curl -s "$S/intel" -o intel.json
+          node -e '
+          const fs=require("fs"), j=f=>{try{return JSON.parse(fs.readFileSync(f))}catch{return {}}};
+          const s=j("staging.json"), l=j("live.json"), i=j("intel.json");
+          console.log("LIVE    v"+l.version, "stories", l.stories, "bySource", JSON.stringify(l.storiesBySource||{}));
+          for (const f of l.feeds||[]) console.log("  live  ", (f.id||f.name||"").padEnd(16), (f.status||"").padEnd(14), "count", f.count ?? f.relevant ?? "-", f.error||"");
+          console.log("STAGING v"+s.version, "stories", s.stories, "clusters", s.clusters, "dropped", s.droppedLogged, "window", JSON.stringify(s.window));
+          console.log("  bySource", JSON.stringify(s.storiesBySource||{}));
+          for (const f of s.feeds||[]) console.log("  stage ", (f.id||"").padEnd(16), (f.status||"").padEnd(14), "raw", String(f.raw ?? "-").padStart(3), "relevant", String(f.count ?? "-").padStart(3), f.error||f.reason||"");
+          const cl=(i.clusters||[]).filter(c=>c.count>1).slice(0,8); console.log("  multi-outlet clusters", (i.clusters||[]).filter(c=>c.count>1).length);
+          for (const c of cl) console.log("   ", c.count, "outlets |", (c.title||"").slice(0,90));
+          const tiers={}; for (const st of i.stories||[]) { const t=st.credibility?.tier||"?"; tiers[t]=(tiers[t]||0)+1 } console.log("  credibility", JSON.stringify(tiers));
+          console.log("  community", JSON.stringify({ok:i.community?.ok, posts:(i.community?.posts||[]).length}));
+          '
+      - uses: actions/upload-artifact@v4
+        with: { name: sentinel-staging-report, path: "*.json" }
