@@ -5,7 +5,7 @@ const now = Date.now(), all = new Map();
 for (const q of qs) {
   for (const extra of ['', '&qft=sortbydate%3d%221%22']) {
     try { const r = await fetch(B(q) + extra, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; ProjectSignalSentinel/5.0)' } }); const x = await r.text();
-      const drops = []; const items = T.parseFeed(x, { id: 'bing-x', tier: 'web', aggregator: true, category: 'news' }, now, drops);
+      const drops = []; const items = T.parseFeed(x, { id: 'bing-x', tier: 'web', aggregator: true, category: 'news' }, now, drops).stories;
       items.forEach(i => all.set(i.url, i.title));
       console.log('BING', r.status, (q + (extra ? ' [bydate]' : '')).padEnd(34), 'raw', (x.match(/<item>/g) || []).length, 'kept', items.length);
     } catch (e) { console.log('BING ERR', q, e.message); }
