@@ -5,14 +5,15 @@
    On by default for the two loaders (always started by a tap); a mute button on each loader remembers the choice. */
 (() => {
   'use strict';
-  const KEY = 'ps-loader-sound';
+  const KEY = 'ps-sound', OLD = 'ps-loader-sound';
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
   const SA = {
     ctx: null, level: 0.85,
-    get enabled() { try { const v = localStorage.getItem(KEY); return v == null ? true : v === '1'; } catch { return true; } },
+    get enabled() { try { let v = localStorage.getItem(KEY); if (v == null) v = localStorage.getItem(OLD); return v == null ? true : v === '1'; } catch { return true; } },
     set enabled(v) {
       try { localStorage.setItem(KEY, v ? '1' : '0'); } catch {}
       if (this.master) this.master.gain.setTargetAtTime(v ? this.level : 0, this.ctx.currentTime, 0.06);
+      try { window.dispatchEvent(new CustomEvent('signal-audio-change', { detail: { on: !!v } })); } catch {}
     },
     /* Must run inside a tap/click so iOS lets audio start. */
     unlock() {
@@ -109,6 +110,7 @@
       const b = document.createElement('button'); b.type = 'button'; b.className = className;
       const paint = () => { const on = this.enabled; b.textContent = on ? '🔊 SOUND' : '🔈 MUTED'; b.setAttribute('aria-pressed', String(on)); b.setAttribute('aria-label', on ? 'Mute loader sound' : 'Turn loader sound on'); };
       b.addEventListener('click', e => { e.stopPropagation(); this.unlock(); this.enabled = !this.enabled; paint(); }); paint();
+      window.addEventListener('signal-audio-change', paint);
       return b;
     }
   };

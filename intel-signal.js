@@ -19,43 +19,12 @@
   const dayKey = () => { const d = new Date(); return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); };
 
   /* ---------------------------------------------------------------- SOUND (off by default) */
+  /* Sound now lives in the site-wide engine (signal-audio.js + sound-barrier.js). */
   const Sound = {
-    on: !!store.get('ps-intel-sound', false), ctx: null,
-    ensure() {
-      try {
-        if (!this.ctx) { const A = window.AudioContext || window.webkitAudioContext; if (!A) return null; this.ctx = new A(); this.master = this.ctx.createGain(); this.master.gain.value = 0.55; this.master.connect(this.ctx.destination); }
-        if (this.ctx.state === 'suspended') this.ctx.resume();
-        return this.ctx;
-      } catch { return null; }
-    },
-    tone(f, dur, { type = 'sine', gain = 0.06, at = 0, to = null, attack = 0.008 } = {}) {
-      const c = this.ctx; if (!c) return; const t = c.currentTime + at;
-      const o = c.createOscillator(), g = c.createGain(); o.type = type; o.frequency.setValueAtTime(f, t); if (to) o.frequency.exponentialRampToValueAtTime(to, t + dur);
-      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(gain, t + attack); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-      o.connect(g); g.connect(this.master); o.start(t); o.stop(t + dur + 0.05);
-    },
-    noise(dur, from, to, gain = 0.05, at = 0) {
-      const c = this.ctx; if (!c) return; const t = c.currentTime + at, len = Math.ceil(c.sampleRate * dur);
-      const buf = c.createBuffer(1, len, c.sampleRate), d = buf.getChannelData(0); for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
-      const src = c.createBufferSource(), f = c.createBiquadFilter(), g = c.createGain(); src.buffer = buf; f.type = 'bandpass'; f.Q.value = 1.4;
-      f.frequency.setValueAtTime(from, t); f.frequency.exponentialRampToValueAtTime(to, t + dur);
-      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(gain, t + dur * 0.3); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-      src.connect(f); f.connect(g); g.connect(this.master); src.start(t); src.stop(t + dur + 0.05);
-    },
-    play(name) {
-      if (!this.on || !this.ensure()) return;
-      switch (name) {
-        case 'tick': this.tone(1800 + Math.random() * 900, 0.025, { type: 'square', gain: 0.008 }); break;
-        case 'blip': this.tone(880, 0.09, { gain: 0.05 }); this.tone(1320, 0.08, { gain: 0.035, at: 0.05 }); break;
-        case 'whoosh': this.noise(0.42, 300, 4200, 0.09); this.tone(160, 0.35, { type: 'sawtooth', gain: 0.012, to: 420 }); break;
-        case 'boot': this.tone(110, 0.9, { type: 'sawtooth', gain: 0.025, to: 440, attack: 0.2 }); this.tone(220, 0.6, { gain: 0.04, at: 0.35, to: 660 }); break;
-        case 'check': this.tone(1046, 0.07, { gain: 0.03 }); break;
-        case 'lock': [523, 784, 1046, 1568].forEach((f, i) => this.tone(f, 0.5, { gain: 0.05, at: i * 0.07 })); this.tone(65, 0.8, { gain: 0.08, type: 'triangle' }); break;
-        case 'jump': this.noise(0.9, 120, 6000, 0.14); this.tone(70, 1.0, { type: 'sawtooth', gain: 0.03, to: 900 }); break;
-        case 'rank': [392, 523, 659, 784, 1046].forEach((f, i) => this.tone(f, 0.45, { gain: 0.05, at: i * 0.09, type: 'triangle' })); break;
-      }
-    },
-    toggle() { this.on = !this.on; store.set('ps-intel-sound', this.on); if (this.on) { this.ensure(); this.play('blip'); } return this.on; }
+    get on() { return !!(window.SignalAudio && window.SignalAudio.enabled); },
+    ensure() { if (window.SignalAudio) window.SignalAudio.unlock(); },
+    play(name, o) { const S = window.SignalAudio; if (!S || !S.ui) return; const map = { tick: 'decode', whoosh: 'swipe', rank: 'rank' }; if (map[name]) S.ui(map[name], o); },
+    toggle() { const S = window.SignalAudio; if (!S) return false; S.unlock(); S.enabled = !S.enabled; return S.enabled; }
   };
 
   /* ---------------------------------------------------------------- STATE */
@@ -282,16 +251,16 @@
       (saved.length ? `<ul>${saved.map(s => `<li><a href="${h(s.url)}" target="_blank" rel="noopener noreferrer"><small>${h(s.label || '')} · ${h(s.outlet || '')}</small>${h(s.title)}</a><button type="button" data-ix-unsave="${h(s.id)}" aria-label="Remove">✕</button></li>`).join('')}</ul>`
         : `<p class="ix-sheet-empty">Nothing saved yet. Tap <b>☆ Save</b> on any transmission and it'll be kept here on this device.</p>`);
   }
-  function openSheet() { renderSheet(); sheet.hidden = false; requestAnimationFrame(() => sheet.classList.add('open')); Sound.play('blip'); $('[data-ix-sheet-close]', sheet)?.focus(); }
+  function openSheet() { renderSheet(); sheet.hidden = false; requestAnimationFrame(() => sheet.classList.add('open')); $('[data-ix-sheet-close]', sheet)?.focus(); }
   function closeSheet() { sheet.classList.remove('open'); setTimeout(() => { sheet.hidden = true; }, 260); }
 
   function onClick(e) {
     const t = e.target.closest('button,a'); if (!t || !shell.contains(t)) return;
     if (t.matches('[data-ix-go]')) return go(Number(t.dataset.ixGo));
     if (t.matches('[data-ix-top]')) return go(0);
-    if (t.matches('[data-ix-sound]')) { const on = Sound.toggle(); refreshTools(); toast(on ? '🔊 Sound effects on' : '🔈 Sound effects off'); return; }
-    if (t.matches('[data-ix-order]')) { order = order === 'latest' ? 'shuffle' : 'latest'; store.set('ps-intel-order', order); renderStream(); go(0, true); refreshTools(); toast(order === 'latest' ? '⇣ Latest first' : '⤨ Shuffled'); Sound.play('blip'); return; }
-    if (t.matches('[data-ix-rank]')) { const r = rankOf(rank.n), next = RANKS[r + 1]; toast(`<b>${RANKS[r][0]}</b> · ${rank.n} transmissions reviewed${next ? `<br>${next[1] - rank.n} more to ${next[0]}` : ''}`); Sound.play('blip'); return; }
+    if (t.matches('[data-ix-sound]')) { const on = Sound.toggle(); refreshTools(); toast(on ? '🔊 Audio on' : '🔈 Audio off'); return; }
+    if (t.matches('[data-ix-order]')) { order = order === 'latest' ? 'shuffle' : 'latest'; store.set('ps-intel-order', order); renderStream(); go(0, true); refreshTools(); toast(order === 'latest' ? '⇣ Latest first' : '⤨ Shuffled'); return; }
+    if (t.matches('[data-ix-rank]')) { const r = rankOf(rank.n), next = RANKS[r + 1]; toast(`<b>${RANKS[r][0]}</b> · ${rank.n} transmissions reviewed${next ? `<br>${next[1] - rank.n} more to ${next[0]}` : ''}`); return; }
     if (t.matches('[data-ix-saved]')) return openSheet();
     if (t.matches('[data-ix-sheet-close]')) return closeSheet();
     if (t.matches('[data-ix-unsave]')) { saved = saved.filter(s => s.id !== t.dataset.ixUnsave); persistSaved(); renderSheet(); syncSaveButtons(); refreshTools(); return; }
@@ -301,7 +270,7 @@
     const c = list.find(x => x.id === (t.dataset.ixSave || t.dataset.ixShare));
     if (t.matches('[data-ix-save]') && c) {
       if (isSaved(c.id)) saved = saved.filter(s => s.id !== c.id);
-      else { saved.unshift({ id: c.id, title: c.title, url: c.url, outlet: c.outlet, date: c.newest, label: c.label.text }); toast('★ Saved to this device'); Sound.play('blip'); }
+      else { saved.unshift({ id: c.id, title: c.title, url: c.url, outlet: c.outlet, date: c.newest, label: c.label.text }); toast('★ Saved to this device'); }
       persistSaved(); syncSaveButtons(); refreshTools(); return;
     }
     if (t.matches('[data-ix-share]') && c) {
@@ -342,9 +311,10 @@
     const prev = idx; idx = i; try { streamIndex = i; } catch {}
     s.forEach((el, k) => el.classList.toggle('is-visible', k === i));
     const el = s[i];
-    if (!initial && !reduced()) { burst(i > prev ? 1 : -1); Sound.play('whoosh'); el.classList.remove('ix-arrive'); void el.offsetWidth; el.classList.add('ix-arrive'); }
+    if (!initial && !reduced()) { burst(i > prev ? 1 : -1); Sound.play('whoosh', { dir: i > prev ? 1 : -1 }); el.classList.remove('ix-arrive'); void el.offsetWidth; el.classList.add('ix-arrive'); }
     const title = $('.ix-title span', el); if (title) holo(title);
     updateRail();
+    try { window.dispatchEvent(new CustomEvent('intel:slide', { detail: { index: i, initial: !!initial, sotd: i === 0 && list.length > 0, end: i === list.length } })); } catch {}
     clearTimeout(dwellTimer);
     if (i < list.length) dwellTimer = setTimeout(() => record(list[i]), 1200);
     if (i === list.length) { const t = $('.ix-today', el); if (t) t.textContent = list.filter(c => rank.today.includes(c.id)).length; }
@@ -635,5 +605,6 @@
   const oldBtn = document.getElementById('refresh');
   if (oldBtn) { const btn = oldBtn.cloneNode(true); oldBtn.replaceWith(btn); btn.addEventListener('click', launch); }
   ['open-stream', 'nav-stream'].forEach(id => { const b = document.getElementById(id); if (b) { const n = b.cloneNode(true); b.replaceWith(n); n.addEventListener('click', () => openIntel()); } });
+  window.addEventListener('signal-audio-change', () => { if (chrome) refreshTools(); });
   window.__intel = { launch, openIntel, get model() { return model; }, get list() { return list; }, go, get index() { return idx; } };
 })();
