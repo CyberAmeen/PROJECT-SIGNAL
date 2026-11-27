@@ -66,3 +66,6 @@
   .hs-ship .bridge-ship,.hs-engines circle{animation:none!important}
   .hs-readout{transition:opacity .2s}
 }
+
+/* gradient headline: let the box grow to the widest word so no letter falls outside the gradient (was clipping the last N) */
+.cosmic-bridge .bridge-content h2{width:fit-content;max-width:none}
