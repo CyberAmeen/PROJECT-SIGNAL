@@ -496,5 +496,5 @@
     if (!dossier.hidden) { e.stopImmediatePropagation(); e.preventDefault(); closeDossier(); }
   }, true);
 
-  window.__atlasAscension = { openDossier, closeDossier, signalPulse, startBoot, setLayers: s => { Object.assign(layerState, s); applyLayers(); } };
+  window.__atlasAscension = { openDossier, closeDossier, signalPulse, startBoot, skipBoot: () => finishBoot(true), setLayers: s => { Object.assign(layerState, s); applyLayers(); } };
 })();
