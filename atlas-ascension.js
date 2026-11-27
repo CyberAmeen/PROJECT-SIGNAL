@@ -149,7 +149,7 @@
         const [x1, y1] = A.positions[a], [x2, y2] = A.positions[b];
         const mx = (x1 + x2) / 2, my = (y1 + y2) / 2, dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy) || 1;
         const off = Math.min(60, len * 0.16), cx = mx - dy / len * off, cy = my + dx / len * off;
-        const p = svgEl('path', { d: `M${x1},${y1}Q${cx.toFixed(1)},${cy.toFixed(1)} ${x2},${y2}`, stroke: color, class: 'ax-link' }, constG);
+        const p = svgEl('path', { d: `M${x1},${y1}Q${cx.toFixed(1)},${cy.toFixed(1)} ${x2},${y2}`, stroke: color, class: 'ax-link', pathLength: '1', style: `--i:${constG.childElementCount}` }, constG);
         const t = svgEl('title', {}, p); t.textContent = `${cityById[a].name} ↔ ${cityById[b].name} — ${CRITERIA[layerState.criterion].label}: ${key}`;
       }
     });
