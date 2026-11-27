@@ -1,0 +1,31 @@
+# Deploys sentinel/ to Cloudflare when SENTINEL changes are merged to main ("launch").
+name: SENTINEL deploy to Cloudflare
+
+on:
+  push:
+    branches: ["main"]
+    paths: ["sentinel/**"]
+  workflow_dispatch:
+
+concurrency:
+  group: sentinel-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Guard — only deploy a complete Worker
+        run: |
+          test -f sentinel/wrangler.toml || { echo "::error::sentinel/wrangler.toml missing"; exit 1; }
+          main=$(sed -n 's/^main = "\(.*\)"/\1/p' sentinel/wrangler.toml)
+          test -s "sentinel/$main" || { echo "::error::entry module sentinel/$main missing"; exit 1; }
+          grep -q 'kv_namespaces' sentinel/wrangler.toml || { echo "::error::KV binding missing from wrangler.toml — refusing to deploy"; exit 1; }
+      - name: Deploy with Wrangler
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: sentinel
+          command: deploy
