@@ -1,10 +1,22 @@
-name: diag-cf (temporary, read-only)
+name: diag-cf (temporary)
 on:
   push:
     branches: ["diag-cf"]
+permissions:
+  contents: write
 jobs:
-  probe:
+  geo:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: node .github/scripts/diag-stg.mjs
+      - run: |
+          mkdir -p geo && cd geo
+          npm pack world-atlas@2.0.2 us-atlas@3.0.1 --silent
+          tar xzf world-atlas-2.0.2.tgz && mv package world-atlas && tar xzf us-atlas-3.0.1.tgz && mv package us-atlas
+          curl -sL -o ne_50m_lakes.geojson https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_lakes.geojson
+          curl -sL -o ne_50m_populated_places_simple.geojson https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_populated_places_simple.geojson
+          curl -sL -o ne_110m_admin_0_countries.geojson https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson
+          rm -f *.tgz; ls -la . world-atlas us-atlas
+      - run: |
+          git config user.name "geo-bot"; git config user.email "geo-bot@users.noreply.github.com"
+          git checkout -b geo-data; git add geo; git commit -qm "temp: Natural Earth / world-atlas data for local bundling (not for merge)"; git push -f origin geo-data
