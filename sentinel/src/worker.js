@@ -17,7 +17,7 @@ const SNAPSHOT_FRESH_MS = 60 * 60 * 1000;
 const MAX_STORIES = 220;
 const MAX_DROPPED = 300;
 const MAX_SOURCES_PER_RUN = 4;
-const RULES_VERSION = 'r5.0.2'; // bump when relevance rules change → stored stories get re-checked
+const RULES_VERSION = 'r5.0.3'; // bump when relevance rules change → stored stories get re-checked
 const SERPER_INTERVAL_MS = 4 * 60 * 60 * 1000;
 const MANUAL_INTERVAL_MS = 5 * 60 * 1000;
 const REDDIT_HOUR_UTC = 15; // 7am Pacific
@@ -384,7 +384,15 @@ async function community(env, kv, keys, nowMs) {
 /* ---------------------------------------------------------------- clustering ("covered by N outlets") */
 const STOP = new Set('the a an of to for in on and with from at by as is are was were be been its it this that these those new news says say said after over about into than more most what whats how why who will can could may might has have had not but or our your their his her they them via amid just also near out up down off'.split(' '));
 const WEAK = new Set(['ufo','uap','pentagon','alien','aliens','file','files','reveal','report','secret','military','government','release','releases','released','video','videos']);
-const tokens = t => [...new Set(String(t).toLowerCase().replace(/[’']s\b/g, '').replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).map(w => w.length > 4 && w.endsWith('s') && !w.endsWith('ss') ? w.slice(0, -1) : w).filter(w => w.length > 2 && !STOP.has(w)))];
+// Light stemming + a few same-story synonyms so "planned an underground vault" and "bunker plan revealed" meet.
+const SYN = {bunker:'vault', doc:'file', document:'file', blueprint:'plan', unveil:'reveal', unearth:'reveal', declassify:'declassifi', declassifie:'declassifi'};
+const stem = w => {
+ if (w.length > 4 && w.endsWith('s') && !w.endsWith('ss')) w = w.slice(0, -1);
+ if (w.length > 5 && w.endsWith('ed')) { w = w.slice(0, -2); if (/([b-df-hj-np-tv-z])\1$/.test(w)) w = w.slice(0, -1); }
+ else if (w.length > 6 && w.endsWith('ing')) { w = w.slice(0, -3); if (/([b-df-hj-np-tv-z])\1$/.test(w)) w = w.slice(0, -1); }
+ return SYN[w] || w;
+};
+const tokens = t => [...new Set(String(t).toLowerCase().replace(/[’']s\b/g, '').replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(w => w.length > 2 && !STOP.has(w)).map(stem))];
 function clusterStories(stories) {
  const n = stories.length, tk = stories.map(s => tokens(s.title)), df = new Map();
  tk.forEach(ts => ts.forEach(w => df.set(w, (df.get(w) || 0) + 1)));
