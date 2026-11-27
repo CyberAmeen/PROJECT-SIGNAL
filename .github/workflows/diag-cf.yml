@@ -1,0 +1,25 @@
+name: diag-cf (temporary, read-only)
+on:
+  push:
+    branches: ["diag-cf"]
+permissions:
+  contents: write
+jobs:
+  sources:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node .github/scripts/diag-sources.mjs
+  import-api:
+    runs-on: ubuntu-latest
+    env:
+      CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CF_ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      SCRIPT: project-signal-api
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          sed -e "s#'sentinel/src#'workers-ref/api/src#g; s#\`sentinel/src#\`workers-ref/api/src#g; s#'sentinel/wrangler.toml'#'workers-ref/api/wrangler.toml'#; s#'sentinel/README.md'#'workers-ref/api/README.md'#" .github/scripts/sentinel-import.mjs > /tmp/imp.mjs
+          node /tmp/imp.mjs
+          git config user.name diag; git config user.email actions@users.noreply.github.com
+          git checkout -B api-reference; git add workers-ref; git commit -qm "reference copy of project-signal-api (read-only, not deployed)"; git push -qf origin api-reference
