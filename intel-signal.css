@@ -421,3 +421,16 @@
 .ixl-mute{position:absolute;z-index:5;right:calc(16px + env(safe-area-inset-right));bottom:calc(18px + env(safe-area-inset-bottom));border:1px solid rgba(127,214,255,.35);background:rgba(10,24,56,.55);color:#cfe9ff;font:700 10.5px 'Oxanium',sans-serif;letter-spacing:2px;padding:8px 12px;border-radius:999px;cursor:pointer;backdrop-filter:blur(6px)}
 .ixl-mute[aria-pressed="false"]{opacity:.6}
 .ixl-out .ixl-mute,.ixl-jump .ixl-mute{opacity:0;transition:opacity .3s}
+
+/* ===== SOUND BARRIER — global audio switch (hub header) + Atlas switch */
+.sb-head{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.sb-toggle{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:30px;border:1px solid #4a6a8f;background:linear-gradient(135deg,rgba(40,60,100,.55),rgba(60,40,90,.45));color:#e8f1ff;font:700 10.5px 'Oxanium',sans-serif;letter-spacing:1.6px;cursor:pointer;white-space:nowrap;box-shadow:0 0 16px rgba(130,170,255,.18)}
+.sb-toggle i{display:inline-block;width:2.5px;height:11px;border-radius:2px;background:linear-gradient(#ffd89c,#b5eaff);transform-origin:bottom;animation:sbEq 1s ease-in-out infinite}
+.sb-toggle i:nth-child(1){margin-left:0;animation-delay:-.3s}.sb-toggle i:nth-child(2){animation-delay:-.7s;margin-left:-4px}.sb-toggle i:nth-child(3){animation-delay:-.1s;margin-left:-4px}.sb-toggle i:nth-child(4){animation-delay:-.5s;margin-left:-4px}
+@keyframes sbEq{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
+.sb-toggle.off{opacity:.7;box-shadow:none}.sb-toggle.off i{animation:none;transform:scaleY(.2)}
+@media (max-width:520px){.sb-head .status{display:none}.sb-toggle{padding:7px 10px;font-size:9.5px}}
+.sb-atlas-toggle{margin-left:8px;padding:12px 14px;border-radius:13px;border:1px solid #58cba68a;background:#0d2a22;color:#dfffe9;font:700 11px 'Oxanium',sans-serif;letter-spacing:1.4px;cursor:pointer;white-space:nowrap}
+.sb-atlas-toggle[aria-pressed="false"]{opacity:.65}
+@media (prefers-reduced-motion:reduce){.sb-toggle i{animation:none}}
+.sb-atlas-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.sb-atlas-actions .sb-atlas-toggle{margin-left:0}
