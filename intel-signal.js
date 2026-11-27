@@ -169,17 +169,22 @@
     const at = atlasTarget(c), reports = c.memberIds.length;
     const meter = Array.from({ length: 5 }, (_, k) => `<i class="${k < Math.min(5, c.count) ? 'on' : ''}"></i>`).join('');
     const brief = c.desc ? `<p class="ix-brief">${h(c.desc)}</p>` : `<p class="ix-brief ix-brief-thin">Headline only — the feed didn't include article details. Open a report below for the full story.</p>`;
-    const chips = c.outlets.slice(0, 4).map(o => `<a class="ix-chip" href="${h(o.url)}" target="_blank" rel="noopener noreferrer">${h(o.name)} ↗</a>`).join('') + (c.outlets.length > 4 ? `<span class="ix-chip ix-more">+${c.outlets.length - 4} more</span>` : '');
+    if (c.kind === 'community') return communityHTML(c, i, total);
+    const SHOW = 3;
+    const chip = (o, k) => `<a class="ix-chip c-${h(o.tier || 'web')}${k >= SHOW ? ' ix-extra' : ''}" href="${h(o.url)}" target="_blank" rel="noopener noreferrer" title="${h(tierText(o.tier))}"><i class="ix-dot" aria-hidden="true"></i>${h(o.name)} ↗</a>`;
+    const chips = c.outlets.map(chip).join('') + (c.outlets.length > SHOW ? `<button type="button" class="ix-chip ix-more" data-ix-more aria-expanded="false">+${c.outlets.length - SHOW} more</button>` : '');
+    const cred = `<span class="ix-cred c-${h(c.tier || 'web')}" title="Credibility describes the publisher, not whether the claim is true">◇ ${h(tierText(c.tier))}${c.topTier && c.topTier !== c.tier && C.TIERS && C.TIERS[c.topTier] && C.TIERS[c.topTier].rank > C.TIERS[c.tier || 'web'].rank ? ` · also ${h(tierText(c.topTier))}` : ''}</span>`;
     return `<article class="stream-slide ix-slide${sotd ? ' ix-sotd' : ''}" data-index="${i}" data-cluster="${h(c.id)}" aria-label="Transmission ${i + 1} of ${total}">
       <div class="ix-scene-slot" data-slot="${i}"></div>
       <div class="ix-panel">
         ${sotd ? `<div class="ix-sotd-banner"><span>◆ SIGNAL OF THE DAY</span><small>${c.count > 1 ? 'Most-covered story in this scan' : 'Lead transmission'}</small></div>` : ''}
-        <div class="ix-kicker"><span class="ix-label t-${c.label.tone}">◆ ${h(c.label.text)}</span>${isNew(c) ? '<span class="ix-new">NEW</span>' : ''}<span class="ix-num">TX ${pad(i + 1)}/${pad(total)}</span></div>
+        <div class="ix-kicker"><span class="ix-label t-${c.label.tone}">◆ ${h(c.label.text)}</span>${isNew(c) ? `<span class="ix-new" title="${prevVisit ? 'New since your last visit' : 'Published in the last 24 hours'}">${prevVisit ? 'NEW SINCE LAST VISIT' : 'NEW · 24H'}</span>` : ''}<span class="ix-num">TX ${pad(i + 1)}/${pad(total)}</span></div>
         <h2 class="ix-title" aria-label="${h(c.title)}"><span aria-hidden="true">${h(c.title)}</span></h2>
         <div class="ix-readout">
           <div class="ix-meter" title="Outlets covering this story"><span class="ix-bars">${meter}</span><b>${c.count}</b> ${c.count === 1 ? 'outlet' : 'outlets'}${reports > c.count ? ` · ${reports} reports` : ''}</div>
           <div class="ix-fresh"><i></i>${h(ago(c.newest))}</div>
         </div>
+        <div class="ix-credrow">${cred}${c.count > 1 ? `<span class="ix-covered">Covered by ${c.count} outlets</span>` : ''}</div>
         ${brief}
         <div class="ix-chips" aria-label="Outlets reporting">${chips}</div>
         <div class="ix-actions">
@@ -188,6 +193,34 @@
           <button class="ix-btn" type="button" data-ix-share="${h(c.id)}">⇪ Share</button>
           ${at ? `<button class="ix-btn ix-atlas" type="button" data-ix-atlas="${h(at.id)}">◈ ${h(at.label)} on Atlas</button>` : ''}
         </div>
+        ${i < total - 1 ? '<div class="ix-swipe">SWIPE UP · NEXT TRANSMISSION</div>' : ''}
+      </div></article>`;
+  }
+  function tierText(t) { return (C.TIERS && C.TIERS[t] ? C.TIERS[t].text : 'Web outlet'); }
+  /* COMMUNITY CHATTER — the day's top Reddit posts. Always labelled unverified; links go to Reddit; thumbnails only if Reddit supplied one. */
+  function communityItem() {
+    const cm = data && data.community;
+    if (!cm || !Array.isArray(cm.posts) || !cm.posts.length) return null;
+    const posts = cm.posts.filter(p => p && p.title && /^https:\/\/(?:www\.)?reddit\.com\//i.test(p.url || '')).slice(0, 3);
+    if (!posts.length) return null;
+    const id = 'community-' + (cm.day || posts[0].url);
+    return { kind: 'community', id, memberIds: [id], title: 'Community chatter', url: posts[0].url, outlet: 'Reddit', posts,
+      label: { text: 'Community chatter — unverified', tone: 'warn' }, scene: 'sighting', seed: C.hash(id), outlets: [], count: posts.length,
+      newest: Math.max(...posts.map(p => Date.parse(p.date) || 0)) || Date.now(), cityId: null, desc: '', text: posts.map(p => p.title).join(' · ') };
+  }
+  function communityHTML(c, i, total) {
+    const fmt = n => n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1) + 'k' : String(n || 0);
+    const rows = c.posts.map(p => {
+      const thumb = /^https:\/\/[a-z0-9.-]*(?:redditmedia\.com|redd\.it)\//i.test(p.thumbnail || '') ? `<img class="ix-cc-thumb" src="${h(p.thumbnail)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : '<span class="ix-cc-thumb ix-cc-none" aria-hidden="true">◎</span>';
+      return `<li><a class="ix-cc-post" href="${h(p.url)}" target="_blank" rel="noopener noreferrer">${thumb}<span class="ix-cc-body"><small>${h(p.subreddit || '')} · ▲ ${fmt(p.upvotes)} · ${fmt(p.comments)} comments · ${h(ago(Date.parse(p.date) || Date.now()))}</small><b>${h(p.title)}</b></span><span class="ix-cc-go" aria-hidden="true">↗</span></a></li>`;
+    }).join('');
+    return `<article class="stream-slide ix-slide ix-community" data-index="${i}" data-cluster="${h(c.id)}" aria-label="Community chatter, unverified. Transmission ${i + 1} of ${total}">
+      <div class="ix-scene-slot" data-slot="${i}"></div>
+      <div class="ix-panel">
+        <div class="ix-kicker"><span class="ix-label t-warn">◆ COMMUNITY CHATTER — UNVERIFIED</span><span class="ix-num">TX ${pad(i + 1)}/${pad(total)}</span></div>
+        <h2 class="ix-title" aria-label="What the UFO community is talking about today"><span aria-hidden="true">What the community is talking about today</span></h2>
+        <p class="ix-brief ix-cc-note">Top posts from the last 24 hours on Reddit. These are user posts, not news reports. Nothing here has been checked.</p>
+        <ul class="ix-cc-list">${rows}</ul>
         ${i < total - 1 ? '<div class="ix-swipe">SWIPE UP · NEXT TRANSMISSION</div>' : ''}
       </div></article>`;
   }
@@ -277,6 +310,7 @@
     if (t.matches('[data-ix-tilt]')) return enableTilt(true);
     if (t.matches('[data-ix-atlas-open]')) { clearResume(); closeStream(); document.getElementById('atlas-launch')?.click(); return; }
     if (t.matches('[data-ix-atlas]')) return openAtlasAt(t.dataset.ixAtlas);
+    if (t.matches('[data-ix-more]')) { const box = t.closest('.ix-chips'); const open = !box.classList.contains('open'); box.classList.toggle('open', open); t.setAttribute('aria-expanded', String(open)); t.textContent = open ? 'Show fewer' : `+${box.querySelectorAll('.ix-extra').length} more`; Sound.play && Sound.play('tick'); return; }
     const c = list.find(x => x.id === (t.dataset.ixSave || t.dataset.ixShare));
     if (t.matches('[data-ix-save]') && c) {
       if (isSaved(c.id)) saved = saved.filter(s => s.id !== c.id);
@@ -300,7 +334,9 @@
     let rest = cl.filter(c => c !== sotd);
     if (order === 'shuffle') { for (let i = rest.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [rest[i], rest[j]] = [rest[j], rest[i]]; } }
     else rest.sort((a, b) => b.newest - a.newest);
-    return [sotd, ...rest];
+    const out = [sotd, ...rest], cc = communityItem();
+    if (cc) out.splice(Math.min(3, out.length), 0, cc);
+    return out;
   }
   function renderStream() {
     model = C.build(Array.isArray(data.stories) ? data.stories : []);
@@ -439,6 +475,8 @@
     const first = slides()[0]; if (first && !reduced()) { first.classList.remove('ix-arrive'); void first.offsetWidth; first.classList.add('ix-arrive'); }
     refreshTools(); startTicker();
     store.set('ps-intel-lastvisit', Date.now());
+    const fresh = prevVisit ? list.filter(c => c.kind !== 'community' && isNew(c)).length : 0;
+    if (fresh) setTimeout(() => toast(`◆ <b>${fresh}</b> new ${fresh === 1 ? 'story' : 'stories'} since your last visit`), 900);
     $('#stream-close')?.focus({ preventScroll: true });
   }
   // neutralise the old stream renderer and route its navigation through this one

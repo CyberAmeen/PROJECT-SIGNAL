@@ -38,6 +38,7 @@
     const parts = rawDesc.split(/(?:&nbsp;| )(?:\s|&nbsp;| )*/i).filter(p => p.trim());
     if (parts.length >= 2) { outlet = decode(parts[parts.length - 1]); desc = decode(parts.slice(0, -1).join(' ')); }
     else desc = decode(rawDesc);
+    if (s.outlet) { outlet = decode(s.outlet); desc = decode(rawDesc); }
     if (!outlet && s.source && !/^google news/i.test(s.source)) outlet = decode(s.source);
     if (outlet && title.toLowerCase().endsWith((' - ' + outlet).toLowerCase())) title = title.slice(0, -(outlet.length + 3)).trim();
     else {
@@ -54,9 +55,22 @@
       desc: headlineOnly ? '' : desc,
       category: s.category || 'news', cityId: s.cityId || null,
       official: s.sourceFeed === 'official' || s.category === 'government',
-      confidence: String(s.confidence || ''), tokens: tt
+      confidence: String(s.confidence || ''), tokens: tt,
+      tier: TIERS[s.credibility && s.credibility.tier] ? s.credibility.tier : 'web',
+      clusterId: s.clusterId ? String(s.clusterId) : null
     };
   }
+
+  /* Publisher credibility, as tagged by SENTINEL. It describes who published, never whether a claim is true. */
+  const TIERS = {
+    official: { rank: 6, text: 'Official source' },
+    press: { rank: 5, text: 'Major press' },
+    specialist: { rank: 4, text: 'UAP specialist' },
+    web: { rank: 3, text: 'Web outlet' },
+    tabloid: { rank: 2, text: 'Tabloid' },
+    witness: { rank: 1, text: 'Witness report · unverified' },
+    community: { rank: 0, text: 'Community · unverified' }
+  };
 
   /* Weighted overlap of headline words; rare words (bunker, implants) count far more than common ones (ufo, pentagon). */
   function cluster(stories, threshold) {
@@ -119,13 +133,20 @@
       if (OFFTOPIC.test(s.title) || !RELEVANT.test(s.title + ' ' + s.desc)) { filtered++; return; }
       clean.push(s);
     });
-    const groups = cluster(clean, threshold);
+    // Use SENTINEL's server-side story clusters when every story carries one; otherwise group here.
+    let groups;
+    if (clean.length && clean.every(s => s.clusterId)) {
+      const by = new Map(); clean.forEach(s => { if (!by.has(s.clusterId)) by.set(s.clusterId, []); by.get(s.clusterId).push(s); });
+      groups = [...by.values()];
+    } else groups = cluster(clean, threshold);
     const clusters = groups.map(members => {
       members.sort((a, b) => b.date - a.date);
-      const score = m => (m.desc ? 4 : 0) + (m.official ? 3 : 0) + (/high/.test(m.confidence) ? 1 : 0) - Math.abs(m.title.length - 85) / 40;
+      const score = m => (m.desc ? 4 : 0) + (m.official ? 3 : 0) + TIERS[m.tier].rank * 0.6 + (/high/.test(m.confidence) ? 1 : 0) - Math.abs(m.title.length - 85) / 40;
       const lead = members.slice().sort((a, b) => score(b) - score(a))[0];
       const outlets = []; const names = new Set();
-      members.forEach(m => { const k = m.outlet.toLowerCase(); if (!names.has(k)) { names.add(k); outlets.push({ name: m.outlet, url: m.url, date: m.date }); } });
+      members.forEach(m => { const k = m.outlet.toLowerCase(); if (!names.has(k)) { names.add(k); outlets.push({ name: m.outlet, url: m.url, date: m.date, tier: m.tier }); } });
+      outlets.sort((a, b) => TIERS[b.tier].rank - TIERS[a.tier].rank || b.date - a.date);
+      const topTier = outlets.reduce((t, o) => TIERS[o.tier].rank > TIERS[t].rank ? o.tier : t, 'community');
       const allText = members.map(m => m.title).join(' · ');
       const desc = (members.find(m => m.desc) || {}).desc || '';
       return {
@@ -133,7 +154,7 @@
         memberIds: members.map(m => m.id),
         title: lead.title, url: lead.url, outlet: lead.outlet, desc,
         newest: members[0].date, earliest: members[members.length - 1].date,
-        outlets, count: outlets.length,
+        outlets, count: outlets.length, tier: lead.tier, topTier,
         label: labelFor(lead.title + ' ' + (members.length > 1 ? '' : desc)),
         scene: sceneFor(lead.title + ' ' + allText + ' ' + desc),
         cityId: (members.find(m => m.cityId) || {}).cityId || null,
@@ -145,6 +166,6 @@
     return { clusters, filtered, total: clean.length };
   }
 
-  const api = { decode, cleanStory, build, labelFor, sceneFor, hash, tokens };
+  const api = { decode, cleanStory, build, labelFor, sceneFor, hash, tokens, TIERS };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.IntelCore = api;
 })(typeof window !== 'undefined' ? window : globalThis);

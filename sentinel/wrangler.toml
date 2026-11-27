@@ -10,9 +10,23 @@ enabled = true
 head_sampling_rate = 1
 
 [triggers]
-crons = ["*/15 * * * *"]
+crons = ["*/10 * * * *"]
 
 [[kv_namespaces]]
 binding = "SENTINEL_KV"
 id = "583fb75aa30c45a4990a205e87b37e93"
 
+
+# Staging copy for testing before "launch". Separate Worker, same KV namespace,
+# but every key it writes starts with "staging:" so live data is never touched.
+[env.staging]
+name = "project-signal-sentinel-staging"
+workers_dev = true
+vars = { KEY_PREFIX = "staging:" }
+
+[env.staging.triggers]
+crons = ["*/10 * * * *"]
+
+[[env.staging.kv_namespaces]]
+binding = "SENTINEL_KV"
+id = "583fb75aa30c45a4990a205e87b37e93"
