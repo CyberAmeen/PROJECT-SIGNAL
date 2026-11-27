@@ -20,6 +20,7 @@ ok(!ev('Unidentified drone enters Latvian airspace: military launches intercepto
 ok(ev('Is The Truth Out There? Trump-Backed UFO Panel Just Revealed What It Knows').accepted, 'keep UFO panel');
 ok(ev('A $22 Million Pentagon UFO Program Had a Bunker Plan Straight Out of a Spy Movie').accepted, 'keep pentagon program despite movie');
 ok(!ev('Disclosure Day is Spielberg\'s most eerily plausible sci-fi movie yet').accepted, 'drop movie');
+ok(!ev('Latvia sent drones into the sky due to an unidentified drone').accepted, 'drop baltic drone');
 // credibility
 const cr = (o, u = 'https://news.example/x') => T.credibility({ tier: 'web' }, o, u).tier;
 ok(cr('Reuters') === 'press' && cr('BBC') === 'press' && cr('The Print on MSN') === 'press', 'press');

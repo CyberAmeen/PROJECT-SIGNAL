@@ -17,7 +17,7 @@ const SNAPSHOT_FRESH_MS = 60 * 60 * 1000;
 const MAX_STORIES = 220;
 const MAX_DROPPED = 300;
 const MAX_SOURCES_PER_RUN = 4;
-const RULES_VERSION = 'r5.0.3'; // bump when relevance rules change → stored stories get re-checked
+const RULES_VERSION = 'r5.0.4'; // bump when relevance rules change → stored stories get re-checked
 const SERPER_INTERVAL_MS = 4 * 60 * 60 * 1000;
 const MANUAL_INTERVAL_MS = 5 * 60 * 1000;
 const REDDIT_HOUR_UTC = 15; // 7am Pacific
@@ -169,7 +169,7 @@ function evaluate(story) {
  if (/\b(review|reviewed|hands-on|walkthrough|guide)\b/i.test(title) && !/\b(pentagon|aaro|congress\w*|government|military|official|nasa|intelligence|records?|files?)\b/i.test(title)) return {accepted:false, reason:'Entertainment review / guide, not news'};
  const fic = title.match(FICTION);
  if (fic) return {accepted:false, reason:'Fiction / satire marker in headline: "' + fic[0] + '"'};
- if (/\b(russia\w*|ukrain\w*|kyiv|nato|interceptor|shahed|airspace violation|drone attacks?|mq-\d+)\b/i.test(title) && !/\b(uaps?|ufos?|unidentified anomalous|aaro)\b/i.test(title)) return {accepted:false, reason:'Military / conflict drone news, not UAP'};
+ if (/\b(russia\w*|ukrain\w*|kyiv|nato|latvi\w*|eston\w*|lithuan\w*|belarus\w*|baltic|interceptor|shahed|airspace violation|drone attacks?|mq-\d+)\b/i.test(title) && !/\b(uaps?|ufos?|unidentified anomalous|aaro)\b/i.test(title)) return {accepted:false, reason:'Military / conflict drone news, not UAP'};
  if (!topic(title, description)) return {accepted:false, reason:'Headline is not about UFOs/UAP, disclosure, encounters or the search for alien life'};
  if (!SUBSTANCE.test(title + ' ' + description)) return {accepted:false, reason:'No substantive context (no sighting, report, document, investigation…)'};
  let points = 2;
@@ -536,7 +536,7 @@ async function collect(env, {force = false} = {}) {
   const u = s.url.replace(/[?#].*$/, ''), head = normalize(s.title).trim() + '|' + normalize(s.outlet || '').trim();
   if (seenUrl.has(u) || seenHead.has(head)) continue;
   const fromPrevious = !collected.includes(s);
-  if (!s.credibility) s.credibility = credibility({tier: 'web'}, s.outlet || s.source, s.url);
+  if (!s.credibility || (fromPrevious && previous?.rulesVersion !== RULES_VERSION && !s.credibility.fixed)) s.credibility = credibility(SOURCES.find(x => x.id === s.sourceFeed) || {tier: 'web'}, s.outlet || s.source, s.url);
   if ((!fromPrevious || previous?.rulesVersion !== RULES_VERSION) && !evaluate(s).accepted) continue;
   seenUrl.add(u); seenHead.add(head);
   if (!known.has(s.url)) newStories++;
