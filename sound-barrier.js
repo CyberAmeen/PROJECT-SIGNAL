@@ -352,7 +352,7 @@
     start(slide) {
       this.stop(); if (!slide || !live()) return;
       const sc = slide.querySelector('.ix-scene'); const key = sc && (sc.className.match(/sc-(\w+)/) || [])[1];
-      const def = SCENES[key] || SCENES.deep; this.slide = slide; this.def = def; this.g = SA.group(); this.fired = new Set();
+      const def = SCENES[key] || (window.PSSceneSounds || {})[key] || SCENES.deep; this.slide = slide; this.def = def; this.g = SA.group(); this.fired = new Set();
       this.b = bed(this.g, 0.55); this.b.g = this.g; try { def.bed(this.b); } catch (e) { console.warn(e); }
       this.timer = setInterval(() => this.tick(), 110); this.tick();
     },
