@@ -14,6 +14,12 @@ ok(ev('Pentagon releases declassified UFO files from various federal agencies').
 ok(ev('Former Air Force member describes missing time and a UFO encounter').accepted, 'keep encounter');
 ok(ev('Inside the Wright-Patterson Drone Mystery: Radio Disruptions, Synchronized Maneuvers').accepted, 'keep drone mystery');
 ok(ev('Senate hearing: whistleblower testifies on UAP crash retrieval program').accepted, 'keep hearing');
+ok(!ev('Aaro Laakso — 2026 Stats').accepted, 'drop sports name Aaro');
+ok(ev('AARO director briefs lawmakers on new UAP cases').accepted, 'keep AARO acronym');
+ok(!ev('Unidentified drone enters Latvian airspace: military launches interceptor UAV').accepted, 'drop war drone');
+ok(ev('Is The Truth Out There? Trump-Backed UFO Panel Just Revealed What It Knows').accepted, 'keep UFO panel');
+ok(ev('A $22 Million Pentagon UFO Program Had a Bunker Plan Straight Out of a Spy Movie').accepted, 'keep pentagon program despite movie');
+ok(!ev('Disclosure Day is Spielberg\'s most eerily plausible sci-fi movie yet').accepted, 'drop movie');
 // credibility
 const cr = (o, u = 'https://news.example/x') => T.credibility({ tier: 'web' }, o, u).tier;
 ok(cr('Reuters') === 'press' && cr('BBC') === 'press' && cr('The Print on MSN') === 'press', 'press');

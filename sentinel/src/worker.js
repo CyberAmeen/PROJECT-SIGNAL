@@ -17,7 +17,7 @@ const SNAPSHOT_FRESH_MS = 60 * 60 * 1000;
 const MAX_STORIES = 220;
 const MAX_DROPPED = 300;
 const MAX_SOURCES_PER_RUN = 4;
-const RULES_VERSION = 'r5.0.1'; // bump when relevance rules change → stored stories get re-checked
+const RULES_VERSION = 'r5.0.2'; // bump when relevance rules change → stored stories get re-checked
 const SERPER_INTERVAL_MS = 4 * 60 * 60 * 1000;
 const MANUAL_INTERVAL_MS = 5 * 60 * 1000;
 const REDDIT_HOUR_UTC = 15; // 7am Pacific
@@ -60,7 +60,6 @@ const SOURCES = [
  {id:'bing-hearing', name:'Bing News · Congress hearings', category:'government', every:120, aggregator:true, url:B('UFO Congress hearing')},
  {id:'bing-whistleblower', name:'Bing News · Whistleblowers', category:'government', every:120, aggregator:true, url:B('UFO whistleblower')},
  {id:'bing-video', name:'Bing News · UFO video', category:'news', every:120, aggregator:true, url:B('UFO video')},
- {id:'bing-drones', name:'Bing News · Unidentified drones', category:'news', every:120, aggregator:true, url:B('unidentified drones')},
  {id:'bing-science', name:'Bing News · Alien life & SETI', category:'research', every:120, aggregator:true, url:B('alien life')},
  {id:'bing-blackvault', name:'Bing News · The Black Vault', category:'news', every:180, aggregator:true, url:B('Black Vault UFO')},
  {id:'bing-debrief', name:'Bing News · The Debrief', category:'news', every:180, aggregator:true, url:B('The Debrief UAP')},
@@ -81,9 +80,9 @@ const TIER_LABEL = {
  witness: 'Unverified witness report',
  community: 'Community post — unverified'
 };
-const PRESS = ['reuters','associated press','ap news','bloomberg','new york times','washington post','wall street journal','cnn','nbc news','cbs news','abc news','fox news','npr','bbc','the guardian','guardian','politico','the hill','axios','usa today','newsweek','time','the atlantic','defense one','breaking defense','military.com','stars and stripes','the war zone','twz','popular mechanics','scientific american','new scientist','space.com','live science','nature','science','the independent','independent','the telegraph','telegraph','sky news','al jazeera','cbc','abc australia','the times','financial times','los angeles times','chicago tribune','boston globe','pbs','c-span','economist','wired','ars technica','the verge','national geographic','smithsonian','vice','the economic times','times of india','hindustan times','the print','reuters.com','apnews','cnet','gizmodo','engadget','futurism','phys.org','universe today','the conversation'];
-const TABLOID = ['daily mail','dailymail','the sun','daily star','express','daily express','mirror','daily mirror','new york post','ny post','daily record','metro','tmz','radar online','the us sun','unilad','ladbible'];
-const SPECIALIST = ['the debrief','liberation times','the black vault','black vault'];
+const PRESS = ['reuters','associated press','ap news','bloomberg','new york times','washington post','wall street journal','cnn','nbc news','cbs news','abc news','fox news','npr','bbc','the guardian','guardian','politico','the hill','axios','usa today','newsweek','time','the atlantic','defense one','breaking defense','military.com','stars and stripes','the war zone','twz','popular mechanics','scientific american','new scientist','space.com','live science','nature','science','the independent','independent','the telegraph','telegraph','sky news','al jazeera','cbc','abc australia','the times','financial times','los angeles times','chicago tribune','boston globe','pbs','c-span','economist','wired','ars technica','the verge','national geographic','smithsonian','vice','the economic times','times of india','hindustan times','the print','reuters.com','apnews','cnet','gizmodo','engadget','futurism','phys.org','universe today','the conversation','newsnation','international business times','ibtimes','st. louis post-dispatch','detroit free press','kxan','clickondetroit','wwlp','kutv','queen city news','ndtv','wion','eastern daily press','tempo.co','the economic times','cbs','nbc','abc7','fox 5','wfaa','khou','ktla','wral','the star','the irish times','rte','dw','france 24','euronews','marca'];
+const TABLOID = ['daily mail','dailymail','the sun','daily star','express','daily express','mirror','daily mirror','new york post','ny post','daily record','metro','tmz','radar online','the us sun','unilad','ladbible','the mirror','north wales live','birmingham live','manchester evening news','daily express us'];
+const SPECIALIST = ['the debrief','liberation times','the black vault','black vault','earthsky','society for uap studies','sol foundation'];
 const OFFICIAL_HOST = /(^|\.)(gov|mil)$|(^|\.)(nasa\.gov|aaro\.mil|defense\.gov|congress\.gov|house\.gov|senate\.gov|archives\.gov|faa\.gov|af\.mil|navy\.mil|army\.mil)$/i;
 const norm = s => String(s || '').toLowerCase().replace(/^www\./, '').replace(/\s+on msn$/, '').replace(/[^a-z0-9.\- ]+/g, ' ').replace(/\s+/g, ' ').trim();
 function credibility(source, outlet, url) {
@@ -135,13 +134,13 @@ const hash = str => { let h = 2166136261; for (let i = 0; i < str.length; i++) {
 /* ---------------------------------------------------------------- relevance (v4.3 rules + gaming/hack/off-topic additions) */
 const BAD = /\b(robot(?:s|ics)?|battle of robots|ufo combat|video ?games?|gaming|gameplay|playstation|ps[1-5]|xbox|nintendo|steam deck|gta|fortnite|minecraft|roblox|comic.?con|cosplay|movie|film|trailer|box office|netflix|anime|manga|album|song|concert|merchandise|toy|action figure|wrestling|stock ticker|electric vehicle|ev tech|horoscope|zodiac|recipe|ufo dish|ufo ride|ufo catcher|ufo tracker app)\b/i;
 const FICTION = /\b(hoax|satire|fictional|fiction|parody|simulation|mockumentary|role.?play)\b/i;
-const AERIAL = /\b(uaps?|ufos?|unidentified (?:anomalous phenomena|aerial phenomena|flying objects?|objects?)|(?:unexplained|anomalous) aerial|aaro|all-domain anomaly resolution office|flying saucers?|orbs? (?:over|in|seen|spotted|filmed)|skinwalker ranch|(?:mystery|mysterious|unidentified) drones?|drone (?:mystery|swarms?|incursions?|sightings?))\b/i;
-const DISCLOSURE = /\b(non[- ]?human intelligence|crash retrieval|uap disclosure|ufo disclosure|aaro|disclosure act|grusch|elizondo|whistleblowers? .*(?:uap|ufo))\b|\bNHI\b.*\b(whistleblower|testimon\w*|retrieval|disclosure)\b/i;
+const AERIAL = /\b(uaps?|ufos?|unidentified (?:anomalous phenomena|aerial phenomena|flying objects?|objects?)|(?:unexplained|anomalous) aerial|all-domain anomaly resolution office|flying saucers?|orbs? (?:over|in|seen|spotted|filmed)|skinwalker ranch|(?:mystery|mysterious|unidentified) drones?|drone (?:mystery|swarms?|incursions?|sightings?))\b/i;
+const DISCLOSURE = /\b(non[- ]?human intelligence|crash retrieval|uap disclosure|ufo disclosure|disclosure act|grusch|elizondo|whistleblowers? .*(?:uap|ufo))\b|\bNHI\b.*\b(whistleblower|testimon\w*|retrieval|disclosure)\b/i;
 const SCIENCE = /\b(astrobiology|biosignatures?|technosignatures?|seti|extraterrestrial (?:life|microbes?|microorganisms?|intelligence|signals?)|alien life|life (?:beyond|outside) earth|potentially habitable (?:exoplanet|world)s?)\b/i;
 const ENCOUNTER = /\b(alien (?:encounters?|abductions?|contact|implants?)|extraterrestrial encounters?|close encounters? (?:with aliens|of the (?:third|fourth) kind)|abducted by aliens)\b/i;
 const SPACE = /\b(interstellar objects?|interstellar comets?|3i\/atlas|oumuamua|astronomical signals?|radio signals?|astronomical anomal(?:y|ies))\b/i;
 const ET_CONTEXT = /\b(extraterrestrial|alien (?:intelligence|technology|probe|craft)|non[- ]?human intelligence|seti|technosignatures?|biosignatures?)\b/i;
-const SUBSTANCE = /\b(sightings?|witness(?:es)?|investigat\w*|report\w*|document\w*|files?|records?|evidence|hearings?|congress\w*|pentagon|military|airspace|pilots?|radar|footage|videos?|sensors?|research\w*|stud(?:y|ies)|disclos\w*|testimon\w*|whistleblowers?|aaro|nasa|government|abduction accounts?|observations?|detections?|scientists?|search(?:es|ing)?|measurements?|analysis|declassif\w*|released?|officials?|lawmakers?|unidentified (?:anomalous|aerial) phenomena|spotted|filmed|seen|lights?|objects?|craft|encounters?|describ\w*|accounts?|missing time|abduct\w*|experienc\w*|mystery|mysteries|counterintelligence|national security|polic(?:y|ies)|maneuvers?|disruptions?|perspectives?|persists?)\b/i;
+const SUBSTANCE = /\b(sightings?|witness(?:es)?|investigat\w*|report\w*|document\w*|files?|records?|evidence|hearings?|congress\w*|pentagon|military|airspace|pilots?|radar|footage|videos?|sensors?|research\w*|stud(?:y|ies)|disclos\w*|testimon\w*|whistleblowers?|aaro|nasa|government|abduction accounts?|observations?|detections?|scientists?|search(?:es|ing)?|measurements?|analysis|declassif\w*|released?|officials?|lawmakers?|unidentified (?:anomalous|aerial) phenomena|spotted|filmed|seen|lights?|objects?|craft|encounters?|describ\w*|accounts?|missing time|abduct\w*|experienc\w*|mystery|mysteries|counterintelligence|national security|polic(?:y|ies)|maneuvers?|disruptions?|perspectives?|persists?|panel|reveal\w*|claims?|speculation|programs?|bunker|vault|advis\w*|courses?|implants?|anniversar\w*)\b/i;
 const EDITORIAL_EVIDENCE = /\b(investigat\w*|document\w*|report\w*|evidence|radar|pilots?|witness(?:es)?|stud(?:y|ies)|testimon\w*|declassif\w*|files?|records?)\b/i;
 const GOLD_INCIDENT = /\b(sightings?|witness(?:es)?|radar|pilots?|footage|investigat\w*|incidents?|hearings?|report\w*)\b/i;
 const CLAIM = /\b(alien bodies|extraterrestrial bodies|retrieved craft|recovered spacecraft|biologics|whistleblower|claims? to|claims?|alleged|purported|says?)\b/i;
@@ -159,15 +158,18 @@ function topic(title, description) {
  if (DISCLOSURE.test(title)) return 'disclosure';
  if (ENCOUNTER.test(title)) return 'encounter';
  if (AERIAL.test(title)) return 'aerial';
+ if (/\bAARO\b/.test(title)) return 'disclosure'; // the acronym only, case-sensitive (not names like 'Aaro')
  return null;
 }
 function evaluate(story) {
  const title = story.title || '', description = story.description || '';
  const badHit = title.match(BAD);
- if (badHit) return {accepted:false, reason:'Off-topic keyword in headline: "' + badHit[0] + '"'};
+ const officialContext = /\b(pentagon|aaro|congress\w*|government|military|navy|air force|declassif\w*|white house|department of (?:war|defense))\b/i.test(title);
+ if (badHit && !(officialContext && /^(movie|film)$/i.test(badHit[0]))) return {accepted:false, reason:'Off-topic keyword in headline: "' + badHit[0] + '"'};
  if (/\b(review|reviewed|hands-on|walkthrough|guide)\b/i.test(title) && !/\b(pentagon|aaro|congress\w*|government|military|official|nasa|intelligence|records?|files?)\b/i.test(title)) return {accepted:false, reason:'Entertainment review / guide, not news'};
  const fic = title.match(FICTION);
  if (fic) return {accepted:false, reason:'Fiction / satire marker in headline: "' + fic[0] + '"'};
+ if (/\b(russia\w*|ukrain\w*|kyiv|nato|interceptor|shahed|airspace violation|drone attacks?|mq-\d+)\b/i.test(title) && !/\b(uaps?|ufos?|unidentified anomalous|aaro)\b/i.test(title)) return {accepted:false, reason:'Military / conflict drone news, not UAP'};
  if (!topic(title, description)) return {accepted:false, reason:'Headline is not about UFOs/UAP, disclosure, encounters or the search for alien life'};
  if (!SUBSTANCE.test(title + ' ' + description)) return {accepted:false, reason:'No substantive context (no sighting, report, document, investigation…)'};
  let points = 2;
