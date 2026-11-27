@@ -1,6 +1,7 @@
-const i = await (await fetch('https://project-signal-sentinel-staging.aminhersi10.workers.dev/intel')).json();
-const o = {}; for (const s of i.stories) if (s.credibility?.tier === 'web') o[s.outlet] = (o[s.outlet] || 0) + 1;
-console.log('STG WEB', JSON.stringify(Object.entries(o).sort((a, b) => b[1] - a[1])));
-for (const s of i.stories) console.log('STG', (s.credibility?.tier || '').padEnd(10), (s.outlet || '').slice(0, 24).padEnd(24), (s.date||'').slice(5,10), s.title.slice(0, 100));
-const d = await (await fetch('https://project-signal-sentinel-staging.aminhersi10.workers.dev/v1/dropped')).json();
-for (const x of (d.dropped || d.items || []).slice(0, 63)) console.log('DROP', (x.reason || '').slice(0, 38).padEnd(38), (x.title || '').slice(0, 90));
+const L = 'https://project-signal-sentinel.aminhersi10.workers.dev';
+const s = await (await fetch(L + '/v1/status')).json();
+console.log('LIVE', 'v' + s.version, 'stories', s.stories, 'clusters', s.clusters, 'updated', s.updatedAt, 'stale', s.stale);
+for (const f of s.feeds || []) console.log('LIVE', (f.id || '').padEnd(18), (f.status || '').padEnd(14), 'relevant', f.count, f.error || '');
+const i = await (await fetch(L + '/intel', { headers: { Origin: 'https://cyberameen.github.io' } }));
+console.log('LIVE cors', i.headers.get('access-control-allow-origin')); const j = await i.json();
+console.log('LIVE intel clusters', (j.clusters || []).length, 'multi', (j.clusters || []).filter(c => c.count > 1).length, 'community', JSON.stringify(j.community ? { ok: j.community.ok, posts: (j.community.posts || []).length } : null));
