@@ -416,3 +416,8 @@
 .bridge-content h2{padding-right:.14em;margin-right:-.14em!important;overflow:visible}
 .bridge-content h2 span{padding-right:.1em}
 .ix-toast.big{min-width:min(300px,86vw)}
+
+/* loader sound toggle */
+.ixl-mute{position:absolute;z-index:5;right:calc(16px + env(safe-area-inset-right));bottom:calc(18px + env(safe-area-inset-bottom));border:1px solid rgba(127,214,255,.35);background:rgba(10,24,56,.55);color:#cfe9ff;font:700 10.5px 'Oxanium',sans-serif;letter-spacing:2px;padding:8px 12px;border-radius:999px;cursor:pointer;backdrop-filter:blur(6px)}
+.ixl-mute[aria-pressed="false"]{opacity:.6}
+.ixl-out .ixl-mute,.ixl-jump .ixl-mute{opacity:0;transition:opacity .3s}
