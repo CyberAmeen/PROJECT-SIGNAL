@@ -285,7 +285,7 @@
     const b = BODIES[key]; if (!b) return;
     if (!readout) { readout = document.createElement('div'); readout.className = 'hs-readout'; readout.setAttribute('role', 'status'); card.appendChild(readout); }
     readout.innerHTML = `<small>◈ ${b.kind.toUpperCase()}</small><b>${b.name}</b>${b.rows.map(([k, v]) => `<span><i>${k}</i>${v}</span>`).join('')}<em>ARTIST RENDER · FICTIONAL BODY</em>`;
-    const w = 210, left = Math.max(10, Math.min(cssW - w - 10, x + 18)), top = Math.max(60, Math.min(cssH - 170, y - 40));
+    const w = 232, left = Math.max(10, Math.min(cssW - w - 10, x + 18)), top = Math.max(60, Math.min(cssH - 170, y - 40));
     readout.style.left = left + 'px'; readout.style.top = top + 'px'; readout.classList.remove('show'); void readout.offsetWidth; readout.classList.add('show');
     clearTimeout(readTimer); readTimer = setTimeout(() => readout && readout.classList.remove('show'), 4200);
     if (audible()) { const s = SA(); s.bell(key === 'ship' ? 988 : 1568, { gain: 0.016, dur: 1.4, rev: 0.7 }); s.tone({ f: 3200, dur: 0.03, gain: 0.01, type: 'square', lp: 4000 }); }
