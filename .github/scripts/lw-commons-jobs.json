@@ -1,18 +1,1 @@
-[
- {"key":"aurora","search":["Dallas Morning News 1897 airship Aurora","Aurora Texas airship 1897 newspaper"]},
- {"key":"levelland","search":["Project Blue Book report 1957-11 Levelland","Blue Book Levelland Texas"]},
- {"key":"dc1952","search":["Project Blue Book report 1952-07 Washington","Blue Book Washington DC 1952 radar","Washington National Airport radar 1952 UFO"]},
- {"key":"hill","search":["Project Blue Book report 1961-09 Pease","Blue Book Pease AFB 1961","Betty Hill drawing craft"]},
- {"key":"shag","search":["Shag Harbour RCMP report","RCMP UFO 1967 Shag Harbour"]},
- {"key":"jal1628","search":["JAL 1628 FAA radar","Klass and Haines inquires JAL","News media contacts to FAA JAL 1628"]},
- {"key":"tehran","search":["1976 Tehran UFO DIA report","Tehran UFO incident document"]},
- {"key":"colares","search":["Operação Prato documento","Operação Prato FAB relatório","Prato COMAR OVNI"]},
- {"key":"winthrop","search":["John Winthrop journal manuscript","Winthrop History of New England 1630 1649"]},
- {"key":"foo","search":["foo fighters World War II UFO","Foo fighter 1944 sighting"]},
- {"key":"malmstrom","search":["Echo Flight Malmstrom 1967","Minuteman I launch facility 1960s"]},
- {"key":"lyco","search":["Lycosthenes Prodigiorum chronicon shield sky","Lycosthenes 1557 celestial","Prodigiorum ac ostentorum chronicon sky"]},
- {"key":"westall","search":["Westall 1966 UFO","Grange Reserve Westall"]},
- {"key":"valentich","search":["Cessna 182L Skylane","Frederick Valentich"]},
- {"key":"phoenix","search":["Phoenix Lights 1997 drawing","Phoenix lights V formation"]},
- {"key":"ohare","search":["O'Hare UFO 2006","hole punch cloud fallstreak hole"]}
-]
+[{"key":"noop","search":[]}]
