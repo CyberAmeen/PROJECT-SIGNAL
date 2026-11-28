@@ -324,6 +324,7 @@
     b.addEventListener('click', () => open(id));
     const anchor = d.querySelector('.ax-fields'); anchor ? anchor.before(b) : d.append(b);
   };
-  new MutationObserver(addButton).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['hidden'] });
+  // SILK: watch only the Atlas (watching the whole page ran this on every Intel scene mount and title frame)
+  new MutationObserver(addButton).observe(document.getElementById('atlas-shell') || document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['hidden'] });
   window.PSRecon = { open, close, cases: Object.keys(CASES), CASES };
 })();
