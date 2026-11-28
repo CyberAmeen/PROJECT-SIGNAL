@@ -29,7 +29,7 @@
       name: 'DUET', desc: 'Two stars locked in a slow orbital dance, a stream of plasma pouring from the larger to the smaller.',
       family: 'star', tone: 'bright', ship: 'trident · distant silhouette', best: 'Rose Nebula, Solar Wind, Andromeda Dusk',
       html: r => `<div class="nx-binary"><div class="nx-bi-orbit"><div class="nx-bi-a"><i></i></div><div class="nx-bi-b"><i></i></div>
-        <svg class="nx-bi-stream" viewBox="0 0 200 100"><path d="M48 50 C 80 20, 120 20, 150 46"/><path class="s2" d="M48 50 C 82 30, 118 28, 150 46"/></svg>${arr(6, i => `<i class="nx-bi-p" style="--d:-${(i * 0.3).toFixed(1)}s"></i>`)}</div>
+        <svg class="nx-bi-stream" viewBox="0 0 200 100"><path d="M48 50 C 80 20, 120 20, 150 46"/><path class="s2" d="M48 50 C 82 30, 118 28, 150 46"/></svg></div>
         <div class="nx-bi-halo"></div></div>${ship('trident', 'far', 78, 22, .5)}`
     },
     supernova: {
@@ -117,11 +117,11 @@
   const T = (o, g) => SA().tone(o, g), N = (o, g) => SA().noise(o, g);
   const SOUNDS = {
     pulsar: { bed(b) { b.osc(55, 'sine', 0.03); b.noise('bandpass', 2400, 2, 0.01); }, events: [ev('.nx-pl-rot', 'nxSpin', [0, .5], (g, p, at) => T({ at, f: 1320, to: 1250, dur: 0.12, gain: 0.012, type: 'triangle', pan: p, rev: 0.5 }, g))] },
-    binary: { bed(b) { b.osc(65.4, 'sine', 0.03); b.osc(98, 'sine', 0.015); }, events: [ev('.nx-bi-p', 'nxFlow', [0], (g, p, at) => N({ at, f: 600, to: 1800, q: 2, dur: 1.6, gain: 0.012, a: 0.5, pan: p, rev: 0.5 }, g))] },
+    binary: { bed(b) { b.osc(65.4, 'sine', 0.03); b.osc(98, 'sine', 0.015); }, events: [ev('.nx-bi-stream path', 'nxFlow', [0], (g, p, at) => N({ at, f: 600, to: 1800, q: 2, dur: 1.6, gain: 0.012, a: 0.5, pan: p, rev: 0.5 }, g))] },
     supernova: { bed(b) { b.noise('lowpass', 160, 0.7, 0.25); b.osc(41.2, 'sine', 0.04); }, events: [ev('.nx-nv-ring', 'nxShock', [0.02], (g, p, at) => { T({ at, f: 70, to: 38, dur: 1.2, gain: 0.05, a: 0.01, pan: p, rev: 0.5 }, g); N({ at, f: 900, to: 200, q: 1, dur: 1, gain: 0.02, a: 0.01, pan: p }, g); })] },
     quasar: { bed(b) { b.osc(46.2, 'sawtooth', 0.01, b.filter('lowpass', 220)); b.noise('highpass', 5000, 0.7, 0.012); }, events: [ev('.nx-qs-jet.up i', 'nxJet', [0.05], (g, p, at) => T({ at, f: 2600, to: 3600, dur: 0.25, gain: 0.006, pan: p, rev: 0.6 }, g))] },
     geyser: { bed(b) { b.noise('bandpass', 700, 0.5, 0.02); b.osc(73.4, 'sine', 0.02); }, events: [ev('.nx-gy-plume i', 'nxPlume', [0.02], (g, p, at, idx) => { if (idx % 9) return; N({ at, f: 3000, to: 900, q: 1.5, dur: 0.9, gain: 0.02, a: 0.02, pan: p, rev: 0.4 }, g); })] },
-    lava: { bed(b) { b.noise('lowpass', 240, 0.8, 0.25); b.osc(36.7, 'sine', 0.04); }, events: [ev('.nx-lv-cracks', 'nxGlow', [0.1], (g, p, at, idx) => { N({ at, f: 300, to: 120, q: 2, dur: 0.6, gain: 0.03, a: 0.05, pan: p }, g); })] },
+    lava: { bed(b) { b.noise('lowpass', 240, 0.8, 0.25); b.osc(36.7, 'sine', 0.04); }, events: [ev('.nx-lv-cracks path', 'nxGlow', [0.1], (g, p, at, idx) => { if (idx > 2) return; N({ at, f: 300, to: 120, q: 2, dur: 0.6, gain: 0.03, a: 0.05, pan: p }, g); })] },
     storm: { bed(b) { b.noise('lowpass', 300, 0.7, 0.3); b.osc(49, 'sine', 0.025); }, events: [ev('.nx-st-planet b', 'nxBolt', [0.08], (g, p, at) => { N({ at: at + 0.4, f: 180, to: 60, q: 1, dur: 1.4, gain: 0.05, a: 0.02, pan: p, rev: 0.6 }, g); })] },
     eclipse: { bed(b) { b.osc(110, 'sine', 0.012); b.osc(164.8, 'sine', 0.008); b.osc(220, 'sine', 0.004); }, events: [ev('.nx-ec-diamond', 'nxDiamond', [0.42], (g, p, at) => SA().bell(1975.5, { at, gain: 0.02, dur: 2.4, rev: 0.9, pan: p }, g))] },
     wormhole: { bed(b) { const o = b.osc(55, 'sawtooth', 0.012, b.filter('lowpass', 300)); b.lfo(o.o.frequency, 0.12, 6); b.noise('bandpass', 400, 1, 0.02); }, events: [ev('.nx-wm-tunnel i', 'nxTunnel', [0.0], (g, p, at, idx) => { if (idx % 3) return; T({ at, f: 300, to: 80, dur: 0.8, gain: 0.012, a: 0.1, pan: p, rev: 0.5 }, g); })] },
