@@ -80,14 +80,11 @@
     for (const [id, h] of hubG) { const off = on && !n(id); if (off !== h.off) { h.off = off; h.g.classList.toggle('ax-t-off', off); } }  // write only what changes
     for (const d of dens) { const t = totals.get(d.id) || 1, k = n(d.id), sc = on ? (k ? Math.round((0.35 + 0.65 * Math.sqrt(k / t)) * 50) / 50 : 0) : 1; if (sc !== d.s) { d.s = sc; d.c.style.setProperty('--ts', sc); } }
     for (const l of links) { const hide = on && (!n(l.a) || !n(l.b)); if (hide !== l.h) { l.h = hide; l.p.classList.toggle('ax-t-hide', hide); } }
-    const lit = on ? countTo(recYears, y) : recs.length;
     // flares only for records crossed while moving forward a short way (a big jump just snaps)
-    if (on && prevY != null && y > prevY && y - prevY <= 4 && !reduced()) {
+    if (on && prevY != null && y > prevY && y - prevY <= 6 && !reduced()) {
       let spawned = 0;
       for (const r of recs) { if (r.y <= prevY) continue; if (r.y > y) break; for (const h of r.hubs) if (spawned < 6) { flare(h, r.sourced); spawned++; } }
     }
-    yrB.textContent = on ? y : ''; yrS.textContent = on ? `${lit} of ${recs.length} dated records` : '';
-    track.setAttribute('aria-valuenow', String(y)); track.setAttribute('aria-valuetext', on ? `${y}: ${lit} records so far` : 'Today: all records');
   }
   /* hub positions on screen (only recomputed after a pan / zoom / resize) */
   let pos = null;
@@ -112,8 +109,19 @@
     const f = (year - Y0) / SPAN;
     handle.style.transform = `translate3d(${(f * trackW).toFixed(1)}px,0,0)`; fill.style.transform = `scaleX(${f.toFixed(4)})`;
     const yi = Math.round(year);
-    if (yi !== shownY) { const prev = shownY; shownY = yi; hLbl.textContent = yi >= NOW ? 'TODAY' : yi; applyYear(yi, prev); if (playing) waveCheck(prev, yi); }
+    if (yi !== shownY) { const prev = shownY; shownY = yi; hLbl.textContent = yi >= NOW ? 'TODAY' : yi; readout(yi); queueApply(); if (playing) waveCheck(prev, yi); }
   }
+  /* every change to the map's SVG repaints the whole map, so its state follows the year at most ~9 times a second;
+     the handle, the readout and the flares (all outside the SVG) follow every frame */
+  let appliedY = NOW, lastApply = 0, applyT = 0;
+  function queueApply() {
+    const now = performance.now(), wait = 110 - (now - lastApply);
+    if (wait <= 0 || shownY >= NOW) { clearTimeout(applyT); applyT = 0; lastApply = now; const p = appliedY; appliedY = shownY; applyYear(shownY, p); }
+    else if (!applyT) applyT = setTimeout(() => { applyT = 0; queueApply(); }, wait);
+  }
+  function readout(y) { const on = y < NOW, lit = on ? countTo(recYears, y) : recs.length;
+    yrB.textContent = on ? y : ''; yrS.textContent = on ? `${lit} of ${recs.length} dated records` : '';
+    track.setAttribute('aria-valuenow', String(y)); track.setAttribute('aria-valuetext', on ? `${y}: ${lit} records so far` : 'Today: all records'); }
   addEventListener('resize', () => { trackW = 0; place(); }, { passive: true });
   function setYear(y) { year = clamp(y, Y0, NOW); place(); }
 
@@ -168,7 +176,7 @@
   }
 
   /* ---------- layers redraw → re-apply; every visit starts at TODAY */
-  window.addEventListener('atlas:layers', () => requestAnimationFrame(() => { cacheLayers(); applyYear(shownY, null); }));
+  window.addEventListener('atlas:layers', () => requestAnimationFrame(() => { cacheLayers(); appliedY = shownY; applyYear(shownY, null); }));
   new MutationObserver(() => { if (shell.hidden) { stop(); vel = 0; tween = null; cap.classList.remove('on'); } else { trackW = 0; invalidate(); setYear(NOW); } }).observe(shell, { attributes: true, attributeFilter: ['hidden'] });
   window.__atlasTime = { setYear, play, stop, get year() { return year; }, get playing() { return playing; }, waves: WAVES, undated, range: [Y0, NOW], records: recs.length };
 })();

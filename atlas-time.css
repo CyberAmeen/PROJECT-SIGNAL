@@ -61,3 +61,8 @@
   .ax-yr{left:12px;top:12px}
 }
 @media (prefers-reduced-motion:reduce){.ax-yr,.ax-wave,#atlas-map-pins .atlas-city,.ax-density circle{transition:opacity .2s}.ax-wave{transform:none}}
+
+/* While travelling through time the decorative marker pulses pause: animating any SVG child repaints the whole map
+   each frame (~36 ms vs ~18 ms measured in desktop Chrome). The ignition flares (compositor) carry the motion. */
+.ax-timing #atlas-map-pins *,.ax-timing #ax-layers *{animation-play-state:paused!important}
+.ax-timing .ax-density circle{transition:none}
