@@ -1,6 +1,8 @@
 # THE LONG WATCH — event register
 Generated from `long-watch-data.js` (47 entries). Badges: Primary account · Later retelling · Modern reinterpretation · Explained · Disputed · Unresolved · Hoax.
 
+Every entry now also has a hero visual (real image or labelled artist's rendering). The full visual register, with sources and licences, is `LONG-WATCH-VISIONS.md`.
+
 ## Deep Antiquity — The First Watchers
 
 | # | Year | Entry | Place | Badge | Image | Sources |
