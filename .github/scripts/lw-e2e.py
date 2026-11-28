@@ -55,6 +55,13 @@ with sync_playwright() as p:
         ctx, pg = new(b, W, H); cdp = ctx.new_cdp_session(pg); cdp.send('Performance.enable')
         boot(pg)
         R['memory'][name] = {'hubBeforeOpen': metrics(cdp)}
+        # context: this machine's floor (empty page) and the existing hub, same throttle
+        if thr > 1: cdp.send('Emulation.setCPUThrottlingRate', {'rate': thr})
+        pg.evaluate(FRAME_JS); time.sleep(3); R['perf'][name + '_baseline_hubIdle'] = frame_stats(pg)
+        cdp.send('Emulation.setCPUThrottlingRate', {'rate': 1})
+        bp = ctx.new_page(); bc = ctx.new_cdp_session(bp); bp.set_content("<div style='height:9000px;background:linear-gradient(#123,#456)'></div>")
+        if thr > 1: bc.send('Emulation.setCPUThrottlingRate', {'rate': thr})
+        bp.evaluate(FRAME_JS); bp.evaluate("new Promise(r=>{let y=0;(function f(){y+=24;scrollTo(0,y);y<6000?requestAnimationFrame(f):r()})()})"); R['perf'][name + '_baseline_emptyPageScroll'] = frame_stats(bp); bp.close()
         # hub layout: all portals identical
         R['checks'][name + '_portals'] = pg.evaluate("[...document.querySelectorAll('.bridge-console .ps-portal')].map(b=>{const r=b.getBoundingClientRect();return [Math.round(r.width),Math.round(r.height)]})")
         R['checks'][name + '_notice'] = pg.evaluate("document.getElementById('notice').textContent+' | '+document.getElementById('last').textContent")
@@ -121,7 +128,7 @@ with sync_playwright() as p:
         pg.click('.lw-return'); time.sleep(3.5)
         ctx.close()
         webm = [f for f in os.listdir(vd) if f.endswith('.webm')][0]
-        subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', f'{vd}/{webm}', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '24', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', f'{OUT}/long-watch-{name}.mp4'])
+        os.replace(f'{vd}/{webm}', f'{OUT}/long-watch-{name}.webm')  # converted to mp4 off-runner
     b.close()
 srv.shutdown()
 json.dump(R, open(f'{OUT}/lw-results.json', 'w'), indent=1)

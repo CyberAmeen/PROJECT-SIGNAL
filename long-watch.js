@@ -447,22 +447,28 @@
       document.body.classList.add('lw-departing');
       if (audible()) try { const S = SA(); g = S.group(); S.noise({ f: 200, to: 4200, ft: 'bandpass', q: .8, dur: DUR * .8, gain: .06, swell: true, rev: .6 }, g); S.tone({ f: 110, to: 41, dur: DUR, gain: .06, type: 'triangle', a: DUR * .3, rev: .5 }, g); } catch {}
       // star rewind: spiralling inward, bent around a lens at the centre
-      const d = Math.min(1.5, devicePixelRatio || 1), W = innerWidth, H = innerHeight; cv.width = W * d; cv.height = H * d; const ctx = cv.getContext('2d'); ctx.scale(d, d);
-      const N = Math.round(Math.min(700, W * H / 1400)), st = Array.from({ length: N }, () => ({ r: 20 + Math.random() * Math.hypot(W, H) * .6, a: Math.random() * 6.283, s: .4 + Math.random(), c: Math.random() < .15 ? '190,150,255' : Math.random() < .3 ? '255,200,150' : '255,255,255' }));
+      const W = innerWidth, H = innerHeight, d = W * H > 600000 ? 1 : Math.min(1.5, devicePixelRatio || 1); cv.width = W * d; cv.height = H * d; const ctx = cv.getContext('2d'); ctx.scale(d, d);
+      // streaks are batched into 6 paths (3 colours × 2 widths): one stroke() each, not one per star
+      const COLS = ['255,255,255', '255,200,150', '190,150,255'];
+      const N = Math.round(clamp(W * H / 1700, 220, 520)), st = Array.from({ length: N }, () => { const r = Math.random(); return { r: 20 + Math.random() * Math.hypot(W, H) * .6, a: Math.random() * 6.283, s: .4 + Math.random(), c: r < .15 ? 2 : r < .4 ? 1 : 0 }; });
       const t0 = performance.now(); let lastStop = -1;
       const step = now => {
         const tt = (now - t0) / 1000, p = clamp(tt / DUR, 0, 1);
         // speed profile: accelerate, cruise, brake
         const v = Math.sin(Math.PI * clamp(p * 1.05, 0, 1)) ** 1.4;
         ctx.globalCompositeOperation = 'source-over'; ctx.fillStyle = `rgba(0,0,0,${.28 + (1 - v) * .4})`; ctx.fillRect(0, 0, W, H);
-        ctx.globalCompositeOperation = 'lighter'; const cx = W / 2, cy = H / 2, E = Math.min(W, H) * .12 * sstep(0, .4, p);
-        for (const s of st) {
-          const r0 = s.r, a0 = s.a; s.a -= (0.4 + 3.2 * v) * s.s * 0.016 * (180 / (r0 + 40)); s.r -= (40 + 900 * v) * s.s * 0.016 * (r0 / 600);
-          if (s.r < 8) { s.r = Math.hypot(W, H) * (.45 + Math.random() * .2); s.a = Math.random() * 6.283; continue; }
-          const bend = r => r + (E * E) / Math.max(r, 1); // weak-lens approximation: light bends around the centre
-          const R1 = bend(s.r), R0 = bend(r0);
-          ctx.strokeStyle = `rgba(${s.c},${(.35 + .65 * v).toFixed(2)})`; ctx.lineWidth = s.s * 1.3;
-          ctx.beginPath(); ctx.moveTo(cx + Math.cos(a0) * R0, cy + Math.sin(a0) * R0); ctx.lineTo(cx + Math.cos(s.a) * R1, cy + Math.sin(s.a) * R1); ctx.stroke();
+        ctx.globalCompositeOperation = 'lighter'; const cx = W / 2, cy = H / 2, E = Math.min(W, H) * .12 * sstep(0, .4, p), E2 = E * E;
+        const alpha = (.35 + .65 * v).toFixed(2), maxR = Math.hypot(W, H);
+        for (let col = 0; col < 3; col++) for (let wide = 0; wide < 2; wide++) {
+          ctx.beginPath(); ctx.strokeStyle = `rgba(${COLS[col]},${alpha})`; ctx.lineWidth = wide ? 1.7 : .9;
+          for (const s of st) {
+            if (s.c !== col || (s.s > .9) !== !!wide) continue;
+            const r0 = s.r, a0 = s.a; s.a -= (0.4 + 3.2 * v) * s.s * 0.016 * (180 / (r0 + 40)); s.r -= (40 + 900 * v) * s.s * 0.016 * (r0 / 600);
+            if (s.r < 8) { s.r = maxR * (.45 + Math.random() * .2); s.a = Math.random() * 6.283; continue; }
+            const R1 = s.r + E2 / Math.max(s.r, 1), R0 = r0 + E2 / Math.max(r0, 1); // weak-lens approximation: light bends around the centre
+            ctx.moveTo(cx + Math.cos(a0) * R0, cy + Math.sin(a0) * R0); ctx.lineTo(cx + Math.cos(s.a) * R1, cy + Math.sin(s.a) * R1);
+          }
+          ctx.stroke();
         }
         // ring of years spins backward and slows
         ring.style.transform = `rotate(${(-p * (mode === 'full' ? 540 : 260) * (1 - .35 * p)).toFixed(2)}deg) scale(${(1.15 - .25 * p).toFixed(3)})`;
@@ -472,6 +478,7 @@
         const a = STOPS[si][0], b = STOPS[si + 1][0];
         const yv = Math.round(lerp(a, b, sk)); const f = fmtYear(yv); yb.textContent = String(f.n);
         const stopNow = p < .06 ? 0 : (local >= .65 || q >= 1 ? si + 1 : -1);
+        if (stopNow < 0 && lastStop < 0) { const want = f.s || '\u00a0'; if (ys.textContent !== want) ys.textContent = want; }
         if (stopNow !== lastStop) { lastStop = stopNow; if (stopNow < 0) ys.textContent = f.s || '\u00a0'; else { const S0 = STOPS[stopNow]; const fs = fmtYear(S0[0]); ys.textContent = (fs.s ? fs.s + (S0[1] ? ' · ' : '') : '') + (S0[1] || 'Today'); }
           if (audible() && stopNow > 0) try { SA().tone({ f: 1400 - stopNow * 180, dur: .18, gain: .03, a: .002, rev: .5, dly: .2 }, g); } catch {} }
         if (p > .86 && !ov.classList.contains('land')) { ov.classList.add('land'); if (audible()) try { SA().tone({ f: 196, dur: 2.2, gain: .05, a: .4, rev: .8, type: 'triangle' }, g); } catch {} }
