@@ -31,7 +31,8 @@ Release stamp `20261128c1` (all files below, the Long Watch boot `V`, and the `l
 
 ## Performance notes
 - Echoes: computed once per scan; strip animation is transform/opacity; thumbnails only for the visible slide ±1.
-- Scrubber: the handle moves by transform each frame; the map SVG is touched only when the whole year changes, and only elements whose state changes are written (cached hubs, density circles, links). The track's box is measured once per drag. Flares and captions are HTML on the compositor (WAAPI).
+- Scrubber: any change inside the map SVG repaints the whole map (~18 ms on a fast desktop, more on phones). So while time-travelling (`.ax-timing`) the decorative marker pulses and layer animations pause, and the map's state follows the year at most ~9×/s (`queueApply`); the handle, year readout and flares update every frame outside the SVG. Measured in desktop Chrome: playback 18 ms/frame vs 36–53 ms for the idle Atlas with pulses running.
+- Scrubber (cont.): the handle moves by transform each frame; the map SVG is touched only when the whole year changes, and only elements whose state changes are written (cached hubs, density circles, links). The track's box is measured once per drag. Flares and captions are HTML on the compositor (WAAPI).
 - Mirrors: one WebGL canvas, moved to the moment on screen; two textures at most, deleted when it leaves; the context is lost on Long Watch close. The dissolve renders only during the fold (~4.2 s) and while dragging.
 - Long Watch hides other body children while open; `.ps-return` is exempt.
 
