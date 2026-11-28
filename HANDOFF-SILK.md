@@ -68,4 +68,4 @@ Profiled with Chrome traces and Long Animation Frame attribution: 390×844 iPhon
   - Scene nodes 143 → 169, bounded.
 
 ## Revert
-`git revert -m 1 <SILK merge commit>` on main and push. To change scene colours later, edit the literals in `intel-signal.css` and rerun `python3 tools/scene-tint.py`.
+`git revert -m 1 069ed8a` on main and push. To change scene colours later, edit the literals in `intel-signal.css` and rerun `python3 tools/scene-tint.py`.
