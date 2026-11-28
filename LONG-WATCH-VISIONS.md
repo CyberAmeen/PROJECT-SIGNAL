@@ -99,3 +99,13 @@ Renderings are drawn from code in `tools/lw-art/` (SVG scenes in each era's styl
 
 Memory across the whole 47-entry pass (open every record in turn, scroll the full timeline, return): JS heap 3.3 → 5.0 → 4.9 MB on iPhone size and 2.9 → 4.6 → 4.9 MB on desktop. Preloaded heroes are capped at 4 and card images at the ±2.5-screen window. All 248 image files are checked to decode in Chrome.
 
+## Verified live (https://cyberameen.github.io/PROJECT-SIGNAL/, merge cddbfa9, stamp 20261128v1)
+- Returning visitors get "New transmission available — TAP TO UPDATE"; after tapping it the page loads `long-watch-boot.js?v=20261128v1` and `LW_VISUALS` covers 47/47 entries.
+- Every one of the 47 records opened in turn: every hero image loaded and every entry has hotspots.
+- Reveal in real desktop Chrome with a GPU (display just under 60 Hz), all 47 reveals: frame interval p50 17.6–17.8 ms and p95 18.4–19.3 ms in every era. A few 0.4–1 s maxima line up with the test tool's own page calls, not the reveal.
+- The reveal reaches its end state at about 1.3 s. A tap during the reveal jumps to the end state. The viewer opens with credit and licence.
+- No console errors or exceptions from page load through the hub, entrance and seven records across all eras.
+
+## Revert
+- VISIONS only: `git revert -m 1 cddbfa9` on `main`, push. Pages redeploys; the stamp returns to `20261127w1` and the service worker prompts an update.
+- Keep the visuals but turn off the reveal choreography: in `long-watch.js` `playReveal()`, take the `reduced()` branch unconditionally (crossfade only).
