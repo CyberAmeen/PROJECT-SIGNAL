@@ -1,0 +1,25 @@
+# THE LONG WATCH — read-only image research. Queries the Wikimedia Commons API (license metadata) and publishes the
+# JSON to the lw-research-results branch so it can be reviewed. Never deploys; runs only on the lw-research branch.
+name: LONG WATCH image research
+on:
+  push:
+    branches: ["lw-research"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  commons:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: mkdir -p /tmp/r && cd /tmp/r && node $GITHUB_WORKSPACE/.github/scripts/lw-commons.mjs
+      - name: Publish results
+        if: always()
+        run: |
+          cd /tmp/r && ls
+          git init -q o && cp lw-commons.json o/ 2>/dev/null; cd o
+          git config user.name "lw-research"; git config user.email "actions@users.noreply.github.com"
+          git checkout -q -b lw-research-results && git add -A && git commit -qm "commons ${{ github.sha }}"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" lw-research-results
