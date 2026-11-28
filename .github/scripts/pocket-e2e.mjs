@@ -13,7 +13,11 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 const admin = async body => (await fetch(S + '/admin/push/check', { method: 'POST', headers: { 'X-Sentinel-Admin-Token': ADMIN, 'Content-Type': 'application/json' }, body: JSON.stringify(body || {}) })).json();
 
 // a persistent profile: Chrome disables the Push API in incognito-style contexts
-const ctx = await chromium.launchPersistentContext('/tmp/e2e/profile', { channel: 'chrome', headless: false, viewport: { width: 430, height: 932 }, deviceScaleFactor: 2, args: ['--no-first-run', '--autoplay-policy=no-user-gesture-required'] });
+// the browser's time zone is the subscriber's: pick one where it is daytime now, so quiet hours don't hold the alert
+const DAYTIME = ['Pacific/Honolulu', 'America/Los_Angeles', 'America/New_York', 'Europe/London', 'Asia/Kolkata', 'Asia/Tokyo', 'Australia/Sydney']
+  .find(z => { const h = +new Intl.DateTimeFormat('en-US', { timeZone: z, hour: 'numeric', hourCycle: 'h23' }).format(new Date()); return h >= 10 && h <= 18; }) || 'UTC';
+log('subscriber time zone for this run:', DAYTIME);
+const ctx = await chromium.launchPersistentContext('/tmp/e2e/profile', { channel: 'chrome', headless: false, timezoneId: DAYTIME, viewport: { width: 430, height: 932 }, deviceScaleFactor: 2, args: ['--no-first-run', '--autoplay-policy=no-user-gesture-required'] });
 const browser = { close: () => ctx.close() };
 await ctx.grantPermissions(['notifications'], { origin: 'http://localhost:8080' });
 await ctx.addInitScript("Object.defineProperty(navigator,'standalone',{get:()=>true});");
