@@ -47,6 +47,8 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: '_site'
+      - name: Let the artifact listing catch up (it can lag a few seconds behind the upload)
+        run: sleep 20
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
