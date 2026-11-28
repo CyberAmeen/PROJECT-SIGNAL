@@ -1,0 +1,67 @@
+[
+ {
+  "name": "staging serves a VAPID public key",
+  "ok": true,
+  "extra": "BEwfXbNSS_DD_m5O…"
+ },
+ {
+  "name": "service worker controls the page",
+  "ok": true,
+  "extra": ""
+ },
+ {
+  "name": "real push subscription created through the opt-in UI",
+  "ok": true,
+  "extra": "fcm.googleapis.com"
+ },
+ {
+  "name": "subscription saved anonymously in SENTINEL KV",
+  "ok": true,
+  "extra": "id af480052…"
+ },
+ {
+  "name": "scheduled check found the subscriber and sent",
+  "ok": true,
+  "extra": "{\"events\":2,\"fresh\":1,\"subs\":1,\"sent\":1,\"skipped\":{},\"removed\":0}"
+ },
+ {
+  "name": "encrypted push delivered and shown by the service worker",
+  "ok": true,
+  "extra": "◆ Gold Signal | A Gold Signal just came in, Commander. Pentagon's latest UFO release w"
+ },
+ {
+  "name": "notification carries the story deep link",
+  "ok": true,
+  "extra": ""
+ },
+ {
+  "name": "tapping the alert opens the app on that story",
+  "ok": true,
+  "extra": "Pentagon's latest UFO release will settle no arguments"
+ },
+ {
+  "name": "next scheduled check sends no duplicate",
+  "ok": true,
+  "extra": "{\"events\":2,\"fresh\":0,\"subs\":1,\"sent\":0,\"skipped\":{\"nothing-new\":1},\"removed\":0}"
+ },
+ {
+  "name": "test endpoint delivers \"Test transmission\"",
+  "ok": true,
+  "extra": "HTTP 200"
+ },
+ {
+  "name": "test endpoint refuses a wrong token",
+  "ok": true,
+  "extra": "HTTP 401"
+ },
+ {
+  "name": "turning alerts off deletes the subscription",
+  "ok": true,
+  "extra": "prefs → HTTP 404"
+ },
+ {
+  "name": "no console errors",
+  "ok": true,
+  "extra": ""
+ }
+]
