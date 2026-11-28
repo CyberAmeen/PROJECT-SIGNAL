@@ -1,0 +1,74 @@
+# POCKET SIGNAL: deploys SENTINEL to the STAGING Worker only, then runs the full alert path end to end with a
+# real Chrome push subscription. Never touches the live Worker. Runs on pushes to the pocket-signal work branch.
+name: POCKET SIGNAL staging e2e
+
+on:
+  push:
+    branches: ["pocket-signal"]
+  workflow_dispatch:
+
+concurrency:
+  group: sentinel-staging
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Offline tests (worker + push crypto)
+        working-directory: sentinel
+        run: node test/unit.mjs && node test/push.mjs
+      - name: Guard — staging only
+        run: |
+          grep -q 'name = "project-signal-sentinel-staging"' sentinel/wrangler.toml || { echo "::error::no staging env"; exit 1; }
+          grep -q 'KEY_PREFIX = "staging:"' sentinel/wrangler.toml || { echo "::error::staging KEY_PREFIX missing"; exit 1; }
+      - name: Deploy to staging
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: sentinel
+          environment: staging
+          command: deploy --env staging
+      - name: Staging secrets (fresh admin token + fresh VAPID key, never printed)
+        working-directory: sentinel
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          tok=$(openssl rand -hex 24); echo "::add-mask::$tok"; echo "STAGING_ADMIN=$tok" >> "$GITHUB_ENV"
+          printf '%s' "$tok" | npx --yes wrangler@3 secret put SENTINEL_ADMIN_TOKEN --env staging > /dev/null
+          node ../.github/scripts/vapid-gen.mjs > /tmp/vapid.json
+          npx --yes wrangler@3 secret put VAPID_JWK --env staging < /tmp/vapid.json > /dev/null; rm -f /tmp/vapid.json
+          echo "staging secrets set"
+      - name: Serve the site locally (stamped service worker)
+        run: |
+          mkdir -p _site && rsync -a --exclude '.git' --exclude '.github' --exclude 'sentinel' --exclude 'tools' --exclude '_site' ./ _site/
+          node tools/sw-stamp.mjs _site
+          (cd _site && python3 -m http.server 8080 > /dev/null 2>&1 &)
+          sleep 25
+      - name: End-to-end alert path (real Chrome + push service)
+        env:
+          STAGING: https://project-signal-sentinel-staging.aminhersi10.workers.dev
+          ADMIN: ${{ env.STAGING_ADMIN }}
+        run: |
+          mkdir -p /tmp/e2e && cp .github/scripts/pocket-e2e.mjs /tmp/e2e/ && cd /tmp/e2e
+          npm init -y > /dev/null && npm i playwright@1.49 > /dev/null
+          xvfb-run -a node pocket-e2e.mjs
+      - name: Publish screenshots + results to the e2e-results branch (artifact downloads are not reachable from the build agent)
+        if: always()
+        run: |
+          cd /tmp/e2e && ls *.png e2e-results.json 2>/dev/null || exit 0
+          git init -q r && cp *.png e2e-results.json r/ 2>/dev/null; cd r
+          git config user.name "pocket-e2e"; git config user.email "actions@users.noreply.github.com"
+          git checkout -q -b e2e-results && git add -A && git commit -qm "e2e ${{ github.sha }}"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" e2e-results
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: pocket-e2e, path: "/tmp/e2e/*.png\n/tmp/e2e/e2e-results.json" }

@@ -93,6 +93,8 @@
     setTimeout(() => { gate.remove(); if (SA && SA.zone) SA.zone(true); }, 320);
     try { document.getElementById('refresh')?.focus({ preventScroll: true }); } catch {}
   }
+  // opened from an alert (POCKET SIGNAL): skip the ceremony, keep the person's audio setting untouched
+  window.addEventListener('ps:quickboot', () => { if (busy) return; busy = true; gate.classList.add('pg-opening'); setTimeout(finish, 320); });
   power.addEventListener('click', () => boot(true));
   silent.addEventListener('click', () => boot(false));
   gate.addEventListener('keydown', e => { if (e.key === 'Escape') { e.preventDefault(); boot(false); } });

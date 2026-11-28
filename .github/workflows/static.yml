@@ -38,7 +38,11 @@ jobs:
       - name: Assemble site (website files only; never publish sentinel/)
         run: |
           mkdir -p _site
-          rsync -a --exclude '.git' --exclude '.github' --exclude 'sentinel' --exclude '_site' ./ _site/
+          rsync -a --exclude '.git' --exclude '.github' --exclude 'sentinel' --exclude 'tools' --exclude '_site' ./ _site/
+      - name: Stamp the service worker with this release's build hash (app updates never get stuck)
+        run: |
+          node tools/sw-stamp.mjs _site
+          ! grep -q "__BUILD__" _site/sw.js
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

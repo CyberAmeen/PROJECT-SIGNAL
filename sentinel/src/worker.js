@@ -5,11 +5,15 @@
  * - Rolling 10-day window, server-side relevance filter with an audit log of what was dropped,
  *   story clustering ("covered by N outlets"), credibility tags, and a once-a-day
  *   community slide from Reddit (OAuth, labelled unverified).
- * Secrets (never in code): SERPER_API_KEY, SENTINEL_ADMIN_TOKEN, REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET.
+ * v5.2 (POCKET SIGNAL): anonymous Web Push alerts for Gold Signal and major breaking stories (see push.js).
+ * Secrets (never in code): SERPER_API_KEY, SENTINEL_ADMIN_TOKEN, REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, VAPID_JWK.
  */
 
-const VERSION = '5.1';
+import { pushCheck, handlePush } from './push.js';
+
+const VERSION = '5.2';
 const ORIGIN = 'https://cyberameen.github.io';
+let extraOrigins = []; // staging only: local test pages
 const DAY_MS = 86400000;
 const WINDOW_DAYS = 10;
 const FAIL_AFTER_MS = DAY_MS;
@@ -602,23 +606,42 @@ async function manualScan(request, env) {
   return response({status:'scan_complete', version: VERSION, updatedAt: s.updatedAt, feeds: s.feedStatus, stories: s.stories.length, clusters: s.clusters.length, gold: s.gold}, 200, request);
  } catch (e) { console.error('Manual scan failed:', e); return response({error:'Scan failed', detail: String(e?.message || e)}, 502, request); }
 }
+async function manualPushCheck(request, env) {
+ const token = request.headers.get('X-Sentinel-Admin-Token') || '';
+ if (!env.SENTINEL_ADMIN_TOKEN || token !== env.SENTINEL_ADMIN_TOKEN) return response({error:'Unauthorized'}, 401, request);
+ let body = {}; try { body = await request.json(); } catch {}
+ const snapshot = await env.SENTINEL_KV.get(keysFor(env).snap, 'json');
+ // simulated events are a staging-only test aid: production can only alert on real Gold Signals / major stories
+ const simulate = env.KEY_PREFIX && body.simulate ? body.simulate : null;
+ const report = await pushCheck(env, snapshot || {}, {gold: snapshot ? validGold(snapshot) : null, simulate});
+ return response({ok:true, report}, 200, request);
+}
 function response(body, status = 200, request) {
  const origin = request?.headers.get('Origin');
  const path = request ? new URL(request.url).pathname : '';
- const headers = new Headers({'Content-Type':'application/json; charset=utf-8', 'Cache-Control': path.startsWith('/admin/') ? 'no-store' : 'public, max-age=120', 'X-Content-Type-Options':'nosniff', Vary:'Origin'});
- if (origin === ORIGIN) headers.set('Access-Control-Allow-Origin', ORIGIN);
+ const headers = new Headers({'Content-Type':'application/json; charset=utf-8', 'Cache-Control': path.startsWith('/admin/') || path.startsWith('/v1/push') ? 'no-store' : 'public, max-age=120', 'X-Content-Type-Options':'nosniff', Vary:'Origin'});
+ if (origin === ORIGIN || extraOrigins.includes(origin)) headers.set('Access-Control-Allow-Origin', origin);
  return new Response(JSON.stringify(body), {status, headers});
 }
 const strip = s => { const {sourceState, ...rest} = s; return rest; };
 
 export default {
  async scheduled(event, env, ctx) {
-  ctx.waitUntil(collect(env).catch(e => console.error('Sentinel collection failed:', e?.message || e)));
+  ctx.waitUntil(collect(env)
+   .then(s => pushCheck(env, s, {gold: validGold(s)}).then(r => { if (r.sent || r.removed || r.fresh) console.log('push', JSON.stringify(r)); }).catch(e => console.error('Push check failed:', e?.message || e)))
+   .catch(e => console.error('Sentinel collection failed:', e?.message || e)));
  },
  async fetch(request, env) {
   const url = new URL(request.url);
-  if (request.method === 'OPTIONS') return new Response(null, {status:204, headers:{'Access-Control-Allow-Origin':ORIGIN,'Access-Control-Allow-Methods':'GET, OPTIONS','Access-Control-Allow-Headers':'Content-Type','Access-Control-Max-Age':'86400'}});
+  extraOrigins = env.KEY_PREFIX ? ['http://localhost:8080', 'http://127.0.0.1:8080'] : [];
+  if (request.method === 'OPTIONS') { const o = request.headers.get('Origin'); return new Response(null, {status:204, headers:{'Access-Control-Allow-Origin': extraOrigins.includes(o) ? o : ORIGIN,'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type','Access-Control-Max-Age':'86400', Vary:'Origin'}}); }
   if (url.pathname === '/admin/scan' && request.method === 'POST') return manualScan(request, env);
+  if (url.pathname === '/admin/push/check' && request.method === 'POST') return manualPushCheck(request, env);
+  if (url.pathname.startsWith('/v1/push/')) {
+   if (!env.SENTINEL_KV) return response({error:'Missing SENTINEL_KV binding'}, 503, request);
+   try { return await handlePush(request, env, url, (b, st = 200) => response(b, st, request)); }
+   catch (e) { console.error('push route failed', e?.message || e); return response({error:'Alert service error'}, 500, request); }
+  }
   if (request.method !== 'GET') return response({error:'Method not allowed'}, 405, request);
   if (url.pathname === '/' || url.pathname === '/health') return response({service:'SENTINEL NETWORK', status:'ONLINE', mode:'READ ONLY', version: VERSION}, 200, request);
   if (!['/intel','/v1/briefing','/v1/gold','/v1/regions','/v1/status','/v1/sources','/v1/dropped','/v1/community'].includes(url.pathname)) return response({error:'Not found'}, 404, request);
@@ -656,4 +679,4 @@ export default {
  }
 };
 
-export const __test = {community, keysFor, fetchSource, parseFeed, evaluate, credibility, unwrapLink, splitOutlet, clusterStories, pickRedditPosts, statusOf, health, collect, SOURCES, topic, strip};
+export const __test = {validGold, community, keysFor, fetchSource, parseFeed, evaluate, credibility, unwrapLink, splitOutlet, clusterStories, pickRedditPosts, statusOf, health, collect, SOURCES, topic, strip};

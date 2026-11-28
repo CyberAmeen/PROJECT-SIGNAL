@@ -29,3 +29,21 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           workingDirectory: sentinel
           command: deploy
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: POCKET SIGNAL — create the VAPID key once (kept as a Worker secret, never printed or committed)
+        working-directory: sentinel
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          list=$(npx --yes wrangler@3 secret list) || { echo "::error::could not list secrets — refusing to touch VAPID_JWK"; exit 1; }
+          if printf '%s' "$list" | grep -q '"VAPID_JWK"'; then echo "VAPID_JWK already set — keeping it (existing subscriptions stay valid)"; exit 0; fi
+          node ../.github/scripts/vapid-gen.mjs > /tmp/vapid.json
+          npx --yes wrangler@3 secret put VAPID_JWK < /tmp/vapid.json > /dev/null; rm -f /tmp/vapid.json
+          echo "VAPID_JWK created"
+      - name: Verify the live Worker
+        run: |
+          sleep 15
+          curl -s https://project-signal-sentinel.aminhersi10.workers.dev/health; echo
+          curl -s -o /dev/null -w "push key HTTP %{http_code}\n" https://project-signal-sentinel.aminhersi10.workers.dev/v1/push/key
