@@ -220,7 +220,7 @@
   card.addEventListener('touchend', () => { touch0 = null; if (!tiltOn) setTimeout(() => { if (!touch0 && !tiltOn) parT = { x: parT.x * 0.4, y: parT.y * 0.4 }; }, 900); }, { passive: true });
   function onOrient(e) { if (e.gamma == null) return; parT.x = Math.max(-1, Math.min(1, e.gamma / 22)); parT.y = Math.max(-1, Math.min(1, ((e.beta || 0) - 50) / 26)); }
   function enableTilt(btn) {
-    const go = () => { tiltOn = true; window.addEventListener('deviceorientation', onOrient, { passive: true }); if (btn) { btn.classList.add('on'); btn.setAttribute('aria-pressed', 'true'); btn.querySelector('b').textContent = 'TILT ON'; } ss.set('ps-hub-tilt', '1'); };
+    const go = () => { tiltOn = true; try { window.PSMotion && window.PSMotion.markGranted(); } catch {} window.addEventListener('deviceorientation', onOrient, { passive: true }); if (btn) { btn.classList.add('on'); btn.setAttribute('aria-pressed', 'true'); btn.querySelector('b').textContent = 'TILT ON'; } ss.set('ps-hub-tilt', '1'); };
     const D = window.DeviceOrientationEvent;
     if (D && typeof D.requestPermission === 'function') D.requestPermission().then(s => { if (s === 'granted') go(); else if (btn) { btn.querySelector('b').textContent = 'TILT OFF'; } }).catch(() => {});
     else if (D) go();
