@@ -1,0 +1,229 @@
+{
+ "errors": [],
+ "perf": {
+  "iphone15_baseline_hubIdle": {},
+  "iphone15_baseline_emptyPageScroll": {
+   "frames": 244,
+   "p50": 16.7,
+   "p95": 666.6,
+   "p99": 983.4,
+   "max": 1600.0,
+   "over16_7": 43.9,
+   "over33": 38.9,
+   "longAnimFrames>50ms": 95
+  },
+  "iphone15_entrance": {
+   "frames": 22,
+   "p50": 350.0,
+   "p95": 949.9,
+   "p99": 1566.6,
+   "max": 1566.6,
+   "over16_7": 86.4,
+   "over33": 77.3,
+   "longAnimFrames>50ms": 42
+  },
+  "iphone15_journey": {
+   "frames": 382,
+   "p50": 33.4,
+   "p95": 116.7,
+   "p99": 250.0,
+   "max": 299.9,
+   "over16_7": 66.8,
+   "over33": 45.8,
+   "longAnimFrames>50ms": 252
+  },
+  "iphone15_threadsScroll": {
+   "frames": 131,
+   "p50": 50.1,
+   "p95": 200.0,
+   "p99": 316.6,
+   "max": 316.6,
+   "over16_7": 80.9,
+   "over33": 66.4,
+   "longAnimFrames>50ms": 260
+  },
+  "desktop_baseline_hubIdle": {},
+  "desktop_baseline_emptyPageScroll": {
+   "frames": 244,
+   "p50": 33.3,
+   "p95": 1466.6,
+   "p99": 2733.2,
+   "max": 2749.9,
+   "over16_7": 56.1,
+   "over33": 38.9,
+   "longAnimFrames>50ms": 86
+  },
+  "desktop_entrance": {
+   "frames": 9,
+   "p50": 566.7,
+   "p95": 1433.3,
+   "p99": 1433.3,
+   "max": 1433.3,
+   "over16_7": 100.0,
+   "over33": 100.0,
+   "longAnimFrames>50ms": 22
+  },
+  "desktop_journey": {
+   "frames": 175,
+   "p50": 66.7,
+   "p95": 216.6,
+   "p99": 250.0,
+   "max": 316.7,
+   "over16_7": 99.4,
+   "over33": 92.6,
+   "longAnimFrames>50ms": 396
+  },
+  "desktop_threadsScroll": {
+   "frames": 77,
+   "p50": 100.1,
+   "p95": 266.7,
+   "p99": 1050.0,
+   "max": 1050.0,
+   "over16_7": 100.0,
+   "over33": 96.1,
+   "longAnimFrames>50ms": 300
+  }
+ },
+ "memory": {
+  "iphone15": {
+   "hubBeforeOpen": {
+    "jsHeapMB": 1.64,
+    "nodes": 1794,
+    "listeners": 278
+   },
+   "afterOpen": {
+    "jsHeapMB": 4.15,
+    "nodes": 3575,
+    "listeners": 310
+   },
+   "afterJourneyAndBack": {
+    "jsHeapMB": 3.91,
+    "nodes": 3782,
+    "listeners": 389
+   },
+   "afterSecondRoundTrip": {
+    "jsHeapMB": 3.92,
+    "nodes": 3775,
+    "listeners": 389
+   }
+  },
+  "desktop": {
+   "hubBeforeOpen": {
+    "jsHeapMB": 1.62,
+    "nodes": 1844,
+    "listeners": 281
+   },
+   "afterOpen": {
+    "jsHeapMB": 3.64,
+    "nodes": 3679,
+    "listeners": 313
+   },
+   "afterJourneyAndBack": {
+    "jsHeapMB": 3.86,
+    "nodes": 3832,
+    "listeners": 392
+   },
+   "afterSecondRoundTrip": {
+    "jsHeapMB": 3.88,
+    "nodes": 3825,
+    "listeners": 392
+   }
+  }
+ },
+ "images": {
+  "total": 86,
+  "ok": 86,
+  "failed": [],
+  "withImage": 43
+ },
+ "reduced": {
+  "open": true,
+  "entranceGone": true,
+  "visibleCards": 47,
+  "ambientCanvas": 1
+ },
+ "checks": {
+  "iphone15_portals": [
+   [
+    298,
+    80
+   ],
+   [
+    298,
+    80
+   ],
+   [
+    298,
+    80
+   ]
+  ],
+  "iphone15_notice": "No scan yet \u00b7 tap Initiate to begin | LAST SCAN: NEVER",
+  "iphone15_endState": {
+   "era": "sensor",
+   "item": 46,
+   "year": "2026",
+   "bgLayers": 2,
+   "pools": 1,
+   "imgsAttached": 4,
+   "imgsLoaded": 4,
+   "budget": 0.45
+  },
+  "iphone15_stat": "You traveled 10,025 years. 47 encounters. Every era. Every continent.",
+  "iphone15_sheet": [
+   "Roswell",
+   3,
+   true
+  ],
+  "iphone15_closed": [
+   false,
+   "",
+   ""
+  ],
+  "iphone15_atlasHandoff": [
+   true,
+   true,
+   "Roswell debris recovery"
+  ],
+  "desktop_portals": [
+   [
+    333,
+    86
+   ],
+   [
+    333,
+    86
+   ],
+   [
+    333,
+    86
+   ]
+  ],
+  "desktop_notice": "No scan yet \u00b7 tap Initiate to begin | LAST SCAN: NEVER",
+  "desktop_endState": {
+   "era": "sensor",
+   "item": 46,
+   "year": "2026",
+   "bgLayers": 2,
+   "pools": 1,
+   "imgsAttached": 4,
+   "imgsLoaded": 4,
+   "budget": 0.45
+  },
+  "desktop_stat": "You traveled 10,025 years. 47 encounters. Every era. Every continent.",
+  "desktop_sheet": [
+   "Roswell",
+   3,
+   true
+  ],
+  "desktop_closed": [
+   false,
+   "",
+   ""
+  ],
+  "desktop_atlasHandoff": [
+   true,
+   true,
+   "Roswell debris recovery"
+  ]
+ }
+}
