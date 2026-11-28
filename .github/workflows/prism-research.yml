@@ -1,0 +1,18 @@
+# Research only: fetch public-domain Natural Earth populated places and keep US cities. Never deploys.
+name: prism-research
+on: { push: { branches: [prism-research] } }
+permissions: { contents: write }
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -sL -o ne.json https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_populated_places_simple.geojson
+          node -e '
+            const g=JSON.parse(require("fs").readFileSync("ne.json","utf8"));
+            const us=g.features.map(f=>f.properties).filter(p=>p.adm0_a3==="USA"||p.sov_a3==="US1"&&p.adm0name==="United States of America")
+              .map(p=>({n:p.name,s:p.adm1name,lat:+(+p.latitude).toFixed(3),lon:+(+p.longitude).toFixed(3),pop:p.pop_max||p.pop_min||0}))
+              .filter(p=>p.pop>0).sort((a,b)=>b.pop-a.pop);
+            require("fs").writeFileSync("us-places.json",JSON.stringify({source:"Natural Earth 10m populated places (public domain), nvkelso/natural-earth-vector",count:us.length,places:us}));
+            console.log(us.length, us.slice(0,5));'
+          git init -q out && cd out && cp ../us-places.json . && git checkout -q -b prism-research-results && git add . && git -c user.name=bot -c user.email=bot@example.com commit -qm "US places" && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" prism-research-results
