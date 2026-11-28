@@ -256,7 +256,7 @@
   /* ---------------------------------------------------------------- AMBIENT EVENTS (shuffled bag, never the same twice in a row) */
   const ev = { sh: [0, 0, 0, -1], co: [0, 0, 0, -1], pg: [0, 0, -1, 0], au: -99, foc: null };
   let bag = [], lastEv = '', evTimer = 0, clock = 0;
-  const audible = () => { const s = SA(); return !!(s && s.live && s.live() && document.body && !document.body.classList.contains('stream-active') && !(document.getElementById('atlas-shell') && !document.getElementById('atlas-shell').hidden)); };
+  const audible = () => { const s = SA(); return !!(s && s.live && s.live() && document.body && !document.body.classList.contains('stream-active') && !document.body.classList.contains('lw-open') && !(document.getElementById('atlas-shell') && !document.getElementById('atlas-shell').hidden)); };
   function nextEvent() {
     if (!bag.length) { bag = ['shoot', 'comet', 'aurora', 'ping', 'shoot', 'flyby', 'ping']; for (let i = bag.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [bag[i], bag[j]] = [bag[j], bag[i]]; } }
     let k = bag.findIndex(x => x !== lastEv); if (k < 0) k = 0; const e = bag.splice(k, 1)[0]; lastEv = e; fire(e);
@@ -358,7 +358,7 @@
 
   /* ---------------------------------------------------------------- VISIBILITY: pause off-screen, release GPU when covered */
   let onScreen = true;
-  const covered = () => document.body.classList.contains('stream-active') || !!(document.getElementById('atlas-shell') && !document.getElementById('atlas-shell').hidden) || !!document.querySelector('.ax-boot:not(.ax-leave)');
+  const covered = () => document.body.classList.contains('stream-active') || document.body.classList.contains('lw-open') || !!(document.getElementById('atlas-shell') && !document.getElementById('atlas-shell').hidden) || !!document.querySelector('.ax-boot:not(.ax-leave)');
   const wanted = () => !document.hidden && onScreen && !covered();
   function sync() { if (covered()) { if (alive) dispose(); return; } if (wanted()) start(); else stop(); }
   document.addEventListener('visibilitychange', sync);

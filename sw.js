@@ -24,6 +24,8 @@ self.addEventListener('install', event => {
     for (const m of html.matchAll(/\b(?:src|href)="([^"#]+)"/g)) { const u = m[1]; if (!/^(?:[a-z]+:|\/\/)/i.test(u) && !/apple-touch-startup|splash\//.test(u)) urls.add(u.replace(/&amp;/g, '&')); }
     const stamp = (html.match(/intel-signal\.js\?v=([^"&]+)/) || [])[1]; // the scene pack loads lazily with this stamp
     if (stamp) { urls.add('intel-scenes-x.js?v=' + stamp); urls.add('intel-scenes-x.css?v=' + stamp); }
+    const lw = (html.match(/long-watch-boot\.js\?v=([^"&]+)/) || [])[1]; // THE LONG WATCH loads lazily with the boot stamp
+    if (lw) for (const f of ['long-watch.css', 'long-watch.js', 'long-watch-data.js']) urls.add(f + '?v=' + lw);
     await Promise.all([...urls].map(async u => {
       try { const r = await fetch(u, { cache: 'reload' }); if (r.ok) await cache.put(u, r); } catch {}
     }));

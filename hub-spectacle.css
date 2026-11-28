@@ -67,8 +67,32 @@
 /* colourways — restored from the pre-Spectacle hub (git history), tuned for the new scene */
 .bridge-console .ps-portal.ps-portal--intel{--pp-grad:linear-gradient(105deg,#e7c1fc 0%,#c8d6fb 30%,#a6e5f3 58%,#ffe1a9 100%);--pp-ink:#081727;--pp-edge:#f4e9ff;--pp-glow:169,223,255;--pp-glow2:226,181,255;--pp-chip:rgba(11,38,55,.14)}
 .bridge-console .ps-portal.ps-portal--atlas{--pp-grad:linear-gradient(112deg,#0b8f6c 0%,#36d18f 22%,#5deca1 48%,#c5fa73 80%,#f3ed92 100%);--pp-ink:#04241c;--pp-edge:#9cffb8;--pp-glow:61,255,170;--pp-glow2:197,250,115;--pp-chip:rgba(5,46,44,.22);--pp-delay:2.4s}
+/* THE LONG WATCH — molten copper flowing into deep violet */
+.bridge-console .ps-portal.ps-portal--watch{--pp-grad:linear-gradient(108deg,#ffd9a8 0%,#f4a66a 20%,#d9703f 40%,#a8467a 66%,#5b2f9c 86%,#3a1f78 100%);--pp-ink:#1f0b06;--pp-edge:#ffc896;--pp-glow:240,140,80;--pp-glow2:140,80,220;--pp-chip:rgba(255,236,220,.2);--pp-delay:4.8s}
+.ps-portal--watch .lw-launch-right{color:#fff3e6!important;border-color:rgba(255,255,255,.28)!important}
+.ps-portal--watch .lw-molten{position:absolute;inset:0 -100% 0 -100%;z-index:0;pointer-events:none;opacity:.55;transform:translate3d(-25%,0,0);will-change:transform;
+  background:radial-gradient(40% 120% at 20% 110%,rgba(255,236,200,.55),transparent 60%),radial-gradient(30% 90% at 55% -20%,rgba(255,210,160,.45),transparent 60%),radial-gradient(35% 110% at 85% 120%,rgba(255,190,140,.35),transparent 60%);
+  animation:lwMolten 9s ease-in-out infinite alternate}
+@keyframes lwMolten{to{transform:translate3d(25%,0,0)}}
+.ps-portal--watch .lw-glyph{filter:drop-shadow(0 0 6px rgba(255,214,170,.75))!important;color:#2a0f08}
+.ps-portal--watch .lw-glyph-orbit{transform-origin:20px 20px;animation:lwOrbit 14s linear infinite reverse}
+.ps-portal--watch .lw-glyph-star{animation:lwStarFall 2.8s cubic-bezier(.5,0,.6,1) infinite}
+@keyframes lwOrbit{to{transform:rotate(360deg)}}
+@keyframes lwStarFall{0%,12%{transform:translateY(-3px);opacity:0}25%{opacity:1}70%{transform:translateY(8px);opacity:1}86%,100%{transform:translateY(9px);opacity:0}}
+.ps-portal--watch.is-loading .lw-glyph-orbit{animation-duration:1.6s}
+/* Portal grid: every portal identical in width and height. Phones stack full-width; wide consoles put 3 side by side;
+   a 4th portal turns the set into a balanced 2 × 2. Counting uses :has() (fallback: the auto-fit grid above). */
+@media (min-width:900px){
+  /* with 3+ portals the console spans the card (like the telemetry row): ~390 px per portal at 1440 */
+  .hero.cosmic-bridge.hs-on{container-type:inline-size}
+  /* keep the console clear of the telemetry band (it used to tuck ~55 px underneath) */
+  .hero.cosmic-bridge.hs-on .bridge-content{padding-bottom:172px}
+  .hs-on .bridge-console:has(> .ps-portal:nth-of-type(3)){width:calc(100cqw - 2 * clamp(25px,5vw,76px));max-width:none;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .hs-on .bridge-console:has(> .ps-portal:nth-of-type(4)){grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:899px){.hs-on .bridge-console:has(> .ps-portal:nth-of-type(3)){grid-template-columns:minmax(0,1fr)}}
 /* future sections drop in with a colourway only, e.g.
-   .ps-portal--timeline{--pp-grad:…;--pp-ink:…;--pp-edge:…;--pp-glow:…;--pp-glow2:…} */
+   .ps-portal--files{--pp-grad:…;--pp-ink:…;--pp-edge:…;--pp-glow:…;--pp-glow2:…} */
 
 /* icon motion */
 .ps-portal--intel .scan-glyph{animation:scanCoreSpin 9s linear infinite!important;filter:drop-shadow(0 0 6px rgba(80,120,255,.45))!important;color:#123a6b}
@@ -81,7 +105,7 @@
 @keyframes ppCorePulse{50%{transform:scale(.84);opacity:.75}}
 @keyframes scanCoreCounter{to{transform:rotate(-360deg)}}
 @media (max-width:420px){.bridge-console .ps-portal.ps-portal{--pp-h:80px;padding:0 12px 0 12px!important;gap:10px}.bridge-console .ps-portal.ps-portal>span:first-child>svg{width:40px!important;height:40px!important;flex-basis:40px}}
-@media (prefers-reduced-motion:reduce){.bridge-console .ps-portal.ps-portal,.bridge-console .ps-portal.ps-portal::before,.bridge-console .ps-portal.ps-portal .scan-glyph,.bridge-console .ps-portal.ps-portal .scan-glyph *,.bridge-console .ps-portal.ps-portal .atlas-insignia *{animation:none!important}.bridge-console .ps-portal.ps-portal:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){.bridge-console .ps-portal.ps-portal,.bridge-console .ps-portal.ps-portal::before,.bridge-console .ps-portal.ps-portal .scan-glyph,.bridge-console .ps-portal.ps-portal .scan-glyph *,.bridge-console .ps-portal.ps-portal .atlas-insignia *,.ps-portal--watch .lw-molten,.ps-portal--watch .lw-glyph *{animation:none!important}.bridge-console .ps-portal.ps-portal:hover{transform:none}}
 
 /* tilt chip, tap readout */
 .hs-tilt{position:absolute;z-index:7;top:clamp(54px,7vw,70px);right:clamp(14px,3vw,26px);display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 11px;border-radius:999px;
