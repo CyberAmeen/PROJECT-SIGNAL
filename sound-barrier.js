@@ -359,7 +359,7 @@
     restart() { const s = this.slide || $('.ix-slide.is-visible', streamShell); this.slide = null; this.start(s); },
     stop() { clearInterval(this.timer); this.timer = 0; if (this.b) this.b.stop(0.8); const g = this.g; if (g) setTimeout(() => g.kill(0.4), 1500); this.b = null; this.g = null; this.slide = null; },
     tick() {
-      if (!this.slide || !live() || !this.slide.classList.contains('is-visible')) return;
+      if (!this.slide || !live() || window.__psGliding || !this.slide.classList.contains('is-visible')) return; // SILK: never query animations mid-swipe
       this.def.events.forEach((e, ei) => {
         $$(e.sel, this.slide).forEach((el, idx) => {
           const an = el.getAnimations && el.getAnimations().find(a => a.animationName === e.anim); if (!an || an.playState !== 'running') return;

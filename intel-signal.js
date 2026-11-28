@@ -117,7 +117,7 @@
       case 'cosmos': return `
         <div class="cx-planet"><i></i></div>
         <div class="cx-ant"><div class="cx-beam"></div><div class="cx-pulses"><i></i><i></i><i></i></div>
-          <svg class="cx-dish" viewBox="0 0 200 170"><defs><linearGradient id="cxg${c.seed % 997}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfeaff" stop-opacity=".9"/><stop offset="1" stop-color="#3d8bff" stop-opacity=".25"/></linearGradient></defs>
+          <svg class="cx-dish" viewBox="0 0 200 170"><defs><linearGradient id="cxg${c.seed % 997}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--t-dish1,#cfeaff)" stop-opacity=".9"/><stop offset="1" style="stop-color:var(--t-dish2,#3d8bff)" stop-opacity=".25"/></linearGradient></defs>
             <path class="bowl" d="M14 58 Q100 132 186 58 Q100 96 14 58Z" fill="url(#cxg${c.seed % 997})"/>
             <path d="M14 58 Q100 96 186 58" /><path d="M40 70 L100 22 L160 70 M100 22 L100 88" />
             <circle cx="100" cy="20" r="5"/>
@@ -128,7 +128,7 @@
         <div class="kx-stage"><div class="kx-holo"><i class="kx-r r1"></i><i class="kx-r r2"></i><i class="kx-r r3"></i><i class="kx-dome"></i></div></div>
         <div class="kx-scan"></div><div class="kx-tag">SCHEMATIC · ILLUSTRATIVE</div>`;
       case 'hearing': return `
-        <svg class="hx-arc" viewBox="0 0 400 200">${Array.from({ length: 4 }, (_, r) => Array.from({ length: 11 + r * 3 }, (_, i) => { const cnt = 11 + r * 3; const ang = Math.PI * (0.1 + 0.8 * i / (cnt - 1)); const R = 80 + r * 26; return `<circle cx="${(200 - Math.cos(ang) * R).toFixed(1)}" cy="${(190 - Math.sin(ang) * R * 0.62).toFixed(1)}" r="3" style="--k:${((i * 7 + r * 3) % 11)}"/>`; }).join('')).join('')}</svg>
+        <div class="hx-arc">${Array.from({ length: 4 }, (_, r) => Array.from({ length: 11 + r * 3 }, (_, i) => { const cnt = 11 + r * 3; const ang = Math.PI * (0.1 + 0.8 * i / (cnt - 1)); const R = 80 + r * 26; return `<i style="left:${((200 - Math.cos(ang) * R) / 4).toFixed(2)}%;top:${((190 - Math.sin(ang) * R * 0.62) / 2).toFixed(2)}%;--k:${((i * 7 + r * 3) % 11)}"></i>`; }).join('')).join('')}</div>
         <div class="hx-wave">${Array.from({ length: 24 }, (_, i) => `<i style="--k:${i};--a:${(0.3 + rng() * 0.7).toFixed(2)}"></i>`).join('')}</div>
         <div class="hx-lines"><i></i><i></i><i></i></div><div class="hx-tag">TESTIMONY · RECORDED</div>`;
       default:
@@ -140,13 +140,26 @@
   }
   /* Only the visible transmission and its neighbours keep a live scene (memory: iOS reloads the tab
      when too many composited layers pile up). Everything else is an empty, cheap slot. */
-  let sceneCache = [];
-  function mountScenes(center) {
-    $$('.ix-scene-slot', view).forEach(slot => {
-      const k = Number(slot.dataset.slot), want = Math.abs(k - center) <= 1;
-      if (want && !slot.firstElementChild && sceneCache[k]) slot.innerHTML = sceneCache[k];
-      else if (!want && slot.firstElementChild) slot.textContent = '';
-    });
+  let sceneCache = [], slotEls = [], mountJob = 0, dropJob = 0;
+  const idle = (fn, timeout) => (window.requestIdleCallback ? requestIdleCallback(fn, { timeout }) : setTimeout(fn, 32));
+  const unidle = id => (window.cancelIdleCallback ? cancelIdleCallback(id) : clearTimeout(id));
+  const mountOne = k => { const slot = slotEls[k]; if (slot && !slot.firstElementChild && sceneCache[k]) { slot.innerHTML = sceneCache[k]; return true; } return false; };
+  /* SILK: the neighbours either side are always ready before a swipe starts (±2 window, built while the
+     person is idle); scenes that fall out of the window are dropped later, never during a gesture. */
+  function mountScenes(center, now) {
+    if (!slotEls.length) slotEls = $$('.ix-scene-slot', view);
+    mountOne(center);
+    if (now) { mountOne(center + 1); mountOne(center - 1); }
+    unidle(mountJob); unidle(dropJob);
+    const queue = [center + 1, center - 1, center + 2, center - 2];
+    const work = deadline => {
+      while (queue.length && (!deadline || deadline.timeRemaining() > 4 || deadline.didTimeout)) { mountOne(queue.shift()); if (deadline && !deadline.didTimeout) continue; break; }
+      if (queue.length) mountJob = idle(work, 400);
+    };
+    mountJob = idle(work, 250);
+    // hard cap: never more than 7 live scenes (+ end card); the ±3 ring is released in idle time
+    slotEls.forEach((slot, k) => { if (Math.abs(k - center) > 3 && slot.firstElementChild) slot.textContent = ''; });
+    dropJob = idle(() => { slotEls.forEach((slot, k) => { if (Math.abs(k - center) > 2 && slot.firstElementChild) slot.textContent = ''; }); }, 800);
   }
   /* ---------------------------------------------------------------- GALACTIC REGIONS
      Each slide is lit by a region: scene hue/saturation, background, glows, accent lines and a decorative HUD.
@@ -176,7 +189,18 @@
     return seq;
   }
   const regionOf = i => REGIONS[regionSeq[i] ?? 0];
-  function rgAttr(i) { const r = regionOf(i); return `data-region="${h(r.name)}" style="--rg-a:${r.a};--rg-b:${r.b};--rg-c:${r.c};--rg-acc:${r.acc};--rg-pan:${r.pan};--rg-sat:${r.sat};--rg-bri:${r.bri}"`; }
+  /* SILK: the colour shift each region used to apply with a live CSS filter, computed once instead
+     (same sRGB matrices as CSS hue-rotate/saturate/brightness; the CSS side lives in intel-tint.css). */
+  function tintHex(hex, deg, sat, bri) {
+    const n = parseInt(hex.slice(1), 16), v = [(n >> 16 & 255) / 255, (n >> 8 & 255) / 255, (n & 255) / 255];
+    const a = deg * Math.PI / 180, c = Math.cos(a), s = Math.sin(a), cl = x => Math.max(0, Math.min(1, x));
+    const H = [[0.213 + c * 0.787 - s * 0.213, 0.715 - c * 0.715 - s * 0.715, 0.072 - c * 0.072 + s * 0.928], [0.213 - c * 0.213 + s * 0.143, 0.715 + c * 0.285 + s * 0.140, 0.072 - c * 0.072 - s * 0.283], [0.213 - c * 0.213 - s * 0.787, 0.715 - c * 0.715 + s * 0.715, 0.072 + c * 0.928 + s * 0.072]];
+    const S = [[0.213 + 0.787 * sat, 0.715 - 0.715 * sat, 0.072 - 0.072 * sat], [0.213 - 0.213 * sat, 0.715 + 0.285 * sat, 0.072 - 0.072 * sat], [0.213 - 0.213 * sat, 0.715 - 0.715 * sat, 0.072 + 0.928 * sat]];
+    const m = (M, w) => M.map(r => cl(r[0] * w[0] + r[1] * w[1] + r[2] * w[2]));
+    return '#' + m(S, m(H, v)).map(x => Math.round(cl(x * bri) * 255).toString(16).padStart(2, '0')).join('');
+  }
+  const tintOf = (R, hex) => tintHex(hex, R.hue, R.sat, R.bri);
+  function rgAttr(i) { const r = regionOf(i), k = REGIONS.indexOf(r); return `data-region="${h(r.name)}" data-rk="${k}" style="--rg-a:${r.a};--rg-b:${r.b};--rg-c:${r.c};--rg-acc:${r.acc};--rg-pan:${r.pan};--rg-sat:${r.sat};--rg-bri:${r.bri};--nxa:${tintHex(r.a, 0, r.sat, r.bri)};--nxb:${tintHex(r.b, 0, r.sat, r.bri)};--nxc:${tintHex(r.c, 0, r.sat, r.bri)}"`; }
   /* ---------------------------------------------------------------- NEW HORIZONS: scene rotation
      Topical scenes (vault, tracker, specimen, dossier, testimony, salvage, nightwatch) still answer stories that match them,
      but no scene may return within the last 8 slides. Everything else draws from a seeded per-session shuffle-bag of the
@@ -233,9 +257,10 @@
     const rng = rngFrom(c.seed + 17);
     const R = regionOf(i), hue = Math.round(R.hue + rng() * 12 - 6), tilt = (rng() * 10 - 5).toFixed(1);
     const neb = `--nx:${(20 + rng() * 60).toFixed(0)}%;--ny:${(15 + rng() * 40).toFixed(0)}%;--nx2:${(10 + rng() * 80).toFixed(0)}%;--ny2:${(40 + rng() * 40).toFixed(0)}%`;
-    return `<div class="ix-scene sc-${c.scene}${X() && X().SCENES[c.scene] ? ' nx' : ''}" aria-hidden="true" style="--hue:${hue}deg;--tilt:${tilt}deg;${neb};--spd:${(0.85 + rng() * 0.4).toFixed(2)}">
-      <div class="ix-px" style="--d:.25"><div class="ix-stars s1" style="box-shadow:${stars(rng, 70, ['#9fd8ff', '#ffffff', '#7da7ff'])}"></div></div>
-      <div class="ix-px" style="--d:.55"><div class="ix-nebula"></div><div class="ix-stars s2" style="box-shadow:${stars(rng, 36, ['#cfe9ff', '#8fb8ff', '#b9a8ff'])}"></div></div>
+    const nx = !!(X() && X().SCENES[c.scene]);
+    return `<div class="ix-scene sc-${c.scene}${nx ? ' nx' : ''}" aria-hidden="true" style="--tilt:${tilt}deg;${neb};--spd:${(0.85 + rng() * 0.4).toFixed(2)};--t-dish1:${tintOf(R, '#cfeaff')};--t-dish2:${tintOf(R, '#3d8bff')}">
+      <div class="ix-px" style="--d:.25"><div class="ix-stars s1" style="box-shadow:${stars(rng, 70, nx ? ['#9fd8ff', '#ffffff', '#7da7ff'] : ['#9fd8ff', '#ffffff', '#7da7ff'].map(x => tintOf(R, x)))}"></div></div>
+      <div class="ix-px" style="--d:.55"><div class="ix-nebula"></div><div class="ix-stars s2" style="box-shadow:${stars(rng, 36, nx ? ['#cfe9ff', '#8fb8ff', '#b9a8ff'] : ['#cfe9ff', '#8fb8ff', '#b9a8ff'].map(x => tintOf(R, x)))}"></div></div>
       <div class="ix-px ix-core" style="--d:1">${centerpiece(c, rng)}</div>
       <div class="ix-hud"><s></s><s></s><s></s><s></s>
         <span class="ix-hud-tl" title="Decorative navigation readout — not where the story came from">◈ ${h(R.name.toUpperCase())} · SECTOR ${R.code}-${String(100 + Math.floor(rng() * 900))}</span>
@@ -346,7 +371,7 @@
     const close = $('#stream-close', controls); if (close) { close.innerHTML = '✕<span class="ix-hide-sm">&nbsp;HUB</span>'; close.setAttribute('aria-label', 'Close and return to hub'); }
     badge = $('.ix-badge', btns);
     rail = document.createElement('nav'); rail.className = 'ix-rail'; rail.setAttribute('aria-label', 'Transmissions'); shell.append(rail);
-    warp = document.createElement('canvas'); warp.className = 'ix-warp'; warp.setAttribute('aria-hidden', 'true'); shell.append(warp);
+    warp = document.createElement('div'); warp.className = 'ix-warp'; warp.setAttribute('aria-hidden', 'true'); shell.append(warp);
     toastEl = document.createElement('div'); toastEl.className = 'ix-toast'; toastEl.setAttribute('role', 'status'); toastEl.setAttribute('aria-live', 'polite'); shell.append(toastEl);
     sheet = document.createElement('aside'); sheet.className = 'ix-sheet'; sheet.hidden = true; sheet.setAttribute('aria-label', 'Saved transmissions'); shell.append(sheet);
     refreshTools();
@@ -365,8 +390,12 @@
     const n = list.length + 1;
     rail.innerHTML = `<span class="ix-rail-n"><b>01</b>/${pad(list.length)}</span><div class="ix-rail-track">${Array.from({ length: n }, (_, i) => `<button type="button" data-ix-go="${i}" aria-label="${i < list.length ? 'Transmission ' + (i + 1) : 'Scan summary'}"></button>`).join('')}</div>`;
   }
-  function updateRail() {
-    if (!rail) return; $$('[data-ix-go]', rail).forEach((b, i) => { b.classList.toggle('on', i === idx); b.classList.toggle('seen', i < list.length && rank.today.includes(list[i].id)); });
+  let railBtns = [], railOn = -1;
+  function updateRail(all) {
+    if (!rail) return; if (!railBtns.length) railBtns = $$('[data-ix-go]', rail);
+    if (all) railBtns.forEach((b, i) => b.classList.toggle('seen', i < list.length && rank.today.includes(list[i].id)));
+    if (railBtns[railOn]) railBtns[railOn].classList.remove('on');
+    if (railBtns[idx]) railBtns[idx].classList.add('on'); railOn = idx;
     const n = $('.ix-rail-n b', rail); if (n) n.textContent = pad(Math.min(idx + 1, list.length));
   }
   function renderSheet() {
@@ -441,18 +470,26 @@
     sceneSeq = buildScenes(list);
     sceneCache = list.map((c, i) => sceneHTML(withScene(c, i), i));
     view.innerHTML = list.map((c, i) => slideHTML(c, i, list.length, i === 0)).join('') + endHTML(list.length);
+    slideEls = []; slotEls = []; railBtns = []; viewH = 0; veilPair = -1; ensureVeil();
     buildRail(); idx = -1;
   }
-  function slides() { return $$('.stream-slide', view); }
-  function go(i, instant) { const s = slides(); if (!s.length) return; i = Math.max(0, Math.min(i, s.length - 1)); view.scrollTo({ top: s[i].offsetTop - view.offsetTop * 0 - (s[0].offsetTop || 0), behavior: instant || reduced() ? 'auto' : 'smooth' }); shell.scrollTop = 0; if (instant || reduced() || Math.abs(view.scrollTop - (s[i].offsetTop - (s[0].offsetTop || 0))) < 2) setIndex(i, !!instant); }
+  let slideEls = [];
+  function slides() { if (!slideEls.length || !slideEls[0].isConnected) slideEls = $$('.stream-slide', view); return slideEls; }
+  let navTarget = -1;
+  function go(i, instant) { const s = slides(); if (!s.length) return; i = Math.max(0, Math.min(i, s.length - 1)); navTarget = i; view.scrollTo({ top: s[i].offsetTop - view.offsetTop * 0 - (s[0].offsetTop || 0), behavior: instant || reduced() ? 'auto' : 'smooth' }); shell.scrollTop = 0; if (instant || reduced() || Math.abs(view.scrollTop - (s[i].offsetTop - (s[0].offsetTop || 0))) < 2) setIndex(i, !!instant); }
   function indexFromScroll() { return Math.round(view.scrollTop / Math.max(1, view.clientHeight)); }
   function setIndex(i, initial) {
     const s = slides(); if (!s.length) return; i = Math.max(0, Math.min(i, s.length - 1)); if (i === idx) return;
     const prev = idx; idx = i; try { streamIndex = i; } catch {}
-    mountScenes(i); saveResume();
-    s.forEach((el, k) => el.classList.toggle('is-visible', k === i));
-    const el = s[i];
-    if (!initial && !reduced()) { burst(i > prev ? 1 : -1, regionOf(i), Math.abs(swipeV) > 1.6); Sound.play('whoosh', { dir: i > prev ? 1 : -1 }); el.classList.remove('ix-arrive'); void el.offsetWidth; el.classList.add('ix-arrive'); }
+    mountScenes(i, Math.abs(i - prev) > 1 || prev < 0); saveResume();
+    if (s[prev]) s[prev].classList.remove('is-visible', 'ix-arrive');
+    const el = s[i]; el.classList.add('is-visible');
+    if (tiltOn || tx || ty) { if (s[prev]) { s[prev].style.removeProperty('--tx'); s[prev].style.removeProperty('--ty'); } applyTilt(); }
+    if (!initial && !reduced()) {
+      if (soft !== i) Sound.play('whoosh', { dir: i > prev ? 1 : -1 });
+      el.classList.remove('ix-arrive'); requestAnimationFrame(() => el.classList.add('ix-arrive')); // restart without a forced reflow
+    }
+    soft = i;
     const title = $('.ix-title span', el); if (title) holo(title);
     updateRail();
     try { window.dispatchEvent(new CustomEvent('intel:slide', { detail: { index: i, initial: !!initial, sotd: i === 0 && list.length > 0, end: i === list.length } })); } catch {}
@@ -470,7 +507,7 @@
       const after = rankOf(rank.n);
       if (after > before) rankUp(RANKS[after][0]);
     }
-    if (changed) { store.set('ps-intel-rank-v1', rank); refreshTools(); updateRail(); }
+    if (changed) { store.set('ps-intel-rank-v1', rank); refreshTools(); updateRail(true); }
   }
   function rankUp(name) {
     Sound.play('rank');
@@ -484,7 +521,7 @@
     const full = span.dataset.full || span.textContent; span.dataset.full = full;
     if (reduced()) { span.textContent = full; return; }
     const start = performance.now(), dur = Math.min(1100, 320 + full.length * 7);
-    span.parentElement.classList.remove('ix-flicker'); void span.offsetWidth; span.parentElement.classList.add('ix-flicker');
+    span.parentElement.classList.remove('ix-flicker'); requestAnimationFrame(() => span.parentElement.classList.add('ix-flicker'));
     let lastTick = 0;
     const step = now => {
       if (span.dataset.full !== full) return;
@@ -503,7 +540,7 @@
     clearInterval(ticker);
     ticker = setInterval(() => {
       if (shell.hidden) { clearInterval(ticker); return; }
-      const el = slides()[idx]; if (!el || reduced()) return;
+      const el = slides()[idx]; if (!el || reduced() || scrolling) return;
       $$('[data-tick]', el).forEach(t => {
         const [min, max, dec, suf] = t.dataset.tick.split('|'); const lo = +min, hi = +max;
         let v = parseFloat(t.dataset.v); if (!Number.isFinite(v)) v = lo + Math.random() * (hi - lo);
@@ -513,34 +550,9 @@
     }, 140);
   }
 
-  /* hyperspace streak burst between transmissions */
-  let burstRaf = 0;
-  const rgbOf = hx => { const n = parseInt(hx.slice(1), 16); return `${n >> 16 & 255},${n >> 8 & 255},${n & 255}`; };
-  function burst(dir, R, fast) {
-    if (!warp) return;
-    const dpr = Math.min(2, devicePixelRatio || 1), w = shell.clientWidth, hgt = shell.clientHeight;
-    if (warp.width !== Math.round(w * dpr) || warp.height !== Math.round(hgt * dpr)) { warp.width = Math.round(w * dpr); warp.height = Math.round(hgt * dpr); }
-    const ctx = warp.getContext('2d'); if (!ctx) return; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const cx = w / 2, cy = hgt * (dir > 0 ? 0.42 : 0.58), N = 150, max = Math.hypot(w, hgt) * 0.6;
-    const parts = Array.from({ length: N }, () => ({ a: Math.random() * Math.PI * 2, r: Math.random() * max * 0.25, v: 0.6 + Math.random() * 1.6, c: Math.random() < 0.55 ? rgbOf((R || REGIONS[8]).b) : (Math.random() < 0.5 ? '255,255,255' : rgbOf((R || REGIONS[8]).c)) }));
-    const t0 = performance.now(), D = fast ? 360 : 560; cancelAnimationFrame(burstRaf); warp.classList.add('on');
-    const frame = now => {
-      const p = Math.min(1, (now - t0) / D), e = p * p;
-      ctx.clearRect(0, 0, w, hgt);
-      const alpha = p < 0.35 ? p / 0.35 : 1 - (p - 0.35) / 0.65;
-      parts.forEach(s => {
-        const r1 = s.r + e * max * s.v, r0 = Math.max(0, r1 - (20 + e * 260) * s.v);
-        ctx.strokeStyle = `rgba(${s.c},${(alpha * 0.85).toFixed(3)})`; ctx.lineWidth = s.v > 1.6 ? 1.8 : 1;
-        ctx.beginPath(); ctx.moveTo(cx + Math.cos(s.a) * r0, cy + Math.sin(s.a) * r0); ctx.lineTo(cx + Math.cos(s.a) * r1, cy + Math.sin(s.a) * r1); ctx.stroke();
-      });
-      if (p < 1) burstRaf = requestAnimationFrame(frame); else { ctx.clearRect(0, 0, w, hgt); warp.classList.remove('on'); }
-    };
-    burstRaf = requestAnimationFrame(frame);
-  }
-
   /* tilt / pointer parallax */
   let tiltOn = false, tx = 0, ty = 0, pend = false;
-  const applyTilt = () => { pend = false; shell.style.setProperty('--tx', tx.toFixed(2)); shell.style.setProperty('--ty', ty.toFixed(2)); };
+  const applyTilt = () => { pend = false; const el = slides()[idx]; if (!el) return; el.style.setProperty('--tx', tx.toFixed(2)); el.style.setProperty('--ty', ty.toFixed(2)); };
   const queue = () => { if (!pend) { pend = true; requestAnimationFrame(applyTilt); } };
   function onOrient(e) { if (shell.hidden) return; const g = e.gamma || 0, b = (e.beta || 0) - 45; tx = Math.max(-1, Math.min(1, g / 25)) * 14; ty = Math.max(-1, Math.min(1, b / 25)) * 14; queue(); }
   function enableTilt(fromTap) {
@@ -567,7 +579,7 @@
     renderStream();
     shell.hidden = false; document.body.classList.add('stream-active');
     view.scrollTop = 0; idx = -1; setIndex(0, true);
-    const first = slides()[0]; if (first && !reduced()) { first.classList.remove('ix-arrive'); void first.offsetWidth; first.classList.add('ix-arrive'); }
+    const first = slides()[0]; if (first && !reduced()) { first.classList.remove('ix-arrive'); requestAnimationFrame(() => first.classList.add('ix-arrive')); }
     refreshTools(); startTicker();
     store.set('ps-intel-lastvisit', Date.now());
     const fresh = prevVisit ? list.filter(c => c.kind !== 'community' && isNew(c)).length : 0;
@@ -577,29 +589,71 @@
   // neutralise the old stream renderer and route its navigation through this one
   try { goStreamIndex = (i) => go(i); } catch {}
   try { activateVisibleSlide = () => {}; } catch {}
-  /* region bleed: a light veil whose colours follow the finger between two regions; streaks scale with speed */
-  let veil = null, veilRaf = 0, lastTop = 0, lastT = 0, swipeV = 0;
-  function paintVeil() {
-    veilRaf = 0; if (!veil || !list.length) return;
-    const H = Math.max(1, view.clientHeight), f = view.scrollTop / H, i0 = Math.floor(f), t = f - i0;
-    const A = regionOf(i0), B = regionOf(Math.min(i0 + 1, list.length)), mid = Math.sin(Math.PI * Math.min(1, Math.max(0, t)));
-    veil.style.setProperty('--va', A.b); veil.style.setProperty('--vb', B.b); veil.style.setProperty('--vc', B.c);
-    veil.style.setProperty('--seam', ((1 - t) * 100).toFixed(1) + '%');
+  /* ---------------------------------------------------------------- SILK: swipe pipeline
+     The browser's own scroller moves the slides: it runs on the compositor thread, tracks the finger 1:1,
+     has native velocity flicks, rubber-banding at both ends and runs at 120 Hz on ProMotion iPhones.
+     JavaScript does only constant-cost work per frame — one scrollTop read, then transform/opacity writes on
+     two isolated layers (region veil + light streaks). Everything heavy (scene mounting, class changes,
+     sounds, titles) waits until the slide has settled. */
+  let veil = null, veilGlow = null, veilStreak = null, veilPair = -1, frameReq = 0, lastTop = 0, lastT = 0, swipeV = 0, soft = -1,
+    scrolling = false, touching = false, commitTimer = 0, viewH = 0;
+  const measure = () => { viewH = Math.max(1, view.clientHeight); };
+  if (window.ResizeObserver) new ResizeObserver(() => { viewH = 0; }).observe(view);
+  function ensureVeil() {
+    if (veil) return;
+    veil = document.createElement('div'); veil.className = 'ix-veil'; veil.setAttribute('aria-hidden', 'true');
+    veil.innerHTML = '<b class="ix-veil-glow"></b><i class="ix-veil-streak"></i>'; shell.appendChild(veil);
+    veilGlow = veil.firstChild; veilStreak = veil.lastChild;
+  }
+  function paintVeil(f) {
+    if (!veil) return;
+    const i0 = Math.max(0, Math.min(list.length, Math.floor(f))), t = Math.min(1, Math.max(0, f - i0));
+    if (i0 !== veilPair) { // colours change only when the pair of regions changes
+      veilPair = i0; const A = regionOf(i0), B = regionOf(Math.min(i0 + 1, list.length));
+      veil.style.setProperty('--va', A.b); veil.style.setProperty('--vb', B.b); veil.style.setProperty('--vc', B.c);
+    }
+    const mid = Math.sin(Math.PI * t), y = ((1 - t) - 0.5) * viewH;
     veil.style.opacity = (mid * (reduced() ? 0.3 : 0.55)).toFixed(3);
-    veil.style.setProperty('--streak', reduced() ? 0 : Math.min(1, Math.abs(swipeV) / 2.2).toFixed(3));
+    veilGlow.style.transform = veilStreak.style.transform = `translate3d(0,${y.toFixed(1)}px,0)`;
+    const v = reduced() ? 0 : Math.min(1, Math.abs(swipeV) / 2.2);
+    veilStreak.style.opacity = v.toFixed(3);
+    if (warp) { const w = reduced() ? 0 : Math.min(1, Math.max(0, (Math.abs(swipeV) - 0.4) / 2.4)); warp.style.opacity = (w * 0.8).toFixed(3); warp.style.transform = `scale(${(1 + w * 0.35).toFixed(3)})`; }
+  }
+  function onScrollFrame() {
+    frameReq = 0; if (!list.length) return;
+    if (!viewH) measure();
+    const top = view.scrollTop, now = performance.now(); // the only layout read this frame
+    if (!lastT) { lastTop = top; lastT = now; }
+    if (now - lastT > 4) { swipeV = swipeV * 0.55 + 0.45 * (top - lastTop) / Math.max(1, now - lastT); lastTop = top; lastT = now; }
+    const f = top / viewH; paintVeil(f);
+    const near = Math.round(f);
+    if (near !== soft && near >= 0 && near <= list.length) { const dir = near > soft ? 1 : -1; soft = near; if (near !== idx) Sound.play('whoosh', { dir }); }
+  }
+  function settle() {
+    clearTimeout(commitTimer);
+    if (touching) return;
+    if (!viewH) measure();
+    const f = view.scrollTop / viewH, i = Math.round(f);
+    if (Math.abs(f - i) > 0.02) { commitTimer = setTimeout(settle, 90); return; } // still gliding into place
+    scrolling = false; window.__psGliding = false; swipeV = 0; navTarget = -1;
+    if (veil) { veil.style.opacity = '0'; veilStreak.style.opacity = '0'; }
+    if (warp) { warp.style.transition = ''; warp.style.opacity = '0'; warp.style.transform = 'scale(1)'; }
+    setIndex(i);
   }
   view.addEventListener('scroll', () => {
     if (!list.length) return;
-    const now = performance.now(); if (now - lastT > 8) { swipeV = swipeV * 0.5 + 0.5 * (view.scrollTop - lastTop) / (now - lastT); lastTop = view.scrollTop; lastT = now; }
-    if (!veil) { veil = document.createElement('div'); veil.className = 'ix-veil'; veil.setAttribute('aria-hidden', 'true'); veil.innerHTML = '<i></i>'; shell.appendChild(veil); }
-    if (!veilRaf) veilRaf = requestAnimationFrame(paintVeil);
-    const i = indexFromScroll(); if (i !== idx) setIndex(i);
-    clearTimeout(settleTimer); settleTimer = setTimeout(() => { setIndex(indexFromScroll()); swipeV = 0; paintVeil(); }, 90);
+    if (!scrolling) { scrolling = true; window.__psGliding = true; lastT = 0; if (warp) warp.style.transition = 'none'; }
+    if (!frameReq) frameReq = requestAnimationFrame(onScrollFrame);
+    clearTimeout(commitTimer); commitTimer = setTimeout(settle, 130);
   }, { passive: true });
+  view.addEventListener('scrollend', () => settle(), { passive: true });
+  view.addEventListener('touchstart', () => { touching = true; }, { passive: true });
+  const release = () => { touching = false; clearTimeout(commitTimer); commitTimer = setTimeout(settle, 130); };
+  view.addEventListener('touchend', release, { passive: true }); view.addEventListener('touchcancel', release, { passive: true });
   document.addEventListener('keydown', e => {
     if (shell.hidden) return;
     if (e.key === 'Escape' && sheet && !sheet.hidden) { e.stopImmediatePropagation(); e.preventDefault(); closeSheet(); }
-    if ((e.key === 'ArrowDown' || e.key === 'ArrowUp') && !e.defaultPrevented) { e.stopImmediatePropagation(); e.preventDefault(); go(idx + (e.key === 'ArrowDown' ? 1 : -1)); }
+    if ((e.key === 'ArrowDown' || e.key === 'ArrowUp') && !e.defaultPrevented) { e.stopImmediatePropagation(); e.preventDefault(); go((scrolling && navTarget >= 0 ? navTarget : idx) + (e.key === 'ArrowDown' ? 1 : -1)); }
   }, true);
   $('#stream-close')?.addEventListener('click', () => { clearResume(); clearInterval(ticker); clearTimeout(dwellTimer); if (sheet) { sheet.hidden = true; sheet.classList.remove('open'); } });
 
