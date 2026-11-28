@@ -24,16 +24,23 @@
   const yearLabel = y => { const f = fmtYear(y); return f.n + (f.s ? ' ' + f.s : ''); };
   const eraIx = Object.fromEntries(ERAS.map((e, i) => [e.id, i]));
   const ERA_ACC = { deep: '#e88a3c', ancient: '#e3b65a', medieval: '#d8a64a', woodblock: '#ff6a4d', press: '#efd9a8', bluebook: '#e0c98a', broadcast: '#8fb8ff', sensor: '#3dffb0' };
-  const GLYPH = { deep: '✶', ancient: '☉', medieval: '✠', woodblock: '◉', press: '¶', bluebook: '§', broadcast: '▶', sensor: '◎' };
 
-  /* resolve Atlas images (single source of truth for US dossiers) */
-  function imageOf(e) {
-    if (e.image) return e.image;
-    if (e.img === 'atlas' && e.atlas && window.__atlas) {
-      const a = (window.__atlas.archive || []).find(r => r.id === e.atlas);
-      if (a && a.image) return (e.image = { src: a.image.thumb || a.image.full, full: a.image.full, page: a.image.page, credit: a.image.credit, kind: a.image.kind, caption: a.image.caption });
-    }
-    return null;
+  /* ── VISIONS: every entry has a hero (a real image, or an original rendering that is always labelled) ── */
+  const VIS = window.LW_VISUALS || {}, IMG_BASE = 'lw/img/';
+  const heroOf = e => (VIS[e.id] || [])[0] || null;
+  const sizeFor = (v, w) => v.sizes.includes(w) ? w : v.sizes[v.sizes.length - 1];
+  const pic = (v, w, lazy = true, cls = '') => { const a = `${IMG_BASE}${v.key}-${sizeFor(v, w)}`, d = lazy ? 'data-' : ''; return `<picture${cls ? ` class="${cls}"` : ''}><source type="image/avif" ${d}srcset="${a}.avif"><source type="image/webp" ${d}srcset="${a}.webp"><img alt="${esc(v.caption)}" decoding="async" ${d}src="${a}.webp" width="${v.w}" height="${v.h}"></picture>`; };
+  /* a file the browser cannot decode never leaves a blank: drop the AVIF source and use the WebP */
+  const picFallback = img => { img.addEventListener('error', () => { const pc = img.parentNode; if (!pc || img.dataset.fb) return; img.dataset.fb = 1; pc.querySelectorAll('source').forEach(x => x.remove()); const w = img.getAttribute('src') || img.dataset.src; if (w) img.src = w.replace(/\.avif$/, '.webp'); }); };
+  let avifOK = null;
+  const avifTest = new Promise(res => { const i = new Image(); i.onload = () => res(avifOK = i.width > 0); i.onerror = () => res(avifOK = false); i.src = 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAB0AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAIAAAACAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQ0MAAAAABNjb2xybmNseAACAAIAAYAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAACVtZGF0EgAKCBgANogQEAwgMg8f8D///8WfhwB8+ErK42A='; });
+  const urlOf = (v, w) => `${IMG_BASE}${v.key}-${sizeFor(v, w)}.${avifOK ? 'avif' : 'webp'}`;
+  /* heroes near the reading position are fetched and decoded ahead of time, so a reveal never waits; pruned beyond the window */
+  const pre = new Map();
+  function preloadAround(i) {
+    if (avifOK === null) { avifTest.then(() => preloadAround(i)); return; }
+    for (let k = i - 1; k <= i + 2; k++) { const e = EV[k], v = e && heroOf(e); if (!v || pre.has(k)) continue; const im = new Image(); im.decoding = 'async'; im.src = urlOf(v, 1280); if (im.decode) im.decode().catch(() => {}); pre.set(k, im); }
+    for (const [k, im] of pre) if (k < i - 3 || k > i + 4) { im.removeAttribute('src'); pre.delete(k); }
   }
 
   /* ================================================================ DOM */
@@ -87,7 +94,7 @@
       <nav class="lw-rail" aria-label="Eras">${ERAS.map((e, i) => `<button type="button" data-i="${i}" style="color:${ERA_ACC[e.id]}"><span>${esc(e.name)}</span><i></i></button>`).join('')}</nav>
       <div class="lw-globe" aria-hidden="true"><canvas width="208" height="208"></canvas><span></span></div>
       <div class="lw-scrim"></div>
-      <aside class="lw-sheet" role="dialog" aria-modal="true" aria-labelledby="lw-sheet-title"><div class="lw-sheet-head"><i class="grab"></i><span class="crumb"></span><button class="lw-iconbtn lw-sheet-x" type="button" aria-label="Close record">${svgIcon('M6 6l12 12M18 6L6 18')}</button></div><div class="lw-sheet-body"></div></aside>`;
+      <aside class="lw-sheet" role="dialog" aria-modal="true" aria-labelledby="lw-sheet-title"><div class="lw-sheet-head"><i class="grab"></i><span class="lw-sy" aria-hidden="true">${Array.from({ length: 4 }, () => `<span class="lw-sy-d"><span>${'0123456789'.split('').map(d => `<b>${d}</b>`).join('')}</span></span>`).join('')}<small></small></span><span class="crumb"></span><button class="lw-iconbtn lw-sheet-x" type="button" aria-label="Close record">${svgIcon('M6 6l12 12M18 6L6 18')}</button></div><div class="lw-sheet-body"></div></aside>`;
     document.body.appendChild(shell);
     scroller = shell.querySelector('.lw-scroll'); track = shell.querySelector('.lw-track'); bgs = shell.querySelector('.lw-bgs'); amb = shell.querySelector('.lw-amb'); fx = shell.querySelector('.lw-fx');
     hud = shell.querySelector('.lw-hud'); odo = shell.querySelector('.lw-digits'); odoEra = shell.querySelector('.lw-odo-era');
@@ -101,9 +108,9 @@
     buildOdo(); buildTimeline(); wire();
   }
   function cardHTML(e) {
-    const i = EV.indexOf(e), img = imageOf(e), b = BAD[e.badge];
+    const i = EV.indexOf(e), v = heroOf(e), b = BAD[e.badge];
     return `<div class="lw-item" data-i="${i}"><button class="lw-card" type="button" data-i="${i}" aria-label="${esc(e.title)}, ${esc(e.date)}. ${esc(b.label)}. Open record">
-      <span class="lw-card-media">${img ? `<img alt="" decoding="async" referrerpolicy="no-referrer" data-src="${esc(img.src)}">` : ''}<span class="plate" aria-hidden="true"${img ? ' hidden' : ''}>${GLYPH[e.era]}</span>${img ? `<span class="kind">${esc(img.kind)}</span>` : ''}</span>
+      <span class="lw-card-media" style="--lq:url('${v.lqip}')">${pic(v, 640)}<span class="kind${v.real ? '' : ' rend'}">${esc(v.real ? v.kind : "Artist's rendering")}</span></span>
       <span class="lw-card-body"><span class="lw-card-date">${esc(e.date)}</span><span class="lw-card-title">${esc(e.title)}</span><span class="lw-card-hook">${esc(e.hook)}</span>
       <span class="lw-card-meta"><b class="lw-badge lw-badge--${e.badge}">${esc(b.label)}</b><span>${esc(e.place)}${e.region && !e.place.includes(e.region) ? ' · ' + esc(e.region) : ''}</span><span class="lw-card-more" aria-hidden="true">Open ↗</span></span></span></button></div>`;
   }
@@ -226,7 +233,7 @@
   const gState = { lon: 10, lat: 30, tlon: 10, tlat: 30, dirty: true, ctx: null, visited: new Set(), cur: -1 };
   function globeTarget(i) {
     if (i === gState.cur || i < 0) return; gState.cur = i; const e = EV[i];
-    gState.tlon = e.lon; gState.tlat = clamp(e.lat, -60, 70); gState.dirty = true; gState.visited.add(i);
+    gState.tlon = e.lon; gState.tlat = clamp(e.lat, -60, 70); gState.dirty = true; gState.visited.add(i); preloadAround(i);
     globeLbl.textContent = e.region === 'Antarctica' ? 'Antarctica' : (e.region || e.continent);
   }
   let gAcc = 0;
@@ -316,25 +323,96 @@
   let revealIO = null, imgIO = null;
   function observe() {
     revealIO = new IntersectionObserver(es => { for (const en of es) if (en.isIntersecting) { const el = en.target; el.classList.add('in'); revealIO.unobserve(el); setTimeout(() => el.classList.add('done'), 1000); } }, { root: scroller, rootMargin: '0px 0px -8% 0px', threshold: .08 });
-    imgIO = new IntersectionObserver(es => { for (const en of es) { const img = en.target.querySelector('img'); if (!img) continue;
-      if (en.isIntersecting) { if (!img.getAttribute('src')) { img.onload = () => img.classList.add('ok'); img.onerror = () => { img.removeAttribute('src'); img.remove(); en.target.querySelector('.plate').hidden = false; }; img.src = img.dataset.src; } }
-      else if (img.getAttribute('src')) { img.classList.remove('ok'); img.removeAttribute('src'); } } }, { root: scroller, rootMargin: '250% 0px 250% 0px' });
+    imgIO = new IntersectionObserver(es => { for (const en of es) { const pc = en.target.querySelector('.lw-card-media picture'); if (!pc) continue; const img = pc.querySelector('img');
+      if (en.isIntersecting) { if (!img.getAttribute('src')) { pc.querySelectorAll('source').forEach(x => x.srcset = x.dataset.srcset); img.onload = () => img.classList.add('ok'); if (!img.dataset.fbw) { img.dataset.fbw = 1; picFallback(img); } img.src = img.dataset.src; } }
+      else if (img.getAttribute('src')) detachPic(pc); } }, { root: scroller, rootMargin: '250% 0px 250% 0px' });
     for (const it of items) { if (reduced()) it.el.classList.add('in'); else revealIO.observe(it.el); imgIO.observe(it.card); }
   }
-  function unobserve() { revealIO && revealIO.disconnect(); imgIO && imgIO.disconnect(); for (const it of items) if (it.img && it.img.getAttribute('src')) { it.img.classList.remove('ok'); it.img.removeAttribute('src'); } }
+  function detachPic(pc) { const img = pc.querySelector('img'); img.classList.remove('ok'); pc.querySelectorAll('source').forEach(x => x.removeAttribute('srcset')); img.removeAttribute('src'); }
+  function unobserve() { revealIO && revealIO.disconnect(); imgIO && imgIO.disconnect(); shell.querySelectorAll('.lw-card-media picture').forEach(pc => { if (pc.querySelector('img').getAttribute('src')) detachPic(pc); }); }
 
   /* ================================================================ ENTRY SHEET */
-  let sheetOpen = false, sheetIx = -1, lastFocus = null;
+  let sheetOpen = false, sheetIx = -1, lastFocus = null, visIx = 0, rvTimer = 0, revealing = false, sheetYearShown = null;
+  const rnd = (a, b) => a + Math.random() * (b - a);
+  /* era-specific reveal layers (all transform/opacity; one-off, about 1.3 s) */
+  function rvLayers(era, v) {
+    const h0 = v.hotspots[0] || { x: .5, y: .5 };
+    switch (era) {
+      case 'deep': return `<i class="rv-torch"></i>${Array.from({ length: 10 }, (_, k) => `<i class="rv-ember" style="left:${rnd(8, 92).toFixed(1)}%;--dx:${rnd(-40, 40).toFixed(0)}px;--d:${(k * .07).toFixed(2)}s"></i>`).join('')}`;
+      case 'ancient': return `<i class="rv-gold"></i>${Array.from({ length: 26 }, (_, k) => { const t = k / 26, side = k % 4, tx = side === 0 ? t * 100 : side === 1 ? 100 : side === 2 ? 100 - t * 100 : 0, ty = side === 0 ? 0 : side === 1 ? t * 100 : side === 2 ? 100 : 100 - t * 100; return `<i class="rv-flake" style="left:${tx.toFixed(1)}%;top:${ty.toFixed(1)}%;--fx:${rnd(-160, 160).toFixed(0)}px;--fy:${rnd(-120, 120).toFixed(0)}px;--r:${rnd(-200, 200).toFixed(0)}deg;--d:${(k * .018).toFixed(3)}s"></i>`; }).join('')}`;
+      case 'medieval': return `${pic(v, 1280, false, 'rv-dup rv-wood')}<i class="rv-parch"></i>${Array.from({ length: 6 }, (_, k) => `<i class="rv-ink" style="left:${rnd(10, 80).toFixed(0)}%;top:${rnd(5, 70).toFixed(0)}%;--s:${rnd(3.2, 5).toFixed(2)};--d:${(k * .06).toFixed(2)}s"></i>`).join('')}`;
+      case 'woodblock': return `<i class="rv-wave"></i>`;
+      case 'press': return `${pic(v, 1280, false, 'rv-dup rv-sepia')}<i class="rv-dots"></i>`;
+      case 'bluebook': return `<i class="rv-leak"></i><i class="rv-grain"></i>`;
+      case 'broadcast': return `<i class="rv-snow"></i><i class="rv-band" style="--d:0s"></i><i class="rv-band" style="--d:.22s"></i><i class="rv-band" style="--d:.45s"></i>`;
+      case 'sensor': return `${pic(v, 1280, false, 'rv-dup rv-flir')}<i class="rv-box" style="left:${(h0.x * 100).toFixed(1)}%;top:${(h0.y * 100).toFixed(1)}%"><b></b><b></b><b></b><b></b><s></s></i><i class="rv-read">TRK · <span>LOCK</span> · ${String(Math.round(h0.x * 360)).padStart(3, '0')}°</i>`;
+    }
+    return '';
+  }
+  function heroHTML(e, v) {
+    const all = VIS[e.id] || [], h0 = v.hotspots[0] || { x: .5, y: .5 };
+    const tag = v.real ? `<span class="lw-hero-tag real">◉ ${esc(v.kind)}</span>` : `<span class="lw-hero-tag rend">${esc(v.label || "ARTIST'S RENDERING — based on the recorded account")}</span>`;
+    return `<div class="lw-hero-wrap"><div class="lw-hero" data-era="${e.era}" style="--lq:url('${v.lqip}')">
+        <div class="lw-hero-frame" style="aspect-ratio:${v.w}/${v.h};--ar:${(v.w / v.h).toFixed(4)}">
+          <div class="lw-kb" style="--ox:${(h0.x * 100).toFixed(1)}%;--oy:${(h0.y * 100).toFixed(1)}%">${pic(v, 1280, false, 'lw-hero-pic')}
+            ${v.hotspots.map((h, k) => `<button type="button" class="lw-hs" data-h="${k}" style="left:${(h.x * 100).toFixed(2)}%;top:${(h.y * 100).toFixed(2)}%;--k:${k}" aria-label="${esc(h.text)}"><i></i></button>`).join('')}</div>
+          <div class="lw-rv" aria-hidden="true">${reduced() ? '' : rvLayers(e.era, v)}</div>
+          <div class="lw-tip" role="status" hidden></div>
+          <button type="button" class="lw-hero-zoom" aria-label="View image full screen">${svgIcon('M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5')}</button>
+        </div>${tag}</div>
+      <p class="lw-hero-cap"><b>${esc(v.real ? v.kind : "Artist's rendering")}</b> ${esc(v.caption)} <small>${esc(v.credit)} · ${esc(v.license)}${v.page ? ` · <a href="${esc(v.page)}" target="_blank" rel="noopener noreferrer">Source ↗</a>` : ''}</small></p>
+      ${all.length > 1 ? `<div class="lw-gal" role="tablist" aria-label="Visuals for this entry">${all.map((x, k) => `<button type="button" role="tab" class="lw-gal-i${x === v ? ' on' : ''}" data-vis="${k}" aria-selected="${x === v}" aria-label="${esc((x.real ? x.kind : "Artist's rendering") + ': ' + x.caption)}" style="--lq:url('${x.lqip}')">${pic(x, 640, false)}<span>${x.real ? 'Real' : 'Rendering'}</span></button>`).join('')}</div>` : ''}</div>`;
+  }
+  function setSheetYear(y) {
+    const box = sheet.querySelector('.lw-sy'); const f = fmtYear(y), n = String(Math.min(9999, f.n));
+    box.querySelector('small').textContent = f.s; const strips = box.querySelectorAll('.lw-sy-d');
+    strips.forEach((st, k) => { const ch = n.padStart(4, ' ')[k]; st.classList.toggle('off', ch === ' '); if (ch !== ' ') { st.firstChild.style.transitionDelay = `${k * 70}ms`; st.firstChild.style.transform = `translate3d(0,${-(+ch) * 10}%,0)`; } });
+    box.classList.remove('lock'); void box.offsetWidth; box.classList.add('lock');
+  }
+  function finishReveal() {
+    if (!revealing) return; revealing = false; clearTimeout(rvTimer);
+    const hero = sheet.querySelector('.lw-hero'); if (hero) { hero.classList.add('rv-skip'); const r = hero.querySelector('.lw-rv'); if (r) r.innerHTML = ''; }
+    sheet.classList.add('rv-text-done');
+  }
+  function playReveal(firstTip) {
+    const hero = sheet.querySelector('.lw-hero'); if (!hero) return;
+    clearTimeout(rvTimer); revealing = true; sheet.classList.remove('rv-text-done');
+    const kids = [...sheet.querySelectorAll('.lw-sheet-body > *')]; kids.forEach((k, n) => k.style.setProperty('--i', Math.min(n, 10)));
+    sheet.classList.remove('rv-text'); void sheet.offsetWidth; sheet.classList.add('rv-text');
+    if (reduced()) { hero.classList.add('rv-rm'); revealing = false; return; }
+    hero.classList.add('rv');
+    rvTimer = setTimeout(() => { revealing = false; const r = hero.querySelector('.lw-rv'); if (r) r.innerHTML = ''; hero.classList.add('rv-end'); if (firstTip) showTip(0, 3200); }, 1250);
+    if (audible()) try { const S = SA(); S.tone({ f: 523, to: 784, dur: .5, gain: .02, a: .02, rev: .6 }); S.noise({ at: .05, f: 2400, to: 600, ft: 'lowpass', dur: .5, gain: .015, a: .02 }); } catch {}
+  }
+  let tipT = 0;
+  function showTip(k, ms) {
+    const hero = sheet.querySelector('.lw-hero'); if (!hero) return; const e = EV[sheetIx], v = (VIS[e.id] || [])[visIx]; const h = v && v.hotspots[k]; if (!h) return;
+    const frame = hero.querySelector('.lw-hero-frame'), dot = hero.querySelector(`.lw-hs[data-h="${k}"]`), tip = hero.querySelector('.lw-tip');
+    const fr = frame.getBoundingClientRect(), dr = dot.getBoundingClientRect(); const x = dr.left + dr.width / 2 - fr.left, y = dr.top + dr.height / 2 - fr.top;
+    tip.textContent = h.text; tip.hidden = false; tip.classList.remove('on');
+    const tw = Math.min(fr.width - 20, 280); tip.style.width = tw + 'px'; tip.style.left = clamp(x - tw / 2, 10, fr.width - tw - 10) + 'px';
+    const below = y < fr.height * .55; tip.style.top = below ? (y + 22) + 'px' : ''; tip.style.bottom = below ? '' : (fr.height - y + 22) + 'px';
+    hero.querySelectorAll('.lw-hs').forEach(d => d.classList.toggle('act', d === dot));
+    requestAnimationFrame(() => tip.classList.add('on'));
+    clearTimeout(tipT); if (ms) tipT = setTimeout(() => { tip.classList.remove('on'); dot.classList.remove('act'); }, ms);
+  }
+  function renderHero(e, k, animate) {
+    const all = VIS[e.id] || []; visIx = clamp(k, 0, all.length - 1); const v = all[visIx];
+    const wrap = sheet.querySelector('.lw-hero-wrap'), html = heroHTML(e, v);
+    if (wrap) wrap.outerHTML = html; else sheet.querySelector('.lw-sheet-body').insertAdjacentHTML('afterbegin', html);
+    sheet.querySelectorAll('.lw-hero-wrap img').forEach(picFallback); const img = sheet.querySelector('.lw-hero-pic img'); const done = () => img.classList.add('ok'); if (img.complete && img.naturalWidth) done(); else img.addEventListener('load', done, { once: true });
+    if (!animate) { const hero = sheet.querySelector('.lw-hero'); hero.classList.add(reduced() ? 'rv-rm' : 'rv-quick'); return; }
+  }
   function openSheet(i, from) {
-    const e = EV[i], b = BAD[e.badge], img = imageOf(e), era = ERAS[eraIx[e.era]];
+    const e = EV[i], b = BAD[e.badge], era = ERAS[eraIx[e.era]];
     sheetIx = i; if (!sheetOpen) lastFocus = from || document.activeElement;
-    sheet.querySelector('.crumb').textContent = era.name + ' · ' + yearLabel(e.year);
+    sheet.querySelector('.crumb').textContent = era.name;
+    sheet.dataset.era = e.era;
     const prev = EV[i - 1], next = EV[i + 1];
     sheet.querySelector('.lw-sheet-body').innerHTML = `
       <h3 id="lw-sheet-title">${esc(e.title)}</h3>
       <div class="when"><span>◷ ${esc(e.date)}</span><span>⌖ ${esc(e.place)}${e.region && !e.place.includes(e.region) ? ', ' + esc(e.region) : ''}</span><span>${esc(e.continent)}</span></div>
       <div class="badgebox"><b class="lw-badge lw-badge--${e.badge}">${esc(b.label)}</b><span>${esc(b.note)}</span></div>
-      ${img ? `<figure><a href="${esc(img.page)}" target="_blank" rel="noopener noreferrer" aria-label="Open image source on Wikimedia Commons"><img src="${esc(img.full || img.src)}" alt="${esc(img.caption)}" decoding="async" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"></a><figcaption><span class="kind">${esc(img.kind)}</span>${esc(img.caption)}<small>${esc(img.credit)} · <a href="${esc(img.page)}" target="_blank" rel="noopener noreferrer" style="color:inherit">Wikimedia Commons ↗</a></small></figcaption></figure>` : ''}
       <h4>What was reported</h4><p>${esc(e.reported)}</p>
       ${e.text ? `<blockquote><q>${esc(e.text.quote)}</q><cite>${esc(e.text.translation)}</cite></blockquote>` : ''}
       ${e.reading ? `<div class="reading"><b>Modern reinterpretation · ${esc(e.reading.year)}</b>${esc(e.reading.by)}: ${esc(e.reading.summary)}</div>` : ''}
@@ -343,12 +421,17 @@
       <h4>Sources</h4><ul class="src">${e.sources.map(s => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></li>`).join('')}</ul>
       ${e.atlas ? `<button class="lw-atlas" type="button" data-atlas="${esc(e.atlas)}">◈ View in Encounter Atlas</button>` : ''}
       <div class="lw-sheet-nav"><button type="button" data-go="${i - 1}" ${prev ? '' : 'disabled'}><small>← Earlier</small>${prev ? esc(prev.title) : ''}</button><button type="button" data-go="${i + 1}" ${next ? '' : 'disabled'}><small>Later →</small>${next ? esc(next.title) : ''}</button></div>`;
+    renderHero(e, 0, true);
     sheet.querySelector('.lw-sheet-body').scrollTop = 0;
-    if (!sheetOpen) { sheetOpen = true; sheet.classList.add('on'); scrim.classList.add('on'); scroller.setAttribute('aria-hidden', 'true'); setTimeout(() => sheet.querySelector('.lw-sheet-x').focus({ preventScroll: true }), 60);
-      if (audible()) try { SA().tone({ f: 880, to: 1320, dur: .25, gain: .025, a: .004, rev: .4 }); } catch {} }
+    setSheetYear(e.year);
+    const wasOpen = sheetOpen;
+    if (!sheetOpen) { sheetOpen = true; sheet.classList.add('on'); scrim.classList.add('on'); scroller.setAttribute('aria-hidden', 'true'); setTimeout(() => sheet.querySelector('.lw-sheet-x').focus({ preventScroll: true }), 60); }
+    // the reveal starts as the sheet settles (or at once when stepping between records)
+    setTimeout(() => playReveal(true), wasOpen || reduced() ? 0 : 160);
+    preloadAround(i);
   }
   function closeSheet() {
-    if (!sheetOpen) return; sheetOpen = false; sheet.classList.remove('on'); scrim.classList.remove('on'); scroller.removeAttribute('aria-hidden');
+    if (!sheetOpen) return; finishReveal(); closeLightbox(); sheetOpen = false; sheet.classList.remove('on'); scrim.classList.remove('on'); scroller.removeAttribute('aria-hidden');
     const it = items[sheetIx]; const target = it ? it.card : lastFocus; if (target && target.focus) target.focus({ preventScroll: true });
   }
   function gotoSheet(i) {
@@ -356,6 +439,37 @@
     const it = items[i]; const y = clamp(it.top - vh * .3, 0, contentH);
     scroller.scrollTo({ top: y, behavior: reduced() ? 'auto' : 'smooth' });
   }
+
+  /* ================================================================ FULL-SCREEN VIEWER (pinch / pan / double-tap / wheel) */
+  let lb = null;
+  function openLightbox(v) {
+    if (lb) closeLightbox();
+    lb = document.createElement('div'); lb.className = 'lw-lb'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Image viewer');
+    lb.innerHTML = `<div class="lw-lb-stage"><div class="lw-lb-img">${pic(v, 1280, false)}</div></div>
+      <div class="lw-lb-bar"><div class="lw-lb-txt">${v.real ? `<b>${esc(v.kind)}</b>` : `<b class="rend">${esc(v.label || "ARTIST'S RENDERING — based on the recorded account")}</b>`}<span>${esc(v.caption)}</span><small>${esc(v.credit)} · ${v.licenseUrl ? `<a href="${esc(v.licenseUrl)}" target="_blank" rel="noopener noreferrer">${esc(v.license)}</a>` : esc(v.license)}${v.page ? ` · <a href="${esc(v.page)}" target="_blank" rel="noopener noreferrer">Original on Wikimedia Commons ↗</a>` : ''}${v.real ? ' · resized for this site' : ''}</small></div>
+      <button type="button" class="lw-iconbtn lw-lb-x" aria-label="Close viewer">${svgIcon('M6 6l12 12M18 6L6 18')}</button></div><div class="lw-lb-hint">${matchMedia('(pointer:coarse)').matches ? 'Pinch or double-tap to zoom' : 'Scroll or double-click to zoom'}</div>`;
+    shell.appendChild(lb); requestAnimationFrame(() => lb.classList.add('on'));
+    const stage = lb.querySelector('.lw-lb-stage'), el = lb.querySelector('.lw-lb-img'), st = { s: 1, x: 0, y: 0 }, P = new Map();
+    let base = null, lastTap = 0, moved = false;
+    const apply = () => { el.style.transform = `translate3d(${st.x.toFixed(1)}px,${st.y.toFixed(1)}px,0) scale(${st.s.toFixed(3)})`; lb.classList.toggle('zoomed', st.s > 1.01); };
+    const C = () => { const r = stage.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]; };
+    const zoomAt = (px, py, s) => { s = clamp(s, 1, 6); const [cx, cy] = C(), qx = (px - cx - st.x) / st.s, qy = (py - cy - st.y) / st.s; st.s = s; st.x = px - cx - s * qx; st.y = py - cy - s * qy; if (s === 1) st.x = st.y = 0; apply(); };
+    const snap = () => { base = { s: st.s, x: st.x, y: st.y, pts: [...P.values()].map(q => ({ ...q })) }; };
+    stage.addEventListener('pointerdown', ev => { stage.setPointerCapture(ev.pointerId); P.set(ev.pointerId, { x: ev.clientX, y: ev.clientY }); snap(); moved = false;
+      if (P.size === 1) { const now = performance.now(); if (now - lastTap < 300) { zoomAt(ev.clientX, ev.clientY, st.s > 1.01 ? 1 : 2.6); lastTap = 0; } else lastTap = now; } });
+    stage.addEventListener('pointermove', ev => { if (!P.has(ev.pointerId)) return; P.set(ev.pointerId, { x: ev.clientX, y: ev.clientY }); const pts = [...P.values()];
+      if (pts.length >= 2 && base.pts.length >= 2) { const [a, b] = pts, [a0, b0] = base.pts, d = Math.hypot(a.x - b.x, a.y - b.y), d0 = Math.hypot(a0.x - b0.x, a0.y - b0.y) || 1;
+        const [cx, cy] = C(), m0x = (a0.x + b0.x) / 2, m0y = (a0.y + b0.y) / 2, mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, s = clamp(base.s * d / d0, 1, 6), qx = (m0x - cx - base.x) / base.s, qy = (m0y - cy - base.y) / base.s;
+        st.s = s; st.x = mx - cx - s * qx; st.y = my - cy - s * qy; moved = true; apply(); }
+      else if (pts.length === 1 && base.s > 1.01) { st.x = base.x + pts[0].x - base.pts[0].x; st.y = base.y + pts[0].y - base.pts[0].y; moved = true; apply(); } });
+    const up = ev => { P.delete(ev.pointerId); snap(); if (st.s <= 1.01) { st.s = 1; st.x = st.y = 0; apply(); } };
+    stage.addEventListener('pointerup', up); stage.addEventListener('pointercancel', up);
+    stage.addEventListener('wheel', ev => { ev.preventDefault(); zoomAt(ev.clientX, ev.clientY, st.s * (ev.deltaY < 0 ? 1.18 : 1 / 1.18)); }, { passive: false });
+    stage.addEventListener('click', ev => { if (ev.target === stage && st.s <= 1.01 && !moved) closeLightbox(); });
+    lb.querySelector('.lw-lb-x').addEventListener('click', closeLightbox); lb.querySelectorAll('img').forEach(picFallback);
+    setTimeout(() => lb && lb.querySelector('.lw-lb-x').focus({ preventScroll: true }), 50);
+  }
+  function closeLightbox() { if (!lb) return; const l = lb; lb = null; l.classList.remove('on'); setTimeout(() => l.remove(), 260); const z = sheet && sheet.querySelector('.lw-hero-zoom'); if (z && sheetOpen) z.focus({ preventScroll: true }); }
 
   /* ================================================================ PATTERN THREADS */
   const thread = { motif: null };
@@ -536,6 +650,7 @@
     if (!opened) return; opened = false; stopLoop(); unobserve();
     // release everything heavy: backdrops, particle pools, canvas backing stores
     for (const el of bgLayers.values()) el.remove(); bgLayers.clear(); pools.clear();
+    for (const im of pre.values()) im.removeAttribute('src'); pre.clear();
     amb.width = amb.height = 1; actx = null; gState.ctx = null; gState.visited.clear(); gState.cur = -1;
     if (fctx) { const cv = finale.querySelector('canvas'); cv.width = cv.height = 1; fctx = null; } finaleLit = false; finale.classList.remove('lit'); shell.querySelector('.lw-tl').classList.remove('lit');
     for (const it of items) it.el.classList.remove('in', 'done');
@@ -561,8 +676,15 @@
   /* ================================================================ WIRING */
   function wire() {
     scroller.addEventListener('scroll', onScroll, { passive: true });
+    // a swipe or a scroll of the record skips the reveal straight to its end state
+    sheet.addEventListener('touchmove', () => { if (revealing) finishReveal(); }, { passive: true });
+    sheet.addEventListener('wheel', () => { if (revealing) finishReveal(); }, { passive: true });
     shell.addEventListener('click', ev => {
       const t = ev.target;
+      if (revealing && t.closest('.lw-sheet')) { finishReveal(); if (!t.closest('button,a')) return; }
+      const hsb = t.closest('.lw-hs'); if (hsb) { showTip(+hsb.dataset.h, 5000); return; }
+      const gal = t.closest('[data-vis]'); if (gal) { renderHero(EV[sheetIx], +gal.dataset.vis, false); return; }
+      if (t.closest('.lw-hero-zoom') || (t.closest('.lw-hero-frame') && !t.closest('.lw-tip'))) { const v = (VIS[EV[sheetIx].id] || [])[visIx]; if (v) openLightbox(v); return; }
       const card = t.closest('.lw-card'); if (card) { openSheet(+card.dataset.i, card); return; }
       if (t.closest('.lw-x')) { close(); return; }
       if (t.closest('.lw-return')) { close(); return; }
@@ -578,7 +700,8 @@
     });
     document.addEventListener('keydown', ev => {
       if (!opened) return;
-      if (ev.key === 'Escape') { ev.preventDefault(); if (sheetOpen) closeSheet(); else if (!motifsEl.hidden) closeMotifs(); else close(); return; }
+      if (revealing) finishReveal();
+      if (ev.key === 'Escape') { ev.preventDefault(); if (lb) { closeLightbox(); return; } if (sheetOpen) closeSheet(); else if (!motifsEl.hidden) closeMotifs(); else close(); return; }
       if (sheetOpen && (ev.key === 'ArrowRight' || ev.key === 'ArrowLeft')) { gotoSheet(sheetIx + (ev.key === 'ArrowRight' ? 1 : -1)); return; }
       if (sheetOpen && ev.key === 'Tab') { const f = [...sheet.querySelectorAll('button:not([disabled]),a[href]')]; if (!f.length) return; const a = f[0], z = f[f.length - 1];
         if (ev.shiftKey && document.activeElement === a) { ev.preventDefault(); z.focus(); } else if (!ev.shiftKey && document.activeElement === z) { ev.preventDefault(); a.focus(); } }
@@ -591,5 +714,5 @@
   }
   function jumpEra(i) { const s = eraSecs[i]; if (!s) return; scroller.scrollTo({ top: Math.max(0, s.top - vh * .1), behavior: reduced() ? 'auto' : 'smooth' }); }
 
-  window.LongWatch = { open, close, get isOpen() { return opened; }, _debug: () => ({ era: ERAS[curEra] && ERAS[curEra].id, item: curItem, year: lastYearShown, bgLayers: bgLayers.size, pools: pools.size, imgsAttached: shell.querySelectorAll('.lw-card img[src]').length, imgsLoaded: shell.querySelectorAll('.lw-card img.ok').length, budget }) };
+  window.LongWatch = { open, close, get isOpen() { return opened; }, _debug: () => ({ era: ERAS[curEra] && ERAS[curEra].id, item: curItem, year: lastYearShown, bgLayers: bgLayers.size, pools: pools.size, imgsAttached: shell.querySelectorAll('.lw-card img[src]').length, imgsLoaded: shell.querySelectorAll('.lw-card img.ok').length, preloaded: pre.size, revealing, budget }) };
 })();

@@ -2,12 +2,12 @@
    the button press (or an idle-time prefetch after the first touch/hover) pulls in CSS + data + engine once. */
 (() => {
   'use strict';
-  const V = '20261127w1';
+  const V = '20261128v1';
   const btn = document.getElementById('lw-launch'); if (!btn) return;
   let loading = null;
   const css = () => new Promise(res => { if (document.getElementById('lw-css')) return res(); const l = document.createElement('link'); l.id = 'lw-css'; l.rel = 'stylesheet'; l.href = 'long-watch.css?v=' + V; l.onload = l.onerror = res; document.head.appendChild(l); });
   const js = src => new Promise((res, rej) => { const s = document.createElement('script'); s.src = src + '?v=' + V; s.onload = res; s.onerror = rej; document.head.appendChild(s); });
-  const load = () => loading || (loading = Promise.all([css(), js('long-watch-data.js').then(() => js('long-watch.js'))]).catch(e => { loading = null; throw e; }));
+  const load = () => loading || (loading = Promise.all([css(), Promise.all([js('long-watch-data.js'), js('long-watch-visuals.js')]).then(() => js('long-watch.js'))]).catch(e => { loading = null; throw e; }));
   const go = async () => {
     btn.classList.add('is-loading'); btn.setAttribute('aria-busy', 'true');
     try { await load(); window.LongWatch && window.LongWatch.open(); }

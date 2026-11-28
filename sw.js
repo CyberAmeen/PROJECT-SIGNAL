@@ -25,7 +25,7 @@ self.addEventListener('install', event => {
     const stamp = (html.match(/intel-signal\.js\?v=([^"&]+)/) || [])[1]; // the scene pack loads lazily with this stamp
     if (stamp) { urls.add('intel-scenes-x.js?v=' + stamp); urls.add('intel-scenes-x.css?v=' + stamp); }
     const lw = (html.match(/long-watch-boot\.js\?v=([^"&]+)/) || [])[1]; // THE LONG WATCH loads lazily with the boot stamp
-    if (lw) for (const f of ['long-watch.css', 'long-watch.js', 'long-watch-data.js']) urls.add(f + '?v=' + lw);
+    if (lw) for (const f of ['long-watch.css', 'long-watch.js', 'long-watch-data.js', 'long-watch-visuals.js']) urls.add(f + '?v=' + lw);
     await Promise.all([...urls].map(async u => {
       try { const r = await fetch(u, { cache: 'reload' }); if (r.ok) await cache.put(u, r); } catch {}
     }));
