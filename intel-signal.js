@@ -147,6 +147,9 @@
       if (want && !slot.firstElementChild && sceneCache[k]) slot.innerHTML = sceneCache[k];
       else if (!want && slot.firstElementChild) slot.textContent = '';
     });
+    $$('.ix-echo img', view).forEach(im => { const k = +im.dataset.slide, want = Math.abs(k - center) <= 1;
+      if (want && !im.getAttribute('src')) { im.onload = () => im.classList.add('ok'); im.onerror = () => im.remove(); im.src = im.dataset.src; }
+      else if (!want && im.getAttribute('src')) { im.classList.remove('ok'); im.removeAttribute('src'); } });
   }
   /* ---------------------------------------------------------------- GALACTIC REGIONS
      Each slide is lit by a region: scene hue/saturation, background, glows, accent lines and a decorative HUD.
@@ -254,7 +257,7 @@
     const chip = (o, k) => `<a class="ix-chip c-${h(o.tier || 'web')}${k >= SHOW ? ' ix-extra' : ''}" href="${h(o.url)}" target="_blank" rel="noopener noreferrer" title="${h(tierText(o.tier))}"><i class="ix-dot" aria-hidden="true"></i>${h(o.name)} ↗</a>`;
     const chips = c.outlets.map(chip).join('') + (c.outlets.length > SHOW ? `<button type="button" class="ix-chip ix-more" data-ix-more aria-expanded="false">+${c.outlets.length - SHOW} more</button>` : '');
     const cred = `<span class="ix-cred c-${h(c.tier || 'web')}" title="Credibility describes the publisher, not whether the claim is true">◇ ${h(tierText(c.tier))}${c.topTier && c.topTier !== c.tier && C.TIERS && C.TIERS[c.topTier] && C.TIERS[c.topTier].rank > C.TIERS[c.tier || 'web'].rank ? ` · also ${h(tierText(c.topTier))}` : ''}</span>`;
-    return `<article ${rgAttr(i)} class="stream-slide ix-slide${sotd ? ' ix-sotd' : ''}" data-index="${i}" data-cluster="${h(c.id)}" aria-label="Transmission ${i + 1} of ${total}">
+    return `<article ${rgAttr(i)} class="stream-slide${c.echoes && c.echoes.length ? ' has-echo' : ''} ix-slide${sotd ? ' ix-sotd' : ''}" data-index="${i}" data-cluster="${h(c.id)}" aria-label="Transmission ${i + 1} of ${total}">
       <div class="ix-scene-slot" data-slot="${i}"></div>
       <div class="ix-panel">
         ${sotd ? `<div class="ix-sotd-banner"><span>◆ SIGNAL OF THE DAY</span><small>${c.count > 1 ? 'Most-covered story in this scan' : 'Lead transmission'}</small></div>` : ''}
@@ -267,6 +270,7 @@
         <div class="ix-credrow">${cred}${c.count > 1 ? `<span class="ix-covered">Covered by ${c.count} outlets</span>` : ''}</div>
         ${brief}
         <div class="ix-chips" aria-label="Outlets reporting">${chips}</div>
+        ${echoHTML(c)}
         <div class="ix-actions">
           <a class="ix-btn ix-primary" href="${h(c.url)}" target="_blank" rel="noopener noreferrer">↗ Full report</a>
           <button class="ix-btn" type="button" data-ix-save="${h(c.id)}" aria-pressed="${isSaved(c.id)}">${isSaved(c.id) ? '★ Saved' : '☆ Save'}</button>
@@ -377,6 +381,39 @@
   function openSheet() { renderSheet(); sheet.hidden = false; requestAnimationFrame(() => sheet.classList.add('open')); $('[data-ix-sheet-close]', sheet)?.focus(); }
   function closeSheet() { sheet.classList.remove('open'); setTimeout(() => { sheet.hidden = true; }, 260); }
 
+  /* ---------------------------------------------------------------- ECHOES (precomputed once per scan; similar descriptions, never a proven link) */
+  function computeEchoes(items) {
+    const M = window.PSMotifs;
+    for (const c of items) { c.echoes = []; if (!M || c.kind === 'community') continue;
+      try { c.motifs = M.tag(c.title + ' . ' + (c.desc || '')); c.echoes = M.echoes(c.motifs, c.id); } catch { c.echoes = []; } }
+  }
+  function echoHTML(c) {
+    if (!c.echoes || !c.echoes.length) return '';
+    const i = list.indexOf(c);
+    return `<div class="ix-echoes" role="group" aria-label="Echoes: historical reports with similar descriptions">
+      <div class="ix-echo-h"><b>◈ ECHOES</b><small>Similar descriptions in history, not a proven link</small></div>
+      <div class="ix-echo-row n${c.echoes.length}">${c.echoes.map((e, k) => `<button type="button" class="ix-echo" data-ix-echo="${h(e.k)}" style="--k:${k}" aria-label="${h(e.when)}, ${h(e.title)}, ${h(e.place)}. ${h(e.why)}. Opens the ${e.k.startsWith('lw:') ? 'Long Watch entry' : 'Atlas dossier'}.">
+        <span class="ix-echo-th">${e.thumb ? `<img alt="" decoding="async" referrerpolicy="no-referrer" data-slide="${i}" data-src="${h(e.thumb)}">` : ''}<i aria-hidden="true">◎</i></span>
+        <span class="ix-echo-tx"><b>${h(e.when)}</b><span class="ix-echo-pl">${h(e.place)}</span><small>${h(e.why)}</small></span></button>`).join('')}</div></div>`;
+  }
+  let echoBusy = false;
+  function openEcho(btn) {
+    if (echoBusy) return; echoBusy = true;
+    const k = btn.dataset.ixEcho, c = list[idx];
+    try { sessionStorage.setItem('ps-echo-return', JSON.stringify({ id: c && c.id, idx, t: Date.now() })); } catch {}
+    const go = () => { echoBusy = false; clearResume(); clearInterval(ticker); clearTimeout(dwellTimer); closeStream();
+      if (k.startsWith('lw:')) { const boot = document.getElementById('lw-launch'); window.PSConvergence && window.PSConvergence.openLongWatchEntry(k.slice(3), boot); }
+      else window.PSConvergence && window.PSConvergence.openAtlasDossier(k.slice(3)); };
+    if (reduced()) { go(); return; }
+    // light threads fire out of the echo tile, then the archive opens
+    const r = btn.getBoundingClientRect(), sr = shell.getBoundingClientRect(), fx = document.createElement('div');
+    fx.className = 'ix-threads'; fx.style.left = (r.left + r.width / 2 - sr.left) + 'px'; fx.style.top = (r.top + r.height / 2 - sr.top) + 'px';
+    const len = Math.hypot(sr.width, sr.height);
+    fx.innerHTML = Array.from({ length: 11 }, (_, n) => `<i style="--a:${(n * 360 / 11 + (n % 2 ? 9 : -7) - 90).toFixed(1)}deg;--l:${(len * (.55 + (n % 3) * .12)).toFixed(0)}px;--d:${(n % 4) * 28}ms"></i>`).join('') + '<b></b>';
+    shell.appendChild(fx); btn.classList.add('fired');
+    try { window.SignalAudio && window.SignalAudio.ui && window.SignalAudio.ui('decode'); } catch {}
+    setTimeout(() => { go(); setTimeout(() => { fx.remove(); btn.classList.remove('fired'); }, 400); }, 560);
+  }
   function onClick(e) {
     const t = e.target.closest('button,a'); if (!t || !shell.contains(t)) return;
     if (t.matches('[data-ix-go]')) return go(Number(t.dataset.ixGo));
@@ -390,6 +427,7 @@
     if (t.matches('[data-ix-tilt]')) return enableTilt(true);
     if (t.matches('[data-ix-atlas-open]')) { clearResume(); closeStream(); document.getElementById('atlas-launch')?.click(); return; }
     if (t.matches('[data-ix-atlas]')) return openAtlasAt(t.dataset.ixAtlas);
+    if (t.matches('[data-ix-echo]')) return openEcho(t);
     if (t.matches('[data-ix-more]')) { const box = t.closest('.ix-chips'); const open = !box.classList.contains('open'); box.classList.toggle('open', open); t.setAttribute('aria-expanded', String(open)); t.textContent = open ? 'Show fewer' : `+${box.querySelectorAll('.ix-extra').length} more`; Sound.play && Sound.play('tick'); return; }
     const c = list.find(x => x.id === (t.dataset.ixSave || t.dataset.ixShare));
     if (t.matches('[data-ix-save]') && c) {
@@ -431,6 +469,7 @@
   function renderStream() {
     model = C.build(Array.isArray(data.stories) ? data.stories : []);
     list = arrange();
+    computeEchoes(list);
     try { reading = list; } catch {}
     if (!list.length) {
       view.innerHTML = '<div class="stream-empty ix-empty"><div class="ix-empty-orb">◎</div><h2>No signals received.</h2><p>The public snapshot is unavailable and nothing is saved on this device yet. Try another scan in a few minutes.</p><button type="button" id="stream-go-scan">Return to scanner</button></div>';

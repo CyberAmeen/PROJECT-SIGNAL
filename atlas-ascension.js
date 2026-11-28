@@ -101,7 +101,7 @@
   for (const c of A.cities) {
     const n = hubCount(c); if (!n) continue;
     const [x, y] = A.positions[c.id];
-    svgEl('circle', { cx: x, cy: y, r: (14 + 34 * Math.sqrt(n / maxCount)).toFixed(1), fill: 'url(#axDens)' }, densG);
+    svgEl('circle', { cx: x, cy: y, r: (14 + 34 * Math.sqrt(n / maxCount)).toFixed(1), fill: 'url(#axDens)', 'data-id': c.id }, densG);
   }
 
   const CRITERIA = {
@@ -149,7 +149,7 @@
         const [x1, y1] = A.positions[a], [x2, y2] = A.positions[b];
         const mx = (x1 + x2) / 2, my = (y1 + y2) / 2, dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy) || 1;
         const off = Math.min(60, len * 0.16), cx = mx - dy / len * off, cy = my + dx / len * off;
-        const p = svgEl('path', { d: `M${x1},${y1}Q${cx.toFixed(1)},${cy.toFixed(1)} ${x2},${y2}`, stroke: color, class: 'ax-link', pathLength: '1', style: `--i:${constG.childElementCount}` }, constG);
+        const p = svgEl('path', { d: `M${x1},${y1}Q${cx.toFixed(1)},${cy.toFixed(1)} ${x2},${y2}`, stroke: color, class: 'ax-link', pathLength: '1', style: `--i:${constG.childElementCount}`, 'data-a': a, 'data-b': b }, constG);
         const t = svgEl('title', {}, p); t.textContent = `${cityById[a].name} ↔ ${cityById[b].name} — ${CRITERIA[layerState.criterion].label}: ${key}`;
       }
     });
@@ -178,6 +178,7 @@
     const modes = [layerState.density && 'DENSITY', layerState.constellations && `CONSTELLATIONS · ${CRITERIA[layerState.criterion].label.toUpperCase()}`].filter(Boolean);
     window.__atlasMode = modes.length ? modes.join(' + ') : 'STANDARD';
     refreshHud();
+    try { window.dispatchEvent(new CustomEvent('atlas:layers', { detail: { ...layerState } })); } catch {}
   }
   layerBar.addEventListener('click', e => { const b = e.target.closest('button[data-layer]'); if (!b) return; layerState[b.dataset.layer] = !layerState[b.dataset.layer]; applyLayers(); });
   $('select', layerBar).addEventListener('change', e => { layerState.criterion = e.target.value; applyLayers(); });
