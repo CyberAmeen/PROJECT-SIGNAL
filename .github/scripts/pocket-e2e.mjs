@@ -12,11 +12,12 @@ const check = (name, ok, extra = '') => { results.push({ name, ok: !!ok, extra }
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const admin = async body => (await fetch(S + '/admin/push/check', { method: 'POST', headers: { 'X-Sentinel-Admin-Token': ADMIN, 'Content-Type': 'application/json' }, body: JSON.stringify(body || {}) })).json();
 
-const browser = await chromium.launch({ channel: 'chrome', headless: false, args: ['--no-first-run', '--autoplay-policy=no-user-gesture-required'] });
-const ctx = await browser.newContext({ viewport: { width: 430, height: 932 }, deviceScaleFactor: 2 });
+// a persistent profile: Chrome disables the Push API in incognito-style contexts
+const ctx = await chromium.launchPersistentContext('/tmp/e2e/profile', { channel: 'chrome', headless: false, viewport: { width: 430, height: 932 }, deviceScaleFactor: 2, args: ['--no-first-run', '--autoplay-policy=no-user-gesture-required'] });
+const browser = { close: () => ctx.close() };
 await ctx.grantPermissions(['notifications'], { origin: 'http://localhost:8080' });
 await ctx.addInitScript("Object.defineProperty(navigator,'standalone',{get:()=>true});");
-const page = await ctx.newPage(); const errors = [];
+const page = ctx.pages()[0] || await ctx.newPage(); const errors = [];
 page.on('pageerror', e => errors.push(String(e)));
 page.on('console', m => { if (m.type() !== 'log' || /push|sw|subscri/i.test(m.text())) log('  [console.' + m.type() + '] ' + m.text().slice(0, 300)); if (m.type() === 'error' && !/Failed to load resource|net::|fonts\.g/.test(m.text())) errors.push(m.text()); });
 
