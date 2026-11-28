@@ -1,0 +1,3547 @@
+CHARLESTON BREAKWATER EXTENSION AND G R O ifT STRUCTURE—
+
+  ENVIRONM ENTAL IMPACT STATEMENT SUPPLEM ENT, N O . 1
+
+
+
+
+                           U. S. ARMY ENGINEER DISTRICT
+                           PORTLAND, OREGON
+                           DECEMBER, 1978
+ Charleston Breakwater Extension and Groin Structure
+
+Draft Environmental Impact Statement Supplement, No. 1
+
+                        to the
+
+    Coos Bay Operation and Maintenance Dredging
+
+         Final Environmental Impact Statement
+
+                  Coos Bay, Oregon
+
+
+
+
+                     Prepared by
+
+              U.S. Army Engineer District
+
+                   Portland, Oregon
+
+
+
+
+                    December, 1978
+                                SUMMARY
+
+
+
+
+( X ) Draft Environmental             (   ) Final Environmental
+      Impact Statement Supplement           Impact Statement Supplement
+
+Responsible Office:                  Colonel Harvey L. Arnold, Jr., District
+                                       Engineer.
+                                     U.S. Army Engineer District, Portland
+                                    Corps of Engineers
+                                     P. 0. Box 2946
+                                     Portland, OR 97208
+                                     Telephone:  (503) 221-6000
+
+
+
+
+1. -' Name of Action:    ( X ) Administrative      (   ) Legislative
+
+2. • Description of the Action: The Corps of Engineers proposes to:
+(1) Construct an 800-foot breakwater extension north from the end of the
+present breakwater paralleling channel alinement; (2) raise the top ele­
+vation of the existing breakwater; and (3) construct a 400-foot long
+groin on the east side of the Charleston Channel, if later determined
+necessary to control channel shoaling.
+
+3*   Summary of Environmental Effects:
+
+The proposed extension is expected to cause the sand spit to reestablish
+where it existed adjacent to the breakwater until 1977. The shape of
+the spit and the added height of the existing breakwater are expected to
+reduce wave activity in the boat basin, reduce damage to boats and
+structures caused by surging, and help to maintain channel depth and
+alinement..
+
+During construction of the proposed project, trucking and dumping of stone
+will produce a temporary increase in turbidity, noise, dust, and traffic
+congestion of the construction site; 'Some turbidity and disturbance to
+fish in the area will occur as the stone is placed. The breakwater exten­
+sion and build up will cover about three acres of sandy habitat and create
+0.4 acres of intertidal rocky habitat. Benthic organisms (Including razor
+clams, cockle clams, bull kelp, snails, and various worms and larvae) would
+be covered and their habitat permanently altered.
+
+The newly created rocky habitat would encourage establishment of species
+similar to those lnhabitating the jetty area, such as rockfish, sculpins,
+anenomes, mussels, barnacles, and attached algae.
+The sand spit which would form west of the extension would contain about
+11 acres of sand above MHHW and cause 12 acres of intertidal sandy habi-
+tat to accrete. Present razor clam populations would survive the gradual
+sand build up and new larval clams should settle on the beach to maintain
+the present population.
+
+Some shoaling would occur both north and south of the proposed groin structure
+which would cover 1.2 acres of rocky and sandy, subtidal benthic habitat.
+
+Dredging requirements in Charleston Channel will be reduced after construc­
+tion of the extension; fewer new disposal sites would be required.
+
+Socio-economic effects of the project center around benefits which would
+occur to the fish industry. Monetary losses and time delays currently
+experienced by local fishermen should decrease substantially. The expected
+reduction in surge problems may encourage local authorities to push for
+expansion of the boat basin. It is likely that tourist-oriented develop­
+ment will occur as a secondary effect of the growth of the fishing
+industry, especially if sport fishing increases as expected. Life-style
+changes in Charleston would occur as the area becomes more tourist oriented.
+
+4. Alternatives Considered: Structural solutions analyzed include con­
+struction of the following: an L-shaped detached breakwater to the north
+of the present breakwater, plus 3 groins on the cast side of the Charleston
+Channel; a 1,000-foot northward extension of the existing breakwater; an
+800-foot northward extension of the existing breakwater and one groin on
+the east side of Charleston Channel; a single groin on the east side of
+Charleston Channel; and an 800-foot northward extension of the existing
+breakwater, plus 2 groins on the east side of the Charleston Channel.
+Other alternatives include no action and dredging Charleston Channel to
+a new alinement.
+
+5.   Section 404 Evaluation:
+
+
+In accordance with the Federal Water Pollution Control Act Amendment
+of 1972 (PL 92-500) and the Clean Water Act of 1977 (PL 95-217), a
+Section 404 Evaluation of the proposed in-water fills associated with
+the project was distributed with the Corps Public Notice No. NPPEN-058
+(as revised). Both of these documents are provided for review with
+this EIS. A Water Quality Certification from the State of Oregon has
+been requested.
+ 5.   Comments Requested:
+
+ Federal
+
+  Department of Transportation
+    U.S. Coast Guard
+    Federal Highway Adminsitration
+    Federal Railroad Administration
+  Environmental Protection Agency
+  U.S. Forest Service
+. U.S. Soil Conservation Service
+  Department of Commerce
+    National Marine Fisheries Service
+  Department of the Interior
+    U.S. Fish & Wildlife Service
+    National Park Service
+  Federal Energy Administration
+ Department of Housing and & Urban Development
+ Department of Health, Education & Welfare
+ Federal Power Commission
+ Advisory Council on Historic Preservation
+
+
+ State
+
+ Office of the Governor
+ Local Government Relations Division
+ Oregon Department of Fish & Wildlife
+ Land Conservation & Development Commission
+ Division of State Lands
+
+
+ Local
+
+ Coos-Curry Council of Governments.
+ Coos County Planning Department
+ Coos Bay Public Library
+ Port of Coos Bay
+Other
+
+OSU Marine Science Center
+Institute of Marine Biology
+Sierra Club
+Friends of the Earth
+Trout Unlimited
+Northwest Environmental Defense Center
+Isaak Walton League
+Federation of Western Outdoor Clubs
+National Audubon Society
+Survival Center, University of Oregon
+The Oregon Journal
+Citizens for a Clean Environment
+Oregon Archeological Society
+Oregon Environmental Council
+Oregon Wildlife Federation
+Oregon Shores Conservation Coalition
+Washington Environmental Council
+Environmental Studies Center, University of Oregon
+OSPIRG
+Western Wood Products Association
+The Oregonian
+Museum of Natural History
+Oregon Historical Society
+League of Women Voters
+ Environmental Information Center, Inc.
+ U.S. Attorney
+Environmental Defense Fund, Inc.
+Kerr Library, OSU
+Liz Greenhagen
+The Nature Conservancy
+Bohemia Inc., Umpqua Division
+All Coast Fishermen's Association
+Charleston Fishermen's Wives Association
+                                  COOS BAY. AT CHARLESTON
+             DRAFT ENVIRONMENTAL IMPACT STATEMENT SUPPLEMENT
+
+
+                                  TABLE OF CONTENTS
+
+
+                                                                      Page
+1   PROJECT D E S C R I P T I O                                        i-1
+
+    1.1   Introduction                                                 1-1
+    1.2   Relationship to the Coos Bay Navigation Prolect              1-2
+    1.3   Relationship to Other Federal Actions                        1-2
+    1.4   Existing Conditions                                          1-3
+    1.5   Proposed Action                                              1-3
+    1.6   Alternatives Considered                                      1-4
+    1.7   Project Economics                                            1-5
+
+2   ENVIRONMENTAL SETTING WITHOUT THE PROJECT                          2-1
+
+    2.1    Physical Characteristics of the Area                        2-1
+    2.2    Biological C o n d i t i o                                  2-11
+    2.3    Socio-Economic Characteristics of theArea                   2-21
+
+3   RELATIONSHIP OF THE PROPOSED ACTION TO LAND-USE PLANS              3-1
+
+    3.1   Introduction                                                 3-1
+    3.2   Local and County Land Use                                    3-2
+    3.3   Statewide Planning                                           3-4
+
+4   ENVIRONMENTAL IMPACT OF THE PROPOSED ACTION                        4-1
+
+    4.1   Genera                                                       4-1
+    4.2   Hydraulics                                                   4-1
+    4.3   Sediment Transport                                           4-5
+    4.4   Biological Impacts of the Proposed Project                   4-6
+    4.5   Socio-Economic Impacts of the ProposedProject                4-9
+
+5   ANY ADVERSE ENVIRONMENTAL EFFECTS WHICH CANNOT BE AVOIDED
+    SHOULD THE PROPOSAL BE IMPLEMENTED                                 5-1
+
+6   ALTERNATIVES TO THE PROPOSED ACTION                                6-1
+
+    6.1   Introduction                                                 6-1
+    6.2   Nonstructural Alternative— No A c t i o n .
+    6.3   Structural Alternatives                                      6-6
+
+7   RELATIONSHIP BETWEEN LOCAL SHORT-TERM USES OF MAN'S ENVIRONMENT
+    AND THE MAINTENANCE AND ENHANCEMENT OF LONG-TERM PRODUCTIVITY      7-1
+8   IRREVERSIBLE AND IRRETRIEVABLE COMMITMENTS OF RESOURCES WHICH
+    WOULD BE INVOLVED IN THE PROPOSED ACTION SHOULD IT BE
+    IMPLEMENTED                                                     8-1
+
+9   COORDINATION                                                    9-1
+
+REFERENCES
+
+APPENDICES
+
+    Plants and Animals Found in the South S l o u g                 A-l
+    Flowfield Diagrams                                              B-l
+    Velocity Field Diagrams                                         C-l
+    Archeological Coordination                                      D-l
+                              LIST OF FIGURES
+
+
+Figure                            Title                              Page
+
+1-1       Authorized Project                                          1-9 •
+1-2      Breakwater Extension and Groin                              1-10
+1-3      Eastward Bend in the Charleston Channel                     1-11
+1-       Storm.Damage                                                1-12
+1-5       Fishing Vessel Grounded on a Shoal                          1-13
+2-       Aerial View of Charleston                                   2-2
+2-2      Typical Sumner Wave Pattern                                 2-4
+2-3      Flow Pattern Computed by the Model                          2-5
+2-4.
+to       Shoreline Changes Near Charleston                           2-9
+2- 1 5
+2-16     Variation in Amount of Exposed Sand in Lower Coos Bay       2-10
+2-17     Razor Clams from Charleston Spit                            2-13
+2-18     Sand Point                                                  2-16
+2-19     South Slough                                                2-19
+2-20     Current Land Use                                            2-30
+2- 21    Property Ownership                                          2-31
+3- 1     Current Interim Zoning                                      3-3
+3- 2     Designated Land Use of the Coos Bay Estuary Plan            3-5
+4- 1     The Charleston Spit Near Its Maximum Size in 1968           4-2
+4-2      Expected Form of Sand Accretion Due to Breakwater Extension 4-3
+
+
+                             LIST OF TABI£S
+
+
+Table;                            Title                              page
+
+2-1      Corps of Engineers* Activities in Lower Coos Bay            2-8
+2-2      ODFW Razor Clam Data                                        2-14
+2- 3     01MB Clam Creel Census                                      2-14
+3- 1     Applicable Land Use Planning Statutes, Documents, and
+            Process 2S                                               3-1
+3-2      Consistency of Action with Oregon's Planning Goals          3-8
+                            LIST OF PREPARERS
+
+Doris J. McKillip, Environmental Specialist, B.S. in Fishery Science.
+
+    Sections 1.1, 1.2, 1.3, 2.2, 4.4, 5.0, 6.1, 6.2, 6.3, 7.0, 8.0,
+    9.0, Sunmary, Appendix A, Appendix D.
+
+David P. Simpson, Civil Engineer, B.S. in Geology, B.S. in Oceanography,
+    M.S. in Ocean Engineering.
+
+    Sections 1.4, 1.5, 1.6, 2.1, 4.1, 4.3, 6.3, Appendix B, Appendix C.
+
+William S. Boodt, Regional Economist, M.S. and PhD in Economics.
+
+   Section 1.7.
+
+Dennis H. Berry, Technical^ Publications Writer (Biological Sciences),
+   B.S. in Forest Resources Management.
+
+   Edited   all Sections.
+
+Eleanor Adelman, Sociologist with Montagne-Bierly Associates, Inc.,
+   B.A. in Biology with a minor in Sociology.
+
+   Sections 2.3, 3.1, 3.2, 3.3, 4.5, 6.2.
+1.    PROJECT DESCRIPTION
+
+1.1    Introduction ■
+
+This Environmental Impact Statement (EIS) is written to supplement the
+August, 1976, Operation and Maintenance Final EIS on Channel Maintenance
+Dredging at Coos Bay. More specifically, this doument relates to the
+particular portion of the Coos Bay Navigation Project known as Charleston
+Channel and Mooring Basin, the features of which are:
+
+       .   a   mooring basin 500 feet by 900 feet at Charleston;
+
+
+       .   A channel 10 feet deep and 150 feet wide from the mooring basin
+           to deep water;
+
+       .   A channel extension in South Slough 10 feet deep and 150 feet wide
+           from the mooring basin to the highway bridge at Charleston; and
+
+           A breakwater and bulkhead.
+
+These four features were authorized by the 30 June 1948 River and Harbor
+Act (House Document 646, 80th Congress, 2nd Session).
+
+Four major environmental documents dealing with the Coos Bay area have
+already been published by the Portland District; these are listed below:
+
+
+Title:                                    Date:               Purpose:
+
+Environmental Impact Statement,         Nov. 1970     Analyzed effects of
+Coos Bay. ,                                           several modifications to
+                                                      existing Coos Bay Naviga­
+                                                      tion projects.
+
+Background Information, Vol. II,        Feb. 1975     Published and distributed
+Draft Supplement to Coos Bay                          with final supplement to
+Deep Draft Navigation Channel                         July 1975 EIS.
+EIS.
+
+Final Supplement, Coos Bay,             July 1975     Supplemented and provided
+Oregon Deep Draft Bavigation                          greater depth of analysis
+Project EIS.                                          than original November
+                                                      1970 EIS.
+Channel Maintenance Dredging,           Aug. 1976     Analyzed environmental
+Coos Bay Final EIS.                                   effects of. operation and
+                                                      maintenance of Coos Bay
+                                                      navigation projects (O&M
+                                                      Statement).
+1.2    Relationship of this EIS to the Coos Bay Navigation Project
+
+ Federal involvement in Coos Bay navigation began with the River and Harbor
+ Act of 1910 and was extended in Acts of 1919, 1922, 19 2 7, 1930, 1935,
+ 1946, 1948, and 1970. Under the authority of these Acts, the Corps
+.maintains:
+
+       .   Two jetties protecting the bay entrance;
+
+           a navigation channel 40 feet deep over the entrance bar, decreasing
+           to a 36-foot depth from Guano Rock (mile 1) to Isthmus Slough
+           (mile 15);
+
+           two turning basins (opposite Coalbank Slough and at North Bend);
+
+           an anchorage basin; and
+
+       .   a small boat basin at Charleston.
+
+In the River and Harbor Act of 1970, Congress authorized the following
+project modifications, which are currently being completed (fig. 1-1):
+
+       . A 45-foot deep, 700-foot wide channel across the entrance bar,
+          decreasing gradually to 35 feet of depth and 300 feet of width
+          near Guano Rock;
+
+       .   an inner channel 35 feet deep and 300 feet wide from Guano Rock to
+           about river mile 9, then widening to 400 feet (same depth) to
+           river mile 15;
+
+       ;   enlarged turning basins with depths of 35 feet at North Bend (800
+           feet by 1,000 feet) and Coalbank Slough (700 feet by 1,000 feet);
+
+            an anchorage area 800 feet wide and 1,000 feet long at mile 5.5;
+           'and '-.
+
+       .   abandonment of previously authorized anchorage at river mile 3.5
+           and 7.0.
+
+ The Charleston project is proposed under the authority provided in the
+ River, and Harbor Act of 1948.
+
+ 1.3   Relationships to Other Federal Actions
+
+The U. S. Coast Guard Station at Coos Head provides navigational aid for
+the Coos Bay. Channel.
+
+ South Slough* an estuarine sanctuary, jointly funded by the Office of
+ Coastal Zone Management, U. S. Department of Commerce and by the State of
+ Oregon, is located just south of Charleston.   Creation of the sanctuary
+ was described in a 1974 Final EIS prepared by the Department of Commerce.
+Additional activities in the Coos Bay area may develop in the future. The
+Port of Coos Bay has applied for two permits, one for enlargement of the
+Charleston Boat Basin (#071 OYA2-002922) and'one for development of a
+trawler basin on the North Spit (#071 0YA2-002884).
+
+
+The Corps also maintains harbors at several other ports along the coast.
+The nearest deep draft harbors are located at Newport, Oregon and Eureka,
+California. ’
+
+1.4    Existing Conditions
+
+In 1956, a 10-foot deep channel was dredged to connect Charleston with
+the main Coos Bay Channel. A small boat basin with spaces for 244 boats
+was also constructed. The boat basin was expanded to 544 spaces in 1966.
+The Charleston Channel has been maintained by frequent dredging since 1961.
+
+ Maintaining proper channel depth and alinement has become increasingly
+ difficult. Waves entering the main channel transport sand from the ocean
+ and from the shoal area to the north of the boat basin's breakwater; the
+ sand is deposited in the Charleston Channel, tending to-form an eastward
+ bend in the channel (fig* 1-3). Many boats have sustained hull damage^
+  at this location; on occasion, even Coast Guard ships have been forced to
+' remain outside the channel entrance during periods of low water and high
+ waves.
+
+High waves entering Coos Bay during winter s£9*ms frequently overtop the >
+present Charleston breakwater, which was builfc> to an elevation of 14 feet
+above mean lower low water (+14' MLLW). The breakwater, consequently,
+has been damaged and part of the blacktop road and a waterline on top of
+the breakwater have been destroyed.
+
+ During fall and winter of 1977 and 1978, the sand spit usually located
+ next to the northern edge of the breakwater completely disappeared. Due .
+ Jjjfcjjthis spit erosion, more wave energy was able to reach the boat basin;
+ a m a g e has correspondingly increased. Waves entering the main channel
+.are diffracted around the end of the breakwater as well as reflect from
+*the'shoreline at Barview. Surge damages in the boat basin result.
+
+To illustrate the severity of the problem, a single storm in October, 1977
+caused more than $30,000 damage to mooring structures in the basin. Other
+storms during the 1977-78 winter season inflicted much more damage to
+boats, mooring lines, pilings, and docks (fig, 1-4).
+
+ 1.5   Proposed Action
+
+ The proposed action     (fig. 1-2) is to:
+
+          Extend the present breakwater 800 feet to the north, parallel to' .
+          the Charleston'Channel;
+      •   raise the elevation of the existing breakwater;
+
+      .   possibly, construct a 400-foot long groin on the east side of the
+          Charleston Channel to control shoaling.
+
+The breakwater extension would have a top elevation of +14 feet MLLW and
+a width, at its crest, of 16 feet.  Base width would be 95 feet. About
+41,000 tons of rock would be used to construct the extension; about 1.8
+acres of present bay-bottom would be covered.  Outer stones in the break­
+water would have an average diameter of about 3.5 feet. . Construction   '
+would be accomplished by dumping from the end of the present breakwater.
+A new spit of sand is expected to form along the north side of the existing
+breakwater and along the west side of the extension; it should be about
+11 acres in size above mean higher high water.
+
+The crest elevation of the present breakwater, currently variable, would
+be raised to +18 feet MLLW for its entire length (about 2,000 feet).
+About 0.8 acre of sandy substrate would be covered as a result of raising
+the breakwater height. Rocks which presently form the outer layer of the
+breakwater are about 2 to 3 tons each. Larger rocks weighing about 3.5
+tons each would be used to raise the breakwater to the +18-foot MLLW
+elevation." ■
+
+The groin would be 400 feet long and would cover slightly over an acre of
+bottom. The top elevation would be +14 feet MLLW and crest width would
+be 12 feet. Rock sizes for groin construction would be comparable to
+those for the breakwater extension and raising.  About 35,500 tons of rock
+would be used for the groin; marine equipment would be used.
+
+The proposed action includes no new dredging. Maintenance dredging of
+the Charleston Channel is discussed in the O&M Final EIS (August, 1976),
+available from Portland District at the address noted on the summary page.
+
+1.6   Alternatives Considered
+
+Structural solutions analyzed include construction of the following: an
+L-shaped detached breakwater to the north of the present breakwater, plus
+3 groins on the east side of the Charleston Channel; a 1,000-foot northward
+extension of the existing breakwater; an 800-foot northward extension of
+the existing breakwater and one groin on the east side of Charleston
+Channel; a single groin on the east side of Charleston Channel; and an
+800-foot northward extension of the existing breakwater, plus 2 groins on .
+the east side of the Charleston Channel. Other alternatives include no
+action and dredging Charleston Channel to a new alinement. Section 6
+contains a more detailed discussion of the alternative plans.
+ 1.7 Project Economics
+ 1.7.1 Estimate of Project Costs and Requirements*
+
+ The Initial cost of construction' for the proposed proje''*- is estimated at
+; $2,399,000:
+
+ Breakwater extension (41.100 tons of rock @ $22/ton)             $   904,200
+ Raising present breakwater (24,800 tens of rock @
+   $22/ton)                                                                      545,600'
+ Groin (35,500 tons ofrock @$11.58/ton)**                             411,200
+ Post constructionmodel tests                                          35,000
+
+                                     Subtotal                     $1,896,000 -
+
+ Contingencies @ 1 5 %                                            $   284,400
+
+                                      Subtotal                    $2,180,500
+
+ Engineering, Supervision & Administration @ 1 0 %                $   218,050
+
+                                      Subtotal (rounded)1         $2,399,000
+
+ Costs of dredging are addressed in the benefit discussion.  Maintenance
+ cost on the breakwater and groin is based on an assumed rehabilitation in
+ 25 years requiring 0.5 percent of first costs accumulated over 25 years.
+ Annual costs based on a 50-year economic life and a 6-5/8 percent interest
+ rate are:
+
+            Amortization   of first costs            $165,600
+          , Maintenance costs                            4,073
+
+                          Average annual cost          $169,673
+                          (rounded)                  $170,000
+
+
+
+
+ *    Economic data was extracted from the U.S. Army Corps of Engineers
+      General Design Memorandum titled "Coos Bay, Oregon, Charleston Channel
+      and Mooring;Basin, Breakwater Extension and Groin", dated November
+      1978. Complete document is available foi inspection at U.S. Army
+      District, Portland, Oregon.
+ **   Groin is assumed to be built 10 years after the extension is built.
+      Cost reflects the present worth of rock placed in 1989, in 1978 dollars.
+1.7.2        Benefits of the Proposed Project
+
+Benefits are based upon a 50-year economic life, 1978 price levels, and
+an interest rate of 6-5/8 percent. Benefits are grouped in two categor­
+ies, the first including benefits due to an improved Charleston Channel:
+
+        a.    Reduced project maintenance costs;
+
+    b.         reduced boat damage, caused by groundings; and
+
+        c.     reduced costs to commercial fishermen and food processors.
+
+The second category relates to benefits from reduced activity in and near
+the boat basin:
+
+        a.     Reduced damage to boats, mooring gear, and lines;
+
+        b.     reduced damage to moorage structures; and
+
+        c. . reduced shoreline erosion.
+
+     Annual Maintenance Cost Reduction. Under existing conditions, the
+average annual channel dredging requirement is 46,000 cubic yards. For
+the first 5 years following construction of the planned improvement, the
+annual dredging requirements will be essentially zero. After that time,
+the annual maintenance dredging will be approximately 22,000 cubic yards,
+24,000 cubic yards less than is now needed. The average costs for
+dredging 46,000 and 22,000 cubic yards are $1.90 and $1.30 pier cubic yard,
+respectively. Dredging costs would be reduced because more efficient
+dredging equipment can be used in "with improvement" conditions. An
+average annual benefit in reduced maintenance dredging costs of $67,000
+results.
+
+The average annual maintenance cost of the existing breakwater (cost of
+repairing damage caused by waves and overtopping) is $22,000 per year,
+based on costs since the breakwater began undergoing direct wave attack
+in 1974. Maintenance costs for project improvements are included in the
+previous section. Eliminating the entire $22,000 annual maintenance cost
+to the existing structure is therefore claimed as a project benefit.
+
+The reduction in maintenance cost of the channel and existing breakwater
+totals $89,000.
+
+    Reduced Vessel Damage. The designated alinement of the navigation
+channel has been frequently altered to fit the natural depths. By 1976,
+Charleston channel had developed a sharp dogleg around the shoal, which
+was supplied with sand from the eroding sand spit. The resulting aline­
+ment and shoal condition of the channel were the primary reasons given
+in Coast Guard reports for numerous groundings, damages, and delays to
+boats. Without project improvement, the crooked channel would tend to
+remain or worsen. Annual damages under "without improvement" conditions
+are estimated at $11,720 for the U.S. Coast Guard vessels, $294,060 for
+commercial fishing boats, and $17,530 for charter boats. According to
+the Port of Coos Bay, 20 to 25 groundings are reported each month during
+the commercial fishing season (fig. 1—5)
+
+Since the planned improvements are expected to return the sedimentary
+regime of the area to that existing in the 1960's, the average controlling
+depth of 9.5 (MLLW) of that period is expected to return. Under the
+"without" condition, the controlling channel depth averages 6.5 (MLLW);
+therefore, a 46 percent increase in controlling depth would result from
+the planned improvement. The average annual benefit is $149,000.
+
+    Reduced Vessel Delays. Under the "without improvement" conditions,
+commercial fishermen will continue to pay average annual costs of $150,200
+from extra running time to fish-receiving stations outside the Charleston
+area and from delays to boats working the tides. Working the tides and
+waiting for higher tides delays fishing boats thus reducing their range
+and effective fishing time. The 40 shrimpers are delayed an average of
+32 trips per year, with an average delay of 3 hours per trip at a cost of
+$32.75 per hour, or $125,800. The 20 drag boats are delayed an average
+of 10 trips per year, with an average delay of 3 hours per trip at a
+cost of $40.74 per hours, or $24,400. The number of trips between
+shrimpers and drag boats differs because shrimpers are day boats. The
+drag boats usually fish for 2 to 3 days per trip. •
+
+Fish processors incur average annual costs of $206,620 in, additional
+expense for overtime wages of crews waiting for delayed fishing boats.
+Also, when fishing boats cannot navigate the Charleston channel-and must
+deliver their catches to fish receiving stations outside the Charleston
+area, the fish processors incur additional costs from trucking fish catches
+back to their Charleston facilities. The average annual benefit for
+reduced vessel delays from planned improvement is $164,100.
+
+    Reduced Boat Damages from Surge and Wave Action. Ocean waves entering
+through the Coos Bay entrance diffract around the existing breakwater and
+reflect off the east shore causing what is locally referred to as "surge"
+in the boat basin. The surge is long period (15— 18 second) oscillations
+which carry boats back and forth at their moorings, damaging boats and
+gear. Average annual damages to commercial boats, sport boats, and
+charter boats have been $165,350, $14,930, and $3,390, respectively.
+The boats moored in the outer basin have been damaged so severely that
+an estimated one-third of the boats will be forced to leave the moorage
+area during each of the next 3 years or risk sinking. With the project,
+damages would be zero after 3 years; amortizing the annual damages over
+the 50-year life of the project, average annual benefits are estimated
+to be $24,370. On the basis of a refraction analysis, the planned improve­
+ment would be 88 percent effective in reducing the height of storm waves
+entering the outer boat basin. Hence, the average annual benefits are
+reduced to $21,400.
+     Reduced Damages to Moorage Structures. The surge problem is
+presently causing average annual damages of $54,450 to moorage structures.
+Without improvement, those damages would continue to occur over the next
+2 years. Then at year three, the entire outer basin investment of
+$1,569,100 would be abandoned as boats move out due to damages and unsafe
+conditions. Amortizing the benefits over the 50-year life of the project,
+and using a .88 factor explained in the previous paragraph \ the average
+annual benefits associated with reduced moorage damage are estimated to
+be $90,300,
+
+     Reduced Shoreline Erosion. The planned improvement would prevent
+shoreline erosion damages south of the boat basin. The present rate of
+erosion is estimated at 8 feet per year over a 300-foot section. The,
+cost of riprap to prevent this loss is estimated at $3,800 per 100 feet,
+replaceable every 10 years. The average annual benefit based upon elimin­
+ating the cost of riprap is $1,600.
+
+     Summary of Benefits. The average annual benefits, occurring over the
+economic life of the proposed improvement are summarized below:
+
+     Benefits
+
+        Reduced project maintenance costs                $ 89,000
+
+        Reduced boat damages due to channel
+        improvement                                       148,700
+
+        Reduced commercial fishing and
+        processor costs due to channel
+        improvement                                       164,100
+
+        Reduced boat damages from surge
+        and wave actions                                   21,400
+
+        Reduced damages to moorage structures              90,300
+
+        Reduced,shoreline erosion                           1,600
+
+                                     TOTAL               $515,100
+
+                                     Rounded to          $515,000
+
+1.7.3   Benefit to Cost Ratio
+
+The benefit-to-cost ratio is 3.03 to 1 based upon a 50-year economic life
+and an interest rate of 6-5/8 percent.
+OVERSIZE FOLDOUT(S) FOUND HERE IN
+THE PRINTED EDITION OF THIS VOLUME
+ARE FOUND FOLLOWING THE LAST PAGE
+OF TEXT IN THIS MICROFICHE EDITION
+
+
+SEE FOLDOUT NO
+2.   ENVIRONMENTAL SETTING WITHOUT THE PROJECT
+
+2.1> Physical Characteristics of the Area   '
+
+ Coos Bay is the Estuary of the Coos River located on the western slope of
+ the Oregon Coast Range. It is the largest natural harbor between Astoria
+ and San Francisco. The 13-mile long bay has an average width of 1,200
+ feet at low-tide and is tributary to 820 square miles.V Charleston is
+ located at the mouth of the South Slough in the lower Coos Bay estuary.
+ The Charleston navigation channel leads from the Slough, an area which
+ drains 29 square miles, to the main Coos Bay channel at mile 2 (fig. 2-1).
+
+
+,2.1.1   General
+
+Tides
+
+Coos Bay has diurnal inequality of tides, typical of the Pacific Coast
+of North America. The tidal range, from mean higher high water (MHHW) to
+mean lower low water (MLLW), is 6.7 feet at the bar and 6.9 feet at the
+city of Coos Bay. Extreme high tide, estimated, is'10.5 feet above MLLW;
+extreme low water, estimated, is 3 feet below MLLW. All water depths
+and elevations in this report are referred to MLLW.
+
+
+Depths
+
+ The broad area north of the present breakwater to the Coos Bay navigation
+ channel is at elevation zero to minus 5 feet. It is a dynamic area, with
+ the.elevations of shoals and spits changing seasonally. A shoal extend­
+ ing north approximately from the end of the.present breakwater has been
+ an identifiable but unstable feature since the time of the earliest
+■surveys in' the late 1800's .
+
+ Salinity
+
+ Salinity measurements of water samples taken at Charleston gave values
+ from 9.7 to 33.0 parts per thousand (p.p.t)y with most values falling in
+ the range 25 to 30 p.p.t.  (Queen and Burt, 1955). C o o s Bay has been ,
+ identified as well-mixed, except during the months of January, April,
+ June, and November, when it is partly-mixed (Percy, et al, 1974, p. 51).
+
+ Topography
+
+ Changes in relative sea level during the Pleistocene Epoch have been
+ given,topographic expression in;the area. Sediment eroded from the Coast
+ Range was deposited in the littoral system during sporadic emergence
+ of the coastline. As a result, wave-cut terraces are Identified at
+ elevations 50, 250, 500, 1,000, and 1,500 feet. South Slough and
+ Charleston Channel are separated from the Pacific Ocean by a ridge
+generally 400 feet high consisting of shale and sandstone. Sea level
+has risen during the last 15,000 years, partially drowning the coast and
+creating a drowned river mouth type of estuary at Coos Bay.
+
+2.1.2    Hydraulics
+
+Waves
+
+During the winter, seas greater than 8 feet and swells greater than 12
+feet occur from the westerly directions about 20 and 30 percent of the
+time, respectively. In the summer, northerly winds, produce short period
+waves, often as high as 1 to 2 feet, in the Charleston Channel and small-
+boat basin. The summer wave pattern is shown on figure 2-2. " Winter storm
+waves from the ocean are responsible for most of the damage at the boat
+basin. Waves approaching Charleston, after being diffracted through the
+entrance, are refracted in the shoal area north of the breakwater. .These
+waves are diffracted around the end of the breakwater. Waves impinging on
+the shoreline at Barview are reflected to the west and to the southwest.
+
+
+Tidal Hydraulics
+
+ Prototype tide and current data were collected in Coos Bay in October
+ 1976 for the purpose of developing a mathematical model of the tidal
+ circulation of Coos Bay and South Slough. The greatest velocity
+ measured in Charleston Channel in October 1976 was near the Charleston
+ Bridge and was 3.2 feet per second (1.0 meters/second). An example of
+  the velocity field computed by the model and verified by field data is
+  shown on figure 2-3. Discussion of the model results is found in sec-
+. tion 4.2.
+
+ 2.1.3   Sediment Transport
+
+ The sediment making up the spit, shoals, and bottom in the area of the
+ Charleston breakwater enters the area predominantly from outside the
+  Coos entrance. This conclusion is based on the sediment description,
+  the spatial distribution of sediment characteristics, sediment transport
+ mechanisms acting in the area t and historical changes in the topography.
+ The rate of sediment transport into the Charleston Channel showed a great
+  increase in the period 1970 to present, as compared to the period 1961
+  through 1969, as shown by dredging records. Over the long term, the
+  channel has been maintained to approximately the same area in cross-
+  section; however,' since 1973, shallower depths have been experienced in
+  the channel than in previous years. To maintain the cross-sectional
+  area, an average of 22,000 cubic yards per year were removed from 1961
+  to 1969 (fiscal years). At that time the spit was near its maximum size.
+  During the period 1957 through 1978 (fiscal years) an average of 46,000
+- cubic yards was dredged annually from Charleston Channel.
+Sediment Description
+
+
+
+The bottom sediment in the Lower Jarvis Range (approximately R.M. 6
+through R.M. 8) to the entrance is medium sand withvshells present. The
+possible origin is thought to be beach sand. Proceeding up the bay, the
+material decreased in size to that of silt in the Smith Mill to Marshfield
+ranges (R.M. 14, R.M. 22). Arneson (1975) reported finding marine
+sediments to predominate to about 10 miles (16 kilometers) from the
+entrance. Beyond that the sediment was transitional between marine and
+fluviatile before grading into fluviatile sediment at approximately 12
+miles (20 kilometers) from the mouth.
+
+Sediment samples collected by the Corps at Coos Bay since 1970 show that
+although the statistical values of the size distribution vary with time,
+the bottom sediment is consistently coarser in Coos Bay Entrance and
+Coos Bay Range than in Charleston Channel.
+
+Sediment Transport Mechanisms
+
+Hydraulic principles are used to interpret transport mechanisms from the
+spatial distribution of sand sizes. When a sediment-laden flow enters
+an estuary and local velocity and turbulence gradually decrease, the
+coarser fractions of the load are the first to be deposited. The
+progressive decrease in sediment size from the mouth toward the river
+deposited sediment zone indicates decreasing influence of tidal currents
+and wave-induced turbulence on the hydraulics of the system, and a direc­
+tion of transport from the mouth upstream for about 10 miles.
+
+
+The mechanisms responsible for sediment movement from the entrance area
+to Charleston are waves, wind, and tidal currents. Waves are considered
+the dominant mechanism in forming deposits north of the Charleston     V
+breakwater and calculations have shown that shoaling waves, in combination
+with tidal currents, are capable of transporting much more sediment in
+the Charleston area than are tidal currents alone.
+
+Ocean waves traveling into the Charleston area are refracted in the
+shallow water north of the breakwater. The eastward-directed component
+of wave energy is responsible for the dynamics of the sand spit, as well •
+as the shoaling and shifting of the Charleston Channel. This is inferred
+from aerial photos which show the spit formed first at the westward end
+of the breakwater in 1956 and enlarged to the east. Maximum size was
+reached in 1968. Erosion;started at the westward end and before disappear­
+ing in 1977, the spit consisted only of a small shoal extending eastward
+from the east end of the breakwater.
+Channel Morphology
+
+Although the channel shoals severely during storms and is periodically
+dredged to at least -10 feet, over the long term, it tends-to maintain
+itself at particular dimensions. Channel cross-section measurements
+from surveys dating from 1973 show that the channel has migrated to the
+east in the vicinity of the present breakwater. Observations show that
+the cross-sectional area and shape of this channel at a specific river
+mile tends to remain constant.
+
+Shoreline Changes
+
+Changes in the shoreline on surveys of the Coos Bay entrance dating from
+1861 to .the present have been studied. Those changes can be related to
+changes in runoff in nearby coastal rivers, and structural changes in
+the system, listed in Table 2-1. Variation can be attributed, at least
+in part, to natural phenomena.   Shoreline changes since 1879 may be
+noted in Figures 2-4 through 2-15. Periods of more exposed sand have
+alternated with periods of less exposed sand in the North Charleston
+area. ihose periods seem to b<^ on the order of 20 to 25 years long.
+Those periods lag the changes in relative amounts of runoff from coastal
+rivers. Periods of an abundance of sand have succeeded periods of average
+and greater-than-average runoff. A period of dry years preceded a period
+of relatively minimal area of exposed sand at Charleston. High magnitude
+floods in the coastal streams may cause short-duration increases in the
+size of the sand spit at Charleston.
+
+Areas are plotted by year on figure 2-16. The variations in those ’
+areas were compared with long-term variations, determined subjectively,
+in levels of annual runoff at nearby stream gaging stations.
+
+Studies of the relationship between average annual runoff of nearby
+coastal rivers, and Umpqua River in particular, lead to the conclusion
+that runoff events that deliver great volumes of sediment to the coast­
+line may cause short-duration fluctuations in the abundance of sand in
+                                         TABLE 2-1
+                               CORPS OF ENGINEERS ACTIVITIES
+                                     IN LOWER COOS BAY
+
+
+1880-1899     Fossil Point Jetty built.
+1891'-         North Spit sand dunes planted with beach grass.
+1891- 1894    North Jetty constructed.
+1894          Dredge entrance channel to -20 feet.
+1899- 1900    South Jetty constructed to length of 2,700 feet.
+1900-1901     Outer 3,000 feet of North Jetty repaired.
+1892-1905     North Spit HWL* moved west 2,700 feet; south tip moved south
+              1,500 feet; LWL^ moved south 2,000 feet (250 feet/year).
+1914           North Spit sand dunes planted with 720 acres grass.
+1917           Entrance channel dredged to -27 feet, the bar channel dredged to
+               -30 feet, and the navigation channel dredged to -22 feet to
+               Smith's Mill.
+1924-1928     South   Jetty extended.
+1924-1929     North   Jetty extended.
+1925          Between Coos Head and Tunnel Point, LWL advanced 200 feet.
+1905-1935     North Spit moved west 1,300 feet in 1905-1935; LWL moved seaward
+               200 feet (43 feet/year).
+1937          Entrance channel dredged to 24 feet.
+1939-1940     North   Jetty restored.
+1941-1942     South   Jetty restored.
+1949          Entrance channel at RM 4.5 dredged to 30feet.
+1952          Entrance dredged to 40 feet to GuanoRock     (30 feet there).
+1956           Connecting channel to Charleston dredged to -10 feet.
+1956-1957     Charleston Boat Basin constructed.
+1957-1958     Outer 2,940 feet of North Jetty repaired.
+1960           Part of submerged jetty removed.
+1963-1964      Outer 3,423 feet of South Jetty repaired.
+1966           Addition to Charleston Boat Basin.
+1970           Channel in South Slough to Highway Bridge dredged to -10 feet.
+               Outer 2,940 feet of North Jetty repaired.
+1978           Coos Bay entrance dredged to -45 feet, channel to -35 feet
+               (increase of 5 feet).
+
+
+1   High water line
+2   Low water line
+OVERSIZE FOLDOUT(S) FOUND HERE IN
+THE PRINTED EDITION OF THIS VOLUME
+ARE FOUND FOLLOWING THE LAST PAGE
+OF TEXT IN THIS MICROFICHE EDITION
+
+
+SEE FOLDOUT NO
+lower Coos Bay immediately,.and those fluctuations are superimposed on
+longer term variations. The causes of the long-term variations may lie
+in prevailing wave activity as much as in the sand supply rate.. ;
+
+The main conclusion reached is that the size of the sand accumulation at
+Charleston has fluctuated drastically since the time records were first
+keptj and these changes can be attributed, in great part, to variations
+in intensity of natural processes acting in the area.
+
+There is some coincidence between shoreline changes and man's activity in
+the system. Referring to Table 1, decreases in area in the North Spit
+grid seem to be coincident with the planting of 720 acres of dune grass
+on the North Spit sand dunes in 1914, and dredging the entrance channel
+to -30 feet in 1949. It is reasonable to assume those activities would
+be effective in decreasing the size of that area.
+
+2.2     Biological Condition
+
+2.2.1     Introduction
+
+To simplify discussion, the Charleston area has been divided into
+three sections: the area north of the breakwater, the Charleston
+Channel-small boat basin area, and the South Slough Sanctuary area.
+Each of the three areas has differing physical forces affecting it;
+each has developed distinctly different biological populations.
+
+Additional and more detailed discussion of Coos Bay estuarine biological
+system may be found in the Corps' 1975 publication, "Coos Bay EIS Supple­
+ment Background Information."
+
+ 2 .2.2   Area North of the Charleston Breakwater
+
+This area, which is subject to more direct influence from the ocean than
+most other bay locations, is constantly altered by intensive wave activity
+and weather conditions.
+
+The sand spit located northeast of the breakwater is transient and has
+moved from west to east since the late I960's (see figs. 2-13, 2-14,
+2-15). The shift has changed the topography of the spit. As would be
+expected,' organisms living in this area must be able to adapt to a
+changing environment. The area has been the subject of much study by
+the Oregon Institute of Marine Biology (OIMB) and the Oregon Department
+of Fish and Wildlife (ODFW).
+
+ Benthic organisms (those which live most of their lives on or beneath the
+ bay bottom) are not very common in this area. For example, a May 1978
+ survey at -0.5 feet low tide by OIMB sampled a 100 meter transect line
+ running northwesterly from the east end of the breakwater and found few
+ benthic organisms. Using a 1/2 meter square sieve box, only a few
+ Dungeness crab larvae, a worm, a juvenile flounder, a bentnose
+Clam (Macoma nasuta), a shrimp, assorted polychaetes, and various sand
+lances were found. Similarly, a 25 Hay 1978 survey at -1.7 feet low tide
+found few benthic organisms in the area that would be covered by the
+proposed.breakwater extension. A 220 meter transect line found a few
+olive snails (Olivella bipllcata) , another snail (Nassarius tossatus),
+amphipods (Eshaustorius sp.), polychaetes (Nerlnedes tossatus), and
+others in the order Capltellidae) , a megalops, a clam (Tellina salmonea),
+and unidentified sand lances. The most densely populated site sampled
+contained 2 olive snails and 102 polychaetes.
+
+The benthic organism of greatest interest to recreationists in this area
+is the razor clam (Siliqua patula). State-wide, razor clam populations in
+coastal estuaries are uncommon. Two areas with significant in-bay popu­
+lations are Tillamook Bay and Yaquina Bay. About 90 percent of Oregon's
+razor clams are found at Clatsop Beach on the northern coast (Link, 1978).
+
+
+
+Locations near Coos Bay where razor clams are found include the open
+beach areas of Heyers Creek Beach in Gold Beach, Bastendorff Beach south­
+west of Charleston, and North Beach and South Beach in Newport. Some of
+these populations are short-lived because of beach instability.
+
+Razor clam populations tend to be sporadic both in size and occurrence
+because of the species life history. The razor clam matures in its second
+year. Spawning occurs during the spring and summer, when water tempera­
+tures exceed 55°F. Each female clam ejects six to ten million eggs, to
+be fertilized by a chance meeting with a sperm cell. During this early
+portion of the species' life history, mortality is extremely high. Those
+eggs that are fertilized become free swimming larvae carried along by
+ocean currents and becoming widely dispersed. After 5 to 16 weeks, shells
+begin to develop and the clams settle to the bottom and dig into the
+sand. About 95 percent die because of inclement temperatures and other
+natural causes. The surviving clams grow quite rapidly, reaching a
+harvestable size of 3-1/2 inches in one year and 4-1/2 inches by the
+next year. After two years the growth rate slows, with the usual maximum
+size of five year old clams being 6 inches (Link, 1978).
+
+
+
+
+As was noted earlier, the bulk of the state's razor clam population is
+located on the open north coast. In-bay populations are rare; south
+coast, in-bay populations are rarer still.
+The area to the north of the breakwater has such a population. Razor
+clams have been in the area since the late 1960's, but were not sufficient
+in number nor large enough in size to harvest until about 1972, and then
+only at tides of -1.5 feet or lower. Since 1974, "clammers" have used the
+area extensively; the area is now used at tides of -0.7 feet or lower.
+As many as fifty people at a time have been observed in the area during
+some of the lowest tides. While intertidal populations are accessible to
+the sport clammeri.razor clams have been found up to a depth of eight
+fathoms at the ocean-bottom.  Clams also live too deep in the sand to
+be disturbed by diggers or the surf.
+
+Although the sand spit area was severely disturbed during the 1977 winter
+storms, the clam population appears to be as abundant as in previous years
+ (fig. 2-17). ODFW personnel annually conduct a creel census of these
+species as well as a study of their age composition (table 2-1) (Link,
+1978).
+                                 TABUE 2-2
+                            ODFW RAZOR CLAM DATA
+                               AGE COMPOSITION
+
+
+                                            Age Composition in Years
+Date    Razor Clans/Digger*
+                                  0           1       2       3              4          5
+
+1974           ■                      07.   38.3%    48.1%      11.17.      1.9%       0.67.
+1975            9.9             42.97.       9.07.   34.47.     13.27.      0.57.           07.
+1976            6.3             15.47.      33.37.   25.77.     12.87.     12.87.           07.
+1977            6.5             14.27.      42.97.   42.97.          07.         07.        07.
+1978            6.7             10.97.      23.37.   38.47.     19.27.      6.87.      1.47.
+
+
+* Average number of razor clams per recreational '.rip
+  (usually 1 low tide of 2-hour duration).
+
+
+Colleen Burgh, from OIMB, conducted a creel census during low tides in
+April and May 1978. The results of her survey are shown in table 2-2
+(Burgh, 1978).
+
+
+
+                                  TABLE 2-3
+                            OIMB CLAM CREEL CENSUS
+
+
+                                                       Razor clams*          Cockle clams
+Date            Total No.
+        Tide                      No. surveyed           digger                 digger
+1978            of diggers
+                                                        surveyed               surve\3d
+
+4/25    -1.1          33
+4/26    -1.1           7                     3                18.6
+5/9     -0.7           9                     7                4.8                      2.6
+5/10    -0.5          ■6
+5/21    -0.9          12                    11                8.3
+5/22    -1.4          44.                   32                 9.0                     1.3
+5/23    -1.7          34                    29                5.5                      1.8
+5/24    -1.8          26                    21                4.7                      0.2
+5/25    -1.7          11                    .'8                1.8                     0.9
+
+
+*The razor clam daily bag limit is the first 24 dug, regardless of size',
+■ or condition. :
+2.2.3   Charleston Channel and Boat Basin Area
+
+The east side of the channel has not been intensively studied biologically.
+In August 1970, students from Oregon Institute of Marine Biology examined
+the area as a part of an overall ecological study of the Coos Bay estuary
+system (Rosenkeetter , et al, 1970). Results from this overall study are
+contained in the Coos Bay Deep Draft FEIS Background Supplement.
+
+A summary of their study of the east channel from the submerged jetty
+south to the Charleston Bridge is contained below. One place referred
+to frequently is Sand Point, which is north of the bridge. (Figure 2-18).
+The substrate from the bridge to Sand Point is a mud-to-sand gradient.
+North of;Sand Point is a hard sandstone base overlain by sand and mud
+with many tide pool locations.
+
+The dominant algal species in these areas seemed to stratify with tidal
+level and substrate type. Nereocystis beds existed on rocky substrate
+at the lowest level of tide. Phyllospadix was found on sandy mud sub­
+strates at mean tide level. Ulva beds were found on flat sandstone-clay
+substrates at mean tide levels. Enteromorpha was occasionally discovered
+in association with Ulva, especially when Ulva was sparse and the flat
+sandstone was covered with a thin layer of sandy mud. Fucus and
+Pelvetiopsis were discovered on exposed rock with Fucus dominant in the
+splash zone and the upper rocky intertidal and Pelvetiopsis dominant in
+the mean and upper mean intertidal.
+
+Populations in the tide pools included many species, especially at mean
+and lower tide levels between rocks and bouldei's on the sandstone-clay
+shelf. Two species of sculpin were observed: Enophrys bison (buffalo
+sculpin) that feeds upon Ulva, and Artedius fenestralis (padded sculpin)
+which feeds upon Ulva and Enteromorpha. Stomach analysis of sculpins
+captured off the submerged jetty revealed small dungeness crab (Cancer
+magister), shrimp, Clinocardium and other molluscs, clam siphons, and
+small fish. Sand lances (Ammodytes tobianus personatus) were found in
+the sandy mud off Sand Point.
+
+The red-rock crab (Cancer productus) was observed in the Ulva beds and
+dungeness crab in the eelgrass-beds. The porcelain crab (Petrolisthes)
+was found on a mussel shelf (Mytilus californianus) . The Hemigrapsus
+nudus (purple shore crab) and Pachygrapsus (the little square-shelled,
+rock crab) were found together in sandstone rock crevices in the high
+intertidal or splash zone. The dominant hermit crab found in the tide
+pools was Pagurus hirsutiusculus.
+
+Nudibranchs in the area included Archldoris montereyensls and Acanthodorls
+columbina appearing in brown kelp, and Aeolidia papillosa, Hermlssenda
+crassicomia, and Dlrona albolineata found in tide pools and lower tidal
+levels.
+The bivalves found in the clam bed off Sand Point were the softshell clam
+(Mya arenaria), the bentnose clam (Macoma nasuta), the rock cockle
+(Protothaca staminea), the cockle (Cllnocardium nuttalli) the gaper
+(Tresus capax),■ the butter clam (Saxidomus glganteus) and Tellina salmonea.
+Gapers and cockles were most numerous.
+
+A snail found in the area was Thais lamellosa. These juveniles were found
+in association with the limpets, Acmaea t. scutum and A^ t^_ fenestra, and
+the chiton (Mopalia clliata) in the upper intertidal splash zone.
+
+Hydrozoans, ctenophores, and jelly fish were found stranded by the tide
+in the study area.   Sponges found encrusting rock undersides in the mid
+intertidal were the purple Haliclona sp., the red Ophlltaspongia pennata,
+the gold Cliona sp., and the brownish-red Esperiopsls originalis. On a
+rock accidentally dredged from the submerged jetty, several anemones
+(Metridium sp.) and tubelarians (Garveia sp.) were found. Other anemones
+in the area were Anthopleura elegantissima and A. xanthogrammica. The
+splash zone area with sandstone rock supported a limpet, barnacle (Balanus
+carlosus and B. glandula) and chiton association.
+
+The area also contains a productive dungeness crab breeding ground, as
+demonstrated by the thousands of molted shells of males which line the
+beach in late July.
+
+The local ODFW office conducts periodic beach seining surveys in the Coos
+Bay estuary. Using a bag seine at low incoming tides to sample areas
+near mudflats and sandy beaches, the following species have been found in
+the Charleston area (Mullarkey, 1978):
+chinook salmon (Oncorhynchus tshawytscha)
+coho salmon (0. kisutch)
+steelhead (Salmo gairdneri)
+pile perch (Rhacochilus vacca)
+shiner perch (Cymatogaster aggregata)
+walleye seaperch (Hyperprosopon argenteum)
+striped seaperch (Emblotoca lateralis)
+white seaperch (Phanerodon furcatus)
+silver surfperch (Hyperprosopon elllptlcum)
+redtail surfperch (Amphistichus rhodoterus)
+surf smelt (Hupomesus pretiosus pretlosus)
+longfin smelt (Splrinchus thaleichthys)
+top smelt (Atherinops affinis)
+Pacific herring (Clupea harengus pallasl)
+anchery (Engraulis mordax mordax)
+English sole (Parophrys vetulus)
+speckled sanddab (Citharichthys stigmaeus)
+starry flounder (Platlchthys stellatus)
+ling cod (Ophiodon clongatus)
+bocaccio (Sebastes paucispinis)
+blue rockfish (Sebastes mystinus)
+kelp greenling (Hexagrammos decagrammus)
+buffalo sculpin (Enophrys bison)
+brown Irish lord (Himilepldotus spinosus)
+pacific staghorn sculpin (Leptocottus armatus)
+bay pipefish (Syngnathus griseolineatus)
+tubesnout (Aulorhynchus flavidus)
+pacific sand lance (Ammodytes hexapterus)
+pen point gunnel (Apodichthys flavldus)
+saddleback gunnel (Pholis ornata)
+kelp crab (Pugettla producta)
+dungeness crab (Cancer magister)
+redrock crab, and
+crago shrimp
+
+Another population present on the west side of Charleston Channel is a
+small population of bodega clams (Tellina bodegensis) found during a.clam
+survey conducted by Thomas Gaumer of the Newport ODFW office in 1978.
+
+Pacific herring are observed spawning in the Charleston Channel from
+February to April each year. Their eggs are very sticky and are found
+adhering to eelgrass, rocks, pilings, and the submerged jetty. Adult
+herrings are important food for chinook and coho salmon, waterfowl,
+lingcod, and sea lions in the area.
+
+2.2.4   The South Slough Estuarine Sanctuary
+
+The South Slough Estuarine Sanctuary was authorized by Section 312 of
+the Coastal Zone Management Act of 1972 (P.L. 92-583). A grant was
+awarded by the Office of Coastal Zone Management, National Oceanic and
+Atmospheric Administration, on a matching basis to the State of Oregon
+to acquire, develop and operate estuarine areas such as South Slough to ,
+be set aside as natural field laboratories. The Sanctuary,: located from
+Valino Island southward (fig2-19) . contains many undisturbed tideflats and
+wetland areas. Through natural inaccessibility, the slough has remained
+virtually untouched as a healthy and productive estuarine system. The
+sanctuary provides an isolated habitat for a great variety of algae,
+marine invertebrates,;birds, mammals, fish and plants (Appendix A ) . T h e •
+sanctuary serves as a nursery area for many fish species and contains
+approximately 100 acres of commercial oyster culture.
+
+
+The immediate sanctuary vicinity is used for scientific and archeological
+research, education and nature interpretation,;and low intensity recre­
+ation (such as recreational fishing, hunting, wildlife observation, and
+aesthetic enjoyment).
+2.2.5    Rare and Endangered Species
+
+ The California brown pelican (Pelicanus occidentalis californicus) has
+ been sighted in the Coos Head area by Audubon Society members.  It is
+ present from August to November in this area which includes north of the
+ Charleston bridge, downtown Charleston to the OIMB campus, the bird
+ sanctuary on Coos Head, the small marsh 1/4 mile south of the Coos Head
+ Naval Facility, the mouth of Coos Bay, South Jetty, the rock cribs on the
+ north spit, and the northern end of Bastendorff Beach and adjacent ocean.
+ The brown pelican, considered endangered nationally, utilizes the bay for
+.feeding. ;       /..■
+
+Another species sighted rarely (at intervals of 2 to 5 years) is the
+bald eagle, (Haliaeetus leucocephalus alascanus) which has national
+threatened status in Oregon.   It has been seen in the Coos Head area in
+the months of March, April, October, and December. There are no known
+nests in this area (McGie, 1978).
+
+
+No rare or endangered plant species occur in the project area.
+
+
+ 2.2.6   Section 404 Evaluation
+
+
+In 1972, Congress enacted the Federal Water Pollution Control Act
+Amendment of 1972 (PL 92-500) to restore and maintain the chemical,
+physical, and biological integrity of the Nation's waters. Under Section
+404 of this act, a federal permit program administered by the Corps of
+Engineers was established to regulate the discharge of dredged or fill
+material into water. The Clean Water Act of 1977 (PL 95-217) continues
+the Section 404 review and permit requirements withrespect to water
+resource projects involving the discharge of dredged or fill material.
+Under these acts, an evaluation is required following procedures
+established by the Environmental Protection Agency in their 1975 Guide­
+lines (40 CFR 230; 40 FR 41291). An evaluation of the proposed in-water
+fills associated with the project was distributed with the Corps Public
+Notice No. NPPEN-058 (as revised). Both of these documents are provided
+for review with this EIS. A Water Quality Certification from the State
+of Oregon has been requested.
+2.3     Socio-Economic Characteristics of the Area
+
+2.3.1    General
+
+Charlestonis an unincorporated town with an established fishing community.
+The fishing orientation is immediately apparent, with the boat basin
+fringed by fish-processing plants and commercial fishing-supply firms as
+the dominant features. The handful of retail stores is clearly related to
+and influenced by the fishing industry, both in appearance ana in
+merchandise. While some of the stores carry tourist-oriented souvenirs
+and memorabilia, most supply fishing gear or food and durable goods for
+the local residents. The area has a small motel, several mobile home
+courts, one tourist-oriented restaurant, and several cafes and taverns.
+
+Across the bay lies Barview, a largely residential area with some strip
+commercial development along the highway. Barview merges into the
+community of Empire, which borders on the City of Coos Bay. Except for
+the area immediately across the bridge from the boat basin, the Barview-
+Empire area has fewer outward signs of a fishing orientation.
+
+2.3.2    History
+
+Charleston was founded in the late nineteenth century. The first permanent
+non-Tndian settler was supposedly a Chinese laborer named Charlie; hence
+the name Charlie's Town, eventually Charleston. White settlers were
+originally attracted to the area for its fishing and logging resources.
+Some farming was done in the South Slough area, and a school and church
+were established around the turn of the century.
+
+In 1924, the south jetty was constructed, beginning an era of growth in
+Charleston. This also coincided with the population movement from the
+South Slough to the area that is now Charleston. A rope-pulled ferry
+originally linked Charleston with what is now Barview. In 1909, a
+permanent bridge was constructed across the bay. Due to weakening by the
+boring Teredo clam, the bridge was replaced in 1930 and again in 1934. The
+mid-1920's marked the development of several retail stores, some of which
+are currently still in operation. In the 1920's, the post office, cafes,
+and taverns were established.
+
+The histories of fishing and fish processing in the Charleston area are
+closely intertwined. Salmon, particularly spring Chinook, was the first
+important commercial species. During the 1920's, greater varieties of
+fish were landed commercially, including crab and various bottom fish.
+
+Fishing in Charleston increased during World War II, when large numbers of ‘
+commercial fishermen came to the area to catch sharks (for their liver)
+and cod (for cod-liver oil) to be used by the U. S. Army. Soon after
+the war Charleston began to develop its boat-building industry.
+As fishing became more diversified, the types of boats changed. Old-time
+residents of Charleston remember when diverse crafts, such as McKenzie
+River boats, would fish for salmon. The increasing importance of bottom
+fish and, more currently, shrimp has led to a dramatic increase in the
+size of boats. Almost all the commercial boats in the outer basin in the
+Charleston Marina are more than 30 feet long. Shrimpers, mainly double­
+riggers, and bottom-fish trawlers are the largest boats in the basin.
+
+The first fish-processing operation, Hallmark Fisheries, was established
+in 1936.  It began as a family enterprise, with the men fishing out of
+Charleston and the women canning the catch. The processing industry in
+Charleston remained limited until the development of the boat basin in
+the late 1950's. In 1958, the Seattle Fishermen's Co-op, one of the many
+fishermen's co-ops established along the coast to help sustain the price
+of salmon, opened a branch in Charleston. The co-op went bankrupt in
+1970 due in part to diminished salmon runs and to internal management
+difficulties. Point Adams, which purchased the Charleston plant, soon
+sold it to Alaska Packers (Del Monte Corporation), the present owner.
+
+During the 1960's, the remainder of the processing plants currently in
+Charleston were established. Sally Salmon Seafood opened in 1962, and
+both Peterson Seafoods and Union Fisheries Co-op (now Barbey Packing)
+opened Charleston plants in 1965. Currently, there are six processing
+plants and three receiving stations in Charleston, as well as one
+processing plant in Empire. All the plants and receiving stations buy
+salmon, crab, shrimp and, when available, albacore tuna. The fish are
+either retailed, processed in Charleston, or trucked to other ports for
+processing. There are two custom canning processing operations in-
+Charleston: Chuck's Seafoods and Sally Salmon Seafoods. Other Charleston
+processing plants include:  (1) Alaska Packers, which processes shrimp,
+crab, and salmon; (2) Barbey Packing, which processes ground fish, salmon,
+and crab; (3) Hallmark:Fisheries, which processes shrimp .and bottom fish;
+and (4) Peterson Seafoods, which processes bottom fish, shrimp, crab,
+and salmon. Eureka Fisheries in Empire processes ground fish and shrimp.
+The receiving stations are Bandon Fisheries, Crescent Fisheries, a n d -
+Tom Lazio Fish Company.
+
+Except for one family-owned plant (Peterson Seafoods), most of the larger
+processing plants have undergone repeated ownership changes,. . Many are now
+owned by large corporations that have other plants in various locations
+on the Pacific Coast.
+
+Most fish-processing operations in Charleston appear to be fairly healthy.
+In 1977, a record of over 12,000,000 pounds of shrimp (Pandalus Jordan!)
+were landed in Charleston, making that port second only to Newport in
+shrimp.landings. Oregon is second only to Alaska in shrimp landings,
+with nearly one quarter of Oregon's shrimp being landed at Charleston. In
+response to the boom in shrimping, some Charleston fish processors have
+installed new shrimp processing machines. Two processors, Peterson
+Seafoods and Barbey Packing, are actively involved in the Pacific hake
+project..
+ The number of employees in the Charleston fish-processing industry has
+ ranged from fewer than 40 in 1958 to a peak of 506 in 1969, reflecting
+ both the increased number of fish-processing plants in the area and the
+ increased processing of shrimp. Shrimp was first processed in the
+ Charleston area in the early 1960's. Initially, all the shrimp picking
+ was done by hand, a labor-intensive job generally done by local women.
+ Shrimp machines, introduced in the late 1960's, substantially decreased
+ the number of employees needed. Employment in fish processing continues
+ to be seasonal in nature, with employees working on an "on call" basis.
+ Interviews in the area indicate that most of the people in fish processing
+ live in the general Charleston vicinity. ,            .
+
+ Estimates of the number of commercial fishermen vary greatly. The 1970
+ census reported only 9 percent of the CCD work force, about 95 people, as
+ employed in agriculture, forestry, and fisheries.  (Due to the seasonal
+ nature of fishing, fishermen employment is usually underestimated in the
+ census). A 1970 Oregon State University study found 115 licensed commer­
+ cial fishermen in Charleston and another 271 licensed commercial fishermen
+ in the Coos Bay area (Smith, 1971). The study did not differentiate
+ between full- and part-time commercial fishermen. A 1976 report estimates
+ that some 500 Coos Bay area residents (including Charleston) fish
+ commercially, mainly for salmon (CCD Economic Improvement District, 1976).
+ Estimates of the current number of commercial fishermen range as high'as
+ 620. '
+
+■Historical trends on the number of fishermen in the Charleston area are
+   also scarce. Local residents remember a great increase in the number of
+ : fishermen during World War II. The Increased number of fishermen helped
+  provide impetus for t h e ‘construction of the boat basin.
+
+  The Charleston boat basin was built in two phases. A construction bond
+  issue was raised in 1955, providing funds for the outer basin to be
+  constructed over the next two years. By 1958, there were 100 berths
+1 available in the outer basin. By the 1960’s, the number of berths had
+  doubled, filling the outer basin to capacity. There was still a demand
+  for additional facilities, and in 1966 the Port of Coos;Bay constructed
+  a new 10-acre inner basin.                                       '
+
+ Currently, there are over 480 boats with permanent moorages in the basin.
+ Approximately 30 percent of the crafts are sport boats and 70 percent are
+ commercial vessels. The deeper outer basin houses 240 boats. These boats
+ are almost entirely commercial and are upwards of 30 feet in length, with
+ some trawlers ranging above 60 feet. The inner basin, which houses about
+ 240 boats, has a slightly greater percentage of sport than commercial boats.
+ The boats in the inner basin are considerably smaller than those in the
+ outer basin. About half of the 15 charter vessels operating out of    ,
+ Charleston are berthed in the inner basin. .
+The boat basin has an additional 80 berths, which are rented on a part-
+time basis to smaller crafts during the summer. The nonpermanent moorage
+slots,.generally undesirable spots near the bank, are used during the
+winter by shrimp and crab boats which tie up horizontally along the piers.
+Including the nonpermanent moorages, there were nearly 560 berths in the
+Charleston basin in 1977. The boat basin is currently at capacity, with
+a waiting list of 280 boats, about 60 percent of which are commercial.
+
+2.3.3   Socio-Cultural Background of Charleston
+
+Fishing Culture in Charleston    •
+
+Charleston is clearly a commercial and, to a lesser extent, a sport­
+fishing area. The boat basin is the dominant visual feature in the town
+and plays a dominant role in the lives of most of the inhabitants. As in
+most traditional fishing communities, family ties'appear to be very strong
+in Charleston. Despite the large number of "newcomers" to the field,
+fishing is still a profession that is handed from father to child. All
+the fishermen and fishermen's wives interviewed indicated a strong .
+allegiance to the Charleston area and an identification of Charleston as
+their home. This is true both of oldtimers and of relative newcomers to
+the area. People seem to have a strong sense of a separate identity of
+"Charleston." In many people's minds, Charleston includes that part of
+Barview immediately adjacent to the bridge, because that area includes
+many old fishing families as well as a fish processing plant and some
+fishing-related businesses. The separate physical and social identity of
+Charleston seems to be generally recognized by residents of the greater
+Coos Bay area.
+
+Due to its small size, the social organizations in Charleston are informal.
+The one significant formal social organization in the town was the school
+district. Many residents mentioned the loss to community life felt when
+the Charleston School District was annexed to theCoos Bay District ten V
+years ago. The school district had served as a unifying structure, often    ,
+bringing together such divergent groups as fishermen and fish processors
+for a common cause. Several people mentioned the community work parties
+occasionally held ac the school before the district's annexation.
+
+After the school district's dissolution, there remained no formal unifying
+social organization in Charleston. Today most of the social organizations
+are along vocational lines, such as All Coast Fishermen's Association
+and Fishermen's Wives Association. The Charleston chapters of both those
+organizations are extremely active. Informal gatherings at the cafes^and
+taverns in Charleston and attendance at a small church are also an
+important part of the community social structure. The fishing community
+in Charleston is tightly knit and appears to keep a certain amount of
+social distance from the nonfishing segment of the community. The
+University of Oregon Institute of Marine Biology students and part-time
+personnel are generally seen as outsiders lacking sensitivity to the
+economic needs of the fishing community.
+
+The fishermen themselves distinguish between commercial fishermen, part-
+time fishermen, and sport fishermen. Most of the commercial fishermen are
+local residents. Part-time fishermen consist both of general Coos Bay
+area residents and of nonlocal residents who fish for salmon out of
+Charleston on weekends and during the summer. Most of the part-time
+fishermen own small crafts and are part of the "day fleet," being unequipped
+for longer ocean voyages. Additionally, there is a large segment of
+primarily nonlocal sport fishermen who fish out of Charleston on small
+boats. The local fishing community regard these fishermen with less
+respect than they do more serious, commercially oriented fishermen. The
+sport fishermen who equip their boats with commercial gear are viewed as
+being more interested in qualifying for business deductions on tax sheets
+than in catching more fish. Local residents sometimes refer to their
+boats as the "Tupperware Fleet."
+
+Most of the local fishermen have larger boats, crabbers, shrimpers, bottom-
+fish trawlers," or some combination of dragger, crabber, and trawler.
+These boats require a very significant capital investment, costing often
+upwards of $100,000 .for the larger trawlers.
+
+Local part-time fishermen are either crew members of larger boats or
+skippers of small salmon vessels. These fishermen may fish on weekends or
+fish daily, returning in the early afternoons to work another job, often
+in lumber processing in Coos Bay. Salmon fishermen may also stagger years
+of full-time fishing with years of part-time or sport fishing. Because
+of the large capital outlay required for combination boats, these options
+are generally not available to owners of the larger trawlers.
+
+A significant number of the part-time fisherman are nonresidents. Responses
+to a 1977 questionnaire indicated that 40% of the boatowners on the
+Charleston Marina waiting list were from the interior areas of Oregon,
+particularly Douglas County and the Willamette Valley (Cork, 1977).
+While not all are commercial fishermen, local fishermen have observed that
+many part-time fishermen live in noncoastal Oregon counties.
+
+One of the striking characteristics of fishing communities, including
+Charleston, is the tight family structure. ; An 0SU Study found that a
+high percentage of the*crabbers and combination salmon/tuna/dragger fish­
+ermen came from fishing families (Liao and Stevens, 1975). This is seen
+in Charleston, where fishing remains the way of life for most of the
+community. Both long-established residents and relative newcomer fisher­
+men have expressed the hope that their children become fishermen. Studies
+in New England have corroborated the Important role that family ties and
+occupational succession have in the social structure of fishing towns and
+ports (Cork, 1977).
+Demography
+
+Since Charleston Is not an incorporated city, there are no official census
+estimates of the town's'population. The Charleston Census Division (CCD)
+includes the entire peninsula between the Pacific Ocean and South Slough,
+including Cape Arago, Charleston, and continuing east halfway to Isthmus .
+Slough and north of the city boundaries of Coos Bay. Barview, Charleston;
+and Empire are included in the CCD. The 1970 census showed the population
+for the CCD as 3,230. While figures are not available, the Charleston-
+Barview area is probably slowly increasing in population despite housing
+shortages. Since 1965, annual population rate increases in unincorporated
+areas of Coos County have been over twice that of incorporated areas.
+
+The 1970 census reported nearly 15 percent of the population of the
+Charleston CCD as below poverty level, with another 23 percent defined as
+"near poor." Half the families in the CCD received under $8,300 annually
+in 1969. Information for 1975 (Oregon Department of Human Resources)
+indicates that 15 percent'of the population of the Charleston CCD is still
+below poverty level. Many of these people are in the Charleston-Barview
+area. Poorer people are attracted to the region by the lower rents and
+by the opportunity for a subsistence livelihood based on farming, fishing,
+and miscellaneous lumber and wood processing jobs. The educational level,
+as well as income in the Charleston CCD, is relatively low. The 1970
+census indicated that 63 percent of the people over 25 years old in the
+CCD had less than a high school education.
+
+According to the 1970 census, the median age in Coos County was nearly
+29 years old; the median age for the Charleston CCD was slightly greater
+than that, somewhat over 31 years old.' Nearly 10 percent of Charleston's
+population was listed as over 65 years old.
+
+Housing
+
+The 1970 census reported the Charleston CCD as having 1,150 housing units,
+approximately 70 percent owner-occupied and 25 percent;renter-occupied.
+The housing profile for Charleston is somewhat different than for the
+entire CCD. The Coos County Draft Element of the Comprehensive Plan
+singles out Charleston as having a disproportionately greater number of .
+homes valued under $10,000. This is an indication of both a lack of
+affluence and constraints on new housing starts.
+
+Due to high water tables and hardpan layers, much of the Charleston-Barview
+area has severe septic tank limitations. While the recent establishment
+of a sewer line is expected to result in a significant increase in new ,,
+housing, many areas of Charleston and Barview are still on septic tanks ,
+and subject to building limitations.    ; -r
+
+According to the County's Housing Element draft, nearly 40 percent of/ the
+•
+ renters in the Charleston-Barview area are paying more• i . than 25 percent
+                                                                       ■ ■ ■• ****
+                                                                                   /
+of their income on rent. The U . S . Department of Housing and Urban Devel­
+opment uses this figure as a determinant of ;fair rent levels. Although
+exact figures are not available, the Charleston-Barview area has some of
+the least expensive housing in the general Coos Bay area. Much of this
+low-cost, usually poor quality housing is found east of Seven Devils Lake
+Road in Charleston and east of the Cape Arago Highway in Barview.
+
+Nearly 13 percent of the homes in the Charleston CCD are mobile homes,
+considerably, higher than the percentage of mobile homes in the rest of the
+county. Mobile homes, a lower-cost alternative for pingle-family housing,
+are found both in mobile home parks, one used predominantly by local
+residents, and one on port property, used largely by nonresident sport and
+sport-commercial fishermen.
+
+Many of the hones alcng Cape Arago Highway in Charleston and along the
+Bay in Barview, show a fair degree of affluence. Further back from the
+highway, houses become plainer, more mobile homes are seen, and many of
+the homes are in considerable disrepair.
+
+While there are some vacation hones along the Cape Arago Highway, most of
+the homes in the Charleston area are inhabited by local residents.
+Housing in both Charleston and Barview is almost exclusively single-family
+or mobile home.
+
+Despite the 1970 census'listing of a 4 percent vacancy rate, local .
+residents report a severe ..shortage; of housing. The sewer line extension
+should induce new residential construction. Much of this, however, may
+be beyond the price range of most current Charleston-Barview residents.
+
+Employment
+
+The 1970 census shows about 1,060 of the residents in the CCD as being
+employed, making a participation rate (that percentage of work-age persons
+in the labor force) of 51 percent. The participation rate for males was
+70 percent, while the rate for females was only, 30 percent. Nonurban
+areas are generally characterized by a relatively small percentage of
+working women. Unemployment rates for women were also higher than they
+were for men, 7.5 percent for women compared to 4 percent for men. The
+annual average unemployment rates for both sexes was probably significantly
+higher;'the 1970 census unemployment rates are calculated based on
+employment in April, a month of high fishing activity.,
+
+Other than employment in fishing and fish processing, Charleston area .
+residents generally find jobs.in Coos Bay/North Bend. Much of the work
+is in lumber and wood-processing industries.
+
+ Due to the nature of the’fishing and fish-processing industries, employment
+;in the Charleston CCD is fairly seasonal. Overall employment rates in
+ Coos County are higher than the state average; in 1976, the average annual
+ county unemployment was nearly 12 percent.
+Public Facilities
+
+The Charleston Sanitation District oversees solid waste disposal in the
+Charleston area. In July, 1977 a sewer extension from Coos Bay through
+Barview into Charleston was completed. There are currently nearly 270
+sewer hookups in Charleston, including the commercial and industrial
+establishments in the marina area. The Sanitation District has no
+current plans for further sewer line extension in Charleston.
+
+Before the construction of the sewer line, Charleston had severe building
+restrictions due to the poor septic tank suitability of the area. Septic
+tank failures and poorly functioning drain fields have resulted in the
+pollution of some of the area's private water sources. Currently, much
+of the residential housing, particularly that off the highway and main-
+street, is still on septic tanks and subject to the same limitations.
+
+Except for some residences on private wells, most of Charleston obtains
+WTter from the Coos Bay-North Bend Water District. Pony;Creek and the
+North Spit sand dunes are the district's primary water sources. Recently
+purchased water rights on Fourth Creek,;Tarheel Reservoir, and Joe Ney
+Creek serve as back-up supply for use in the event of another drought
+(Seton, Johnson, and Odell, 1977). Water supply will not be a limiting
+factor on nonindustrial development in the Charleston area.
+
+Land Use and Ownership
+
+The most intensive land use (fig. 2-20) in Charleston is found around the
+boat basin and along the channel from the basin to the Cape Arago Highway
+Bridge. Most of the marine industrial and commercial developments are
+concentrated in these locations. The Port-owned property behind the basin
+houses many fishing-related ancillary services including a marine
+electronics store, a tackle shop, boat storage areas, restrooms with
+shower facilities, parking for cars and boat trailers, and Marina and
+Flsheruen Marketing Association offices. Also on Port land is a mobile
+home/trailer park.
+
+Most of the fish processing plants and receiving stations are located on
+the Charleston side of the channel. Two are located on the east side of
+the bay, one in Empire, and one adjacent to the Cape Arago Highway Bridge.
+
+Non-marine commercial development is found around the basin area, along
+the main street and along the Cape Arago Highway, both adjacent to and
+immediately west of the bridge. Two tourist-oriented establishments, a
+motel and a restaurant, are located behind the basin area. General stores,
+eating establishments, fish retail shops, and cafes/taverns are the other
+major commercial establishments in the area.
+
+Residential development is mixed in with the marine industrlal/commerclal
+uses along the channel. Homes are also located along and off the main
+street in Charleston, and along and off the Cape Arago Highway on both
+sides of the channel. Scattered residences are found in the hills both
+behind Charleston and overlooking the South Slough.
+
+Land ownerships (fig. 2-21) in Charleston include the Federal Government
+(U. S. Coast Guard), the Port of Coos Bay (marina area and some adjacent
+land holdings), the State of Oregon (predominantly the University of
+Oregon), School District #9, and private ownerships. Corporate ownerships,
+primarily lumber companies become predominant in the timbered hillsides
+away from the highway. Land development corporations, many from out of
+state, also own sizable tracts of land in this area.
+ 3.0     RELATION OF THE PROPOSED ACTION TO LAND-USE PLANS
+
+ 3.1     Introduction    -
+
+  The current zoning designations and land-use plans for Charleston are
+  based upon the area as it was prior to 1977 when the exposed sand spit'
+  north of the breakwater still existed. The breakwater extension is
+  designed to return this area to its condition prior to the development of
+  the surge and shoaling problems. The proposed action will be in con­
+  formance with the local and county planning documents and processes as
+  they presently exist. Applicable Federal, State and local land-use
+: planning statutes, documents and processes are shown in Table 3-1.
+
+                                      TABLE 3-1
+                        APPLICABLE     LAND-USE PLANNING STATUTES,
+                               DOCUMENTS AND PROCESSES         _______________ _
+
+
+ Federal
+
+         Coastal Zone Management Act (1972) and Amendments administered b y ,the
+         Office of Coastal Zone Management, National Oceanic and Atmospheric
+         Administration, Department of Commerce.
+
+ State                     ■■
+         1) Statewide Planning Goals and Guidelines (based on the 1973 Oregon
+         Land Use Act O.R.S. 197)
+         Goals 1-14 adopted December, 1974.
+         Goal 15 adopted December, 1975.
+         Goals 16-19 adopted December, 1976; effective 1 January 1977.
+
+         2) Oregon Administrative Rule Classifying Oregon Estuaries - 13
+         September 1977. Promulgated by LCDC.
+
+ Coos County
+
+         1) Coos County:Comprehensive Plan; currently being writen and
+         reviewed.
+
+         Compliance date - 30 June 1979    •
+
+       The Comprehensive Plan will include a plan for the Coos Bay estuary
+       based on Goal 16 of the LCDC Goals qnd Guidelines. Coos County is
+       currently operating under the 1975 Coos Bay Estuary Plan. Although
+       adopted by Coos County,; the plan has not been adopted by the affected
+       cities and is not in compliance with the LCDC Goals and Guidelines.
+
+     .2) Coos County Interim Zoning Ordinance; adopted by Coos County,
+      July 1975. When the county comprehensive land-use plan is completed,
+      the zoning ordinance and zoning maps will be reviewed and modified to
+_____ be in conformance with the plan. ,________________________________
+  3.2     Local and County Land-Use Planning
+
+  3.2.1    Local Zoning
+
+    The proposed Corps action conforms with the current zoning (fig. 3-1)
+    of the marina area as interim marine-commercial. This special designation
+    was.formulated by the County Planning Office’s Charleston Steering Com­
+    mittee to describe fishing-industry-related land uses. The proposed
+. . action should enhance the viability of the fishing and fish processing
+    industries, which are the predominant and favored land uses of the marine
+    area.
+
+  3.2.2    Comprehensive Planning
+
+  Since Charleston is unincorporated, land-use planning is under the juris­
+  diction of Coos, County, which is currently preparing a comprehensive land-
+  use plan to comply with Oregon's Statewide Planning Goals and Guidelines.
+  While the county has prepared most of the elements of the first draft of
+  the plan, land use designations for Charleston have not yet been for­
+  mulated. County and Coos-Curry Council fo Government planners advised of
+  the proposed Corps’ action could foresee no conflicts between the action
+  and any future plan designations or planning efforts for the Charleston
+  area.
+
+  The proposed action is consistent with! the available elements of the
+  draft Coos County Comprehensive Plan. The action also complements the
+  county's fourth draft economic policy. The following policies are
+  particularly relevant:
+
+      Policy 3: Development of the fish processing industry shall be
+  encouraged where possible, with special; emphasis placed on more local
+  processing and production.
+
+      Policy 4 : Coos County shall promote local wood products and fishing
+  industry by encouraging channel maintenance improvements in local shipping
+  facilities.
+
+      Policy 6 : Industries that process local natural resources shall
+  continue to recieve strong support from Coos County.
+    Policy 7: Coos County shall promote industries that utilize the
+local labor force.
+
+Since the proposed action should enhance the viability of the fishing
+and fish processing industries by protecting boats fiom surge damage
+and shoaling impediments, the action is consistent with the draft econom­
+ic policies. _ The industries utilize local natural resources and rely
+almost entirely on the local labor force.
+
+3.2.3     Coo8 Bay Estuary Plan and Planning Process
+
+Charleston is also affected by Coos Bay. Estuary Plan (fig. 3-2) which
+was adopted by the county in 1975. Under this plan, the waters in the
+Charleston.area are designated for marine transport. The sand spit
+which once existed north of the jetty was designated for recreation,
+the upland marina area is designated for marine commercial, and both
+8ides of the Cape Arago Bridge Highway is designated for marine commer­
+cial. .Since the 1975 Estuary Plan has not been adopted by the cities
+of Coos Bay and North Bend, and is not in compliance with the LCDC
+Coastal Goals, a new plan for Coos Bay estuary is currently being devel­
+oped. The county, the Coos-Curry Council of Governments, the cities of
+Coos Bay and North Bend, as well as resource agencies, are involved in
+the plan'8 formulation.
+
+The proposed Corps* action is in conformance with the current draft of
+the County's estuarine policies as:printed in June 1978. Relevant draft
+estuary policies include:   "
+
+    Policy 2 : Protect and where appropriate improve existing facility/
+systems that will enhance estuarine*related commercial and industrial
+activities.
+
+    Policy 11: Maintain and enhance resources which offer valuable
+public recreation opportunities.
+
+3.3     Statewide Planning   -
+
+In 1973, the Oregon Legislature adopted a Statewide Land Use Planning
+Act (ORS 197) establishing the Land Conservation and Development
+Commission (LCDC). The commission was directed to formulate and adopt
+statewide planning Goals and Guidelines, which were to be.applied and
+implemented at the local level through comprehensive plans. County and
+local comprehensive plans currently are being formulated and/or updated
+to conform.to the statewide Goals and Guidelines. Local jurisdictions
+are legally required to adhere to the* statewide Goals and Guidelines.
+Local jurisdictions are legally required to adhere to the statewide
+Goals in their planning process. T h e ;statewide Guidelines, while not
+mandatory, are strong directives on Implementation of the goals.
+Oregon currently has 19 adopted Goals and Guidelines (table 3-2). The
+first two are procedural, emphasizing public involvement and the overall
+planning process. Goals 16 through 19 relate specifically to coastal
+resource management and part of Oregon's Coastal Zone Management Program.
+
+Of particulnr pertinence to the proposed action is Goal 5, Natural Re­
+sources; Goal 6, Alr/Water/Land Resources Quality; Goal 8, Recreational
+Needs; Goal 9, The Economy of the State; and Goal 16, Estuarine Resources.
+
+Goal 5 . Open Spaces, Scenic and Historic Areas, and Natural Resources,
+calls for the protection of natural and scenic resources and the conser­
+vation of open space. The proposed action will result in the loss of some
+clam beds, a natural resource of the Charleston area, while creating an
+area suitable for new clam beds to establish. Following the implementation
+Guidelines of Goal 5, the Corps action is being coordinated with the Ore­
+gon Department of Fish and Wildlife to minimize Impacts as much as possible.
+
+The proposed action may also cause some temporary conflicts with Goal 6.
+which calls for the maintenance and Improvements of the water land resource,
+and air quality of the state. During the construction phase of the pro­
+posed breakwater modification, there would be some increase in noise and
+air pollution from construction vehicles. There would also be a temporary
+increase in water turbidity. Specifications in Corps contracts will mini­
+mize these impacts and applicable water quality certifications will be
+obtained from the State of Oregon prior to construction.
+
+Goal 8 . Recreational Needs, is concerned with satisfying the recreational
+needs of Oregon's residents and of visitors. The proposed action may
+enhance the availability of some popular recreational clam beds, which
+are used by both local residents and visitors. The action may also help
+maintain the recreational opportunities of the Charleston Boat Basin by
+protecting the vessels from extreme;surge and shoaling problems.       .
+
+Goal 9 . The Economy of the State, calls for the diversification and      •
+improvement of the state'8 economy. Economic growth and activity are- to
+be emphasized "in areas which have underutilized human and natural resource
+capabilities." The planning guidelines strongly emphasize the expansion
+and Increased productivity of existing industries as a means of strengthen­
+ing the local and regional economies. Since the proposed action could
+significantly strengthen the viability of the fishing industry in Charles­
+ton, it is in compliance with Goal 9. Fishing and fish processing are
+existing Industries based on a significant natural resource ;(fish) in an
+area that has a high chronic unemployment rate.
+
+Goal 16. Estuarine Resources, calls for the protection of the environmen­
+tal, economic and social values of each Oregon estuary. The goal details
+inventory requirements and methodologies to be used in the development of
+comprehensive plans for the estuaries. The goal'outlines priority uses
+and implementation requirements, including stipulations for mitigation for
+dredge or fill activities in intertidal or tidal marsh areas.
+During breakwater extension and build up of the existing breakwater,
+approximately three acres of subtldal area would be filled and 0.4 acres of
+Intertidal rocky habitat would be created. The sand spit which is expec­
+ted to reform after the extension would provide an estimated .12 acres
+of Intertidal sandy habitat. The spit is expected to contain approximately
+11 acres of sand above mean higher high water elevation when it reaches
+maximum size in about 10 years. The sandy bottom that would be covered
+was, until recently, covered by sand to an elevation of at least mean
+higher high water. The project would recreate that condition.
+
+Groin construction would include, the filling of one acre of subtidal area
+and would crecte 0.2 acres of intertidal rocky habitat. Since this por­
+tion of the project would not be constructed for at least 10 years, if
+ever, compliance requirements will be coordinated with concerned resource
+agencies at that time.
+
+
+By attempting to reestablish the viability of a commercial fleet marina,
+proposed action is also in conformance with the goal of protecting and
+restoring the economic values and benefits of Coos Bay estuary.
+
+To assure diversity among the Oregon estuaries, Goal 16 also calls for the
+classification of Oregon's estuaries to specify the most intensive level
+of development of alteration peroissable within each estuary. Coos Bay
+was one of the three Oregon estuaries designated under the overall Oregon
+Estuary Classification system for deep-draft development. Charleston is
+part of the Coos Bay estuary. The seven shallow draft development estuaries
+and three deep draft estuaries are the only ones allowed to have maintained
+channels; only the deep-draft estuaries are allowed channels in excess of
+ 22 feet depth. The developemnt estuaries are thus the only ones in which
+a commercial fishing marina is feasible. The three deep-draft development
+ estuaries, Columbia River, Yaquina Bay and Coos Bay have established fish­
+ ing industries. Of the seven shallow draft estuaries, Chetco and Umpqua
+have established commercial fishing communities and Tillamook*might have
+ potential for developing one. The shallow draft port fishing and fish
+ processing industries.
+
+According to the Administrative Rules Classifying Oregon Estuaries,
+"Deep-draft development estuaries shall be managed to provide for naviga­
+tion, and other identified uses, for public and commercial industrial
+water-dependent use consistent with the Estuarine Resources goal." The
+rules allow for both major and minor navigation improvements.- The Corps'
+proposed action in Charleston is within the;boundary of the Administrative
+Rules on estuary classification. .
+
+Overall, the Corps of Engineers proposed action is in conformance with the
+applicable land-use Acts and plans. The action would conform to local
+zoning designations and current and draft county plans. The action
+generally* conforms with applicable Statewide Planning Goals and Guidelines.
+Both Division of State Lands and Land Conservation and Development
+Commission have been contacted to assure that the project meets the State's
+compliance requirements.
+                                   3-7       -r~             ;   • .
+         TABLE 3-2 CONSISTENCY OF ACTION WITH OREGON’S PLANNING GOALS
+
+
+                LCDC
+           Statewide Goals                  Impact of Proposed Action
+
+
+ 1.   Citizen Involvement             Citizen input has been Involved in
+                                      the development of the proposed
+                                      action.
+
+ 2.   Planning Process                The action is being coordinated with
+                                      the relevant local, state and federal
+                                      agencies.
+
+ 3.   Agricultural Lands              Not significantly involved since
+                                      agricultural lands are not affected.
+
+ 4.   Forest Lands                    Not significantly involved since
+                                      forest lands are not affected.
+
+ 5.   Open Space -                    The action will cause a loss of some
+      Scenic and Historic Areas-      clam beds, while creating potential
+      Natural Resources;              sites.
+
+ 6.   Air/Water/Land Resources        The action will cause a temporary
+      Quality                         increase in air and noise pollution
+                                      as well as an Increase in water
+                                      turbidity.
+
+ 7.   Areas Subject to Natural        The action may protect an area, the
+      Disaster and Hazards            Charleston marina, which has become
+                                      subject to surge hazards.
+
+ 8.   Recreational Needs              The action may facilitate the contin­
+                                      ued use of a recreational clamming
+                                      area which has existed since the.
+                                      early 1970's.
+
+ 9.   Economy of the State            The action will enhance the economic
+                                      viability of the fishing and fish
+                                      processing industries in the area.
+
+10.   Housing                         Not significantly involved since
+                                      housing is not affected.
+
+11.   Public Facilities ;             Not significantly involved.
+
+12.   Transportation                  The proposed action will significantly
+                                      facilitate the water transportation in
+                                      and out of the basin area.
+            ■ LCDC ....     . .
+          Statewide Goals              Impact of Proposed Action
+
+
+13.   Energy Conservation         The proposed action will protect a
+                                  marina with a locational advantage
+                                  in terms of reduced running costs
+                                  and energy consumption for boats
+                                  entering and leaving the estuary.
+
+14.   Urbanization                Not significantly Involved.
+
+15.   Willamette River Greenway   Not applicable; the area Is not part
+                                  of the Willamette River Greenway.
+
+16.   Estuarine Resources         The proposed action may restore
+                                  and maintain economic values and
+                                  benefits of the estuary as consistent
+                 "I
+                                  with the goal and the classification
+                                  of Coos Bay estuary.
+
+
+
+17.   Coastal Shorelands          Not significantly involved.
+
+18.   Beaches and Dunes           Not significantly involved.
+
+19.   Ocean Resources             Not significantly involved.
+4.0     ENVIRONMENTAL IMPACTS OF THE PROPOSED ACTION
+
+4.1     General ■
+
+The proposed extension is Intended to permanently replace a sand spit that
+existed adjacent to the Charleston Breakwater until 1977. That spit
+reduced the surge problems In the boat basin and protected a portion of
+Charleston Channel from shoaling. The shape of the expected sand spit
+would be changed slightly from that of former conditions. The naturally-
+deposited spit at Its maximum size in 1968 extended about 750 feet north
+of the breakwater (figure 4-1). The breakwater extension is expected to
+cause a spit to form in; the shape shown in figure 4-2. The deposit will
+extend 800 feet north of the breakwater, but will not be permitted to.
+extend into the Charleston Channel.
+
+4.2     Hydraulics
+
+4.2.1     Tidal Hydraulics
+
+The Corps of Engineers Waterways Experiment Station (WES) Implicit Flooding
+Model was employed t o 'evaluate impacts on tidal hydraulics of Coos Bay
+below Empire, including South Slough, caused by constructing the extension
+and the groin. Results showed changes in the hydraulics would be confined
+to the vicinity of the structures and there would be no significant changes
+in the tidal prism, height, or current velocity at any other place in
+Coos Bay or South Slough.
+
+•The Corps' model is a finite difference model. Input data included tide
+ elevations at the ocean boundary (Cape Arago gage) and river boundary
+ (Empire gage), and bottom elevation and hydraulic resistance within grid
+ cells. The model was verified by comparing .measured tide heights with
+ computed values for seven other locations in the estuary, and by comparing
+ measured velocities with those computed by the model for ten locations in
+ Coos Bay and South Slough. Those comparisons showed that the mcdel's
+ overall ability to simulate the tidal hydraulics is good. A po<;r comparison
+ in the upper reaches of South Slough may be due to a lack of detailed
+ topographic data in the mudflat area and the size scale of the computa­
+ tional cells. '
+
+After model verification, the breakwater extension was coded into the
+model, and a second run made. By comparing velocity and tidal height
+values computed in the two runs, changes in hydraulics were predicted.
+Alternative plans were similarly analyzed. Except i n t h e vicinity of
+the planned structures, the model' showed essentially no changes in velo­
+city, tide height, or time history of.discharge anywhere in the estuary
+that would be caused by the planned structures.
+Flow field computer diagrams graphically represented the hourly flow
+intensity and direction. At an information meeting in which the diagrams
+were presented, the detail of the flow patterns was noted to be accurate
+by some who navigate the Coos Bay and Charleston entrance regularly.
+
+Flow field diagrams of South Slough for verification and for plan condi­
+tions are shown for maximum flood and maximum ebb flows in appendix ff.
+Velocity field diagrams of the Charleston area are similarly shown in
+appendix C.
+
+In the center of Charleston Channel the velocity would increase under the
+plan conditions. Velocity was shown to decrease where the flow was ob­
+structed by a groin. In nature, Increased velocity is countered partly
+by Increased depth. For areas shown to have Increased velocity in plan
+conditions, the increase will not be as great as that shown by the model;
+Sandy bottom material in those areas may scour to slightly deeper depths.
+
+Currents
+
+The groin, if constructed, will provide a 700-foot wide channel between its
+tip and the breakwater extension. That width is sufficient to pass tidal
+flows and runoff that would be contributed by South Slough (drainage area:
+29 square miles). The channel just downstream of the South Slough Bridge
+has developed a width at the -6 contour of about 470 feet, and a width of
+640 feet at the 0 contour. It therefore appears that after the channel*
+and the flow mutually adjust to the presence of the structures, the equi­
+librium cross-sectional area will not be greatly different from that which
+the channel naturally develops in reaches which are protected from wave
+activity. The breakwater extension will form a non-eroding bank, with a
+side slope that is steeper than that of a sand bank. That factor would
+tend to make the channel slightly deeper adjacent to the extension than it ,
+would be in an unprotected condition in that location.
+
+4.2.2   Waves                                                     'S
+
+Diffraction studies, using wave periods of 11, 13, and 17 seconds, showed
+that an 800-foot extension would decrease the height of ocean storm waves
+expected to arrive at the Charleston Channel by a factor of at least 0.25
+by the time waves traveled to the end of the present breakwater, and should
+provide sufficient protection to boats moored in the boat basin. Waves      '1
+have been observed to reflect from the shoreline east of the planned exten­
+sion into the boat basin as well as toward the Coast Guard facility located
+northwest of the breakwater. The extension and the sand it would trap
+would diminish the reflected wave activity. The extension is oriented so
+that waves arriving from theocean would be reflected onto the existing
+breakwater. After a second'reflection, the energy content of those waves
+would be negligible. -The possibility of Increased wave height due to addi­
+tion of incident and reflected waves has been Incorporated in the design
+for extending the breakwater and raising the crest elevation.
+ After a spit has formed adjacent to the breakwater, waves would he refracted
+ onto it and reduce the wave energy progressing past the extension. Waves
+ then would not be able to break on the breakwater or the extension.
+
+ Until the time when a sand spit has formed adjacent to the breakwater,
+ waves entering the "corner" formed by the extension and the breakwater
+ would experience an increase in wave height as the incident and reflected
+ wave combine. Mass transport by the deformed waves will produce a slight
+ increase in mean water surface elevation. Thu height of the breakwater
+ necessary to prevent damage-causing overtopping is determined to be +18
+ MLLW.
+
+ Southerly waves generated in Coos Bay in the summer, shown in figure 2-2,
+ presently are a problem in the small boat basin. The breakwater extension
+ would provide an energy-absorbing boundary and reduce the amplitude of
+ those waves slightly by the time they arrived at the small boat basin. If
+ the groin opposite the extension is constructed, it would act to decrease
+ wave energy approaching the boat basin by providing a gap. through which the
+ waves must diffract.
+
+ A.3   Sediment Transport
+
+  Extending the present breakwater northward would block the direct path of
+  the sand into the channel and induce a spit to form again adjacent to the
+  breakwater. That conclusion is reached by considering the sediment source
+  and method of transport, discussed in section 2.3, as well as the following
+-■'observations.'
+
+ Extreme shoaling of Charleston Channel occurs during the short period when
+ storm waves enter through the Coos Bay entrance. Shoaling in Charleston
+ Channel increased greatly when the sand spit began eroding. Observations
+ Indicate the spit acted as a temporary trap for sediment being transported
+ under waves into the estuary. That sediment was later eroded from the spit
+ and some was deposited in the channel. The extension would be effective
+ in stabilizing the area.
+
+ The amount of sediment moving into the north Charleston area would be un­
+ changed by the proposed structures and sand is expected to fill the area
+ formed by the breakwater and the extension. The expected final form of t
+ the spit thus created is shown on figure A-2. The time period before final
+ form is reached is expected to be five to ten years. After the topography
+ became adjusted to the structure, sand would then be available to move past
+ the extension.
+
+ The first phase of construction would consist of extending the present
+ breakwater to the north and raising the present breakwater crest elevation.
+ If a deposit forms on the channel side of the end of the extension and
+ tends to push the channel out of project allnement, a groin would be con­
+ structed on the east side of the channel to maintain the correct allnement
+ (second phase of construction). There would be somesand accretion around
+ the groin, but not as much as is observed in river conditions.
+                                                                                I
+With the breakwater extension in place, the sedimentary regime in Charleston
+Channel is assumed to return to that existing before the sand spit began
+eroding. The volume of material dredged from the channel averaged 22,000
+cubic yards per year before erosion began, and 46,000 cubic yards per year
+since maintenance dredging began. Taking the average dredging rate as
+the average rate of sediment deposition in the area, the breakwater exten­
+sion would reduce the volume rate of deposition in the channel by 24,000
+cubic yards per year.                          . \ y f ./
+Thus, less time would be spent by dredges in the area and fewer disposal
+sites will be needed. This would slightly decrease pressure in the area to
+find new upland disposal sites, after the present ones are filled.
+
+Velocity is predicted to increase at the tip of the breakwater extension.
+At a distance of a few hundred feet northward from the extension tip,
+velocity is practically unchanged from that in base conditions. For a
+short distance beyond the tip of the extension the bottom is expected to
+scour, which will reduce the current speed below the predicted value, until
+a near-equilibrium condition between depth and velocity is reached. Scour
+near the tip of the breakwater extension is expected to affect an area
+roughly circular in shape and about 100 feet in diameter. Four to five
+feet of sand is expected to be scoured from that area, at its deepest part.
+
+The groin, if constructed, will decrease flow velocity near its central
+part and increase velocity near the tip adjacent to Charleston Channel.
+Velocity will be increased only slightly near its shoreward end. The
+preceeding discussion on scour is applicable also to areas of increased
+velocity around the groin. Deposition is expected to occur in zones of
+decreased velocity, both north and south of the groin. However, the
+Charleston groin would not be shore-connected so its sediment trapping
+ability would be less than if it were built out from the shore.
+
+4.4. Biological Impacts of the Proposed Project
+
+The proposed project has a number of environmental Impacts which would
+occur during the different phases of construction.
+
+At the start, the impacts would be constructidn related: stone placement
+from a barge or end dumping by trucks. Since the area around the site is
+shallow, the use of trucks is expected. Stones may be stockpiled in the
+port parking lot adjacent to the site. Construction is expected to last
+at least 5 months, during which traffic, congestion on the breakwater and
+in the Charleston Boat Basin area is expectedo This will also create higher
+noise levels in the area, plus an increase in air pollution from the trucks.
+
+While the breakwater is being raised in elevation, there would be a con-
+flict between construction activity and maintenance of the traffic flow to
+and from Lazio Receiving Station:and Point Adams Fish Packing Station.
+This,problem has been discussed with the 'stations' managers and construction
+activity will be planned to avoid serious traffic delays.
+ Breakwater construction would require at least 10 truck loads a day of
+ quarry stone. As each truck load Is dumped off the end of the extension,
+ aquatic organisms would be covered and their habitat permanently altered.
+ The extension and the built-up breakwater, when complete, would cover
+ approximately 3 acres of sandy habitat and create 0.4 acres of intertidal
+ rocky habitat (above 0.0 feet MLLW). This habitat would encourage estab­
+ lishment of species similar to those inhabiting jetty areas, such as rock-
+ fish, sculpins, anemones, mussels, barnacles, and attached algae.. Rockfish
+ and sculpins are predatory on juvenile salmoulds, so some Increased preda­
+ tion may occur. Fishing off the extension for rockfish may also occur as
+ populations increase.
+
+ Since razoX clams are recreationally harvested in the area, the effect of
+ the project on existing populations has been carefully considered. The
+ extension would not .cover an area of dense razor clam populations. The
+ sand spit further to the north and west of the extension contain most of
+ the clams that are recreationally harvested. Sand is expected to accrete
+.west of the extension, eventually filling it to capacity. The sand spit
+ would provide an estimated 12 acres of intertidal sandy habitat. The
+ spit, itself, is expected to contain approximately 11 acres of sand above
+ MHHW when it has grown to maximum size. This point is expected to be
+ reached in 10 years, and sand buildup will;be gradual. Since razor clam
+ populations survive ocean bar conditions in which sand periodically builds
+ up in one area and erodes in another, it is expected that most of the
+ clams existing in the area at present will survive, due, in part, to
+ their feeding habits. Razor clams may stay as much as 4 feet below the
+ bottom surface for as long as 3 weeks before rising within 8 inches of
+ the surface to feed on plankton. They extend their necks the remaining
+ distance to the water level, thus staying surrounded by soil.
+
+ There is an excellent chance that a razor clam population will develop on
+ the accreted area, since larval clams are carried by ocean and bay currents.
+ The waves that would carry the sand to create the beach would also carry
+ the clam larvae. Sub tidal populations of clams in the bay, which are
+ presently out of reach of recreational clammers, would supply that larvae.
+ After a year, these d a m s would grow to a harvestable size of 3-1/2 inches.
+ Since the accreted area would have easier clammer access (being closer
+ to vehicle parking) and be exposed more low tides than the sand spit
+ area to the north, this sandy beach may be extensively used within 5 years
+ after the extension is built.
+
+ Based on model study results, water velocities will Increase at the end of
+ the extension. A bottom depression approximately 100 feet in diameter and
+ four feet deep may be scoured at this point. This may create an incon­
+ venience to clammers, since they may either have to avoid the area or wear
+ chest waders to cross it. It should be possible to use an alternate route
+ on' the east side of the breakwater, where bottom elevations are expected
+.to be higher, to reach the concentrated razor clam populations.
+End dumping of quarry stone will Impact fish and other free-swimming
+aquatic organisms.  Some of these will sense vibrations in the area in
+time to leave, but others may be covered by the stone. The impact is not
+anticipated to be significant.
+
+The placement of stone will create no significant turbidity, since
+relatively clean quarry stone (no dirt or toxic chemicals) will be placed
+on the sandy substrate.
+
+Vibrations from stone placement and other construction activity may bother
+both upstream and downstream migrating fish. It is not anticipated that
+this will drive any fish out of the area (except those immediately adjacent
+to the structure) since the area is already disturbed (by dredging, boat -
+movement, other construction, fishing, etc.) Fish migration runs should
+not be -significantly delayed or altered.
+
+The groin would be constructed from a barge in the channel. Similar impacts
+would occur in the area as occurred during stone placement for the break­
+water extension. Approximately 0.2 acres of intertidal rocky habitat will
+be created.
+
+No rare or endangered species will be impacted by any phase of the project.
+4.5 ’ Socio-Economic Impacts of the Proposed Project
+
+4.5.1   Economic and Social Impacts
+
+Expected Changes In Fishing and Fish-Processing Industry
+
+ Solution to the surge and channel problems should encourage a continuation
+ of overall current trends in the fishing and fish-processing industries in
+•Charleston. Tha use of Increasingly larger boats, particularly among
+ shrimpers and bottom-fishers, should continue. Fishermen currently hesi­
+ tant to Invest in larger boats due to the existing shoaling problem may be
+ encouraged to do so were this problem alleviated.
+
+Shrimp and bottom-fish landings will probably continue to play an increas­
+ingly major role in Charleston's fishing industry. .Depending on the future
+of the Pacific hake project, the bottom-fish industry may become very
+important. Pacific hake is currently being fished and processed on an
+experimental basis as part of a demonstration grant administered by the
+Oregon Department of Economic Development. The project should help clarify
+the economic feasibility of the fledgling American-processed Pacific hake
+industry. If it appears to be viable, Coos Bay would be a key location,
+for the industry.
+
+Despite the somewhat uncertain future of the Pacific hake industry, the
+Port of Coos Bay has applied to the Army Corps of Engineers for a permit
+for construction of a basin on North Spit that would be capable of mooring
+the larger trawlers needed for the hake industry. Some of the processing
+plants in the Charleston area are already involved -in the hake project.
+The extent of their and other processors future involvement in the hake
+industry remains uncertain.                     »
+
+There appears to be a potential for the growth of the Charleston commercial
+fleet if additional suitable moorages can be provided. The marina currently
+has a waiting list of nearly 250 boats. Responses to a 1977 questionnaire
+of boat owners on the waiting list indicate that over 60 percent of the
+boats would be used for commercial fishing.; While some respondants indi­
+cated that they were simultaneously seeking moorages at other locations,
+all were sufficiently interested in a Charleston moorage to pay the
+twenty-five-dollar waiting list deposit.                                  <
+
+Before the onset of severe surge and shoaling problems, several fish
+processors had invested in new shrimp machines, and the Charleston Marina
+had planned for the installation of an ice plant which is due to open
+soon. These actions indicate a belief in the continued health and
+possible growth of the Charleston commercial fleet.
+
+With a solution to the surge and shoaling problems in Charleston, the
+recurrent question of expanding the boat basin will undoubtedly again be
+raised. The Fort of Coos Bay is interested in expanding the basin in the      .
+area that currently consists of submerged and submersible land in front
+of the Trawler Restaurant. An application for marina expansion, filed in
+March 1978, is currently pending before the Army Corps of Engineers.
+
+Concerns have been raised as to the biological impact of the proposed
+marina expansion. - A segment of Charleston's population, apprehensive
+about Charleston's becoming more tourist-oriented, has questioned whether
+marina expansion would serve sport and recreational fishing interests
+over the:commercial fleet. Many residents enjoy the slower-paced rural
+life style and foresee that growth.''of the town and of the basin may erode
+the way of life in Charleston. Other residents, many of whom believe
+growth to be an inevitable result*of the sewer line extension, favor
+marina expansion. Many residents believe that the benefits to the com­
+mercial fleet would outweight other effects of marina expansion.
+
+4.5.2   Land-Use Impacts
+
+A solution to the surge and channel problems in Charleston might encourage
+further marine industrial/marine commercial development in Charleston.
+While Charleston has land for further commercial development, both along
+Cape Arago Highway and along the main street, land for industrial expan­
+sion, particularly for the marina, is in short supply. Finding adequate
+space for additional parking areas would be a problem were the marina
+expanded. There is, however, currently sufficient land on the port prop­
+erty for the development of some further ancillary service for the marina.
+
+The current zoning, land-use plans, and planning efforts are largely
+based on the existing uses and projected continued fishing orientation of
+Charleston. The solution to the surge and shoaling problems should not
+create significant land-use conflicts.
+
+The most significant change in land use will probably occur independent
+of solution to the surge and channel problems. The recent extension of
+the sewer line to Charleston is expected to spur considerable residential
+development. The extent of this development will be partially contingent
+on further sewer line hookups and extensions. Solution of the surge and
+channel problems should diminish current financial losses to boat owners.
+The local fishermen may therefore be in a more favorable position to
+purchase new homes in Charleston.
+
+4.5.3   Archeological Impacts
+
+Since all of the work will take place In water or in places previously
+disturbed by man, it is not anticipated that any cultural resources will
+be impacted. ■ ■■;.          ,                        •
+
+As outlined in "Procedures for the Protection of Historic and Cultural
+Properties" (36 C.F.R. Part 800), the Oregon State Historic Preservation
+Officer has been consulted (see appendix D). He felt that "no distur­
+bance of previously undisturbed ground should be involved, and cultural*
+resources should not therefore be impacted." -
+5.   ANY ADVERSE ENVIRONMENTAL EFFECTS WHICH CANNOT BE AVOIDED SHOULD THE
+     PROPOSAL BE IMPLEMENTED
+
+During initial construction of the structures, the trucking and end
+dumping of stone vill produce a temporary increase in turbidity, noise,
+dust; and traffic congestion in the vicinity of the construction sites.
+
+The breakwater extension and buildup will cover about 3 acres of subtidal
+sandy habitat and the benthic organisms living there (such as razor and
+cockle clams). The extension will create 0.4 acres of intertidal rocky
+habitat. The sand spit which would form west of the extension would con­
+tain approximately 11 acres of.sand above MHHW and cause 12 acres of
+intertidal sandy habitat to accrete.
+
+After the breakwater extension is constructed, velocity is expected to
+increase at the tip and cause scouring to the north. A 100-foot-in­
+diameter, roughly-circular crater is expected to form. It may reach a
+depth of -4 to -5 feet in the center.
+
+Some shoaling will occur both north and south of the proposed groin
+structure. The groin will cover 1.24 acres of rocky, subtidal habitat.
+6.    Alternatives to the Proposed Action
+
+6,1    Introduction
+
+A variety of alternative plans were investigated for improving navigation
+and fulfilling the expressed desires and needs of local residents in the
+study area. Each alternative was evaluated to obtain a plan that best
+responded to stated problems and needs. Formulation and investigation
+of the various plans were based on technical, economic, and environmental
+criteria, identified as follows:
+
+Technical Criteria     "
+
+The following technical criteria were adopted for use in developing a
+plan:
+
+    a. The selected plan should be consistent with local, regional, and
+State land-use plans and goals and guidelines.
+
+    b. The plan should provide adequate channel depth to accommodate
+existing boat basin traffic.
+
+      c.   The plan should maintain the channel in usable alinement.
+
+      d.   The plan should reduce adverse wave conditions.
+
+      e.   To be considered, a plan must be technically feasible.
+
+
+    f. Design criteria, such as rock size, type of armor, elevation, and
+cross-section selection, will be based on wave climate at Charleston.
+
+Economic Criteria
+
+The economic criteria which were applied in formulating a plan are as ,
+follows:
+
+      a.   Tangible economic benefits must exceed project costs.
+
+      b.   The scope of the development is to provide maximum net benefits.
+
+    c. The plan should be the most economically feasible alternative
+available that would accomplish the desired objective.
+    d. The benefits and cost are expressed in comparable quantitative
+economic terms to the fullest extent possible. Annual cost is based on
+a 50-year period of analysis and an interest rate of 6-5/8 percent. No
+interest during construction was included, as the project could be com­
+pleted within one year. The annual charges also include the cost of
+maintenance.
+
+Environmental and Other Criteria
+
+The following environmental criteria were considered in formulating a plan:
+
+    a. The planning process must involve natural scientists, engineers,
+sociologists, and economists.
+
+    b. An assessment and evaluation of the environmental impacts and of
+any Irreversible and irretrievable commitments of resources which would be
+involved in any proposed action will be completed.
+
+    c. Any detrimental impacts on environment must be avoided when possible.
+If any detrimental effects are unavoidable, feasible mitigating measures
+or tradeoffs will be studied for implementation/
+
+    d. Consideration will be given to public health, safety, and social
+well being.
+
+    e. Sufficient information, must be provided to interested local, State,
+and Federal governments, private groups, and the general public to obtain
+their input regarding existing problems, formulation of alternatives,
+impact assessment and evaluation.
+
+The alternatives considered were of two types— nonstructural and structural.
+The effects of each of the alternatives on the physical, biological, and
+social systems of the study area are Indicated in the following paragraphs.
+
+6.2     Nonstructural Alternative— No Action
+
+6.2.1     Introduction
+
+Under this alternative, existing problem conditions would continue (see
+section 1.4). Maintaining Charleston Channel to proper depth and allnement
+would require a high level of effort and expense in the future. The present
+breakwater would continue to be overtopped during winter storms and be
+breached periodically.
+
+During fall and winter storm conditions similar to those which occurred in
+1977-78, waves entering from the ocean will again cause surge conditions
+within the boat basin. Piling and docks were repaired and strengthened
+after the last storm, so damage to boats and mooring lines may Increase.
+It is theorized that the improved moorages will stand firm longer than
+previously, rather than yielding immediately when the boats slam against
+them. As a consequence, more direct expense will be Incurred by the indi­
+vidual boatovner in the future than in 1977 (whenwave conditions are like
+those of that winter).
+ Without the proposed improvement there would be no change to the tidal
+ hydraulic processes that now act in the area. That is not to say if
+  there were no more structures placed in the estuary, there would never
+ be a change in estuary hydraulics. To the contrary, sediment will con­
+  tinue to be delivered to South Slough and the rest of the estuary from
+  its headwaters. Natural processes act to fill estuaries. The better the
+  flushing of an estuary, generally, the longer is the time before it is
+''silted up.
+
+  Sand entering the Charleston area tends to restrict the flow through
+' Charleston Channel and, thus, all of South Slough. With no structural
+ measures taken to reduce channel shoaling at Charleston, the sedimenta­
+  tion rate in South Slough would be expected to be higher than it would
+ be if the channel were maintained at deeper-than-present depths.
+
+ Under present conditions, waves can be expected to. continue refracting
+ around the breakwater, and reflecting from the shore between Barview and
+ Fossil Point. This wave activity would continue to cause structural
+ damage in the boat basin and shore erosion at Charleston, at the Const
+ Guard building northwest of the root of the breakwater, and on the shore
+ east of Charleston Channel.
+
+ Dredging'records have shown that, while the spit north of the Charleston
+ breakwater was near its maximum size, sediment was deposited in Charles­
+ ton Channel at an average annual rate of 22,000 cubic yards.
+ The rate of sediment deposition in the channel, averaged over all cycles
+ of sand spit size, is expected to be 46,000 cubic yards annually, based
+ on the quantities removed since maintenance dredging began.
+
+ In the present condition the channel sometimes becomes too shallow
+ and the alinement too tortuous for a hopper dredge to operate. Under
+ those conditions, a pipeline dredge must be used to maintain the channel,
+ resulting in a higher cost for.dredged material and, often, more
+ serious environmental costs than if a hopper dredge could be used.
+  6.2.2 Socio-Economic Impacts of No Action Alternative
+
+ Economic Effects
+
+ People Interviewed generally agreed that if the surge and channel problems
+ are not remedied, the boat basin would not be suitable for year-round com­
+ mercial fishing. Currently, there are very few facilities in the Coos
+ Bay area that could serve as moorages for part of the fishing fleet. During
+ the bad winter storms of 1977, the boats in the outer basin were tied up
+ to.any available moorages including fish processing plants and miscellaneous
+ docks in the upper bay. At that time, as now, there were no formal
+ facilities.that could permanently handle the significant numbers of
+ larger commercial fishing vessels found in the outer basin of the
+ Charleston Marina. Although all the fishermen and families Interviewed
+ expressed a very strong desire to stay in the Coos Bay area, all agreed
+ that adequate facilities did not exist for boat moorages other than the
+ Charleston Marina.
+
+ The City of Coos Bay has some old moorages in the downtown area. Proximity
+ to the shipping channel makes these somewhat dangerous to use. The moorages
+ are in considerable disrepair and a plan to renovate them remains dormant.
+
+ Two of the fish processing plants, Hallmark Fisheries and Peterson Seafood,
+ have some moorage spaces. These are generally reserved for the .temporary
+ tie-up of fishing boats serving the processors.
+
+• Hanson's Landing, directly upstream of the Charleston Marina, has a total
+  of about 50 moorage spots on the bay and Joe Ney Slough. The boats
+  range from 20 feet to 50 feet in length. About half of them
+  are commercial. Hanson's Landing is currently at capacity and has a
+  waiting list of about twenty boats. The landing's location upstream of the
+  CaJ>er Arago Highway drawbridge makes it an undesirable spot for large vessel
+  moorage. Automobile traffic is severely congested, particularly during the
+  summer, by frequent lifting of the drawbridge.
+
+Currently, the Port of Coos Bay has a permit application pending before
+the Army Corps of Engineers to allow the construction of a trawler basin
+on the North Spit. Long range plans by the Port Include development of
+the bottom fishing Industry and estabishment of the proper processing
+plants on the North Spit. While some of the larger trawlers in the
+Charleston Marina could conceivably use this basin, it is not being design­
+ed for use by small vessels, nor for permanent.moorages of many vessles.
+The future of the bottom fishing industry in the Coos Bay area and the
+outcome of the proposed trawler basin cannot, therefore, be seriously
+considered as an alternative for the boats currently moored in the Charles­
+ton Marina. The Charleston facilities are being fully utilized by fisher­
+men catching shrimp,, crab, salmon, bottomfish, etc.
+
+ All the major fishing ports along the Oregon and northern California coast
+ are operating at capacity and have significant waiting lists. Most people
+ interviewed mentioned Newport as being the most desirable port to them
+outside of Coos Bay. Other ports mentioned Included Crescent City and
+Eureka. The small fishing ports such as Brookings and Winchester have
+bars that make entry during winter months all but impossible.
+Fishermen, particularly those with stong family ties, would
+be very reluctant to relocate to areas outside of Coos Bay.
+
+Failure to solve the surge and channel problems would also have
+significant Impacts on the fish processing industry. Due to the difficulty
+in obtaining permits for construction of new fish processing plants,
+particularly in obtaining water-quality permits, it is doubtful
+whether the current plants would relocate. Those plants that have
+branches in other ports would probably relocate their equipment to those
+plants and possibly close down their Charleston operation. Plants that
+operate only in the Charleston area would have the alternative of: 1)
+trucking-fish in from landing stations elsewhere on the coast; 2) using
+local landings and greatly curtailing operation; or 3) closing down
+operation. Some fish landings, particularly salmon, which is generally
+fished out of small vessels, could continue in the Charleston area. The
+larger vessels, however, would be seeking-other moorages.
+
+The ties between the fishing industry and the fish processing industry are
+close. Two to two and a half shrimp boats are generally needed to supply
+enough shrimp to run one shrimping machine. Strong but informal agreements
+are generally made between processors and boats that will supply them.
+Fishermen, particularly shrimpers that relocate to other areas, would thus
+have to find processors who could use their catch.
+
+Community Effects
+
+ The soclo-cultural effects of not remedying the surge and channel problems
+ in the Charleston Marina would be profound. The owners of the larger,
+ fishing trawlers would be forced to seek moorages elsewhere. Since there
+ are few adequate alternative moorage spots in the Coos Bay area, many of
+ these fishermen would ultimately be forced to leave the area, severely
+ disrupting social ties. Since family networks are an important aspect
+ in the community, relocation would be a source of great sor.ial change in
+.Charleston.
+
+The community of Charleston itself might become predominantly a summer
+fishing area. Vacation of the area by commercial fishing vessels would
+create more space for sport fishing and smaller sport-commercial vessels.
+The character of the area might become more tourist and sport-fishing
+oriented* '
+
+A decrease in commercial fishing would have secondary economic impacts.
+Marine commercial enterprises may suffer a loss of business. General
+commercial establishments would become more dependent on tourism support
+by sport fishermen. There would probably be an overall loss of income
+to the current residents of the area. Only a small percentage of current
+residents would be able to afford new housing.
+’The recent extension of the sewer.line to Charleston is expected to
+ encourage considerable residential development. An Influx of new residents
+ with no ties to the fishing industry might further dilute the currently
+ pronounced commercial fishing orientation and character of Charleston. ■
+
+
+6.3     Structural Alternatives
+
+The following structural alternatives were tested for their hydraulic
+effects on the estuarine system using a numerical model. If an alternative
+failed to meet either the technical or economic criteria, it was not studied
+further,
+
+6.3.1     Alternative 1
+
+Construction of an L-shaped breakwater north of the present breakwater and
+three groins on the east side of Charleston Channel was the most extreme
+structural modification tested. Although that alternative showed no adverse
+hydraulic impacts would result, the plan was rejected for economic reasons.
+
+The top elevation of the 400-foot-long groins and of the 3600-foot-long
+breakwater was to be +14 feet. That plan would require about 345,000 more
+tons of rock and would cover about 12 more acres of sandy bottom than the
+chosen alternative. In terms of labor and materials, alternative 1 is
+about $8 million more expensive than the chosen plan. Alternative 1 would
+have caused a sand spit to form in the area that is now a recreational
+clamming area.
+
+6.3.2     Alternative 2
+
+Extending the breakwater 1000 feet northward was analyzed but was rejected
+because it would not appreciably decrease channel maintenance costs to
+any greater degree than would the 800-foot extension. The 800-foot exten­
+sion was the length that provided the minimum amount of wave energy reduc­
+tion in the boat basin for safe conditions. The 1000-foot extension would
+reduce the wave height of a 17-second wave in the mooring basin only .slightly
+more than the 800-foot extension would * The 200 feet of additional extension
+would require 7,795 tons more rock and would cover about 0.5 acre more
+sandy bottom.
+
+6.3.3    Alternative 3
+
+Modeling the extension and one groin on the east side of the channel
+showed that plan would be very effective in protecting the channel from
+shoaling. Maximum velocity in the channel would be increased by the '
+presence of the groin. The extension alone may prevent problems of channel
+depth and alinement. The channel has the ability to adjust its own shape,
+and therefore the flow and sediment transport characteristics. Since
+the adjustment of the channel to the presence of the breakwater cannot be
+analytically determined and due to the Importance of waves In the
+channel shoaling problem, construction of the groin would be deferred
+until actual performance of the extension was evaluated. The groin would
+conlist of about 35,500 tons of rock and would cover about 1.2 acres of
+sandy and rocky ,bottom.
+
+
+6.3.4    Alternative 4 .
+
+A single groin on the east side of Charleston Channel near the end of the
+breakwater was considered as a means of keeping the channel in correct
+alinement and to reflect waves away from the boat basin. However, it was
+determined that the groin, acting alone, would not reduce the channel
+maintenance costs because the groin would not block the sediment from
+moving into the channel. The groin would not prevent waves from
+diffracting around the end of the present breakwater, which presently
+causes much damage in the mooring basin.
+
+ 6.3.5   Alternative 5
+
+  Two groins, in addition to the extension, were shown by the model to
+■ produce more concentrated flow in the channel than would be produced with
+  only one groin and the extension. That alternative should not impact the
+ hydraulics outside the Charleston area, but the flow conditions in the
+  channel produced by the second groin are not considered necessary to
+ maintain the channel at project dupth and alinement. The second groin
+ would cover about 1.1 acres of bottom and require about 35,500 tons of
+  rock.
+
+ 6.3.6   Alternative 6
+
+Repositioning the channel, with no other structural modifications, would
+be only a temporary lmprovsment for navigation. Under the prevailing -
+dynamic conditions, any dredged area would soon return to its pre-dredged
+condition. Although no rock would be placed under this alternative, the
+average dredging requirement of the past 10 years could be expected to
+continue. The monetary cost as well as the environmental cost of dredging
+and disposing of the shoal material has led to formulating the plan to
+structurally protect the channel where it has shoaled the most.
+7.0   RELATIONSHIP BETWEEN LOCAL SHORT-TERM USES OF MAN*S ENVIRONMENT
+      AND THE MAINTENANCE AND ENHANCEMENT OF LONG-TERM PRODUCTIVITY
+
+As the stone Is placed for the breakwater extension, 3.0 acres of sandy
+substrate will be covered. The structure will create 0.4 acres of Inter­
+tidal rocky habitat. Within 10 years an estimated 1 1 acres of sand above
+MHHW would form and about 12 acres of Intertidal sandy habitat would
+accrete.
+
+Groin construction would eliminate less than 1 acre of rocky in-bay
+subtldal habitat and replace It with 0.22 acres of rocky Intertidal
+habitat.
+
+In the short term, there will be Increased use of fossil fuels, an increase
+In noise levels, and a worsening in air quality during construction, plus
+traffic congestion in the Charleston are. Over the long run, the loca­
+tional advantages should reduce use of fossil fuels, however.
+
+The increased elevation of the breakwater will prevent overtopping of the
+structure during winter storms.
+
+These structures will help maintain Charleston's fishing industry as it
+has been in the past by reducing recent channel'passage problems and
+surge problems in the boat basin. Since navigation conditions should
+return to the former conditions, it is possible that' there will be
+increased pressure to expand the existing boat basin area.
+8.   IRREVERSIBLE AND IRRETRIEVABLE COMMITMENTS OF RESOURCES WHICH WOULD
+     BlTINVOLVED IN THE PROPOSED ACTION SHOULD IT BE IMPLEMENTED
+
+Removal of the stone for the proposed breakwater extension and possible
+groin structure from its source(s) at commercial quarries will be
+Irreversible. Placement of stones will alter the effect of wave action
+from the bay entrance and reduce shoaling within the Charleston channel.
+A 50-year life is assumed for economic purposes, but the actual life of
+the project will be indefinitely longer. Emplacement of the rock would
+remove 3.0 acres of sandy bottom habitat and replace it with 0.4 acres
+of intertidal, irregular, rocky surface.
+
+The sand spit which would form west of the proposed extension would con­
+ tain about 11 acres of sand above MHHW and cause 12 acres of intertidal
+ sandy habitat to accrete.
+
+Some shoaling would occur both north and south of the proposed groin
+structure which would cover 1*2 acres of rocky, subtidal benthic habitat.
+
+Allocation of labor and capital for construction of the breakwater
+extension and possible groin structure will preclude the investment of
+these resources elsewhere. Both gasoline and diesel oil would be con­
+sumed during construction.         -
+  9.   COORDINATION
+
+  On 22 March 1978, a meeting was held at the Portland District Office,
+  Corps of Engineers, to explain the status of the Charleston navigation .
+  improvement plans, environmental resources in the Charleston area,-and
+  results of a numerical model study of the tidal hydraulics of the lower
+  Coos Bay including South Slough. Attending the meeting were concerned .
+  Federal, State and local agencies, representatives from congressional
+  offices, the South Slough Sanctuary Manager, and interested private
+  citizens. "
+
+  The U. S. Fish and Wildlife Service has prepared a report on the project
+  in accordance with the provisions of the Fish and Wildlife Coordination
+  Act (48 Stat. 401, as amended; 16 U.S.C. 661 et. seq.).
+
+’Comments on the proposed project have also been requested from Division of
+ State Lands, Department of Land Conservation and Development, Environmental
+ Protection Agency, National Marine Fisheries Service, and Oregon Depart­
+ ment of Fish and Wildlife.
+
+  The draft EIS supplement was mailed to the following for review and
+, comment:
+
+ Federal'
+
+ Department of Transportation
+   U.S. Coast Guard
+   Federal Highway Administration
+   Federal Railroad Administration
+ Environmental Protection Agency
+ U.S. Forest Service
+ U.S. Soil Conservation Service
+ Department of Commerce
+   National Marine Fisheries Service
+ Department of Interior
+   U.S. Fish & Wildlife Service
+   National Park Service
+ Federal Energy Administration
+ Department of Housing & Urban Development
+ Department of Health, Education & Welfare
+ Federal Power Commission
+ Advisory.Council on Historic Preservation
+
+
+ State
+
+Office of the Governor
+Local Government Relations Division
+Oregon Department of Fish & Wildlife
+Land Conservation & Development Commission
+Division of State Lands
+Local -
+
+Coos-Curry Council of Governments
+Coos County Planning Department
+Coos Bay Public Library
+North Bend Public Library
+Port of Coos Bay
+
+
+Other
+
+ OSU Karine Science Center
+ Institute of Marine Biology
+ Sierra Club
+ Friends of the Earth
+ Trout Unlimited
+Northwest Environmental Defense Center
+ Isaak Walton League
+ Federation of Western Outdoor Clubs
+National Audubon Society
+Survival Center, University of Oregon
+The Oregon Journal
+Citizens for a Clean Environment
+Oregon Archaelogical Society
+Oregon Environmental Council
+Oregon Wildlife Federation
+Oregon Shores Conservation Coalition
+Washington Environmental Council
+Environmental Studies Center, University of Oregon
+OSPIRG
+Western Wood Products Association
+The Oregonian
+Museum of Natural History
+Oregon Historical Society
+League of Women Voters
+Environmental Information Center, Inc.
+U.S. Attorney
+Environmental Defense Fund, Inc.
+Kerr Library, OSU
+Liz Greenhagen
+The Nature Conservancy
+Bohemia Inc., Umpqua Division
+All Coast Fishermen's Association .
+Charleston Fishermen's Wives Association
+                               REFERENCES
+
+
+Arneson, Robert J. 1975. "Seasonal Variations in Tidal Dynamics, Water
+     Quality, and Sediments in the Coos Bay Estuary,” thesis submitted
+     in partial fulfillment of requirements for Master of Ocean Engineer­
+     ing, Oregon St. Univ., 237 pp.
+
+Burgh, Colleen.   1978.    Personal Communication.   Student, OIMB.   Charleston,
+     Oregon. '
+
+CCD Economic Improvement Association.  1977. Coos County Area Development
+     Fact Book. CCD. Ecomomic Improvement Association, Roseburg, Oregon.
+
+Coos County Planning Department. October 1977. Draft; Housing Element.
+     Coos County Planning Department, Coquille, Oregon.
+
+Coos County Planning Department. 6/23/78. Third Draft Economic Policies.
+     Coos County Planning Department, Coquille, Oregon.
+
+Coos County Planning Department. 6/22/78. Third Draft Estuary Policies.
+     Coos County Planning Department, Coquille, Oregon.
+
+Coos County.   1975.    Coos Bay Estuary Plan.   Coos County, Coquille, Oregon.
+
+Cork, Brad.  1977. "Response to Status Questionnaire by Charleston Boat
+     Basin Waiting List People," Report for Oregon Institute of Marine
+     Biology, Charleston, Oregon.
+
+Day, Ruth. 1978. Personal Communication. Retired Former Owner of
+     Hallmark Fisheries. Charleston, Oregon.
+
+Gersuny, Carl and John J. Poggie, Jr. 1973. "The Uncertain Future of
+     Fishing Families." The Family Coordinator, 241 through 244.
+
+Hall, Leonard. 1978. Personal Communication. Retired Fisherman and
+     Member of Oregon Fish Commission. Charleston, Oregon.
+
+Jacks, Jim. 1978. Personal Communication. Coos-Curry Council of
+     Governments Planner, North Bend, Oregon.
+
+Liao, David S. and Joe B. Stevens.  1975. "Oregon’s Commercial Fishermen:'
+     Characteristics, Profits, and Incomes in 1972.: Oregon State Uni­
+     versity Sea Grant Program ORESU-T1-75-OI, Corvallis, Oregon.
+
+Link, T. L. 1978.      Personal Communication.   Oregon Department of Fish
+     and Wildlife,     Astoria, Oregon. -  .
+
+McGle, Alan. 1978. Personal Communication.       Audubon Society Member.
+     Charleston, Oregon.
+McLain, Bruce H. 1973. ’’Commercial Fishing and its Related Industries,"
+     Report for Spring Term 1973 at Oregon Institute of Marine Biology.
+
+Mullarkey, William. 1978.      Personal Communication.    Oregon Department
+     of Fish and Wildlife.     Coos Bay, Oregon.
+
+Nesmith, William. 1978.      Personal Communication.     Coos County Planner.
+     Coquille, Oregon.,
+
+Oregon Department of Human Resources.  1976. Social Accounting for
+     Oregon.  1976, Indicators of Depressed Socio-Economic Conditions.
+     Salem, Oregon.
+
+Oregon Department of Land Conservation and Development. 27 December 1974.
+     Statewide Planning Goals and Guidelines. . Salem, Oregon. 18 Decem­
+     ber 1976. Statewide Planning Goals and Guidelines. . 16 through 19
+     for Coastal Resources. Salem, Oregon.
+
+Percy, Katherine L., e t a l , 1974. "Oregon's Estuaries" Sea Grant College
+     Program. Oregon State University, 294.pp.*
+
+Queen, John and Wayne V. Burt.  1955. "Hydrography of Coos Bay", School
+     of Science, Oregon St. Coll. Reference 55-1, 16 pp.
+
+Rosenkeetter, Jerald, Kathleen Dugl, and Charles Id. 1970. Coos Bay
+     Estuary Report, Area A-l. Oregon Institute of Marine Biology.
+     Charleston, Oregon.
+
+Scott, Richard. 1978. Charleston Boat Basin Manager.         Personal Communi­
+     cation. Charleston, Oregon.
+
+Smith, Courtland. 1977. "Fish or Cut Bait." Oregon State University
+     Sea Grant Program. ORESU-T-77-06. Corvallis, Oregon.
+
+U.S. Corps of Engineers. 1932. "Report on Coos Bay Tidal Current Survey
+     Appendix A". Portland District, Corps of Engineers, 25 pp.
+
+University of Washington.     1955.   "Coos Bay, Oregon, A Literature Survey"
+     142 pp.
+                                    -APPENDIX A    ..
+
+
+                     PLANTS AND AN2MAU5 FOUND IN THE SOUTH SLOUGH
+
+                    A Partial List of Algae Found in South Slough
+
+Cyanophyta - Blue-green algae
+Chlorophyta - Green algae
+
+               Enteromorpha clathrata
+               Ulva fenestrata (Scagel)
+               Rhlzoclonlum rlparium
+
+Chrysophyta - Yellow-green and golden-brown algae and diatoms
+
+               Melospira sp.
+               Navicula ap.
+               Rhizosolenla sp.
+
+Phaeophyta - Brown Algae
+
+               Nerocystis luetkeana
+               Fucus edentatus (Scagel)
+
+
+
+
+                A Partial List of Marine Invertebrates of South Slough
+
+Sponges
+
+    Boring Sponge                                 Cliona sp.
+    Violet Encrusting Sponge                      Hallclona permollis
+
+Hydroids
+                                                  Campanularia sp.
+                                                  Garveia annulata
+                                                  Syncoryne eximia
+                                                  Tubularia marina
+
+Jellyfish
+                                                  Polyorchis paciflca
+                                                  p. penicillatus
+                                                  Aequorea sp. ■
+
+
+Sea Anemones
+
+    Green Anemone                                 Hallplanella leucolena
+                                                  Metridlum sp.
+                                                  Nematostella sp.
+Comb Jellies
+
+    Sea Walnut             Pleurograchia bachel
+Endoproct                   Barentsia gracilis
+Bryozoans
+   Moss Animals             Bowerbankla gracilis
+   Encrusting Bryozoan     Membranlpora tuberculata
+Polychaetes
+                            Abarenicola paclfica
+                            Anobothrus gracilis
+                           Capltella capitata
+                            C. ovincola
+                            Heteromastus flliformls
+                            H. fllobranchus
+                            Cirratulus cirratus
+                            Eunice sp.
+                            EudlstyllA Vancouver!
+                            Serpula vermicularis ~
+                            Plsta paclfica
+                            Glycera americana
+                            Glyclnde armlgera
+                            Nephtys c&ecoides
+                            Nereis brandti (Neanthes brandti) .
+                            N. limnlcola (Neanthes diverslcola)
+                            N. vexillosa
+
+Echinoderms - Starfish
+    Shortspined Pisaster   Pisaster brevlsplnus
+    Ochre Starfish         P. ochraceous
+
+
+Molluscs
+
+    Button Tcllen          Tellina button!
+    European Shipworm      |eredo naval^^
+    Gaper Clam             Tresus
+    Nudibranch             Acanthodorls columbine
+                            Aeolldla papillosa
+    Sea Lemon Nudibranch   Anlsodoris nobllis
+                            Archldoris montereyensis
+    Opalescent             .Hermissenda crasslcornia^
+    Moon Snail             Pollnices draconls
+    Purple Olive Snail     Olivella blpllcata
+    Pea Pod Borer           Botula californiensis
+    Bay Mussel'             Mytllus edulls
+    Basket Cockle          Cardlum nuttallli v
+    False Mya              Cryptomya callfornlca
+     Baltic Macoza              Hacooa balthica
+     Bent-nose C l a m .         M. nasuta
+     Soft-shell Clam            Mya arenaria
+     Common Littleneck          Protothaca ataainea
+
+ Arthropods
+
+
+ Isopods
+
+     Pill bugs/rock lice         Gmorimosphaeroma oregonensls
+                                 Idothea aculeata
+                                 Ligla pallcsii
+                                 Porcelllo scaber scaber
+
+Amphipods
+
+     Beach flea                 Corophlum acheruslcum
+     Sand flea                  Orcheatoldea callfomiana
+
+Crabs and Shrimp
+
+    Black tailed shrimp         Crago rilgrlcauda
+    Broken back shrimp          Spirontocarls paludicola
+    Rock Crab                   Cancer antennarius
+    Red cancer crab             C. productua
+          Shore Crab            Hemlgrapsus oregonensls
+    Purple (Beach) Shore Crab   H. nudus
+              .                 Scleroplat gfriaulata
+     Ghost Shrimp                dalllanassacaxitorniensls
+     Blue Mud Shrimp             Upogebla pugettensis
+    Dungeness crab              -       ---- -----------
+Barnacles ’    , °              C g c e r maRlster
+
+
+    Horse Barnacle              Balanus cariosus
+    Acorn Barnacle              1J. glandule
+                    Partial Checklist of the Birds of the *South Slough Area
+
+
+        ABUNDANCE STATUS
+
+                    VC   —       very connnon; 50 or more birds per day/observer/area
+                    C        -   common; 10-49 birds per day/observer/area
+                    U        -   uncommon; 0-9 birds per day/observer/area
+                    R        -   rare;'5 or less birds per year/observer/area
+                    VR       -   very rare; 5 or less birds per year/observer/area
+
+        SEASONAL STATUS
+
+                 R           -   resident; foundall year
+                 WV              winter visitor
+                 SV          -   summer visitor
+               • SR          -   summer resident
+                 M           -   migrant; seen only in transit
+
+
+
+
+      Name                         Scientific Name                Seasonal Status   Preferred Habitat         Abundance
+
+Order Gavilformes
+  Family Faviidae
+    Common Loon                    Gavla lmmer                           R          Ocean, estuary, lakes       C
+    Arctic Loon                    Gavla arctlca                         M          Estuary, Ocean              U
+
+Order Podicipcdiformcs
+  Family Fodiclpedldae .
+    Horned Grebe                   Podlceps autitus                      WV         Lakes, rivers,estuary       c
+    Western Crebe                  Aechmophorus occldentalls             WV         Lakes, estuary              c .
+    Pied-billed Grebe              Podilymbus podlceps                   R          Rivers, marshes,estuary     u
+Order Pelecanlformes
+  Family Phalcrocoracidae
+      randt's Cormorant             Phalacrocorax penicillatus   R    Ocean, offshore rocks     VC
+                                                                       estuary
+      Pelagic Cormorant             Phalacrocorax pelagicus      R    Ocean, offshore rocks,    VC
+                                                                       estuary
+                                •
+Order Ciconiformes
+  Family Ardeldae
+     Great Blue Heron               Ardea herodlas               R    Estuary, lakes, streams   C
+                                                                       marshes
+      Green He ron                  Butorldes vlrescens          SR   Karshes, lakes, rivers    0
+      Coupon Egret                  Casaerodius albus            R    Marches, lakes            R
+
+
+O r der Anserlformes
+    Family Anatldae
+        B lack Brant                Branta nigricans             WV   Estuary, open ocean       VC
+       Mallard                      A n a s platyrhynchos        R    Lakes, rivers,, estuary   VC
+       Pintail                      A n a a acuta                R    Lakes, ponds              VC
+       Green-winged T e a l         An a s carollnensls          R    M a r s h e s , estuary   c
+       American Wi dgeon            M a r e c a smerlcana        WV   Marshes, lakes, fields    VC
+       Wood B u c k             A l X ttPQBfig                   R    Lakes, streams .          C
+       Canvasback               Ayttiya                          WV   Karshes,estuary, lakas    VC
+       G r e ater Scaup         A y t h y a marlla               WV   Lakes, estuary            c
+       C ommon Goldeneye        Bucephala claneula               WV   Lakes, ponds, rivers      C
+       Harlequin D u c k        Hlstrlonlcna Mafrlnnlrti*        WV   Ocean, estuary            u
+       Whlte-vlnged Scoter      Me l a nltta deglandl            R    Ocean, lakes, estuary     vc
+       Surf Scoter              Melanltta persplcillata •        R    Ocean, lakes, estuary     VC
+       Common Scoter            Oldemla nigra                    R    Ocean, lakes, estuary     u
+       Rudy. D u c k            O x y u r a iamalcensls          R    Lakes, marshes, estuary   C
+       Hooded Merganser         Lophodytes cucullatus            R    Lakes; streams            u
+       Common Merganser         Mergus merganser                 R    Streams, lakes, estuary   U
+       Red-breasted Merganser   Mergus serrator                  WV   Rivers, estuary           u
+O r der Falconlformes
+    Family Cathartldae
+       Turkey Vulture           Cathartes aura                   SR   Wocdlands                 u
+      Family Accupltrldae
+      • ' Sharp-shinned Hawk      Accipiter atriatus             R          Forests, woodlands               U
+          Cooper's Hawk           Acclplter cooperii             R         .Woodlands                        U
+          Red-tailed Hawk         Buteo jaaalcensis              R          Woodlands, farm lands            c
+          Rough-legged Hawk       Buteo lagopus                  WV   .     Marshes                          U
+
+■     Family Pandlonldae
+         Osprey                   Pandion hallatus               SR            Lakes, rivers                 U
+
+    Order Galliforues
+      Faally Tetraonidae                                                  .•            •
+         Blue Grouse              Dendraeapus obscurus          ’R             Forest                       C
+      Family Phaalanldae
+         Mountain Quail "-        Oreortvx olctus               R              Woodlots, forests            U
+      Family Rallldae
+         Aaerlcan Coot            Fullca aaerlcana              R              Lakes, estuary, marshes.     VC
+                                                                                fields
+
+    Order, Charadrllformes
+      Family Charadrildae
+          Sealpalaated Plover    ;Charadrlus semipalmatua       M          :Shores, tideflats               u
+          Kllldeer               .Charadrlus voclferus          R           Field, tideflats                c
+          Black-bellied Plover    Scvstarola souatarola         M           Mudflats, open marshes          c
+          Surfblrd                Robrlea vlrcata               H           Rocky coasts, jetties           c
+     Faally Scolopaddae
+        Whlabrel                  Kuaenlus phaeopus             K          Mudflats, open marshes           0
+        Spotted Sandpiper         Actltls macularia             R          Streams, marshes                 u
+        Solitary Sandpiper        Trlnea solltarla              M          Streams, marshes                 R
+        Wlllet                    Catootroohorus semlpalmatus   M          Marshes, beaches                 V
+        Dunlin                    Erolla alolna                 WV         Beaches, tidal flats             VC
+        Short-billed Dow!tcher    Llanodromus erlseus           M          Mudflats                         C
+        Long-billed Dowltcher    -Llanodromus scolonaceua       M          Mudflats                         VC - -
+        Sealpalaated Sandpiper    Ereunetes puslllus            M          Beaches, mudflats              o R ■■■
+        Western Sandpiper         Ereunetes maurl               M          Mudflats, beaches                VC
+        Sanderling                Crocethla alba                M          Sandy beaches                    C
+Order Caprlmulglformes
+ .Family Caprimulgldae
+     Common Nighthawk               Chordelles minor            SR     All open lands                 C
+
+Order Apodiformes
+  Family Trochllldae
+     Rufous Hummingbird             Selasphorus rufus           SR     Mixed woods, urban areas       C
+
+Order C o r a d i f o r m e s
+  Family Alcedlnidae
+     Belted Kingfisher              Megaceryle alcyon           R      Streams, estuary               c
+
+Order Plclformes
+  Family. Picidae
+     Red-shafted Flicker {          Colaptes cafer              R    • Mixed woods                    c
+     Plicated Woodpecker            Dryocopus pileatus          R      Conifers                       u
+     Yellow-bellied Sapsucker       Sphyraplcus varius          R      Mixed woods                    U
+     H airy Woodpecker i |          Dendrocopos v i llosus      a      Mixed woods                    u
+     Downy Woodpecker.'             Dendrocopos pubescens       R      'deciduous w oods              0
+
+Order Passeriformes
+  F amily Tyrannidae . 1
+      W e s t e r n W o o d Pewee   Contopus sordldulus         SR     Woodlands                      c
+      Olive-sided Flycatcher        Nuttallornls borealis       SR     Open wood8                     c
+
+  Family Hirundlnidae
+     Violet-green Swallow           Tachyclneta thalasslna      SR     O p e n woodlands, adjacent    VC
+                                                                         to water, urban areas
+      T r e e Swallow               Irldoprccne bicolor         SR     Rivers, marshes                VC
+      B a n k Swallow               Rlparia riparla             SR     Around water                   R
+      Rough-winged Swallow          Stelgidopteryx ruflcollls   SR     Around water                   R  . .
+      Barn Swallow                  Hirundo rustics             SR     Around water                   VC
+
+
+  Family Corvidae.
+     Steller's J a y ;              Cyanocitta stelleri         R      Conifers                      •c
+                                                                R      Brush, urban                   U'rt
+     Scrub Jay •            ■"      Aphelocoma coerulescens
+                                    Corvus brackyrhynchos       R      Open woods, farms             •C
+     Common Crow
+  Family Phalaropodldae
+     RedfPhalarope          Phalaropus fulicarius            M          Ocean                      c
+     Northern Phalarope     Lobipes lobatus                  H          Ocean                      VC
+  Family Stercorarildae
+     Parasitic Jaeger       Stercorarius parasiticus •       M          Ocean                      U
+  Family Larldae
+     Glaucous Gull          Larus hyperboreus                WV '        Estuary, garbage dumps    R
+     Glaucous-winged Gull   Larus glaucescens                R           Estuary, garbage dumps,   C
+                                                                          fields
+     Western Gull           Larus occidentails               R           Estuary, ocean, lakes.    C
+                                                                          islands/
+     California Gull        Larus californlcus               R           Estuary, lakes, rivers    c
+     Bonaparte's Gull       Larus Philadelphia               M         - Ocean, estuary, lakes     u
+     Caspian Tern           Hydroprosne caspla               M    •      Lakes, estuary, ocean     u
+  Family Alcldae
+     Common Muure           Uria aSlge                       R          Ocean, estuary, offshore   VC
+                                                                         rocks
+     Pigeon Guillemot       Cepphus columba                  R          Ocean, estuary, offshore   c
+                                                                         rOCkS
+     Karbled Murrelet       Brachyramphus marmoratum     ■R      : ■    Ocean,.estuary             0
+Order Columb iformes
+  Family Columbldae
+   . Band-tailed Pigeon     Columba fasciata             ■   R   ;;     Conifers, mixed moods      c
+Order Strlgiformes
+  Family Strigldae
+     Screech Owl            Otus aalo                        R         Grassland, open woodlands   0
+     Great Horned Owl       Bubo vlrglnlanus                 R         Fields, grassland.
+                                                                         woodlands
+     Saw-whet Owl 1         Aegollus acadlcus                R   ,     Mixed woods                 0
+Family Parldae
+   Black-capped Chickadee       Parus atricaplllus            R          Deciduous woods               C
+   Chestnut-backed Chickadee    Parus rufescens               R        v Conifers •'                   VC
+   Common Bushtlt               Psaltriparus minimus          R          Deciduous woods               VC
+
+Family'Slttldae
+   Vhlte-breasted Nuthatch      Sltta carollnensls             R        Deciduous, mixed woods         C
+   Red-breasted Nuthatch        Sitta canadensis ;        ■■■■ R        Conifers, mixed woods          C
+
+Family Chamaeldae
+  • Vrentlt                     Chamaea fascists ;            R         Mixed woods, brush             C
+
+Family Vlreonldae
+   Warbling Vlreo               Vlreo gilvus                  SR        Deciduous woods                C
+
+Family Parulldae
+   Audubon's Warbler            Dendrolca audubonl            R         M ixed woods, conifers         c
+   Yellowthroat                 Ceothlypis trlchas            SR        Fresh-water marshes            c
+   W i l son's Warbler          W llsonla pusllla             SR        Deciduous and mi x e d woods   c
+Family Icterldaev
+   Red-winged Blackbird         Agelalus phoeniceus           R    '    Marshes, fields.               VC
+   Brewer's Blackbird           Euphagus cyanocephalus        R         Fields, farms                  VC
+
+Family Troglodytldae
+  -Winter W r e n               Troglodytes troglodytes       R         Dense conifers, woods          c
+   Long-billed K a r s h Wren   Telmatodytes palustrls        R         Fresh-water marshes            u
+
+Family Turdldae
+   Robin                        Tttrdus migratorlus         R           Fields, residential            VC
+   Varied Thrush                Ixoreus naevlus           - R           Conifers, mixed woods          C
+   Hermit Thrush                Hylocichla guttata          R           Deciduous woodsy conifers      c
+   Swalnson's Thrush            Hylocichla ustulata         AR          Conifers, mixed woods          c
+Family Sylvlldae *
+   Golden-crowned Kinglet    Regulus satrapa             R    Conifers                 C
+
+Family Motacillidae                                                       ■
+
+   Vater Pipit               Anthus splnoletta       :   M    Fields, mudflats         C
+
+Family Bombyclllldae
+  .Cedar Waxwing             Bombycllla cedrorum         R    Open woods, urban        C
+
+Family Sturnidae
+   Starling                  Sturnus vulgaris            R    Open fields, farms       VC
+
+Family Thraupldae
+• Western Tanager           Piranga ludoviclana          SR   Conifers, mixed woods    C
+
+Family Frlnglllldae
+   House Finch               Carpodacus mexlcanus        R    Residential, farms       C '
+ • Pine Siskin               Spinus' pinus               R    Conifors, mixed woods   ■C
+   American Goldfinch        Spinus tristis              R    Fields, farms            C   •
+   Rufous-sided Towhee       Pipilo erythrophthalmus     R    Brush                    VC
+   Oregon Junco              Junco oreganus              R    Conifers, deciduous      VC
+   White-crowned Sparrow'    Zonotrichia*leucophrys      R    Willows, open brush      VC
+   Golden-crowned Sparrow   .Zonotrlchla atrlcapllla     WV   Weed patches, brush      VC.
+   Fox Sparrow               Passerella illaca       ‘   R    Brush                    C
+   Song Sparrow              Melospiza melodia           R    Brush                    VC
+                   A Partial List of Mammals for South Slough,
+
+
+Mammals:                      Scientific Name                    Common Name   .
+
+
+                             Procyon lotor                       Raccoon
+                             Ursus amerlcanus                    Black bear
+                             Eutamias spp.                       Chipmunk
+                             Tamiasciurus hudsanlcus             Squirrel
+                             Lynx rufus                          Bobcat
+                             Glaucomys spp.                      Flying squirrel
+                             Phoca vltullna                      Harbor seal
+                             Lutra canadensis                    Otter
+                             Ondatra zlbethlcus                  Muskrat
+                             Castor canadensis                   Beaver
+                             Canls latrans                       Coyote
+                             Urocyon clnereoarsenteus            Fox
+                             Odocoileus columbxanus              Elacktall deer
+                             Aplodontla rufa                     Mountain beaver
+                             Sylvilagus bachmani                 Brush rabbit
+
+
+                 A Partial List of Upland Plants In South Slough
+
+Ferns & Horsetails:
+
+                              Polypodium Scouleri                Polypody
+                              Pteridlum aqulllnum                Bracken
+                              Equisetum spp.                     Horsetail
+                              Blechnum spp.                      Deer-Fern
+
+Higher Plants:
+
+                              Lysichitum amerlcanum             Yellow Skunk Cabbage
+                              Liliutn columblanum               Tiger Lily
+                              Abronia latifolia                 Sand-Verbena
+                              Fragarla chlloensls ■             Beach Strawberry
+                              Rubus parvlflorus .               Thimbleberry
+                              Rubls spectabilis                 Salmonberry
+                              Gaultherla shallon              - Salal
+                              Rhododendron cacrophyllum         Rhododendron
+                              Vaccinlum ovatum                  Huckleberry
+                              Sambucus calllcarpa               Elderberry
+                              Lonlcera lnvolucrata              Twinberry
+
+Trees:
+
+                              Plnus contorta                    Beach Finer
+                              Picea sltchensls                  Sitka Spruce
+                              PseudotsuRa Menzlesll           /Douglas Fir .
+                              Tsuga heterophylla                Hemlock' ,
+                              Chamaecynarls Lawsonlana -        Port Orford Cedar   ,.
+                             Scientific Nama                   Common Name
+
+                             Alnus oregcna                     Red Alder
+                             Quercus Garryana                  Oregon Oak
+                             Lithocarpus denslflora            Tan Oak
+                             Myrlca californica                Wsx Myrtle
+                             Acer macrophyllum                 Big Leaf Maple
+                             Acer drcinatum                    Vine Maple
+                             Sallx Roolerlana                  Coast Willow
+                             Sallx scouleriana                 Scouler's Willow
+
+
+
+
+                    A Partial List of Wetland Plants of South Slough
+
+Monocots
+
+  Family Rupplaceae
+                             Ruppla marltlma                   Ditchgrass
+
+  Family Zosteraceae
+                             Zostera marina                    Eel grass
+
+  Family Juncaginaceae
+                             Trlglochin marltlma               Seaside Arrowgrass
+
+  Family Gramlneae
+                             Agrostls alba                     Bent grass
+                             Dlstlchlls splcata                Salt grass
+
+  Family Cyperaceae
+                             Carex sp.                         Sedge .
+                             Eleocharls sp.                    Spike rush
+                             Scirpus acutus                    Hard-stem bulrush
+                             S. robustus                       Salt marsh bulrush
+                             S. americanus                     Common three square
+                                                                      bulrush'
+  Family Juncaceae
+                             Juncus baltlcus                   Baltic rush .
+
+Dlcots                                                                 '
+
+  Family Polygonaceae
+                             Rumex sp.                         Dock .
+. Family Chenopodlaceae
+                             Atrlplex sp.                      Salt bush
+                             Sallcornla paclflca               Plckleweed
+  Family Caryophyllaceae
+                             :Spergularia marina               Salt marsh sand sponge
+  Family Rosaceae
+                             Potentllla so.                    Cinquefoil
+                -h   '••
+Family Umbelliferae
+                           Lllasopsis occldentalls          Western lilacopsla
+Family Primulaceae
+                           Glauz marltlma                   Milkwort
+Family Convolvulaceae
+                           Cuscuta sallna                   Slat marsh deddeC.
+Family Scrophulariaceae
+                           Orthocarpus castllleloides       Paint brush
+Family Plantaginaceae
+                           Plantago juncoides(Peck)         Plantin
+Family Compositae
+                           Cotula coronopifolla             Brass buttons
+                           Grlndelia sj>.                   Gumplant
+                           Jaumaa carnosa                   Fleshy jaumea
+
+
+
+
+      A Check List of Fishes that Commonly Utilise South Slough
+
+
+Sturgeons
+  Aclpenser medlrostrls - Green
+  Acipenser transmontanus - White
+
+Herrings
+  Clupea harengus pallasi - Pacific Herring
+
+Anchovies
+  Engraulis mordax - Northern Anchovy
+
+Trouts, Salmon?
+  Oncorhynchus kisutch - Coho Salmon
+  Oncorhynchus tshawytscha - Chinook Salmon
+  Salmo clarkl— Cut throat Trout
+
+Smelts
+  Splrinchus thaleichthys - Longfln
+
+Silversides ’
+  Atherinops affinis - Topsmelt
+
+Sticklebacks
+  Gasterosteus aculeatue - Threespine
+
+Pipefish
+  Syngnathus griseolineatus - Bay Pipefish
+
+Sea Bass
+  Morone saxatillis - Striped Bass
+
+Surfperch
+  Amphlstichus rhodoterus - Redtall
+ Cvmatogaster aggregata - Shiner
+ finblotoca lateralis - Striped
+ Rhacochilus vacca - Pile
+
+Gobles
+  Clevlandla los - Arrow goby
+
+Rockfish
+  Sebastes melonoos - Black rockfish
+
+Greenlings
+  Hexagranmos lagocephalus - Rock
+  Hexagranmos decagranaus - Kelp
+
+Sculpins
+  Cottus asper - Prickly
+  Enophrvs bison - Buffalo
+  Leptocottus araatus - Pacific Staghorn
+
+Lefteye Flounders
+  Cltharlcbthvs stlgmaeus - Speckled Sanddab
+
+Rlghteye Flounders
+  Parophrvs vetulus - English Sole
+  Platlchthvs stellatus - Starry Flounder
+  Psettichthys melanostlctus - Sand Sole
+                    APPENDIX D
+             ARCHEOLOGICAL COORDINATION'
+Department o f Transportation
+STATE HISTORIC PRESERVATION OFFICE
+Parks and Recreation Branch
+525 TRADE STREET S.E., SALEM, OREGON 97310
+
+
+
+
+                                 June 12, 1978
+
+
+
+
+L.J. Stein, Chief
+Engineering Division
+US Army Corps of Engineers
+FO Box 2946
+Portland, OR 97208
+Dear Mr. Stein:
+     This letter is in response to your correspondence of June 7th
+regarding three projects in conjunction with the Coos Bay Channel
+Maintenance dredging.
+     After a review of your-proposed construction of the extension
+northward fran the present breakwater and the groin on the east
+side of the Charleston channel, together with the increase in the
+elevation of the present breakwater, we can offer the following
+comments. We feel that no disturbance of previously undisturbed
+ground should be involved, and cultural resources should not
+therefore be impacted.
+     We thank you for the opportunity to comment and review, and
+the dose coordination we are receiving from your district arche­
+ologists, Dr. John Fagan and Rob Freed.
+                                 Sincerely,
+
+
+
+
+                                 David G. Talbot
+                                 State Historic Preservation Officer
+

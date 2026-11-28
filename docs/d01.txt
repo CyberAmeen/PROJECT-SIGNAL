@@ -1,0 +1,1724 @@
+ JOURNAL AND PROCEEDINGS
+          OF THE
+
+    ROYAL SOCIETY
+                    OF
+ NEW SOUTH WA L ES
+           Volume 140 Parts 1 and 2
+                (Nos 423, 424)
+
+
+
+                    2007
+
+
+
+               ISSN 0035-9173
+
+
+
+         PUBLISHED BY THE SOCIETY
+BUILDING H47 UNIVERSITY OF SYDNEY, NSW 2006
+               Issued June 2007
+                    THE ROYAL SOCIETY OF NEW SOUTH WALES
+                               OFFICE BEARERS FOR 2007-2008
+ Patrons                      His Excellency, Major General Michael JefFery AC CVO MC,
+                                Governor General of the Commonwealth of Australia.
+                              Her Excellency Professor Marie Bashir AC CVO, Governor of
+                                New South Wales.
+ President                    Mr J.R. Hardie, BSc Syd, FGS, MACE
+ Vice Presidents              Prof. J. Kelly, BSc Syd, PhD Reading, DSc NSW, FAIP, FInstP
+                              Mr CM. Wilmot
+                              one vacancy
+ Hon. Secretary (Gen.)        vacant
+ Hon. Secretary (Ed.)         Prof. P. A. Williams,   BA (Hons), PhD Macq.
+ Hon. Treasurer               Ms M. Haire BSc, Dip Ed.
+ Hon. Librarian               Ms C. van der Leeuw
+ Councillors                  Mr A.J. Buttenshaw
+                              Mr. T. Danos
+                              Mr J. Franklin
+                              Em. Prof. H. Hora
+                              Dr M. Lake, PhD Syd
+                              Ms Jill Rowling BE UTS, MSc Syd
+                              A/Prof. W.A. Sewell, MB, BS, BSc Syd, PhD Me/6 FRCPA
+                              Ms R. Stutchbury
+                              two vacancies
+ Southern Highlands Rep.      vacant
+
+
+
+
+The Society originated in the year 1821 as the Philosophical Society of Australasia.    Its main   function is
+the promotion of Science by: publishing results of scientific investigations in its Journal and Proceedings;
+conducting monthly meetings; organising summer science schools     for senior secondary school students;
+awarding prizes and medals; and by liason with other scientific societies. Special meetings are held for:
+the Pollock Memorial Lecture in Physics and Mathematics, the Liversidge Research Lecture in Chemistry,
+the Clarke Memorial Lecture in Geology, Zoology and Botany, and the Poggendorf Lecture in Agricultural
+Science.
+
+
+Membership, as an Ordinary, Associate or Absentee Member, is open to any person whose application is
+acceptable to the Society. An application must be supported by two members of the Society. Subscriptions
+for the Journal are also accepted. The Society welcomes, from members and non- members, manuscripts
+of research and review articles in all branches of science, art, literature and philosophy for publication in
+the Journal and Proceedings.
+
+
+ISSN 0035-9173
+
+Copyright
+The Royal Society of New South Wales does not require authors to transfer their copyright. Authors are
+free to re-use their paper in any of their future printed work and can post a copy of the published paper
+on their own web site. Enquiries relating to copyright or reproduction of an article should be directed to
+the author.
+Journal & Proceedings of the Royal Society of New South Wales,       Vol. 140, p. 1-9,   2007
+ISSN 0035-9173/07/01001-9       $4.00/1
+
+
+
+                    Davidite and Other Early EveritsW^d;^
+                             Australia's Uranium Sto
+                                            DAVID BRA .N .AG AN
+
+
+        Abstract: The uranium-bearing mineral davidite was named for T.W. Edgeworth David.
+        The controversy about its validity as a true mineral lasted some years. Signihcant studies of
+        radioactivity and age determinations were carried out at Sydney University during the years
+        1904 to 1930.
+
+        Keywords: Edgeworth David, davidite, age determinations, Sydney University
+
+INTRODUCTION                                            ent substances, and he suspected there might
+                                                        be a new mineral present. Alderman (1967)
+With the present interest in the use of uranium         makes the point that Mawson had not only
+as a source of energy, it is an appropriate time        a deep interest in minerals, but also an ency-
+to present a few snippets of early Australian           clopaedic knowledge.         'He displayed the hall-
+research on that subject.       The first scientific    mark of the great mineralogist that uncanny
+studies in Australia on radioactivity were car-         ability to recognise almost instantly whether        a
+ried out more than one hundred years ago. Al-           mineral is unusual or "new"
+though not himself an experimenter in this field,            Mawson described the 'new' substance as
+T.W. Edgeworth David (1858-1934), Professor             cuboid crystals of a black mineral with specific
+of Geology at the University of Sydney between          gravity about      4,   having a brilliant lustre and
+1891 and 1924, through his encouragement and            glassy fracture, containing over 50% of Ti02, a
+support of various students, played a        signifi-   large quantity of iron and a notable amount of
+cant part in the development of this research.          rare earths, uranium, vanadium and chromium.
+Archibald Liversidge (1847-1927), Professor of          He continued 'the bright black mineral is an en-
+Chemistry until 1907, also played an important          tirely new type, though details are not yet avail-
+role.                                                   able for complete description.          We propose to
+                                                        name it davidite, after Professor T.W.E. David,
+                                                        of Sydney University,        whose personal    ability,
+EDGEWORTH DAVID AND                                     wise counsel, and enthusiasm have done so much
+URANIUM                                                 to further the interests of the science and eco-
+                                                        nomic application of geology in Australasia.'
+David and uranium are inextricably linked                  The mineral was supposed to have been
+through the mineral davidite, named by Dou-             chemically analysed by E.H. Rennie (1852-
+glasMawson (1882-1958) for his mentor, in               1927), a pupil and friend of Liversidge, (Barker
+1906 (Mawson 1906).  Mawson recognised the              k Stranks 1988), and his colleague W.T. Cooke
+new material when he was involved in the ex-            (1877 1957) at Adelaide University, just ar-
+amination of samples collected from the locality        rived back from post-graduate studies in Eng-
+he named Radium Hill, in South Australia. The           land. However, if their 'preliminary note' (1906)
+presence of carnotite (a yellow potassium uranyl        is   right they did      not test the correct mate-
+vanadate), first attracted attention, as a proba-       rial!   They examined the material which Maw-
+ble decomposition product of another uranium            son wrote was associated with his 'new' mineral,
+compound. The primary substance in the ore-             but which was somewhat heavier and less bril-
+body was black and sub-metallic. At first this                        They pointed out that analysis
+                                                        liant in lustre.
+main black material was suggested to be a single        was difficult, and to date incomplete, but that
+phase, probably a variety of ilmenite, but Maw-         'in addition to titanic and ferric oxides, which
+
+son thought there were in fact five quite differ-       are the chief constituents, there are present ura-
+2                                                        BRANAGAN
+
+
+Ilium, vanadium, cerium, and almost certainly                 son believed it was a crystal face) is not suffi-
+thorium and other rare earths, traces of lime,                cient to prove that the material is homogeneous;
+and we believe, also chromium and traces of                   and the fragments of ''davidite" which we exam-
+manganese. The quantities of vanadium and                     ined show unmistakeable signs of heterogeneity'
+chromium, however, if present, are very small,                (Crook k Blake 1910).
+and in the presence of uranium difficult to de-                  The years from 1906 to 1910 had not been
+tect with certainty' (Rennie       & Cooke 1906).             conducive to Mawson expanding on his new
+    The new mineral received its first interna-               mineral, as David gained him a position on
+
+tional mention in the Minemlogicol Magazine                   Shackleton's Antarctic expedition and the two
+
+of September 1907, where L..J. Spencer (1870-                 of them went off to seek the South Magnetic
+                                                              Pole, which incidentally kept the both of them
+1959) listed it among newly described minerals
+from around the wx)rld, connnenting it was 'an                interested, at times, in mineralogy (Branagan,
+
+incompletely described mineral, possibly iden-                2005).
+
+tical with ilmenite'.       Spencer mentioned that it            It was thus some time before Mawson came
+
+was named for David. However the British es-                  back to defend his mineral. By 1911 the ore-
+tablishment was not too satisfied with the va-                body at Radium Hill had been opened up to
+lidity of davidite as a mineral.   Thus a sam-                some degree and Mawson felt 'further reference
+ple was called for and sent by   Mawson  to the               to the association and identity of davidite is due.
+Imperial Institute in London, to be examined                  The davidite in its pure form is but rarely met
+by two well-accredited members of the Scientific              within the lode' (Mawson 1916). He had written
+and Technical Department of the Institute, T.                 a reply to Crook and Blake some time in 1911
+Crook and G.S. Blake (Crook k Blake 1910).                    with an attendant chemical analysis, but the pa-
+They were sceptical, and while accepting that                 per was mislaid during the period preparing for
+the complex substance might be new, after test-               his own Antarctic expedition departure in
+                                                                                                      De-
+ing they wrote 'the existence of new minerals                 cember 1911. The paper finally saw the light
+should only be inferred as a         last   resource to       in August 1916 (Mawson 1916), not long after
+meet difficulties which are otherwise unmanage-               Mawson had gone to England again to work for
+able.    In the present instance, the evidence to             the Allies* war effort.
+be handled undoubtedh' presents serious diffi-                   In this 1916 paper Mawson claimed that the
+culties, but it seems less objectionable to cover             British researchers  had also, like the original
+this evidence by an appeal to known minerals                  'analysis' by Rennie and Cooke (1906) tested
+than by an invention of new ones,           pend-
+                                             .   .   .
+                                                              the wrong material! Mawson's paper was ac-
+ing the publication of proof to the contrary, one             companied by an analysis by Dr. Cooke (of
+may reasonably contimie to regard "davidite"                  Adelaide), following up on the earlier anal}i;ical
+as a mineral complex ..."                                     work by Rermie and himself (Rermie must have
+    At the end of the paper Crook added a foot-               been too busy to continue with the anal>^ical
+note that Mawson, back from the Antarctic (see                work, as had been proposed, so it was left to
+below), had displa\^ed specimens of 'davidite'                Cooke). Cooke was sure of himself, and wrote,
+                                                              'of the ferriferous and titaniferous radio-active
+at a meeting of the Geological Society of Lon-
+don on 9 February 1910, saying it was a 'ho-                  constituents of the lode, the one referred to as
+
+mogeneous mineral' and claiming that Crook
+                        ,
+                                                              davidite is the most interesting, as it is homo-
+
+and Blake had not seen it. Mawson gave spec-                  geneous and is a distinct species.' He gave the
+imens to Crook several days later, saying that                following analysis: Ti02 54.3, FeO 16.0, Fe203
+
+'full details of chemical analyses by Drs. Ren-
+                                                              13.0, rare earths 8.3, V2O5, Cr203, and U2O8
+
+nie and Cooke will be published shortly'. How-                4.6, MgO 0.6, CaO 1.5, PbO 1.1, CuO trace,
+
+ever Crook stuck to his guns, saying that he                  H2O 1.5, Total 100.9. Mawson believed himself
+couldn't see any difference from what they had                totally vindicated.
+
+tested, writing 'the mere uniformity of appear-                  Mawson's 1916 paper and the attendant
+ance and continuity of a fracture-surface (Maw-               analysis by Cooke were probabl}^ only in press
+         DAVIDITE AND OTHER EARLY EVENTS IN AUSTRALIA'S URANIUM STORY                                               3
+
+
+
+
+when Charles Anderson (187()--1944) of the Aus-          complexit^y of its structure and there is a hint
+trahan Museum, Sydney, completed his exten-              that he suspected it was not a true mineral but
+sive, important bibliography of Australian min-          a rnetaniict phase. Rayner (1957), relying to
+eralogy, so     it   is   not surprising that Anderson   some extent on Whittle, expanded on this mat-
+(1916), relying apparently on the sceptical 1910         ter,    indicating that davidite appeared to be 'de-
+paper by Crook and Blake (1910), surrounded              void of internal regular atomic arrangement',
+'davidite' with inverted commas.                         and there were 'no X-ray diffraction patterns of
+                                                         crystalline material'. In 1959, Whittle came out
+     It was   more than thirty years before Cooke's
+                                                         strongly that davidite was not a true mineral
+analysis was supported by other tests.  There
+was revived interest in uranium in South Aus-            but a complex mixture (Whittle 1959).                  How-
+                                                         ever the cudgel for its validity was taken up by
+tralia just as Wbrld Waw Two was ending
+                                                         several      North American mineralogists, includ-
+(Mawson 1944, Mudd 2005).              Of more signif-
+                                                         ing J.D. Hayton (1960) who stated that davidite
+icance for the present subject         was the discov-
+                                                         belonged to the group of multiple oxides which
+ery in   Mozambique in 1950 of a mineral ap-
+parently akin to, or closely related to, davidite
+                                                         included arizonite and brannerite.             He pointed
+                                                         out the difficulty in the analysis was because
+(Bannister & Horne 1950).      These researchers
+                                                         the oxidation state of the iron present was not
+devoted a considerable time studying the min-
+eral structure and testing comparable material
+                                                         known.        Discussion continued, essentially con-
+                                                         firming Hayton 's opinion.
+from Radium Hill, indicating a close similarity
+between the samples from two such widely sep-                   Today the internet offers numerous oppor-
+arated localities. The Mozambique region was             tunities to find out  about davidite, but care
+shortly after looked at in considerable detail by        is    needed to sort fact from fiction (or er-
+Davidson &z Bennett (1950). Bannister & Horne            ror),    including misspelling of David's name,
+
+(1950) also pointed out an obscure reference
+                                                         incorrect      identification   of       Australian   locali-
+
+(Golubkova 1930) indicating that a davidite-             ties, and a considerable variety of composi-
+like substance had also been discovered in Rus-          tions for davidite. However, the various inter-
+
+sia somewhat earlier. Other sources of davidite          net sites regard      it   as a valid mineral,        albeit
+
+were later discovered around the world.                  with varying chemical analyses, while one site
+                                                         (http //geo oregonstate edu/^taylore/
+                                                                  :        .                  .
+
+
+    Economic interest in radioactivity had re-
+                                                         minerals/daviditel938 .htm) shows a fine ex-
+mained largely centred on radium until the
+                                                         ample of a crystal of davidite obtained from
+1930's. In 1951 demand for uranium increased
+                                                         Radium Hill. Davidite, like David himself, has
+and attention turned once again to Radium Hill.
+                                                         stood the test of time, and, despite some at-
+Renewed exploration of the mine indicated a
+                                                         tempts to demote it, remains firmly fixed as an
+substantial deposit and it was realised that the
+                                                         accepted mineral to this day.
+significant uranium ore mineral was davidite
+(Nininger 1954).    Almost one million tonnes
+of davidite was mined over the next few years            EARLIER AUSTRALIAN WORK ON
+at Radium Hill with an average ore grade of              RADIOACTIVE MINERALS
+1.2kg/U308 per ton. The South Australian Ge-
+ological Surve}^ began an extensive study of ura-
+                                                         There was some interest in the possibility of
+nium occurrences (Dickinson et al. 1954). Inter-         uranium being found in Australia as early as
+est in uranium in NSW was also considerable
+                                                         1889 and even some vague reports of finds in
+between 1954 and 1961 (Mulholland k Rayner
+                                                         the next couple of years (Mudd 2005).                 Mudd,
+1953, Rayner 1955, 1957).
+                                                         based on Barrie (1982), mentions that G.W.
+    During the South Australian Survey work              Goyder (1826-1898) noted an unidentified green
+detailed mineralogical examinations were car-            mineral at Rum Jungle as early as 1869, but
+ried out by the petrologist Alick Whittle (1920-         it    was not identified as a uranium mineral un-
+1987),  who made a considerable study of da-             til1917, when H.I. Jensen (1879-1966), a for-
+vidite (Whittle 1954). The work indicated the            mer student of David, reported uranium there.
+4                                                          BRANAGAN
+
+
+What is probably the first specific mention of                      to obtain his B.Sc. With Mawson was Acting-
+a rachoactive mineral in Australia is the brief                     Demonstrator T.H. Laby who had been recom-
+report, by G.W. Card (1865-1943) of the                     NSW     mended by his chief. F.B. Guthrie (1861-1927)
+Department of Mines, in 1894.                     He was refer-     at the New^ South Wales Department of Agri-
+ring to a small specimen of torbernite from a                       culture's laboratory.      Guthrie acted as Profes-
+cobalt prospect at Carcoar,                  NSW (Card 1894).       sor during several periods of leave          by Liver-
+Edgeworth David had reported on the Carcoar                         sidge (Branagan Sz Holland 1985).  Laby was
+prospect in 1888, when with the                   NSW Geolog-       in the unfortunate situation of being unma-
+ical Survey.            He commented on the variety of              triculated, but he       undertook night lectures in
+unusual minerals present, but did not find any                      physics, chemistry and maths.
+uranium species (David 1888). Rayner (1957)                            Mawson and Laby (1904), excited by the in-
+in a fine review of the development of uranium                                          among chemists world-
+                                                                    terest in radioactivity
+work in New South Wales, refers to a report by                      wide,   set   out   to    examine    'the   more com-
+A. Selwyn Brown (1898) on a radioactive min-                        mon [Australian] uranium and thorium min-
+eral specimen said to come from Pambula on                          erals' first testing     them photographically and
+the far south coast of NSW. Rayner (1957) sug-                      then in an electroscope, based on the design
+gests that a more likely source of the sample                       of C.T.R. Wilson.         Mawson built this instru-
+was the Whipstick molybdenite deposit, some                         ment in the University's Engineering Labora-
+kilometres inland from the coast.                                   tory. They tested some twenty Australian sam-
+    The next Australian                     radioactive   mineral   ples and, for comparison, three         from overseas
+work occurred              when Bernard
+                          in   April    19U1                        (Table 1). Most were monazite-rich sands, con-
+F. Davis gave W.G. Woolnough (1876-1958),                           taining thorium, but two samples, one of tor-
+Demonstrator in Geology at Sydney University,                       bernite from Carcoar, the other euxenite from
+and Edgeworth David a specimen he had col-                          Marble Bar, were uranium-bearing and highly
+lected in the Pilbara region of Western Aus-                        active. The two researchers were particularly
+tralia.   Woolnough identified it as gadolinite, a                  concerned to see if radium was given off by
+mineral containing a considerable percentage of                     their samples, recognising it occurred in mon-
+rare earths.           Davis took the specimen to Eng-              azite from the Pilbara and another sample from
+land where he analysed                 it    and sent back the      Emmaville, NSW.
+results, which David and Woolnough presented                            As neither of the authors was a member of
+to the Royal Society of New South Wales.                     The    the Royal Society of New South Wales, David
+mineral was reported to have given off" helium.                     made the formal presentation of the paper to
+Davis also collected two minerals 'allied to "eu-                   an interested audience of the Society on 5 Oc-
+xenite"    .   .   .   essentially niobates       and titanates     tober, 1904 (Royal Society of       NSW Proceedings,
+(with tantalum) of uranium, iron and yttrium                        1906), when Mawson knew he had his B.Sc.
+earths with the cerium earths and thorium',                         and was off shortly to Adelaide University as
+(Davis 1902).                                                       Lecturer. Meanwhile, Laby, despite his lack of
+    Of more significance, was a joint study car-                    a degree, had been awarded an 1851 Exhibi-
+ried out in 1904 by Mawson and T.H. Laby                            tion to study in England (Branagan          & Holland
+(1880-1946). Mawson had made his first con-                         1985). Discussion followed the talk with David,
+tact with Edgeworth David in 1899 when in                           Guthrie,  James Pollock (1865-1922), Profes-
+the first year of his Mining and Metallurgy En-                     sor of Physics at the University, G.H.  Knibbs
+gineering Course at Sydney University.                      Even    (1858-1929), W.M. Hamlet (1850-1931) and
+before his graduation on 19 April 1902, with                        the authors participating. The published ver-
+Archibald Liversidge, Professor of Chemistry                        sion gave tribute to David for his encourage-
+approving, Mawson was appointed a Junior                            ment, and also to Knibbs (at that time Lecturer
+Demonstrator in Chemistry, David acting as                          in Surveying, later first Commonwealth Statisti-
+a referee (Branagan <fe Holland 1985, Ayres                         cian), and J.A. Schofield (1869-1934), then Act-
+1999). At the same time Mawson was stud3dng                         ing Professor in Chemistry.
+        DAVIDITE AND OTHER EARLY EVENTS IN AUSTRALIA'S URANIUM STORY                                      5
+
+
+
+
+Mineral                          Activity     i-iOv ciiihy v.ii   .
+
+
+
+
+Black uranium oxide. U2O5         100         Taken as standard
+Torbernite              highly active         Carcoar.      NSW (insufficient for comparative test)
+Euxenite                     highly active    Marble Bar tinfields, WA (insufficient for
+                                              comparative test)
+Gadolinite                             0.88   Cooglegong River-Greenbuslies tirffield, WA
+Monazite                            11.30     Pilbara,     WA
+Fine river sand with gold,             8.49   Tumberumba, NSW.
+tinstone, etc
+Zircon sand with monazite              0.60   Tooloon River, NSW (contains 0.45% thoria)
+Concentrated beach sand                7.39   Broken Head, Richmond River, NSW.
+Concentrated river sand                8.00   Tasmania
+Monazite                               5.47   Torrington, NSW. A large well-developed crystal
+Monazite                               3.25   Torrington, NSW.
+Monazite                               4.92   Cow Flat, Torrington, NSW (contains 0.3% thoria)
+Monazite                               3.11   20 miles W of Torrington (contains 1.5% thoria)
+Monazite                               4.46   20 miles W of Torrington (contains 1.8% thoria)
+Monazite                               3.31   Gulf mine, Emmaville, NSW (contains 0.6% thoria)
+Monazite                               3.00   as above
+Monazite                               3.41   as above
+Monazite                               3.13   as above
+Monazite                               2.50   as above
+Monazite                               4.50   Paradise Creek, Emmaville
+Pitchblende                        354.05     Joachimstal (for comparison)
+Samarskite                          47.10     Sweden (for comparison)
+Thallium blende                        3.75   Locality unknown. Activity may be due to the presence
+                                              of other uranium minerals
+
+
+Table 1. Observations on radioactivity. Total activity as determined b}^ ionisation produced in an
+air-gap. Modified slightly from the original table by Mawson    Laby (1904).
+
+
+
+   Mawson's work on radioactivity, from this               of papers the same year (Bragg 1906a, 1906b,
+early beginning,moved to the miner alogical,               1906c), following on his Section A Presidential
+as noted above. In fact, it was not long af-               address on ionisation at the Australasian Asso-
+ter   Mawson arrived in Adelaide that he paid              ciation for the Advancement of Science (Bragg
+a visit to the Moonta mines (Mawson, 1944)                 1904). Radcliff (1913) continued his interest in
+where S. Radcliff, a chemist, was testing the              radium, extracting the element from     Radium
+ore bodies for radium minerals (Radcliff 1906).            Hill material.   In this paper Radcliff suggests
+Radcliff's work on the theoretical side was be-           that Mawson took a parcel of 30 tons of picked
+ing assisted mainly by W\H. Bragg (1862-1942)             ore from Radium Hill to the U.K. (sending some
+at Adelaide University, who presented Radcliff's          on to the USA), presumably when he provided a
+results to the local Royal Society, and Mawson's          large sample for Crook and Blake, but elicited
+visit gets   no mention by Radcliff.    Bragg was         no interest among potential customers for the
+heavily involved, at the time, in studying ra-            ore.
+dium, uranium and thorium, presenting a series
+6                                              BRANAGAN
+
+
+    Laby continued in a chemical vein, working          the rare radioactive minerals of the Pilbara'
+during his research at the Cavendish Labora-            (Simpson,      1907,   1909,   1910,   1911,   1912a,
+tory, Cambridge under J.J. Thomson, for which           1912b).
+he was awarded a B.A. (Close, 1983). In 1909
+Laby, just as he was about to take up a position
+as Professor of Physics at Victoria LTniversity
+                                                        ANOTHER SYDNEY UNIVERSITY
+College, Wellington, New Zealand, offered an-           ASPECT OF RADIOACTIVITY
+other paper to the Royal Society of New South
+                                                        In the years following the discovery of radioac-
+Wales. David was just back from the Antarctic,
+                                                        tivity,    one of the major interests in uranium-
+but the paper was read by Guthrie, Laby's first
+                                                        bearing minerals was the perceived possibility
+chief.   The title is somewhat enigmatic: 'On a
+                                                        of using the rate of breakdown to measure the
+Pitchblende probably occurring in New South
+                                                        age of rocks bearing significant quantities of ra-
+Wales' (Laby 1909). The paper must have been
+                                                        dioactive minerals, and ultimately, in measur-
+sitting around for a few years, as Laby had car-
+                                                        ing the age of the Earth. David saw the possi-
+ried out the analysis while at Sydney University.
+                                                        bilitieson this work and, following W'orld War
+It essentially continued on from the joint paper
+                                                        One, urged Mawson to take up the problem test-
+he had published with Mawson in 1904. The
+                                                        ing Australian specimens. However he had too
+enigma is that the sample, passed from a min-
+                                                        many irons in the fire until 1944 when he men-
+eral collector, Bennett in Newcastle, NSW, to
+                                                        tioned that he intended to use davidite from Ra-
+Card, and thus to Laby, was thought to have
+                                                        dium Hill for an age determination, but he never
+come from the New England district of that
+                                                        seems to have got around to it.
+State. However Laby cast doubt on this prove-
+                                                             In the meantime, through David's encour-
+nance when he mentioned in a footnote that a
+                                                        agement, the task was taken up in Australia
+French metallurgist, C. Poulot, saw^ a large par-
+                                                        by Leo Cotton (1883-1963), David's succes-
+cel of what he thought was the same ore at a
+                                                        sor in the Geology Chair at Sydney Univer-
+treatment works in Germany. It had apparently
+                                                        sity. Cotton, probably with the help of Harry
+been shipped from Melbourne, suggesting that
+                                                        Gooch (ca 1884-1946), the Department's j ack-
+New England was an unlikely source. As far as I
+                                                        of- all- trades, built the equipment to carry out
+am aware the true source was never established.         the uranium/lead method of dating rocks in
+    In the meantime, chemical research on ra-           the early 1920's. In particular. Cotton tested
+dioactivity    continued   at   Sydne}'   University.   some Precambrian rocks from South Australia.
+George    J.   Gray, a student of David, gradu-         During this period David and Cotton were in
+ated in Science (with Geology) in 1905; he also         close touch with Arthur Holmes (1890 1965) in
+gained an Engineering Degree and went on to             England (David Papers, University of Sydney
+practise as a geologist (Branagan 1973, Vallance        Archives), who had established his reputation
+1995). In 1907 Gray described wT)rk on the ra-          as an authority on such matters. They were
+dioactivity of thorium carried out at the Univer-       particularly interested in the methods of cal-
+sity on specimens once again obtained through           culating rock ages, and Cotton did not accept
+Card, Gray (1907) thanked Liversidge for his            Rutherford's Constant used by Holmes, argu-
+encouragement. It was the year Liversidge re-           ing for a slight revision. In the end Cotton's
+tired and shortly after left for England, never         dates differed only slightly from those of Holmes
+to return.                                              for samples from the same rock body (Cotton,
+   E.S. Simpson (1875 1939) was another of              1926). Cotton first presented his results at a
+David's Engineering students, graduating with           lecture in Adelaide, before sending off his pa-
+honours in 1895, and working, over the years,           per to the American Journal of Science (Table
+largely on the minerals of Western Australia.           2).   He followed up this work several years later
+Prider (1988) believed Simpson's 'best-known            (Cotton 1928), discussing measurements of the
+scientific contributions were in    connexion with      age of the Earth.
+      DAVIDITE AND OTHER EARLY EVENTS IN AUSTRALIA'S URANIUM STORY                                             7
+
+
+
+
+    David inentioncxl the radioactive minerals in           came not from David's pen, hut from his former
+his 1932 Explanatory Notes (David 1932). bnt                pupil, as editor, W.R. Browne (David 1950).
+surprisingly or not. davidite does not get a men-           Completed in tlie years iimnediately after the
+tion, the nearest    statement being 'radio-active          War Browne (Vol. 2, p. 315) gives davidite at
+ilmenite'. Did David suspect it wasn't a 'fair              Radium Hill only a minor place among the ore
+dinkum' mineral? The additional notes about                 minerals.   As mentioned above, just a few years
+these minerals in the Geology of the     Common-            later,   when mining began, it was found to be
+wealth, which finalW appeared in 1950, probably             the major uranium mineral in the ore body.
+
+
+      Mineral                              UaOs            UO3       UO2     ThOs     PbO     Age (Ma)^
+                             WA
+      Fegusonite, Coolglegong,                              2.38              0.53     0.18           620
+      Mackintoshite, Wodgina,WA                          Present             24.72     7.90        1475
+      Thorogummite, Wodgina, WA                            37.33      35.6   24.46     7.78        1460
+      Pilbarite, Wodgina, WA                               27.09     none    31.34    17.26        3840
+      Concentrates, Olary, SA               1.6                      none              0.16         880
+      Carnotite, Olary, SA                                                             1.3          240
+      Lodestuff^, Olary, SA                47.8                                        0.40        1560
+      Monazite^, Normanville, SA            2.25                             10.70     0.55        1130
+
+Table 2. The lead, uranium and thorium content (percentages) of certain Austrahan radioactive
+minerals. Modified slightly from the original table by Cotton (1926). Notes: (a) Pb/U+0.384 Th x
+8000. (b) An 'intimate mixture of ilmenite, rutile and magnetite with a variable but small amount
+of other material' (Crook    & Blake 1910).        (c)   R.G. Thomas, using a slightly different formula,
+obtained a value of 1073 Ma. For references to the original samples see Cotton (1926).
+
+
+
+ACKNOWLEDGEMENTS                                            Bannister, E.A.    k Home, J.E.T., 1950. A ra-
+                                                              dioactive mineral related to davidite. Miner-
+A brief precis of this paper was given at the 19^*^           alogical Magazine, 29, 101-112.
+Edgeworth David Day Symposium, 21 October                   Barker, J.M.     k Stranks, D.R., 1988.    Renriie.
+2006, organised by the Earth Resources Foun-                  Edward Henry (1852-1927). Australian Dic-
+dation and the Edgeworth David Society, both
+                                                              tionary of Biography 11 (1891-1939).          Mel-
+of the University of Sydney.    I   am grateful for           bourne University Press, pp. 361-62.
+                            E.O. Rayner. Dr
+fruitful discussions with Dr.
+                                                            Barrie, D.R., 1982.The Heart of Rum Jungle:
+Barry Cooper, South Australian Department of
+                                                              The History of Rum Jungle and Batchelor in
+Primary Industries kindly answered some bio-
+                                                              the Northern Territory. Batchelor, NT, pp.
+graphical queries.
+                                                              139, 142.
+
+                                                           Bragg, W\H., 1904.        On some recent advances
+REFERENCES                                                    in the theory of the ionisation of gases Presi-
+                                                              dential Address, Australasian Association for
+Alderman, A.R., 1967. The Development of Ge-
+                                                              the    Advancement of Science, Section A, 10,
+  ology in South Australia: A Personal View.
+                                                              47-77.
+  Records of the Australian     Academy of Sci-
+  ence, 1, 30 52.
+                                                           Bragg, W.H., 1906a. Ionization of various gases
+
+Anderson, C, 1916. Bibliography of Australian                 by the alpha particles of radium. Transac-
+                                                              tions of the Royal Society of South Australia,
+  Mineralogy.   New South Wales Department of
+  Mines, Geological Survey, Mineral Resources                 30, 1 15.
+
+  Series No. 22, p. 23.                                    Bragg, W.H., 1906b. The alpha particles of ura-
+Ayres, P., 1999.   Mawson: A Life. The Miegun-                nium and thorium. Transactions of the Royal
+  yah Press, Melbourne.                                       Society of South Australia, 30, 16 132.
+8                                                    BRANAGAN
+
+
+Bragg, W.H., 1906c. Ionization of various gases               Crook, T.     & Blake, G.S., 1910. On carnotite
+  by the alpha particles of radium. No. 2 (and                  and an associated mineral complex from
+    plate).     Transactions of the Royal Society of            South Australia. Mineralogical Magazine, 15,
+    South Australia, 30, 166-187.                               271 284.
+
+Branagan, D.F.            (ed.),   1973.    Rocks-Fossils-    David Papers, SU Pll.    University of Syd-
+    Profs.     Geological Sciences in the University            ney Archives. See particularly A. Holmes
+    of Sydney. 1866-1973. Science Press, Sydney.                to David: 27/5/1926, 2/6/1926, 21/6/1926,
+                                                                23/8/1926; Cotton to David 7/7/1926.
+Branagan, D.F., 2005. T             W
+                            Edgewo'Hh David:
+  A Life. National Library of Australia, Can-                 David, T.W.E., 1888. Report on the occurrence
+    berra.                                                      of the recently discovered cobalt ore at Car-
+                                                                coar.Annual Report of the New South Wales
+Branagan, D.F. & Holland, G.H., (eds), 1985.
+                                                                Department of Mines, 165, 175- 77.
+  Ever Reaping Something New: A Science
+    Centenary.        University of Sydney,        Science    David, T.W.E., 1932. Explanatory Notes to ac-
+    Centenary.                                                  company a New Geological Map of the Com-
+                                                                monwealth of Aust/ralia. C.S.I.R.
+Broughton. A.C., 1925. Radio-active ilmenite.
+                                                              David, T.W.E., 1950. The Geology of the Com-
+  near Mt. Painter, Northern Flinders Range.
+  Transactions of the Royal Society of South                    monwealth of Australia. (3 vols). Edward
+    Australia, 49, 101.
+                                                                Arnold k, Co., London (edited k. much sup-
+                                                                plemented by W.R. Browne).
+Broughton,        A.C.,     1926.     Further Notes on
+                                                              Davidson,      C.F.     <^     Bennett,   J.A.E.,   1950.
+    Radio-active       Ilmenite,     near    Mt.   Painter,
+    Northern Flinders Range.               Transactions of
+                                                                The Uranium deposits of the Tete district,
+    the Royal Society of South Australia, 50, 315
+                                                                Mozambique.           Mineralogical Magazine,      29,
+                                                                291 303.
+    316.
+                                                              Davis, B. F., 1902. Occurrence of gadolinite in
+Brown,        A.S.,    Cerium in New South
+                      1898.
+                                                                West Australia (with notes by W.G. Wool-
+    Wales. Australian Mining Standard, 11 Au-
+                                                                nough & T.W. Edgeworth David. Journal &
+    gust, 3152-53.
+                                                                Proceedings of the Royal Society of New South
+Card, G.W., 1894.             Mineralogical and Petro-          Wales, 37, 286-289.
+    graphical Notes No. 2 (copper-uranite from
+                                                              Dickinson, S.B., Sprigg, R.C., King, D., Wade,
+    Carcoar).   Records of the New South Wales
+                                                                M.L.,      Webb, B.P. and Whittle, A.W.G.,
+    Geological Survey, 4, Part 1, 1894-96 (1896),
+                                                                1954.     Uranium Deposits in South Australia.
+    20-21.
+                                                                Geological Survey of South Australia Bulletin
+Close,     C, 1983. Laby. Thomas Howell (1880-                  No. 30.
+    1946).  Australian Dictionary of Biography
+    9 (1891 1939). Melbourne University Press,
+                                                              Golubkova      —   .,   1930    A contribution to the
+                                                                study of the radioactive minerals of Central
+    pp. 640 41.
+                                                                Asia.   Information Bulletin, Middle- Asian
+Cooke, W.T., 1916.             Chemical Notes on Da-            District,    Geological-Prospecting Administra-
+    vidite.    Transactions and Proceedings of the              tion,   Tashkent, 1, 21-23.
+    Royal Society of South Australia, 40, 267.
+                                                              Gray, G.J., 1907.        The Radio-activity of Tho-
+Cotton, L.A., 1926.     Age of certain Radium-                  rium.     Australasian Association for the Ad-
+    bearing Rocks in Australia. American Jour-                  vancement of Science, 7, 365.
+    nal of Science, Semes 5, 12, 41-46.
+                                                              Hayton, J.D., 1960.            The constitution of da-
+Cotton, L. A., 1928.        The Age of the Earth. The           vidite.   Economic Geology, 55, 1030-38.
+    Australian Geographer, 1, 40-42.
+                                                              Laby, T.H., 1909.        On a pitchblende probably
+Crook, T., 1910. Postscript (February 14, 1910)                 occurring in New South Wales. Journal and
+    to   Crook and Blake, 1910.              Mineralogical      Proceedings of the Royal Society of New South
+    Magazine, 15, 283 284.                                      Wales, 43, 28-33.
+      DAVIDITE AND OTHER EARLY EVENTS IN AUSTRALIA'S URANIUM STORY                                                 9
+
+
+
+
+Mawson,     D.,     1906.            On certain new mineral       Rayner, E.O., 1957.      The nature and distribu-
+  species associated with carnotite in the radio-                   tion of uranium deposits in N.S.W. Jeclmical
+  active ore  body near Olary.      Transactions                    Reports of the New South Wales Department
+   and Proceedings of the Royal Society of South                    of Mines, 5, 63-102.
+  Australia, 30, 188-193.                                         Rennie, E.H. and Cooke, W.T.,         1906.   Pre-
+Mawson, D.,       1916.      Mineral Notes.           Tra,nsac-     liminary analytical notes on the minerals de-
+  tions and Proceedings of the Royal Society                        scribed in the Preceding Paper. Transactions
+
+  of South Australia, 40, 262-266 and Plate                         and Proceedings of the Royal Society of South
+  XXXI.                                                             Australia, 30, 193.
+
+Mawson, D., 1944. The nature and occurrence                       Royal Society of New South Wales, 1906. Ab-
+  of uraniferous mineral deposits in South Aus-                     stract of Proceedings. Journal and Proceed-
+
+  tralia.   Transactions of the Royal Society of                    ings of the Royal Society of New South Wales,
+
+  South Australia, 68, 334-357.                                     40, xxxiii-xxxiv.
+
+Mawson D. k Laby, T.H., 1904.                      Preliminary    Simpson, E.S., 1907.      Tantalum and niobium
+                                                                    in Australia, Australasian Association for the
+  observations on radio-activity and the occur-
+  rence of radium in Australian minerals. Jour-
+                                                                    Advancement of Science, 7, 442-455.
+  nal and Proceedings of the Royal Society of
+                                                                  Simpson, E.S., 1909. Further occurrences of
+
+  New South Wales, 38, 382-389.                                     tantalum and niobium in Western Australia.
+                                                                    Australasian Association for the      Advance-
+Mudd, G.M., 2005. The Legacy of Early Ura-
+                                                                    m.ent of Science, 8, 310-315.
+  nium Efforts in Australia, 1906-1945: From
+  Radium Hill to the Atomic Bomb and Toda}^
+                                                                  Simpson, E.S., 1910. Pilbarite:    A new mineral
+                                                                    from the Pilbara Goldfields, Western Aus-
+  Historical Records of Australian Science, 16,
+                                                                    tralia. Chemical News, 102, 283.
+  169-198.
+                                                                  Simpson, E.S., 1911. Pilbarite: A new min-
+Mulholland, C. St. J. and Rayner, E.O., 1953.
+                                                                    eral from the Pilbara Goldfield. Journal of
+  Investigation of radio-activity areas in the
+                                                                    the Natural History and Scientific Society of
+  Broken Hill district. Technical Reports of the
+                                                                    Western Australia, 3, 130-36.
+  New South Wales Department of Mines, 1,
+                                                                  Simpson, E.S., 1912a. Radium- uranium ores
+  44-46.
+                                                                    from Wodgina.       Bulletin of the Geological
+Nininger, R.D., 1954. Minerals for Atomic En-
+                                                                    Survey of Western Australia, 48, 9 21.
+  ergy.   Van Nostra nd.
+                                                                  Simpson, E.S., 1912b. The occurrence of mon-
+Prider, R.T., 1988.          Simpson, Edward Sydney                 azite at Coolgelong and Moolyella. Bulletin
+  (1875-1939). Australian Dictionary of Biog-
+                                                                    of the Geological Survey of Western Australia,
+  raphy, 11 (1891         1939).       Melbourne University         48, 44-48.
+  Press, pp. 610 11.
+                                                                  Spencer, L.J., 1907. Fourth List of New Mineral
+Radcliff, S., 1906.         Radium at Moonta Mines.                 Names.      Mineralogical Magazine,   14,   394-
+  Transactions of the Royal Society of South                        415.
+  Australia, 30, 199 -204.                                        Vallance, T.G., 1995. Vallance database of ge-
+Radcliff, S., 1913.        Extraction of Radium from                ologists,   miners and surveyors, prepared by
+  the Olary Ores.           Journal and Proceedings of              D.F. and C.D. Branagan from card index
+  the Royal Society of New South Wales, 47,                         compiled by T.G. Vallance (1928 1993).
+  145-156.                                                        Whittle, A., 1954.    The radioactive minerals of
+Rayner,     E.O.,        1955.     and other
+                                        Davidite                    South Australia and their petrogenetic signif-
+  radioactive occurrences in the Thackaringa                        icance. Journal of the Geological Society of
+  area, Broken Hill district.   Technical Re-                       Australia, 2, 21-46.
+  ports of the New South Wales Department of                      Whittle, A., 1959.   The nature of davidite. Eco-
+  Mines, 3, 62-72.                                                  nomic Geology, 54, 64-81.
+
+
+
+David Branagan
+School of Geosciences, University of Sydney
+dbranagaQmail usyd edu au
+                     .           .      .
+Journal & Proceedings of the Royal Society of New South Wales,       Vol. 140, p. 11-19, 2007
+ISSN 0035-9173/07/010011-9          $4.00/1
+
+
+
+    Oral presentation at the 17^^^ Australian National Physics Congress
+                       Brisbane 3-8 December 2006
+
+
+  New Aspects for Low Cost Energy by Inertial Fusion
+                                    Using Petawatt Lasers
+           FREDERICK OSMAN, HEINRICH HORA, GEORGE H. MILEY AND .JAK C. KELLY
+
+
+      Abstract: The prospect of generating clean, safe, virtually unlimited, universally accessible
+      and low cost energy from nuclear fusion has cost many billions of dollars over the last fifty
+      years. The aim is to confine the hydrogen isotopes deuterium (D) and tritium (T) and hold
+      them in this state for a sufficient length of time at temperatures of dozens of million degrees
+      for the nuclei to fuse into helium.    The predominant method used is the confinement of the
+      reacting plasma by magnetic fields (MCF, magnetic confinement fusion) or confinement by
+      the inertia of a fuel pellet after extremely fast heating and compression such that much more
+      fusion energy is produced than one needed for this ignition (ICF, intertial confinement fusion).
+      Prospects for such processes are reviewed.
+
+      Keywords: Fusion energy, Laser, Flasma, Ion currents.
+
+INTRODUCTION                                            prospect of laser powered fusion has driven the
+                                                        development of very high powered lasers, in-
+One of the leading experts on environment prob-         cluding the multibillion dollar facilities at NIF
+lems is James Lovelock FRS, who played a key            and LMJ (Gerstner 2007), opening develop-
+role in detecting damage to the atmosphere              ments up to conditions of the Hawkirig-Unruh
+caused by the chlorofluorohydrocarbon emission          radiation (Hora et al. 2002a, Stait-Gardner <^
+and succeeded in their worldwide banning. He            Castillo 2006).
+was listed by the magazine Prospect in 2005 as              As always happens when increases of or-
+one of the hundred most influential intellectuals       ders of magnitude are achieved,          new physics
+in the world. In an interview with Ulli Kulke           has been revealed and old            phenomena clar-
+for the German newspaper Die Welt (March 23,            ified.     Currently     available   laser   pulses     of
+2006, p. 10), Lovelock maintained that all sep-         petawatt (PW = 10^^ W) power and picosecond
+arate observations of environmental problems            (ps= 10~^^s) duration permit new schemes for
+have to be combined.      It   is   for instance sug-   fast ignition.   A basically new effect based on
+gested that ocean levels       may rise during the      drastically anomalous measurements (Zhang et
+next few decades not by several meters but by           al. 1998, Badziak et al. 1999) was explained by
+
+up to sixty meters. These catastrophic devel-           a skin laj^er theory (Hora et al. 2002, Hora 2004,
+opments may be irreversibly on the way and it           2005) in combination with much earlier compu-
+might be too late to stop them. Nevertheless,           tations in Australia. This effect may be used for
+they may be delayed.    Under the barmer ^Das           igniting virtuallyuncompressed solid DT fuel
+ist dock grilner Unsimv (this definitely is green       by PW-ps laser pulses to ignite a very high gain
+nonsense) Lovelock favours nuclear energy, and          controlled fusion reaction wave, which,          if   con-
+very interestingly mentions fusion energy for the       firmed by further research, may lead to very low
+future (Hora 2007, 2007a).                              cost fusion power stations.
+   For the very fast ignition of controlled fu-             This    controlled   ignition    of weakly        com-
+sion reactions, the laser was immediately con-          pressed    DT fuel follows a scheme of Nuckolls
+sidered as the preferred tool and suggested as          & Wood (2002) where PW-ps laser pulses gen-
+such by Teller (1960) and Sakharov (1961). The          erate ultra-intense relativistic electron beams.
+12                                            OSMAN et al.
+
+
+       The new effect led to measurements of space     This project, with funding of more than $16
+charge neutral D-T-ion       beam    current densi-    billion, is scheduled to come to fruition in 2016
+
+ties   exceeding 10^^ A cm"'-, through which ion       and the gain is still rather modest: a 500          MW
+beams instead of the electron beams of Nuckolls        electricity input should produce 500         MW
+                                                                                                  fusion
+et al. (2002) may lead to low cost, controlled ig-     power during 500 seconds such that after con-
+nition of fusion.                                      version at 30 % efficiency in an electric genera-
+                                                       tor,   a gain of 0.3 may result (Tran 2004).         The
+                                                       best measurement concerning magnetic confine-
+THE SOLUTION OF NUCKOLLS &                             ment fusion (Keilhacker 1999) was with the JET
+WOOD (2002)                                            (Joint European Torus), when a magnetically
+                                                       confined plasma torus during 2 seconds pro-
+Nuckolls (2005) suggested in 1960 that laser           duced 16    MW of fusion power by irradiation of
+pulses might be used to ignite solid or lightly        21   MW neutral beam power and 3MW heat-
+compressed DT directly.      This can be seen          ing by electromagnetic radiation.          To this fusion
+from   the fact that a lO^'^Wcm"^    laser inten-      gain of 0.66, one had to ignore the 100          MW of
+sity is comparable with 11 million degree  (keV)       electricity which was    needed to run the torus.
+Planck radiation.    This ignition has not yet         If one takes the operation of       JET into account,
+been achieved, as Kidder (2005) has critically         the gain of fusion energy is 0.129 and with 30 %
+remarked. However, with the advent of PW-              conversion to electricity, the total gain is 0.042.
+ps laser pulses, the chance of success has been        ITER should then produce an increase of the
+greatly improved.      Nuckolls   & Wood (2002)        gain by a factor only 7.4.     It   can be estimated
+modified the fast igniter scheme (Tabak et al.         that at least the same increase of gain is possible
+1994) so that they produce an intense        5MeV      with the JET facility, if a niunber of additional
+electron beam such that an ignition of virtually       neutral beam injectors were added. This would
+uncompressed and large amounts of DT may re-           cost very    much less than the projected ITER
+sult in 100 Me V fusion energy produced by a           project cost and could be achieved in a much
+10 kJ laser pulse of ps duration.                      shorter time.     However, this would be neutral
+     The electron beams have to be produced by         beam fusion (Hora 2000, 2004) and contradict
+irradiation of the lOkJ-ps laser pulse onto a          the Spitzer theorem of 1951.
+plasma at pre-compression to more than 1000                  The modified fast igniter (Nuckolls & W^od
+times solid state density. Examples for ignition       2002) has still the disadvantage that the gen-
+of DT are given for 10 times the solid state with      eration of the 5MeV electron beams needs
+the remark that for lower densities, even better       the interaction of a lOPW-ps laser pulse with
+conditions will be expected.      This is all within   a plasma of very high (thousand times solid
+a controlled energy generation and clearly dif-        state) pre-compressed plasma.             Then the elec-
+ferent from an uncontrolled reaction.     The close    tron beam ignites the voluminous low density
+borderlines between controlled energy produc-          DT fuel to produce 100 M J fusion energy. This
+tion and the uncontrolled case should not be           is   the step to fulfil the initial dream that laser
+used to bedevil laser fusion, as it w^as openly        pulses may result in controlled ignition of virtu-
+done by Tran (2004). Reporting on fusion en-           ally uncompressed solid     DT fuel with very high
+ergy to the   UN- World Energy Conference in           gain.
+Sydney, he excluded laser fusion and reported                A further step forward without any very
+only on the International Thermonuclear Ex-            high compression of plasma           is    to use space
+perimental Reactor (ITER) using magnetic con-          charge neutral ion beams instead of the rela-
+finement fusion (MCF). Other objections to in-         tivistic electron beam as will be shown in the
+ertia! fusion energy (IFE) are discussed else-         following section in order to completely fulfil the
+where (Mora et al. 2005, 2007, 2007a).                 initial visions of Nuckolls (2005),        with a plane
+     To properly assess the position of ITER, the      geometry laser ignition of solid DT with PW-ps
+following facts have to be taken into account.         laser pulses.
+                               LOW COST ENERGY BY INERTIAL FUSION                                                 13
+
+
+
+
+EFFECT OF LASER DRIVEN                                          Equivalent to laser irradiation,       it   was con-
+PLASMA BLOCKS WITH VERY                                    sidered that electron beam irradiation or irra-
+
+HIGH DT CURRENT DENSITIES                                  diation by a beam of      DT could be used for the
+                                                           flame ignition (Bobin 1974).     It   turned out that
+                                                           a DT ion beam current density under optimized
+The following is a combination of the fast ig-             conditions of
+niter concepts for laser fusion        (Tabak   et   al.
+
+1994) with the initial vision of Nuckolls (2005),          j   > j* = 10^^ Acm-2                                 (1)
+in view of the recent    development of petawatt-
+picosecond laser pulses.       We underline the new        was necessary and an energy           flux density      E
+                                                           given below was required.
+aspects in this development, focussing on the
+fact that a new effect was found with the most
+                                                           E > E* = 10^ Jem-"                                    (2)
+anomalous measurements resulting from the in-
+teraction of laser pulses with         a few    TW-ps         The condition (1) was many orders of magni-
+laser pulses (Sauerbrey 1996, Zhang et al. 1998,           tude beyond any particle beam technology and
+Badziak et al. 1999).     Usually, these pulses            the condition     (2)    was very extreme. It
+                                                                                   also
+produced extreme relativistic effects such as              should be mentioned that by evaluation of the
+100 MeV electrons, GeV highly charged heavy                fusion detonation wave at spark ignition (Hora
+ions, extreme X-ray and gamma ray bursts with              et al. 1998), the ignited core produced a value
+subsequent nuclear transmutations by the nu-               of E = 1.62 X 10^ J cm"^ for ignition of the high
+clear photo effect, pair production, and so on             density low temperature outer DT shell.            A cor-
+(Cowan et al. 1999). In strong contrast to this,           rection of E* in (2) to about ten times lower val-
+the anomalous measurements showed very low                 ues may be possible (Hora 1983) if the interpen-
+X-ray emission (Zhang et al. 1998), very low               etration of the energetic particles into the low
+ion energies (Badziak et al. 1999) and a rather            temperature fuel is considered,        if   the anoma-
+transparent plane geometry plasma accelera-                lous resistivity is included as expressed by the
+tion (Sauerbrey 1996). This could be combined              quantum correction of the classical collision fre-
+with early numerical computations carried out              quency, and if the inhibition of the thermal con-
+around 1978 in Australia (Hora 1991) to explain            ductivity is taken into account as given by the
+these    phenomena as a nonlinear force driven             double layer between the hot and cold areas.
+plasma block generation due to the avoidance                    The fast ignitor scheme (Tabak et al. 1994)
+of relativistic self- focussing by suppression of          for laser fusion where the fuel is compressed to
+pre-pulses with extremely high contrast ratios             several thousand times the solid state density
+(Hora et al. 2002, Hora 2003, Hora et al. 2005,            with ns laser pulses and the missing tempera-
+Badziak et al. 2005).                                      ture in the centre for spark ignition was assumed
+   We have first to return to the initial vi-              to be provided by a ps-PW laser pulse, led to
+sion of Nuckolls (2005) as to       whether irradia-       the development of these pulses.        When study-
+tion of solid    DT without pre-compression could          ing the interaction of ps laser pulses of            TW
+result in ignition of a       thermonuclear burn, or       and higher power, the above-mentioned numer-
+flame propagation.       It    has to be noted that        ous relativistic effects (Cowan et al. 1999) were
+the electron beam scheme of Nuckolls <^ Wood               observed.   If,   however, the relativistic       self fo-
+
+(2002)   still   needs very high plasma compres-           cussing was avoided by suppressing any laser
+sion for generating the special electron currents          prepulse (high contrast ratio), the plane geom-
+and even the controlled fusion reaction in the             etry of interaction within the skin layer of the
+large volume of DT of only 12 times solid state            plasma surface produced two plasma blocks.
+density needed the support of the highly corn-             This is by nonlinear (ponderomotive) forces
+pressed part of the fuel. We are aiming to use             (SLA, skin layer plasma block acceleration by
+the ultra-intense ion    beam following the skin-          the nonlinear force), one moving with low side-
+layer effect to avoid the requirement for very             wise expansion against the laser light and the
+high compression.                                          other into the plasma (Figure 1), as expected
+14                                              OSMAN et al.
+
+
+from computations carried out prior to 1980,                and confirmed in all details, both experimen-
+(Figure 2). This was first analysed from ion                tally(Badziak et al. 2004) and numerically
+emission (Badziak et al. 1999, Hora et al. 2002)            (Badziak et al. 2005).
+
+
+
+
+                              Laser Beam                                                  Target
+
+
+
+
+                                                 Debye Length
+
+
+
+
+Figure 1. Fusion scheme where a laser beam irradiates solid DT producing a block of plasma moving
+against the laser light and another block moving into the target. Ignition requires extremely high
+DT current densities and energy fluxes of the blocks, equations (1) and (2).
+
+
+
+                      10^'^         Intensity                                        H     10 10
+                                                                                      i
+
+                                    Velocity                                          I
+
+
+
+
+                bJO
+                      10^^^    a = 2x 10^                                            J     10^
+                                                                                      I
+
+                               T = 1.5 ps
+                00
+                      10^^                                                                 10^
+
+
+
+               CM     10^                                                            -i   -102
+
+
+
+                      10'                                                                 -10^
+
+
+                                                                                      !
+
+
+                      10^^                                                                10 10
+
+                              -50   -30        -10     10           30   50     70
+                                                 Thickness {/.im)
+
+Figure 2.   Generation of blocks of deuterium plasma moving against the neodymium glass laser
+                                           and moving into the plasma interior (negative velocities)
+light (positive velocities, v, to the right)
+produced upon irradiation by a neodymium glass laser of 10^^ Wcm"^ intensity onto an initially
+100 eV hot and 100 /^m thick bi-Rayleigh profile (Hora 1991) with minimum internal reflection. The
+electromagnetic energy density {'E'^ -hli^) {Stt) is shown at the same time of 1.5 ps after beginning
+constant irradiation (Gang et al. 2005).
+                              LOW COST ENERGY BY INERTIAL FUSION                                                    15
+
+
+
+
+    The suppression of the self-focussing was in-         A,v/.    = 1.06 X 10'^^ cms-^^                          (5)
+directly confirmed (Hora et        al.   2002) from the
+                                                             Applying this result to the accelerated
+measured intensity independence of the accel-
+                                                          plasma blocks of DT with a critical density
+erated ion numbers (Badziak et al. 1999). The
+                                                          at Ue     — 10-   ^    cm~"^ and an ion velocit}^ above
+suppression of the self-focussing channel (Hora
+                                                          lO^cms"^ shows that the plasma blocks have
+1975, 1991. Hauser et al. 1992) was ingeniously
+                                                          an ion current density above 10^° A cm~^, there-
+measured by Zhang et al. (1998) where TW-
+                                                          fore fulfilhng condition (1) for flame propaga-
+100 fs laser pulses were clean with a contrast
+                                                          tion.     A very detail numerical confirmation of
+ratio of 10*; the need for a pre-pulse generated
+                                                          this fact using the gemiine two-fluid model has
+plasma plume for the relativistic self-focussing
+                                                          been provided (Badziak et al. 2005, Cang et al.
+was demonstrated by detecting the emitted X-
+                                                          2005, Glowacz et al. 2006).
+rays changing from very low values without self-
+focussing into very high values if a fernptosecond
+pre-pulse was irradiated at least 70 ps before the        ENERGY FLUX DENSITY FOR
+main pulse.                                               FUSION FLAME PROPAGATION
+    It  is very important to underline the fact
+
+that   SLA-plasma-block acceleration was ob-
+                                                                 now discuss how condition (2) could be ful-
+served previously, without the later realized
+                                                                                   TW power or several
+                                                          filled with ps laser pulses of
+
+connections, by Sauerbrey (1996), confirming in
+                                                          PW by defocussing to large areas and interact-
+retrospect that his 350 fs     TWlaser pulses were
+                                                          ing with the           DT in order to produce moder-
+sufficientl}' clean. The pulses were produced by
+                                                          ate ion energies, since the optimized      DT fusion
+                                                          cross sections require 80 keV only. Experiments
+the Schafer-method, amplifying 350 fs dye-laser-
+pulses through an activated KrF laser medium
+                                                          (Badziak et           al.   1999, 2004, 2005) provided    E
+                                                          values for (2) of nearly 10^^ Jcm~^.
+(Schafer 1986) without the need for gratings
+                                                                 For the compressing block, the whole maxi-
+or pulse compression as with Mourou's chirped
+pulse amplification      CPA method (Mourou &             mum quiver energy of the electron is converted
+                                                          into translation energy of the ions.                 For the
+Tashirna 2002).   Sauerbrey (1996) measured
+an acceleration, A, in a carbon plasma front
+                                                          DT interaction, use of an oscillation energy of
+                                                          80 keV for the resonance maximum of the DT
+moving against the laser by the Doppler eff"ect,
+                                                          reaction may not necessarily be the best choice.
+produced by a 350 fs        TW
+                           KrF laser pulse at
+                                                          Since this is close to the relativistic threshold
+3.5 X 10^'='   Wcm-2 as follows:
+                                                          intensity Irei        we have to use the general quiver
+Aea-p = 10^° cms-2                                 (3)
+                                                          energy (Hora 1991)
+
+    This corresponds to an electric field            =    Ease    - moC^ [(1 + 3SI,,e/Ire/)'/'        -   1]      (6)
+
+2.9 X 10^^ erg cm        and a density, n^ m^ of the
+                                               ,          where the maximum intensity Imax = Sl^.ac due
+accelerated plasma layer of 5.4 x 10~^ gcm""^             to the dielectric swelling near the critical den-
+at the critcal density n^     = 1.6 x 10^^ cm"^"^ for     sity is expressed           by the factor S with the laser
+C^+ ions. The nonlinear force for the simplified          intensity lyac in vacuum at the target surface.
+plane geometry (Hora 1991) is given in (4).                  For the general analysis we have to be flexi-
+                                                          ble about the chosen values of the applied max-
+iNL - - (d/d^) (E'^ + H'^)/(87r)                          imum (dielectrically swelled) oscillation energy
+       = UiniiA                                                                             DT ion energy s trans in
+                                                          Ease into the translation
+       = -(l/167r)(L^p/cj)-^(a/ax) E2               (4)                                                    We further
+                                                          adjustment of fusion cross sections.
+                                                          leave open the value of the energy flux density
+   Assuming for simplification c^x = Ax = 10 /im          E* = Ivac/'^L for reaction condition (2) [possibly
+and a swelling of S = 2 (the experiments of               even a lower value depending on future research
+Badziak et al. (2004, 2005, 2006) for ps pulses           on interpenetration mechanisms (Hora 1983)]
+resulted in S    = 3.5), we find the theoretical value    to find the correct value of E* where the laser
+given in (5).                                             pulse duration tl will have to be in the range
+16                                                                OSMAN et al.
+
+
+of ps. According to numerical studies (Gang et                           any     dielectric swelling w^here the    whole    laser
+al.   2005, Badziak et         al.   2005, Glowacz 2006),                pulse energy     is   transferred,   as in the simple
+in agreement with estimations, this value could                          case of radiation pressure to the (nonlinear-
+well be a few ps.        From (7)                                        force dominated, nearly collisionless) absorbing
+                                                                         plasma.      We conclude that the condition (2)
+                                                                   (7)
+                                                                         could well be     fulfilled    for the ignition of un-
+
+we arrive at the function for the                         laser   wave   compressed solid DT fuel when applying shorter
+length given in (8) where nio                  is    the rest mass       laser wave length than that of the neodymium
+
+of the electron.                                                         glass laser; this is well in reach of present tech-
+                                                                         nology. For the pessimistic case of Bobin (1974),
+                                                                         the numerical factor in (9) is 0.105, such that
+      [r^/;,,/35£1>/2                                                    with S = l just the borderline of higher har-
+                                                                         monics CPA (Mourou & Tashima 2002) or of
+       {[(£«ra„./m„c2) + ll2-l}i/2                                 (8)
+                                                                         excimer lasers (Schafer 1986) would be covered.
+Using as a special case ti = 3ps, E* = 2 x 10^                           Further research on lower values of E* and nu-
+Jcm"-^, Straus ~ 80 kcV, we arrive at (9).                               merical studies for slightly longer laser pulses
+                                                                         may further relax the conditions, and longer
+A - 0.516/8^/2 //m                                                 (9)
+                                                                         laser    wave lengths would be        possible.        Fig-
+      The nonlinear force driven two-block skin                          ure 3 shows the dependence of the necessary
+layer interaction        model (Figure               1)   works for      laser wave length for a pulse length of 3 ps and
+swelling, S, considerably larger than                      1, as was     swelling S — 1 which one needs for a desired ion
+the case automatically from detailed analysis of                         translative energy in multiples of m^c^.          if   the
+the measurements (Hora 2003) with S = 3.                           The   threshold E* is given.        Maybe there is a narrow
+lowest possible case with S                1    is   that without        gap for successful conditions.
+
+
+
+
+           bJO
+
+
+
+
+                  0.01    -
+
+                 0.001
+
+                         10^         10^              10®          10^
+
+                                      E*(J/cm2)
+Figure 3. Relation between the laser wave length, aimed ion energy Strans in multiples of m^c"^
+and the necessary energy flux density for ignition of uncompressed DT following (8) for S = 1 and
+a laser pulse duration of 3 ps.
+                               LOW COST ENERGY BY INERTIAL FUSION                                              17
+
+
+
+DISCUSSION                                                   ation problems associated with uranium fission
+                                                             would be greatly reduced (Hora 2002). The ben-
+To produce energy at five times lower cost                   efits in reducing global warming would be much
+than all the existing energy sources on earth                greater than the risks of a suggested increase in
+is   potentially achievable     if   the laser could   ig-   the number of fission reactors. Unlike the finite
+nite solid state   DT without the complicated pre-           supply of uranium, the availability of hydrogen
+compression step.      It is   remarkable that Nuck-         and its isotopes is essentially unlimited.
+olls k Wbod (2002) developed the option of                      The problems to be clarified are the new the-
+the fast igniter where very intense 5MeV elec-               oretical aspects of the interpenetration process
+trons would ignite large quantities of nearly                for Bobin's (1974) fusion flame     and techniques
+solid state (or moderately compressed)          DT and       forproducing sufficiently thick highly directed
+where some 10 kJ of laser energy produces more               and low temperature plasma blocks by the skin
+           M
+than 100 J of fusion energy. It can be assumed               layer effect.   The use of radially driven layers
+that this ignition scheme involves controlled                with shrinking width and increasing thickness
+laser fusion processes quite differently to uncon-           are currently being discussed (Badziak et        al.
+
+trolled fusion reactions.      A similar scheme may          2006).
+be reached with nonlinear force driven skin layer
+acceleration SLA plasma blocks (Hora 2002).                  CONCLUSIONS
+The necessary condition (1) for 10^^ A cm ~- and
+higher   DT ion current densities for this have              Interaction of TW-ps laser pulses with plasma
+been verified (Hora et al. 2002, Badziak et al.              results in a skin layer mechanism for nonlinear
+2005) for optimum ion energies of 80keV. For                 (ponderomotive) force driven two dimensional
+condition (2), the possibilities seem to be in               plasma blocks (pistons). This mechanism re-
+reach since the value E* will be considerably                lies on a high contrast ratio for suppression of
+reduced in view of modifications that have not               relativistic self-focussing. Space charge neutral
+yet been fully explored.        The final question is        plasma blocks are obtained with ion current
+whether the necessary laser intensities of 10^^              densities larger than lO^'^Acm"^. Using ions
+to 10^^ Wcm"^ of few ps duration provide com-                in the MeV range results in 1000 times higher
+parable conditions for igniting the fusion flame             proton or DT current densities than the pro-
+in a   way similar to radiation ignition (Nuck-              posed proton fast igniter reciuires (Roth et al.
+olls 2005), which refer to uncontrolled reactions            2005). This should result in better conditions of
+with similar intensities of Planck radiation (11             this fast ignitor scheme.   The ballistic focusing
+million K).                                                  of the generated plasma blocks and then short-
+     With several preliminary estimations con-               time thermal expansion increases their thickness
+cerning fusion, apart from solid experimental                but maintains high ion current densities. As
+and theoretically based results on plasma block              shown here, this approach then provides condi-
+generation, the present study may provide the                tions that are very favourable for efficient fast
+framework for further evaluation of Particle in              ignition of a fusion target. If successful, this ap-
+Cell (PIC) computation results for generation                proach to fiist ignition could significantly sim-
+of plasma blocks (pistons) covering conditions               plify operation of an IFE plant, leading to very
+(1) and (2) (Esirkepov et al. 2004). We must                 attractive energy production costs.
+find out   how to avoid relativistic self-focussing
+and how to optimise DT ion energies for tlie fu-             ACKNOWLEDGEMENTS
+sion flame.  Our present position from the side
+of sub-relativisitc conditions may be an alter-              This paper is based on an oral presentation at
+native approach leading to a very simplified low             the 17^^ Australian National Physics Congress
+cost laser fusion reactor.                                   2006, Brisbane 3 8 December 2006. Support
+     If this laser-plasma block controlled ignition          by the Australian Institute of Nuclear Science
+(LABIG) scheme becomes a serious method of                   and Engineering (AINSE) is gratefully acknowl-
+producing energy at very low cost, nonprolifer-              edged.
+18                                                     OSMAN et al.
+
+
+REFERENCES
+Badziak, J., Kozlov, A. A., Makowksi, J., Parys,                Gerstner, E. 2007. Editorial Nature 446, 16
+  P., Rye, L., Wolowski, J., Woryna, E. and                     Glowacz, S., Hora, H., Badziak, J., Jablonski,
+     Vankov, A.B.,      1999.         Investigation of ion        S.,   Gang, Y. and Osman, F, 2006. Analytical
+  streams emitted from plasma produced with a                     description of rippling effect and ion accel-
+  high-power picosecond laser, Laser and Par-                     eration in plasma produced by a short laser
+  ticle Beams, 17, 323- 329.                                      pulse. Laser and Particle Beams, 24, 15- 25.
+Badziak, J., Glowacz, S., Jablosnki, S., Parys                  Hauser, T., Scheid,  W. and Hora, H., 1992.
+  P., Wolowski, J. and Hora, H., 2004. Produc-                    Theory of ions emitted from a plasma by rel-
+  tion of ultrahigh-current-density ion                beams      ativistic self-focusing of laser beams, Physical
+  by short-pulse laser-plasma interaction, Ap-                    Review A, 45, 1278-1281.
+  plied Physics Letters, 85, 3041-3043.                         Hora H., 1975.    Theory of          relativistic   self-
+
+Badziak, J., Glowacz, S., Jablonski, S., Parys,                   focusing of laser radiation in Plasmas, Jour-
+  P.,    Wblowski, J. and Hora, H., 2005. Laser-                  nal of the Optical Society of America,             65,
+  driven generation of high-current ion                beams      882-886.
+  using skin-layer ponderomotive acceleration.                  Hora, H., 1983. Interpenetration burn for con-
+  Laser and Particle Beams, 23, 401 410.                          trolled inertial confinement fusion by nonlin-
+Badziak,      J.,   Glowacz,    S.,     Hora, H., Jablon-         ear forces, Atomkernenergie, 42, 7 10.
+  ski,   S.   and Wblowski,       J.,    2006.     Studies of   Hora, H., 1991. Plasm,as at High Temperature
+  laser driven generation of fast-density plasma                  and Density. Springer, Heidelberg.
+  blocks for fast ignition. Laser                and Particle   Hora. H., 2000. Laser Plasm,a Physics: Forces
+  Beams. 24, 249-254.                                             and the Nonlinearlty Principle. SPIE-Books,
+Bobin, J.L., 1974. Nuclear fusion reactions in                    Bellingham, WA.
+  fronts propagating in solid DT, In Schwarz,                   Hora.      H.,    2002.        Fusion   reactor     with
+  H. and Hora, H. (Eds), Laser Interaction                        petawatt laser,     German Patent Application
+  and Related Plasma Phenomena, Vol. 4B, pp.                      103308515.3 (declassified 5 Sept. 2002).
+  465 494. Plenum Press, New York.                              Hora, H., 2003.      Skin-depth theory explaining
+Gang, Y., Osman. F., Hora.H., Zhang, J.,                          anomalous picosecond-terawatt laser-plasma
+  Badziak, J., Wolowski, J., Jungwirth, K.,                       interaction, Czechoslovak Journal of Physics,
+  Rohlena, J. and Ullschmied, J., 2005. Com-                      53, 199-217.
+  putations for nonlinear norce driven plasma                   Hora, H., 2004.       Developments in inertial fu-
+  blocks by picosecond laser pulses for fusion.                   sion energy and beam fusion at magnetic con-
+  Journal of Plasma Physics, 71, 35-51.                           finement, Laser and Pariicle Beams, 22, 439-
+Cowan, T.E., Parry, M.D., Key, M.H., Dittmire,                    449.
+  T.R., Hatchett, S.P., Henry, E.A., Mody,                      Hora, H., 2005. Ideal Energy Source by Mark
+  J.D.,  Moran, M.J., Pennington, D.M.,                           Oliphant's      Beam Fusion,     Journal and Pro-
+  Phillips, T.W'., Sangster, T.C., Sefcik, J.A.,                  ceedings of the Royal Society of New South
+  Singh,         Suavely, R.A., Stoyer, M.A.,
+              M.S.,                                               Wales. 138, pp. 13-29.
+  Wllks,         Young, P.E., Takahashi, Y.,
+              S.C.,                                             Hora, H. and Miley, G.H., (Eds) 2005. Edward
+  Dong, B., Fountain, W\, Parnell, T., Johnson,                   Teller Lectures:        Lasers and Inertial Fusion
+  J., Hunt, A.W. and Kuhl, T., 1999. High en-                     Energy. Imperial College Press, London.
+  ergy electrons, nuclear phenomena and heat-                   Hora, H., Azechi, H., Kitagawa, Y., Mima, K.,
+  ing in petawatt laser- solid experiments, Laser                 Murakami, M., Nakai, S., Nishihara, K., Tak-
+  and Pariicle Beams, 17, 773-783.                                abe, H.,       Yamanaka, C, Yamanaka M. and
+Esirkepov, T., Borgliesi, M., Bulanov, S.V.,                      Yarnanabi, T., (1998) Measured laser fusion
+  Mourou G. and Tajima, T., 2004. Highly ef-                      gains reproduced by self-similar volume com-
+  ficient relativistic-ion generation in the laser-               pression and volume ignition for NIF condi-
+  piston regime. Physical Review Letters, 92,                     tions,   Journal of Plasma Physics, 60, 743-
+  14.                                                             760.
+                                    LOW COST ENERGY BY INERTIAL FUSION                                                          19
+
+
+
+
+Hora, H., Badziak, J.. Boody, F.. H6pfi, R.,                     Nuckolls.   J.H.     and Wood,          L.,   2002.         Future
+  Jungwirth, K., Kralikova, B., Kraska, J.,                        of inertial      fusion     energy.    Lawrence Liver-
+    Laska, L.. Parys,        P.,    Perina, P.. Pfeifer. K.        more National Laboratory Preprint. UCRL-
+    and Rohlena, J., 2002. Effects of picosecond                   JC-149860.
+    and ns laser pulses for giant ion source, Optics             Roth,    M.,    Brambrink,         E..        Audebert.        B.,
+
+    Commimications, 207, 333 338.                                  Blayevic, A., Clarke, R., Cobble.                   J.,    Geis-
+
+Hora, H., Badziak,            J.,   Glowacz,    S.,   Jablon-      sel, M., Habs, D., Hegelich, M., Karsch, S.,
+
+    ski, S.,     Sklandanowski, Z., Osnian, F., Cang,              Ledingham, K., Neelz, D., Ruhl, H., Schlegel,
+    Y.. Zhang, J.I.E., Miley, G.H., Peng, H.,                      T. and Schreiber, J., 2005. Laser accelerated
+
+    He, X., Zhang, W., Rohlena, K., Ullschmied,                    ions and electron transport in ultra- intense
+
+    J. and Jungwirth, K., 2005.  Fusion energy                     laser matter interaction. Laser a.nd Particle
+
+    form plasma block ignition, Laser and Parti-                   Beams, 23, 95-100.
+    cle Beam.s. 23, 423 -432
+                                                                 Sakharov, A., 1961. See Hora et al. (2005), p. 3.
+                                                                 Sauerbrey, R., 1996.          Acceleration of femtosec-
+Hora, H., 2007.          New aspects for fusion energy
+                                                                   ond laser produced plasmas. Physics of Plas-
+    using inertial confinement. Laser and Particle
+                                                                   mas. 3, 4712-4716.
+    Beams 25, 37-45.
+                                                                 Schafer, F.-P.,      1986.     Excimer        laser for      very
+Hora,      H.,     2007a.      Klirnakatastrophe        Uber-
+                                                                   short laser pulses, Applied Physics, B39, 17.
+    windern.      S.   Roderer Verlag, Regensburg.
+                                                                 Stait-Gardner, T., and Castillo, R. 2006. Differ-
+Hora,      H.,    Osman,     F.,    Castillo,   R.,   Collins,
+                                                                   ence between Hawking and Unruh radiation
+    M., Stait-Gardner, T.,            Chan W.-K., Holss,
+                                                                   derived from studies about pair production by
+    M., Scheid, W.,         mng, J.X.„ and Ho, Z.-K.               lasers in vacuum.          Laser and Particle Beams
+    2002a. Laser-generated pair production and
+                                                                   24, 579-603.
+    Hawkirig-Unruh radiation, Laser and Particle
+                                                                 Tabak, M., Ghnsky, M.N, Kruer, W.L., Wilks,
+    Beams 20, 79-86.
+                                                                   S.C., Woodworth, J., Campbell, E.M.. Perry,
+Keilhacker, M., 1999. High fusion performance
+                                                                   M.D. and Mason, R.J., 1994. Ignition of high-
+    from deuterium- tritium plasma in JET. Nu-                     gain fusion with ultrapowerful lasers. Physics
+    clear Fusion, 39, 209-221.
+                                                                   of Plasmas, 1, 1626 1634.
+Kidder, R.E., 2005.           Book review, Laser and             Teller, E., 1960. See Hora et al. (2005), p. 3
+    Particle Beams, 23, 597.                                     Ti'an Minh     Quang, 8 September 2004. Physics
+Mourou, G. and Tashima, T., 2002. Ultrahigh                        Colloquium, Sydney University.
+  power laser pulses, In Tanaka, K.A., Meyer-                    Zhang,   P.,   He,    J.T.,    Chen, D.B.,         Li,       Z.H.,
+  hofer, D.D. and Vehn, J.M. (Eds), Inertial                       Zhang, Y., W^ng, L., Li, Z.H., Feng, B.H.,
+  Fusion Science and Applications 2001, pp.                        Zhang, D.X., Tang, X.W. and Zhang, J.,
+    831-836. Elsevier, Paris.                                      1998.   X-ray emission from ultraintense-
+Nuckolls, J.H., 2005.        Edward Teller Medal: Ac-              ultrasliort laser irradiation, Physical Review,
+    ceptance Remarks. See Hora et al. (2005).                      E57, 3746-3752.
+
+
+
+
+*   Frederick Osman, Mathematics Department, Ti'inity College, Summer Hills, NSW, Australia.
+          Email fosman@trinity.nsw.edu.au
+§   Heinrich Hora, Department of Theoretical Physics, University of NSW, Sydney, Australia.
+§   George H. Miley, Fusion Studies Laboratory, University of Illinois, Urbana-Cliampaign, USA.
+§   Jak C. Kelly, School of Physics, Sydney University, Sydney, Australia.
+
+*   Author for correspondence.
+
+
+(Manuscript received 14.08.2006, accepted 30.01.2007)
+Journal & Proceedings of the Royal Society of New South Wales,           Vol. 140, p. 21-26, 2007
+ISSN 0035-9173/07/010021-6          $4.00/1
+
+
+
+   Thesis Abstract:                The Australian Stellate-haired Rhamnaceae:
+                 a Systematic Study of the Tribe Pomaderreae
+
+                                              .lURGEN KELLERMANN
+
+                Abstract of a Thesis submitted for the Degree of Doctor of Philosophy,
+                                   University of Melbourne, Victoria, 2007
+
+
+      Rhamnaceae    Juss.    is   weh represented    in   orates findings by Richardson et          al.   (2000a,
+Australia with about 240 species. Over 90% of             2000b) and Fay et al. (2001). Five main gen-
+these belong to Pomaderreae Reissek ex Endl.,             era of Pomaderreae. Pomaderris, Siegfriedia
+the second largest tribe of Rhamnaceae, which             C.A. Gardner, Spyridium Fenzl. Stcvanthemum
+is endemic to Australia and New Zealand. The              Reissek and Trymalium Fenzl, are confirmed,
+defining characters of the tribe are the presence         but some name changes are needed to achieve
+of stellate hairs on stems, leaves and/or flow-           a classification with monophyletic genera:           the
+ers   and schizocarpic capsular fruits.        Individ-   Victorian species of Trymalium and Cryptan-
+ual fruitlets are indehiscent or release the seed         dra waterhousei F. Muell. should be transferred
+through an opening or slit.                               to Spyridium:       Blackallia connata C.A. Gard-
+
+      Pomaderreae currently consist of seven gen-         ner needs to be subsumed in Cryptandra and
+
+era in Australia, of which only one {Pomaderris           the genus Blackallia C.A. Gardner has to be re-
+Labill.)    extends to New Zealand.The limits             stricted to B. biloba C.A. Gardner.        Three new
+of the genera were confused by many botanists             genera are suggested. The first should include
+over the last 150 j^ears, with two to seven gen-          the four species of the "Bilocular Clade', a group
+era being accepted over time. This thesis aims            of species previously thought to be unrelated.
+
+to clarify the generic limits and resolve the po-         The second genus would be monotypic contain-
+sition of several atypical species.                       ing Stenanthernum gracilipes Diels.The last
+                                                          new genus would consist of two other species
+      Parsimony analyses of two        DNA regions,
+                                                          so far included in Stenanthernum..
+the Internal Transcribed Spacer (ITS) from nu-
+clear   DNA and the trnL-F region from chloro-                 The current results do not support a split of
+plast DNA, were conducted separately and com-             Cryptandra, although a number of morphologi-
+bined.      The combined data-set contained 69            cally distinct species or groups of species        have
+taxa of Pomaderreae; it was analysed with suc-            been suggested by others to warrant generic
+cessive weighting to down weight base positions           rank. Most of these unusual species are part
+that changed excessively and resulted in a well-          of a 'basal' grade that is separated from a clade
+supported phylogeny.        Morphological data was        containing mostly 'typical' species of Cryptan-
+mapped on to the cladograrn to explore the vari-          dra sensu Thiele      & West (2004), however, res-
+ation of characters and to find key synapomor-            olution within the Cryptandra clade is limited
+phies for the clades.                                     and only few nodes receive statistical support.
+      The results of the different analyses were               The indumentum on           leaves   of    selected
+generally congruent, but the arrangement of the           species   of   Pomaderreae was examined with
+clades to one another was not resolved satisfac-          Scanning Electron Microscopy to assess the
+torily and the position of some species changed           variation of hair types and their distribution.
+between analyses. The ITS phylogeny was well-             Trichonies are quite variable and range from
+resolved, in contrast to the trnL-F analysis,             simple hairs to fasciculate or dendroid multi-
+which contained only few clades and many poly-            radiate hairs.     The indumentum in some taxa,
+tomies.  Long homoplasious indels hampered                such as Stenantemum, the three new genera,
+the trnL-Y analysis and resulted in seemingly             or   Cryptandra,  seems to be more constant
+unrelated species being grouped together.                 and  might  provide synapomorphies for certain
+      Pomaderreae is monophyletic, which corrob-          clades or groups of species in the future.
+22                                                THESES
+
+
+     Cladistic biogeographic analysis of the tribe,     that Pomaderreae is a relatively old group of
+using the strict consensus tree of the combined         plants and ttuit the origin of the main lineages
+analysis of ITS and trnL-F sequences, has found         within the tribe can be explained by vicariance.
+general patterns of relationships of the areas in-
+habited by species of Pomaderreae, which is in
+agreement with patterns found in other groups           Dr Jiirgen Kellermann
+of plantsand animals in Australia and New               National Herbarium of Victoria
+Zealand.    The summary cladogram indicates             Royal Botanic Gardens Melbourne
+three main areas: the tropical North, Western           Birdwood Avenue
+Australia and south-eastern Australia (includ-          South Yarra, VIC 3141
+ing New Zealand).      The hypothesis is proposed       Email: juergen.kellermann@rbg.vic.gov.au
+
+
+
+
+ Thesis Abstract:                 A 2000 Year Record of Environmental Change
+             from Tocal Homestead Lagoon, Eastern Australia
+                                               DUNCAN COOK
+
+              Abstract of a Thesis submitted for the Degree of Doctor of Philosophy,
+                                 University of Sydney, New South Wales, 2006
+
+
+     A high-resolution sedimentary record from          ment during the last    c. 2000 years have also
+
+Tocal Homestead Lagoon, in the lower Hunter             been gained, providing much needed informa-
+valley of eastern Australia,        has provided de-    tion on late Holocene environmental change and
+tailed   information  on environmental change           pre-European human impacts.
+during the last c. 2000 years. Twenty-four cores
+were retrieved from the lake. These have been              The Tocal Homestead Lagoon record has
+correlated using magnetic susceptibility mea-           shown that periods of contrasting climatic con-
+surements, allowing the construction of a basin-        ditions prevailed during the late Holocene in
+wide magneto-stratigraphy. The core with the            eastern Australia.    These environmental shifts
+longest, most complete and the highest reso-            have, so far, not been recorded in any of the
+lution record (core TCA9b) was sub-sampled              pollen- based palaeoenvironmental records from
+and analysed for a suite of physical, magnetic          the region. In particular, the Tocal record has
+and chemical properties. The lake sediments             provided some evidence of a prolonged warm
+have been precisely and accurately dated us-            period after c. 900 AD, broadly coincident with
+ing a range of independent methods providing            the Medieval      Warm Period.   The    lake sedi-
+arguably the most detailed, continuous record           ments have also supplied indirect evidence of
+of late Holocene environmental change on the            the chronology of Aboriginal occupation at the
+Australian continent. Radiocarbon, palaeomag-           site.   Burning of the immediate catchment has
+netic and radiometric dating have been used to          taken place regularly since c. 150 BC. This is in
+identify the sedimentary horizon of first Euro-         agreement with most fossil charcoal records in
+pean contact in the early 19th century AD. This         the region, which show that regular firing of the
+has allowed a detailed record of catchment- wide        environment has occurred during the last sev-
+soil loss for the period   c.   1820 to 1998 AD to be   eral millennia.   More explicit evidence of Abo-
+obtained, providing a rare opportunity to ex-           riginal occupation comes from the lake sediment
+amine the timing and magnitude of the land-             chemistry, with the concentration of P increas-
+scape disturbance that accompanied European             ing above background levels from       c.   800 AD,
+settlement in the 19th century. In addition, in-        roughly 1000 years before European settlement
+sights into the state of the pre-impact environ-        in the region.
+                                                   THESES                                                23
+
+
+
+
+By the time the first European had entered the           ranching at the beginning of the 20tli century.
+catchment, P levels had already doubled above            Earlier,   when agriculture at the site was crop-
+the site's pre-800 AD. background level. In the          dominated, tlu^ catchment appears to liave been
+absence of any other plausible explanation, this         more stable and erosion less severe. Lower rates
+has been cautiously interpreted as a record of           of erosion have been recorded in the last decade
+pre-European human activity within the Tocal             at Tocal,    which may represent the impact of
+catchment.                                               more sustainable farming practices. This pat-
+      The mean rate of catchment-wide soil loss          tern is somewhat different to that recorded in
+for   the   c.   2000 years before the arrival of        other long-term sedimentation records in east-
+Europeans        was 18tkrn"-a"^       This mav          ern Australia, which show that the greatest ero-
+be contrasted with       the   mean   rate   of   ero-   sion rates immediately followed European set-
+sion experienced under     European land use of          tlement.
+228 1 krri~~ a"^, an increase of more than an or-
+                                                             Decadal-scale climatic variations appear to
+der of magnitude.      Although this mean rate
+                                                         have had little direct influence on the history
+for the post-settlement period is comparable
+                                                         of erosion, although there is good evidence that
+to modern rates of catchment sediment yield
+                                                         extreme climatic conditions may have been re-
+in eastern Australia, it masks periods of much
+                                                         sponsible for amplifying the already severe im-
+greater denudation.
+                                                         pacts of intensive land use.     This    may be in
+      The arrival of Europeans at Tocal is clearly
+                                                         part due to the dominant role of land use in
+recorded in the lake sediments as a pulse of
+                                                         controlling erosion in the historic period.   How-
+topsoil-dominated material,      which marked a
+                                                         ever, the observed cycles of drought   and flood
+spectacular rise in erosion to    638tkm~^a~\
+                                                         in the region in the decades before European
+more than 200 times higher than the rate at
+                                                         settlement in c. 1820 appear to have had no im-
+which soils were being eroded in the preced-
+                                                         pact on soil erosion either. It appears that the
+ing four centuries. Truncated A-horizons and
+                                                         pre-European environment may have had some
+compacted soil profiles in the catchment today
+                                                         level of resilience to short-term climatic fluctu-
+provide modern records of this past denudation.
+                                                         ations and Aboriginal land use.     If   some level
+The catchment "s response to the arrival of Eu-
+                                                         of equilibrium existed in the pre-European en-
+ropeans, the clearing of land for farming and the
+                                                         vironment, then it was both easily and rapidly
+impact of thousands of hard-hoofed animals in
+                                                         disturbed and any resilience such systems may
+the catchment was both swift, and intense. In
+                                                         have had to minor climatic fluctuations appears
+contrast, the pollen record for the period im-
+                                                         to have been incapable of coping with the envi-
+mediately before and after European settlement
+                                                         ronmental changes that accompanied the arrival
+shows little variation, which has important im-
+                                                         of Europeans in Austraha.
+plications for our understanding of vegetation
+response to human impacts in the Australian
+environment.                                             Dr Duncan Cook
+    Although the initial shock of European im-           Department of Geographical and Earth Sciences
+pact resulted in a dramatic increase in erosion,         East Quadrangle, University of Glasgow
+the greatest rates of catchment-wide soil loss at        Glasgow G12 8QQ, Scotland UK
+Tocal took place during periods of intense cattle        Email: Duncan. Cook^ges. gla.ac.uk
+24                                                                 THESES
+
+
+                   Thesis Abstract:                             The Postcranial Skeleton of
+                    Temnospondyls (Tetrapoda: Temnospondyli)
+                                                                  KAT PAWLEY
+
+                  Abstract of a Thesis submitted for the Degree of Doctor of Philosophy,
+                                                La Trobe University, Victoria, 2006
+
+     Temnospondyls             are    large          extinct     fossil   finding has major implications for the phylo-
+tetrapods,      superficially        resembling crocodiles                genetic analysis of temnospondyls      and other
+in their general size,   appearance and lifestyle.                        early tetrapods.   An overview of phylogenetic
+Temnospondyls are a group of early tetrapods,                             variation in the   postcranial skeleton      is   pre-
+the oldest fossils are more than 340 million years                        sented,   including a large phylogenetic analy-
+old, and they existed for more than 200 mil-                              sis of the Tenmospondyli. The most primitive
+
+lion years. This doctoral thesis examined the                             temnospondyls possess fully ossified postcra-
+postcranial skeleton of temnospondyls and its                             nial skeletons, well adapted for terrestrial lo-
+evolutionary history and diversification.                        Stan-    comotion, but some of the derived clades of
+dard taxonomic techniques were used to distin-                            temnospondyls have paedomorphic postcranial
+guish between the types of variation observed                             skeletons and are exclusively aquatic.
+in the postcranial skeleton and for ph\dogenetic
+                                                                             For the first time, the postcranial skeleton
+analysis.     The thesis consists of a series of pub-
+                                                                          of temnospondyls is comprehensively compared
+lished articles, three describing the postcranial
+                                                                          with that of other early tetrapods in the largest
+skeletons of various temnospondyls,                         and three
+                                                                          phylogenetic analysis to date, resulting in the
+summary articles,          all    with extensive              illustra-
+                                                                          unexpected discovery that temnospondyls are
+tions.
+                                                                          most closely related to the ancestors of am-
+     To provide data, the postcranial skeletons                           niotes. The Temnospondyli plus Neospondyli
+of three temnospondyl                taxa were described.                 (Seymouriamorpha plus Cotylosauria plus Lep-
+The articulated postcranial skeleton of a basal                           ospondyli) forms a large    new clade, the Ter-
+stereospondyl (rhinesuchid)                is    immature, and            rapoda, defined by the presence of many derived
+paedomorphism of the postcranial skeleton in                              synapomorphies. Some of the cranial synapo-
+stereospondyls      is    discussed.            The robust ap-            morphies of the Terrapoda are most likely re-
+pendicular skeleton of Eryops megacephalus                           is   lated to improvements in hearing.   The postcra-
+plesiomorphic,      well-ossified,          and           terrestrially   nial synapomorphies indicate that the Ter-
+adapted.      The paedomorphic postcranial skele-                         rapoda are the first vertebrates to have evolved
+ton of Trirnerorkachis insignis                      is    plesiomor-     limbs that are well adapted for terrestrial lo-
+phic, and secondarily aquatic; the description                            comotion. The Terrapoda are the first truly
+includes growth stages.                                                   terrestrial vertebrates; their postcranial    adap-
+                                                                          tations facilitated their colonisation of the land
+     This study found that extensive morpho-
+                                                                          and consequent phylogenetic radiation during
+genetic      variation    is     present        in   the      postcra-
+                                                                          the early Carboniferous.
+nial skeleton of         temnospondyls.                   Many phy-
+logenetically significant characteristics develop                             Both analyses incorporate characters from
+w-ith    morphogenesis, they          may be absent in                    previous analyses and    many new postcranial
+early growth stages,             and may never develop                    characters. The results of the phylogenetic anal-
+even in the largest growth stages of taxa with                            yses are statistically more parsimonious than
+paedomorphic postcranial skeletons.         Conse-                        previous analyses and have much lower levels
+quentl}'',   assessment of the presence or absence                        of homoplasy.    Comparative analyses indicate
+of a phylogenetically significant characteristic in                       that the distinctive results are most likely due
+any taxon may be dependant on the morpho-                                 to the increased use of characters pertaining
+genetic stage of the specimen examined.                          This     to temnospondyls, increased use of postcranial
+                                                THESES                                                          25
+
+
+
+characters, and differentiation between sources       Dr Kat Pawley PhD
+of morphological variation to minimise morplio-       PC) Box 71, Bundoora
+genetic and phenotypic variation and elucidate        VIC 3083
+true phylogenetic signal.                             Email: k.pawley@latrobe.edu.au
+
+The complete thesis is online at:
+http www lib latrobe edu au /thesis/public/adt-LTU20061124 124055/index html
+      :       .    .         .    .   .                                         .                  .
+
+
+
+
+    Thesis Abstract: Identification of Novel Genetic Regulators
+                                 of Breast Cancer Metastasis
+
+                                           BEDRTCH ECKHARDT
+
+                  Abstract of a Thesis submitted for the Degree of Doctor of Philosophy,
+                                 Universitv of Melbourne, Victoria, 2006
+
+
+    The majority of deaths due to breast cancer       vealed that genes involved in adhesion, motil-
+result from the formation of secondar}^ tumours       ity and invasion were inherently altered between
+
+(metastasis) that arise in distant organs such as     weakly and highly metastatic tumours. Fur-
+lymph nodes, lung and bone. Metastatic spread         ther, the genetic differences between highly and
+to these organs leads to debilitating complica-       weakly metastatic mouse tumours were able to
+tions, such as respiratory problems, spinal cord      segregate a cohort of human breast cancer pa-
+compression, bone pain and fractures.          Cur-   tients     into 'early'   and   'late"   metastasis cate-
+rent therapies are palliative, aiming to relieve      gories.
+the symptoms caused by metastatic growth. To                In   highly   metastatic     tumours,      a   signifi-
+achieve curative therapies, a better understand-      cant proportion of extracellular matrix (ECM)
+ing of the genetics that underlie the process of      genes were over-expressed.               An ECM gene.
+metastasis is required.                               POEM/nephronectin, was identified and evalu-
+   To this end, a unique mouse model of               ated for a functional role in metastasis. Reduc-
+spontaneous breast cancer metastasis to mul-          tion of    POEM expression by stable RNA inter-
+          was characterized both at the phe-
+tiple sites
+                                                      ference in the highly metastatic 4T1.2 tumour
+notypic and genotypic levels.  Using a novel          line impaired metastasis to lung,          bone and kid-
+real time cjuantitative   PCR assay of metastatic     ney.   A second gene, bone morphogenic protein-
+burden, several mouse mammary tumour lines            4 (BMP-4), was identified with minimal expres-
+were characterized for their ability to sponta-       sion in 4T1.2 tumours.          Restoration of BMP-4
+neously metastasise to various tissues.  Based        expression in 4T1.2 tumours inhibited metasta-
+on this assay, the tumour lines were cat-             sisand dramatically improved the siu'vival of
+egorized as non-metastatic (67NR), weakly             mice bearing these tumours. These studies im-
+metastatic (4T07, 168FARN and 66cl4) and              plicate a causal role for       POEM and BMP-4 in
+highly metastatic (4T1.2 and 4T1.13). In con-         the progression of breast cancer. Further char-
+junction, functional assays that mimic the indi-      acterisation of these genes will aid in the devel-
+vidual events of metastatic progression revealed      opment of more specific and effective therapies
+that highly metastatic tumour lines were more         for metastatic breast cancer.
+adhesive, migratory and invasive compared to
+their weaker metastatic counterparts.                 Dr Bedrich Eckhardt
+   Each metastatic tumour was array- profiled         Peter MacCallum Cancer Centre
+against the non-metastatic       67NR to elucidate    Locked Bag #1, A 'Beckett Street
+genes associated with metastasis in this model.       Melbourne, VIC 8006
+Gene ontology analysis of the array data re-          Email: bedrich.eckhardt@petermac.org
+26                                                THESES
+
+
+           Thesis Abstract: Behavioural Ecology of the Bobuck
+                                    (Trichosurus cunninghami)
+                                              JENNIFER GILBERT
+
+               Abstract of a Thesis submitted for the Degree of Doctor of Philosophy,
+                                    University of Melbourne, Victoria, 2005
+
+
+     This thesis demonstrates the profound influ-        was no                          and that males
+                                                                    sex- bias in dispersal,
+ence that patterns of resource distribution and          sired multiple  young per year. Both of the
+abimclance can have on the behavioural ecol-             key resources for bobucks (den- trees and silver
+ogy of a marsupial.        I   studied two neighbour-    wattle. Acacia dealbata, the main dietary item)
+ing populations of bobucks,          Trichosurus cun-    occurred at significantly higher density at the
+ningkarni within a fragmented forest landscape           roadside site, and were located in close proxim-
+in the Strathbogie    Ranges, south-eastern Aus-         ity to one another.         Conversely, these resources
+      There were numerous marked differences
+tralia.                                                  were widely separated at the forest site. There
+between the 'forest population', which inhab-            were no significant differences in the number of
+ited a forest patch and the 'roadside population'        den-trees or silver wattle trees located within
+which occurred in linear roadside vegetation.            the   home ranges of females at the two sites,
+     The forest population was socially monoga-          but females at the forest site had home ranges
+mous; the adult sex ratio was at parity and there        approximately three times the size of those of
+were no significant diff"erences in the number of        roadside females.
+
+den-trees used by adult females and males or                   At the forest site, patterns of den-use and
+in their home range sizes. Pair-members had              den-sharing, and the relative location of den-
+
+strongly overlapping home ranges, shared den-            trees    and preferred foraging areas, suggested
+trees and remained close to one another dur-            that suitable den-trees located close to food
+
+ing their nocturnal activity period. Pair-bonds          trees were limiting.        To test this hypothesis, I ar-
+                                                        tificially supplemented hollow availability by in-
+ended only as a result of the death of one pair-
+member. Two-thirds of young were sired by the            stalling nestboxes within the core foraging range
+
+female's social partner and most males sired one        of each adult female in the forest population.
+
+young per year. There was a significantly male-         In contrast to the findings of other studies, the
+
+biased offspring sex ratio and all males that were      nestboxes were rapidly colonised by bobucks, in-
+born at this site and survived to three years           dicating that        if   natural hollows were available
+of age dispersed;    all   females were philopatric.    closer to food resources, as they            were at the
+Females inherited some of their mothers' den-           roadside     site,   they would almost certainly be
+trees and, as adults, established        home ranges    used.
+
+that overlapped substantially with their moth-                 My study establishes that bobucks have a
+ers' ranges.   Patterns of genetic relatedness in-      variable mating system, governed by the avail-
+
+dicated that all adult males in the forest popu-        ability and distribution of key resources. Specif-
+
+lation were innnigrants.                                ically,   where resources were sparse and widely
+                                                        distributed, females had large home ranges, and
+     In contrast,   the roadside population was
+                                                        males were constrained to social monogamy by
+polygynous;    the adult sex ratio was female-
+                                                        the spatial distribution of females.
+biased and male home ranges were significantly
+larger than those of females.      Each male's home     Dr Jennifer Gilbert
+range overlapped with those of two or three fe-         Department of Zoology
+males, and males used significantly more den-           University of Melbourne
+trees than females.    There was no bias in off-        VIC 3010
+spring sex ratio; genetic data revealed that there      Email: j .martin@zoology.unmelb.edu.au
+                                       NOTICE TO AUTHORS
+
+Manuscripts should be addressed to The Hon-              If this is not readily possible then        an indication
+orary Secretary, Royal Society of New South              of the required reduction (such as 'reduce to 1/2
+Wales, Building H47 University of Sydney       NSW       size')   must be clearly stated. Tables and illus-
+2006.                                                    trations should be numbered consecutively with
+                                                         Arabic numerals in a single sequence and each
+Manuscripts will be reviewed by the Hon. Ed-
+                                                         must have a caption.
+itor, in consultation with the Editorial Board,
+
+to decide whether the paper will be considered           Half-tone illustrations (photographs) should be
+for   publication in the Journal.  Manuscripts           included only when essential and should be pre-
+are subjected to peer review by an indepen-              sented on glossy paper.
+dant referee. In the event of initial rejection,
+                                                         Maps, diagrams and graphs should generally
+manuscripts may be sent to two other referees.
+                                                         not be larger than a single page.               However,
+Papers, other than those specially invited by the        larger figures   may be split and printed across
+Editorial Board on behalf of Council, will only          two opposite pages. The scale of maps or dia-
+be considered if the content is substantially new        grams must be given in bar form.
+material which has not been published previ-
+                                                         References are to be cited in the text by giving
+ously, has not been submitted concurrently else-
+                                                         the author's name and year of publication. Ref-
+where nor is likely to be published substantially
+                                                         erences in the Reference List should be listed
+in the same form elsewhere. Letters to the Ed-
+                                                         alphabetically by author and then chronologi-
+itor and short notes may also be submitted for
+                                                         cally by date. Titles of journals should be cited
+publication.
+                                                         in full - not abbreviated.
+Three,    single   sided,   typed    copies   of   the
+                                                         Details of submission guidehnes can be found
+manuscript (double spacing) should be submit-
+                                                         in   the   on-line    Style   Guide   for    Authors at
+ted on A4 paper.
+                                                         http://nsw.royalsoc.org.au
+Spelling should conform with 'The Concise Ox-
+ford Dictionary' or 'The Macquarie Dictionary'.          MASTER MANUSCRIPT FOR
+The Systeme International d'Unites (SI) is to be         PRINTING
+used, with the abbreviations and symbols set
+out in Australian Standard AS 1000.                      The journal is printed from master pages pre-
+                                                         pared by the         Wr^2£ typesetting program.
+All   stratigraphic  names must conform with             When a paper has been accepted for publica-
+the International Stratigraphic Guide and new            tion, the    author (s) will be required to submit
+names must first be cleared with the Cen-                the paper in a suitable electronic format.           De-
+tral Register of Australian Stratigraphic Names,         tails    can be found in the on-hne Style Guide.
+Australian     GeologicalSurvey Organisation,            Galley proofs will be provided to authors             for
+Canberra, ACT 2601, AustraUa.       The codes            final checking prior to publication.
+of Botanical and Zoological Nomenclature must
+also be adhered to as neccessary.
+                                                         REPRINTS
+The Abstract should be brief and informative.
+                                                         An author who is a member of the Society will
+Tables and Illustrations should be in the form           receive a number of reprints of their paper free.
+and size intended for insertion in the master            Authors who are not a members of the Society
+manuscript - 150      mm x 200 mm.                       may purchase reprints.
+                                        CONTENTS
+                                   Vol. 140 Parts 1 and 2
+
+
+
+
+BRANAGAN, D.
+    Davidite and Other Early Events in Australia's Uranium Story
+
+
+OSMAN, F., HORA, H., MILEY, G.H., & KELLY, J.C.
+    New Aspects for Low Cost Energy by Inertial Fusion Using Petawatt Lasers
+
+ABSTRACTS OF THESES
+  Kellermann, J.     The AustraUan Stellate-haired Rhamnaceae: a Systematic
+                     Study of the Tribe Pomaderreae
+  Cook, D.           A 2000 Year Record of Environmental Change from Tocal
+                     Homestead Lagoon, Eastern Australia
+  Pawley, K.         The Postcranial Skeleton of Temnospondyls (Tetrapoda:
+                     Temnospondyli)
+  ECKHARDT, B.       Identification of Novel Genetic Regulators of Breast Cancer
+                     Metastasis
+  Gilbert, J.        Behavioural Ecology of the Bobuck (Trichosurus
+                     cunninghami)
+
+
+
+
+ADDRESS         Royal Society of New South Wales,
+                Building H47 University of Sydney   NSW 2006, Austraha
+                http://nsw.royalsoc.org.au
+
+DATE OF PUBLICATION               June 2007
+

@@ -1,0 +1,354 @@
+                                                                                                           Order Code RS22173
+                                                                                                           Updated July 20, 2005
+
+
+
+             CRS Report for Congress
+                                     Received through the CRS Web
+
+                                   Detainees at Guantanamo Bay
+                                                           Jennifer K. Elsea
+                                                          Legislative Attorney
+                                                         American Law Division
+           Summary
+
+                After the U.S. Supreme Court held that U.S. courts have jurisdiction to hear legal
+             challenges on behalf of more than 500 persons detained at the U.S. Naval Station in
+             Guantanamo Bay, Cuba in connection with the war against terrorism, the Pentagon
+             established administrative hearings, called “Combatant Status Review Tribunals”
+             (CSRTs), to allow the detainees to contest their status as enemy combatants. This
+             report provides an overview of the CSRT procedures and summarizes court cases
+             related to the detentions and the use of military commissions. The relevant Supreme
+             Court rulings are discussed in CRS Report RS21884, The Supreme Court and
+             Detainees in the War on Terrorism: Summary and Analysis. This report will be
+             updated as events warrant.
+
+                    In Rasul v. Bush,124 S.Ct. 2686 (2004), a divided Supreme Court declared that “a
+           state of war is not a blank check for the president”and ruled that persons deemed “enemy
+           combatants” have the right to challenge their detention before a judge or other “neutral
+           decision-maker.” The decision reversed the holding of the Court of Appeals for the D.C.
+           Circuit, which had agreed with the Bush Administration that no U.S. court has
+           jurisdiction to hear petitions for habeas corpus by or on behalf of the detainees because
+           they are aliens and are detained outside the sovereign territory of the United States.
+           Lawyers have filed more than a dozen petitions on behalf of some 60 detainees in the
+           District Court for the District of Columbia, where judges have reached opposing
+           conclusions as to whether the detainees have any enforceable rights to challenge their
+           treatment and detention. Fifteen of the detainees have been determined by the President
+           to be subject to his military order (“MO”) of November 13, 2001,1 making them eligible
+           for trial by military commission.2 Military commissions were temporarily halted pending
+           the result of one case, but are to be resumed now that the D.C. Circuit has reversed the
+           decision of a lower court that had found the procedures for military commissions to be
+           invalid.
+           ________________________________________________________________________
+           1 Order on Detention, Treatment, and Trial of Certain Non-Citizens in the War against Terrorism,
+           November 13, 2001, 66 Fed.Reg. 57,833 (2000)(hereinafter “MO” or “military order”).
+           2 For an analysis of the military commission rules, see CRS Report RL31600, The Department of
+           Defense Rules for Military Commissions: Analysis of Procedural Rules and Comparison with
+           Proposed Legislation and the Uniform Code of Military Justice.
+________________________________________________________________________________________________________________________________________________________
+                         Congressional Research Service ˜ The Library of Congress
+                                                                                                                                                                 Form Approved
+                                     Report Documentation Page                                                                                                  OMB No. 0704-0188
+
+Public reporting burden for the collection of information is estimated to average 1 hour per response, including the time for reviewing instructions, searching existing data sources, gathering and
+maintaining the data needed, and completing and reviewing the collection of information. Send comments regarding this burden estimate or any other aspect of this collection of information,
+including suggestions for reducing this burden, to Washington Headquarters Services, Directorate for Information Operations and Reports, 1215 Jefferson Davis Highway, Suite 1204, Arlington
+VA 22202-4302. Respondents should be aware that notwithstanding any other provision of law, no person shall be subject to a penalty for failing to comply with a collection of information if it
+does not display a currently valid OMB control number.
+
+
+1. REPORT DATE                                                           2. REPORT TYPE                                                      3. DATES COVERED
+20 JUL 2005                                                              N/A                                                                    -
+4. TITLE AND SUBTITLE                                                                                                                        5a. CONTRACT NUMBER
+Detainees at Guantanamo Bay                                                                                                                  5b. GRANT NUMBER
+
+                                                                                                                                             5c. PROGRAM ELEMENT NUMBER
+
+6. AUTHOR(S)                                                                                                                                 5d. PROJECT NUMBER
+
+                                                                                                                                             5e. TASK NUMBER
+
+                                                                                                                                             5f. WORK UNIT NUMBER
+
+7. PERFORMING ORGANIZATION NAME(S) AND ADDRESS(ES)                                                                                           8. PERFORMING ORGANIZATION
+                                                                                                                                             REPORT NUMBER
+Congressional Research Service The Library of Congress 101
+Independence Ave SE. Washington, DC 20540-7500
+9. SPONSORING/MONITORING AGENCY NAME(S) AND ADDRESS(ES)                                                                                      10. SPONSOR/MONITOR’S ACRONYM(S)
+
+                                                                                                                                             11. SPONSOR/MONITOR’S REPORT
+                                                                                                                                             NUMBER(S)
+
+12. DISTRIBUTION/AVAILABILITY STATEMENT
+Approved for public release, distribution unlimited
+13. SUPPLEMENTARY NOTES
+
+14. ABSTRACT
+
+15. SUBJECT TERMS
+
+16. SECURITY CLASSIFICATION OF:                                                                               17. LIMITATION OF                18. NUMBER             19a. NAME OF
+                                                                                                                   ABSTRACT                     OF PAGES              RESPONSIBLE PERSON
+          a. REPORT                          b. ABSTRACT                          c. THIS PAGE
+                                                                                                                       SAR                            6
+     unclassified                         unclassified                         unclassified
+
+                                                                                                                                                                        Standard Form 298 (Rev. 8-98)
+                                                                                                                                                                              Prescribed by ANSI Std Z39-18
+                                           CRS-2
+
+The White House determined in February 2002 that Taliban detainees are covered under
+the Geneva Conventions,3 while Al Qaeda detainees are not,4 but that none of the
+detainees qualifies for the status of prisoner of war (POW) under the Conventions. The
+Bush Administration has deemed all of the detainees to be “unlawful enemy combatants,”
+who may, according to Administration officials, be held indefinitely without trial or even
+were they eventually acquitted by a military tribunal. However, the detainees at
+Guantanamo Bay have been allowed to meet with representatives of the International
+Committee of the Red Cross (ICRC) and diplomatic representatives of their States of
+nationality. An unknown number of detainees is reported to be held in Afghanistan and
+other locations abroad. It is unclear whether these detainees will have a right to challenge
+their detention under the Court’s decision in Rasul.
+
+    Combatant Status Review Tribunals. In response to Supreme Court decisions in
+2004 related to ‘enemy combatants,’5 the Pentagon established procedures for Combatant
+Status Review Tribunals, based on the procedures the Army uses to determine POW
+status during traditional wars.6 According to the Department of Defense (DoD), “any
+detainee who is determined not to be an enemy combatant will be transferred to their
+country of citizenship or other disposition consistent with domestic and international
+obligations and U.S. foreign policy.”7 CSRTs have been completed for all detainees, and
+have confirmed the status of 520 enemy combatants. Of the 38 detainees determined not
+to be enemy combatants, 23 have been transferred to their home States. Presumably, any
+new detainees that might be transported to Guantanamo Bay will go before a CSRT.
+
+   The tribunals are administrative rather than adversarial, but each detainee has an
+opportunity to present “reasonably available” evidence and witnesses to a panel of three
+commissioned officers to try to demonstrate that the detainee does not meet the criteria to
+be designated as an “enemy combatant,” defined as “an individual who was part of or
+supporting Taliban or al Qaida forces, or associated forces that are engaged in hostilities
+against the United States or its coalition partners[,] ...[including] any person who has
+committed a belligerent act or has directly supported hostilities in aid of enemy armed
+________________________________________________________________________
+
+3 The two most relevant are the Geneva Convention Relative to the Treatment of Prisoners of
+War, August 12, 1949, 6 U.S.T. 3317 (hereinafter “GPW”); Geneva Convention Relative to the
+Protection of Civilian Persons in Time of War, Aug. 12, 1949, 6 U.S.T. 3516 (hereinafter “GC”).
+4 White House Memorandum, “Humane Treatment of al Qaeda and Taliban Detainees” (Feb. 7,
+2002), available at [http://www.washingtonpost.com/wp-srv/nation/documents/020702bush.pdf].
+5For an analysis of relevant decisions, see The Supreme Court and Detainees in the War on
+Terrorism: Summary and Analysis, CRS Report RS21884.
+6 See Department of Defense (DoD) Fact Sheet, “Combatant Status Review Tribunals,” available
+at [http://www.defenselink.mil/news/Jul2004/d20040707factsheet.pdf]. CSRT proceedings are
+modeled on the procedures of Army Regulation (AR) 190-8, Enemy Prisoners of War, Retained
+Personnel, Civilian Internees and Other Detainees (1997), which establishes administrative
+procedures to determine the status of detainees under the Geneva Conventions and prescribes
+their treatment in accordance with international law. For more information, see Treatment of
+“Battlefield Detainees” in the War on Terrorism, CRS Report RL31367.
+7 See DoD Press Release, “Combatant Status Review Tribunal Order Issued” (June 7, 2004),
+available at [http://www.defenselink.mil/releases/2004/nr20040707-0992.html].
+                                              CRS-3
+
+forces.” Each detainee is represented by a military officer (not a member of the Judge
+Advocate General Corps) and may elect to participate in the hearing or remain silent.
+
+   The CSRTs are not bound by the rules of evidence that would apply in court, and the
+government’s evidence is presumed to be “genuine and accurate.” The government is
+required to present all of its relevant evidence, including evidence that tends to negate the
+detainee’s designation, to the tribunal. Unclassified summaries of relevant evidence may
+be provided to the detainee. The detainee’s personal representative may view classified
+information and comment on it to the tribunal to aid in its determination but does not act
+as an advocate for the detainee. If the tribunal determines that the preponderance of the
+evidence is insufficient to support a continued designation as “enemy combatant” and its
+recommendation is approved through the chain of command established for that purpose,
+the detainee will be informed of that decision upon finalization of transportation
+arrangements (or earlier, if the task force commander deems it appropriate). The rules do
+not give a timetable for informing detainees in the event that the tribunal has decided to
+retain their enemy combatant designations.
+
+   In March 2002, the Pentagon announced plans to create a separate process for
+periodically reviewing the status of detainees.8 The process, similar to the CSRT process,
+affords persons detained at Guantánamo Bay the opportunity to present to a review board,
+on at least an annual basis while hostilities are ongoing, information to show that the
+detainee is no longer a threat or that it is in the interest of the United States and its allies
+to release the prisoner. The detainee’s State of nationality may be allowed, national
+security concerns permitting, to submit information on behalf of its national.
+
+Court Challenges to the Detention Policy
+   While it is now clear that the detainees have recourse to federal courts to challenge
+their detention, the extent to which they may enforce any rights they may have under the
+Geneva Conventions and other law remains unclear. The Justice Department argues that
+Rasul v. Bush merely decided the issue of jurisdiction, but that the 1950 Supreme Court
+decision in Johnson v. Eisentrager9 remains applicable to limit the relief to which the
+detainees are entitled. While one district judge from the D.C. Circuit agreed,10 others have
+not, holding that detainees have the right to the assistance of an attorney.11 One judge
+found that a detainee has the right to be treated as a POW until a “competent tribunal”
+decides otherwise,12 but the appellate court reversed. The following sections summarize
+the three most important decisions as they make their way through the D.C. Circuit Court
+of Appeals and, it is expected, to the Supreme Court.
+________________________________________________________________________
+
+8See DoD Press Release, “DoD Announces Draft Detainee Review Policy” (March 3, 2004),
+available at [http://www.defenselink.mil/releases/2004/nr20040303-0403.html].
+9339 U.S. 763 (1950) (holding that the federal courts did not have jurisdiction to hear a petition
+on behalf of German citizens who had been convicted by U.S. military commissions in China
+because the writ of habeas corpus was not available to “enemy alien[s], who at no relevant time
+and in no stage of [their] captivity [have] been within [the court’s] jurisdiction”).
+10   Khalid v. Bush, 355 F.Supp.2d 311 (D. D.C. 2005).
+11   Al Odah v. United States, No. CIV.A. 02-828(CKK) (D. D.C. Oct. 20, 2004).
+12   Hamdan v. Rumsfeld, 344 F.Supp.2d 152 (D. D.C. 2004), rev’d ___ F.3d ___ (D.C. Cir. 2005).
+                                               CRS-4
+
+    Khalid v. Bush.13 Seven detainees, all of whom had been captured outside of
+Afghanistan, sought relief from their detention at the Guantanamo Bay facility. U.S.
+District Judge Richard J. Leon agreed with the Administration that Congress, in its
+Authorization to Use Military Force (AUMF),14 granted President Bush the authority to
+detain foreign enemy combatants outside the United States for the duration of the war
+against al Qaeda and the Taliban, and that the courts have virtually no power to review
+the conditions under which such prisoners are held. Noting that the prisoners had been
+captured and detained pursuant to the President’s military order,15 Judge Leon agreed with
+the government that “(1) non-resident aliens detained under [such] circumstances have no
+rights under the Constitution; (2) no existing federal law renders their custody unlawful;
+(3) no legally binding treaty is applicable; and (4) international law is not binding under
+these circumstances.”
+
+    Judge Leon rejected the petitioners’ contention that their arrest outside of Afghanistan
+and away from any active battlefield meant that they could not be “enemy combatants”
+within the meaning of the law of war, finding instead that the AUMF contains no
+geographical boundaries,16 and authorizes the President to exercise his war power
+wherever enemy combatants are found. The circumstances behind the off-battlefield
+captures did, however, apparently preclude the petitioners from claiming their detentions
+violate the Geneva Conventions.17 Other treaties put forth by the petitioners were found to
+be unavailing because of their non-self-executing nature.18 The court declined to evaluate
+whether the conditions of detention were unlawful. Judge Leon concluded that “[w]hile a
+state of war does not give the President a ‘blank check,’ and the courts must have some
+role when individual liberty is at stake, any role must be limited when, as here, there is an
+ongoing armed conflict and the individuals challenging their detention are non-resident
+aliens.”19 He dismissed all seven petitions, ruling that “until Congress and the President
+act further, there is . . . no viable legal theory under international law by which a federal
+court could issue a writ.”
+
+    In re Guantanamo Detainee Cases.20 U.S. District Judge Joyce Hens Green
+interpreted Rasul more broadly, finding that the detainees do have rights under the U.S.
+Constitution and international treaties, and thus denied the government’s motion to
+dismiss the eleven challenges before the court. Specifically, Judge Green held that the
+detainees are entitled to due process of law under the Fifth Amendment, and that the
+CSRT procedures do not meet that standard. Interpreting the history of Supreme Court
+________________________________________________________________________
+13   355 F.Supp.2d 311 (D. D.C. 2005).
+
+14   Authorization for Use of Military Force (“the AUMF”), P.L. 107-40, 115 Stat. 224 (2001).
+
+15 Although the MO states that it authorizes detention as well as trial by military commissions,
+only fifteen of the detainees have been formally designated as subject to the MO.
+16   Khalid at 320.
+17   Id. at 326.
+18Id. at 327. It may be argued that the habeas statute itself (28 U.S.C. § 2241), which authorizes
+petitions alleging detention in violation of any treaty of the United States, provides a means for
+private enforcement.
+
+19   Id. at 330 (citations omitted).
+
+20   355 F.Supp.2d 443 (D. D.C. 2005).
+                                                CRS-5
+
+rulings on the availability of constitutional rights in territories under the control of the
+American government (though not part of its sovereign territory), Judge Green concluded
+that the inquiry turns on the fundamental nature of the constitutional rights being asserted
+rather than the citizenship of the person asserting them. Accepting that the right not to be
+deprived of liberty without due process of law is a fundamental constitutional right, the
+judge applied a balancing test to determine what process is due in light of the
+government’s significant interest in safeguarding national security.21 Judge Green rejected
+the government’s stance that the CSRTs provided more than sufficient due process for
+the detainees. Instead, she identified two categories of defects. She objected to the
+CSRTs’ failure to provide the detainees with access to material evidence upon which the
+tribunal affirmed their “enemy combatant” status and the failure to permit the assistance
+of counsel to compensate for the lack of access. These circumstances, she said, deprived
+detainees of a meaningful opportunity to challenge the evidence against them.
+
+    Second, in particular cases, the judge found that the CSRTs’ handling of accusations
+of torture and the vague and potentially overbroad definition of “enemy combatant” could
+violate the due process rights of detainees. Citing detainees’ statements and news reports
+of abuse, Judge Green noted that the possibility that evidence was obtained involuntarily
+from the accused or from other witnesses, whether by interrogators at Guantanamo or by
+foreign intelligence officials elsewhere, could make such evidence unreliable and thus
+constitutionally inadmissible as a basis on which to determine whether a detainee is an
+enemy combatant. Judge Green objected to the definition of “enemy combatant” because
+it appears to cover “individuals who never committed a belligerent act or who never
+directly supported hostilities against the U.S. or its allies.” She noted that government
+counsel had, in response to a set of hypothetical questions, stated that the following could
+be treated as enemy combatants under the AUMF: “[a] little old lady in Switzerland who
+writes checks to what she thinks is a charity that helps orphans in Afghanistan but [what]
+really is a front to finance al-Qaeda activities, a person who teaches English to the son of
+an al Qaeda member, and a journalist who knows the location of Osama Bin Laden but
+refuses to disclose it to protect her source.”22 Judge Green stated that the indefinite
+detention of a person solely because of his contacts with individuals or organizations tied
+to terrorism, and not due to any direct involvement in terrorist activities, would violate
+due process even if such detention were found to be authorized by the AUMF.23
+
+   The D.C. Circuit Court of Appeals is considering the government’s appeal with
+respect to the holding that the detainees have enforceable rights under the Constitution
+and international law, as well as appeals by some detainees with respect to other aspects
+of Judge Green’s decision. Briefs are due June 28, 2005, with oral arguments to be
+scheduled at a later date. The detainees’ appeal of the Khalid decision, supra, is to be
+heard on the same day.
+
+    Hamdan v. Rumsfeld.24 Salim Ahmed Hamdan, who was captured in
+Afghanistan and is alleged to have worked for Osama Bin Laden as a body guard and
+________________________________________________________________________
+
+21   Id. at 465 (citing Hamdi v. Rumsfeld).
+
+22   Id. at 475 (internal citations omitted).
+23   Id. at 476.
+24   344 F.Supp.2d 152 (D. D.C. 2004), rev’d __ F3d __ (D.C. Cir. 2005).
+                                               CRS-6
+
+driver, brought this challenge to the lawfulness of the Secretary of Defense’s plan to try
+him for alleged war crimes before a military commission convened pursuant to the
+President’s military order. Hamdan’s attorney objected to the military commission rules
+and procedures, which he argued were inconsistent with the UCMJ and Hamdan’s right
+to be treated as a prisoner of war under the Geneva Conventions. U.S. District Judge
+Robertson agreed, finding that the Geneva Conventions apply to the whole of the conflict
+in Afghanistan, including under their protections all persons detained in connection with
+the hostilities there.25 Accordingly, he ruled, Hamdan was entitled to be treated as a
+prisoner of war until his status was determined to be otherwise by a competent tribunal,
+in accordance with article 5 of the Third Geneva Convention (prisoners of war). The D.C.
+Circuit Court of Appeals, in an opinion written by Judge Randolph, reversed that finding,
+ruling that the Geneva Conventions are not judicially enforceable,26 and that in any event,
+the military commission would qualify as a “competent tribunal” within the meaning of
+U.S. Army regulations implementing the Conventions.27 Judge Williams wrote a
+concurring opinion, agreeing with the government’s conception of the conflict with Al
+Qaida as separate from the conflict with the Taliban, but construing Common Article 3 to
+apply to any conflict with a non-state actor, without regard to the geographical
+confinement of such a conflict within the borders of a signatory state.
+
+   With respect to the President’s military order establishing military commissions, the
+district court judge had found no inherent authority in the President as Commander-in-
+Chief of the Armed Forces to create such tribunals, and that existing statutory authority
+for military commissions is limited. Interpreting the statute in light of the Geneva
+Conventions, which permits the punishment of prisoners of war “only if the sentence has
+been pronounced by the same courts according to the same procedure as in the case of
+members of the armed forces of the Detaining Power,”28 Judge Robertson found no
+congressional authority for Hamdan’s trial under the DoD’s rules for military
+commissions. He found these rules to be fatally inconsistent with the UCMJ (contrary to
+UCMJ art. 36, 10 U.S.C. § 836) because they give military authorities the power to
+exclude the accused from hearings and deny him access to evidence presented against
+him.29 The Circuit Court reversed, opining that Congress did not mean that all of the
+UCMJ procedural rules for courts-martial should apply to military commissions. Instead,
+the panel interpreted art. 36 to mean that military commission rules have only to be
+consistent with those articles of the UCMJ that refer specifically to military commissions.
+However, because the procedural rules to be used by the military commissions do not
+affect their jurisdiction, it was unnecessary to resolve the issue at the interlocutory stage
+of the case. The court left open the possibility that Hamdan can challenge the procedural
+rules if he is convicted by the military commission, possibly by bringing a new habeas
+corpus petition in federal court.
+
+
+________________________________________________________________________
+
+25Id. at 161 (rejecting the government’s position that the military is engaged in two separate
+conflicts in Afghanistan, respectively, against the Taliban and against Al Qaeda).
+26   Rumsfeld v. Hamdan, No. 04-5393, slip op. at 10 (D.C. Cir. July 15, 2005).
+27   Id. at 19.
+28   GPW art. 102.
+29   344 F.Supp.2d at 166.
+

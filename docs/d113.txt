@@ -1,0 +1,1047 @@
+TS"’/',
+                                    NBS CIRCULAR S'/3
+          '■   V-'!r%
+
+
+
+SEP 1 7 19Si
+
+
+
+                        Beierence oogk not to bts
+                        taken from the Library,
+
+  Bibliography on the
+  Measurement of Gas Tomporature
+
+
+
+
+ UNITED STATES DEPARTMENT OF COMMERCE
+  NATIONAL BUREAU OF STANDARDS
+UNITED STATES DEPARTMENT OF COMMERCE                                 •   Charles Sawyer, Secretary
+          NATIONAL BUREAU OF STANDARDS • E. U. Condon, Director
+
+
+
+
+                    Bibliography on the
+     Measurement of Gas Temperature
+
+                                   Paul D. Freeze
+
+
+
+
+       National Bureau of Standards Circular 513
+                           Issued August 20, 1951
+
+
+
+
+      For sale by the Superintendent of Documents, U. S. Government Printing Office
+                        Washington 25, D. C.    -   Price 15 cents
+                        Preface
+  This Circular presents an introductory review of the
+various temperatures that are of interest in hot gases mov¬
+ing at high velocities, and a bibliography of published in¬
+formation on the measurement of gas temperatures in
+general, grouped for convenience in accordance with
+various instrument types. These temperatures are of
+considerable interest in connection with the develop¬
+ment, operation, and control of gas turbines and jet
+engmes.
+
+                            ‘   E. U.           Director.
+
+
+
+
+                                                        iii
+                      Contents
+                                                     Page
+
+Preface_                                              iii
+Introduction_                                          1
+Scope and arrangement of the bibliography_             3
+Bibliography_                                          3
+100. Books, 1936 through 1950_                         3
+200. Periodical reports, 1930 through 1950_            4
+     201. Thermocouples_                               4
+     202. Resistance thermometers and thermistors_     8
+     203. Conventional optical pyrometry_              9
+     204. Conventional radiation pyrometry_           10
+     205. Spectroscopic methods_                      11
+         205.1 Line reversal_                         11
+         205^2 Band and line spectra_                 11
+     206. Pneumatic or thermodynamic methods_         12
+     207. Indicating paints_                          13
+     208. Miscellaneous___                            13
+            Bibliography on the
+      Measurement of Gas Temperature
+                             Paul D. Freeze
+
+        The various temperatures which are of interest in hot gases mov¬
+     ing at high velocities, such as those constituting the working media
+     of gas turbines and jet engines, are reviewed in an introduction to
+     a bibliography of approximately 400 references on the n.easurement
+     of gas temperatures in general. These references, grouped for con¬
+     venience in accordance with instrument types, cover approxin.ately
+     the last 20 years.
+
+
+                           Introduction
+   III the reaction zone of a flame where chemical chang-es are in prog¬
+ress, the individual molecules are in a wide variety of energy states
+that do not follow a Maxwellian distribution. Nevertheless, the ‘‘tem¬
+perature” of such a reacting mixtm-e has a practical significance, when
+considered in the sense of Maxwell’s definition that “the temperature
+of a substance is its thermal state considered with reference to its
+ability to communicate heat to other substances.” Even in the ab¬
+sence of equilibrium, spectroscopic methods may be used in the deter¬
+mination of significant temperatures of individual molecular sjiecies,
+and such temperatures ai‘e useful in studies of reaction mechanism
+and of the establishment of thermodynamic equilibrium. At chemical
+equilibrium, the thermal state of a gas can be expressed quantita¬
+tively on the basis of the kinetic theory. Unless otherwise stated,
+the present discussion of the measurement of gas temperature pre¬
+sumes the existence of such equilil^rium.
+   In its familiar sense, the temperature of a stationary gas in thermo¬
+dynamic equilibrium is a measure of the mean kinetic energy of ran¬
+dom molecular translation. In fact, the mean translational energy
+of random motion in a perfect gas is the l)asis for the thermodynamic
+scale of temperature, and the translational temperature is adequate to
+describe completely the energy state of a quiescent peidect gas.
+   A gas with a directed velocity possesses not only the energy due to
+random molecular motion, but also some additional kinetic energy
+due to the mass motion in a single direction. It has been found con¬
+venient to express the total kinetic energy of both the random and
+the directed motion in terms of a tempei’ature that has come to be
+called more specifically the total temperature. Where confusion might
+exist, the measure of random translational energy is usually designated
+as the static temperature.
+   The significance of the static and total tempei-atures can be illus¬
+trated by considering the acceleration of a perfect gas that is allowed
+to escape adiabatically from a large resei-voir through a nozzle to a
+region of lower pressure. The gas in the reservoir has no directed
+
+                                                                            1
+velocity, so that its static temperature (T^) and total temperature (TJ        ;
+are identical. For the adiabatic transformation of pressure head in
+the reservoir into velocity head in the throat of the nozzle, there is         I
+no change in the total enthalpy, and conservation of energy demands            j
+that the static and total temperatures of the gas in the throat of the
+nozzle be related by the ec|uation
+
+                            T,= T,-V\l2gJC„                              (1)
+
+in which    is the velocity in the throat, g is the acceleration of gravity,   ;
+J is the mechanical ecpiivalent of heat, and all are expressed in con-         j
+sistent units.
+   For actual gases also, adiabatic acceleration (and deceleration) takes
+place at constant enthalpy, and eq 1 holds, provided that thermal
+equilibrium is maintained and that the proper value of the variable
+heat capacity is used. As will be shown, thermal equilibrium is not            |
+maintained during rapid accelerations of some actual gases, and for
+such cases eq 1 holds approximately, but not exactly.
+   When such temperature-sensing devices as thermometers and ther¬
+mocouples, free of errors from conduction and radiation, are immersed
+in streams of high-velocity gas, they attain and indicate a temperature
+{Ti) intermediate between Tt and Tg. This characteristic of the in¬
+strument is frequently specified in terms of its recovery factor (r),                ,
+defined as
+                           r=(T,-Tg)KT,-Ts),                             (2)         j
+The recovery factors of most instruments are essentially independent
+of the operating conditions.
+   In addition to the static and total translational temperatures al¬
+ready discussed, actual gases may possess energy in other forms, each
+of which may be described in terms of still other temperatures. Gases
+of major practical interest contain more than one atom per molecule,
+and thus the rotations and vibrations of the molecules may contribute
+to the total energy. As measures of these two kinds of molecular
+energy, the concepts of rotational and vibrational temperature have
+proved useful. Rotational and vibrational temperatures can be deter¬
+mined from the relative intensities of certain spectral lines.
+   For an actual gas in thermodynamic equilibrium, the total energy is
+partitioned among the various degrees of freedom in definite proportions
+which are invariant so long as equilibrium is maintained. Thus equi-               ' ‘
+partition is said to exist at the equilibrium state. In certain processes      I
+to which gases are subjected in practical applications, equilibrium is         ]
+established only after some finite interval known as the relaxation            j
+time. For example, rotational and vibrational temperatures are of              !
+practical interest in the case of molecules newly formed at high tem¬
+peratures, as in the process of combustion. Such molecules may have
+abnormally high rotational and vibrational temperatures which de¬
+crease as equilibrium is approached.        Since only the translational
+energy, and none of the rotational or vibrational energy, can be
+utilized in driving a turbine or in producing jet thrust, the desirability
+of attaining equipartition within the power plant is obvious.
+   Many problems have arisen in the measurement and control of the
+temperatures of the working media of gas turbines and jet engines.
+Satisfactory solutions to these problems, in the form of practical in¬
+struments, are required for evaluating the performance of power plants
+
+2
+and their constituent parts, and for protecting them against over¬
+heating and overspeeding. Much research effort is being expended
+currently in the development of instruments that are more accurate
+and more rugged, in the perfection of various spectroscopic methods, in
+the extension of the theoretical background, and in the evolution of
+more exact knowledge of the real significance of the measured values.
+   The National Bureau of Standards is participating in this instru¬
+mentation program under sponsorship of the Bureau of Ships and the
+Air Materiel Command. One phase of this activity has been an ex¬
+amination of the literature applicable to this field. This Circiffar was
+prepared in the belief that a list of pertinent references, classified in
+accordance with instrument type, would prove useful to others who are
+interested in the measurement of gas temperature.
+
+
+  Scope and Arrangement of the Bibliography
+   Approximately 400 references to articles on and related to the
+measurement of gas temperature, covering the 20 years prior to
+January 1951, are included. These are classified topically, as shown
+in the table of contents. Within each topical subdivision, the reports
+are in chronological order and, within chronological sections, alpha¬
+betically by author. ‘‘Anonymous” articles are listed at the end of the
+chronological sections.
+   The journal abbreviations used are those employed in Chemical
+Abstracts, except that the abbreviation NACA is used for the National
+Advisory Committee for Aeronautics. Volume numbers are in bold¬
+faced type, and the date of issue is given in cases where page numbers
+do not run consecutively throughout a given volume.
+
+
+                            Bibliography
+                100.    Books, 1936 Through 1950
+Commemorative volume for the fiftieth year of the platinum smelting works o
+   the G. Siebert Company, at Hanau (In German). Verlag G. M. Albertis
+   Hanau, 1931.
+G. Riband, Measurement of temperature. Colin, Paris, 1936.
+W. E. Forsythe, Measurement of radiant energy.       McGraw-Hill, New York,
+   1937.
+E. H. Kennard, Kinetic theory of gases.   McGraw-Hill, New York, 1938.
+B. Lewis and G. von Elbe, Combustion, flames and explosions of gases.  1st ed.
+   Cambridge University Press, London, 1938.
+J. E. Mark and M. J. Martin, The photographic process.    McGraw-Hill, New
+   York, 1939.
+A. H. Wilson, Semi-conductors and metals. The University Press, Cambridge,
+   England, 1939.
+F. Seitz, The modern theory of solids.  McGraw-Hill, New York, 1940.
+R. B. Sosman, The pyrometry of solids and surfaces. Am. Soc. for Metals,
+   Cleveland, 1940.
+W. M. Cohn, The field of extreme temperatures—its measurement and control.
+   Reinhold, New York, 1941.
+T. J. Rhodes, Industrial instruments for measurement and control.    McGraw-
+   Hill, New York, 1941.
+W. P. Wood and J. M. Cork, Pyrometry. 2d ed. McGraw-Hill, New York, 1941.
+Temperature—its measurement and control in science and industry. Am.
+   Inst. Physics, Reinhold, New York, 1941.
+W. H. McAdams, Heat transmission, 2d ed. McGraw-Hill, New York, 1942.
+R. L. Weber, Temperature measurement and control. Blakiston, Philadelphia,
+   1942.
+
+                                                                            3
+L. G. Berg, A. V. Nikolaev, and E. la. Rode, Pvrometrv (In Russian). Akaa.
+  Nauk, 1944.
+D. Faggiani, Techniques of thermal measurement. Libreria Editrice Politec-
+  nica, iSIilan, 1944.
+D. P. Eckman, Principles of industrial process control. Wiley, New York, 1945.
+E. Griffiths, Methods of measuring temperature. Chas. Griffin, London, 1947.
+M. Jakob, Heat transfer. Wiley, New York, 1949.
+Third symposium on combustion, flame, and explosion phenomena.        Williams
+  and Wilkins, Baltimore, 1949.
+D. P. Eckman, Industrial instrumentation.    Wiley, New York, 1950.
+A. Schulze, Metallic materials for the electrical industry. Part III.  Metall-
+  Yerlag, Berlin, 1950.
+
+
+       200.     Periodical Reports, 1930 Through 1950
+                           201. Thermocouples
+
+W. E. Forsvthe, Accurate measurement of high temperatures. J. Am. Ceram.
+   Soc. 12, 780 (1929).
+H. Schmidt, The measurement of gas temperatures at 1,500° C in a radiation
+   field of changing anisotropy. Arch. Eisenhutteinves. 2, 293 (1928-9).
+O. Wolger and F. R. Lorenz, Sources of error in thermoelectric thermometrv.
+   Z. tech. Physik 11, 242 (1930).
+N. P. Bailey, Response of thermocouples.     Mech. Eng. 53, 797 (1931).
+A. Grunwald, Temperature measurement and temperature regulation in the
+   hardening process. Feinmech. d. Prazision 39, 151 (1931).
+M. Parkin and F. Winks, Comparison between the ordinary thermocouple and
+   the suction pyrometer for the measurement of the temperature of flowing gases
+   in glass furnaces. J. Soc. Chem. Ind. (London) 50, 602 (1931).
+H. E. Pearson, Aleasuring temperatures in rotating machinerv. Power 74, 324
+   (Sept. 1931.)
+R. Risch, Temperature measurement of rarefied gases. Z. tech. Phvsik 12,
+   286 (1931).
+A. Schulze, The use of thermocouples at high temperatures. Z. Yer. dent. Ing.
+   75, 731 (1931).
+E. Brim, The heating of a thermometer bv a flowing gas. Compt. rend. 194, 594
+   (1932).
+C. H. Cartwright, Tellurium-bismuth vacuum radiation thermocouple. Rev.
+   Sci. Instruments 3, 73 (1932).
+C. W. Goedeke, Thermoelectric temperature measurements to 2000° C.         Chem.
+   Fabrik 5, 361 (1932).
+O. Feussner, New noble metal thermoelement for very high temperatures.
+   Elektrotech. Z. 54, 155 (1933).
+G. R. Fitterer, New thermocouple for the determination of temperature up to at
+   least 1800° C. Iron Age 131, 396 (1933).
+A. Grunert, Changes in nickel-chromel thermoelements. Chem. Fabrik 6 39    ,
+   (1933).
+Y’. Hessenbruch and \Y. Rohn, High-sensitivity chromium-nickel alloys and their
+   life testing. Elektrowarme 3, 294 (1933).
+Yk F. Roeser and H. T. YYnsel, Reference tables for platinum to platinum-
+  rhodium thermocouples. J. Research Nat. Bur. Standards 10, 275 (1933).
+A. Schulze, Thermoelements at high temperatures. Z. Yer. dent. Ing. 77, 1241
+   (1933).
+Pyrofer, a new thermocouple.      Chem. Age (London) 29, 257 (1933).
+The influence of radiation on thermocouples.     Eng. Joint Research Rept. No.
+   82, 669 (1932-3).
+E. Brim, Distribution of temperature on an insulated cylinder during rapid move¬
+  ment through air.     Compt. rend. 198, 1213 (1934).
+E. 0. Mattocks, New pvrometer for verv hot gases.         Metal Progress 26, 37
+   (1934).
+H. F. Mullikin, Accurate measurement of high gas temperatures. Power 78, 565
+   (1934).
+B. Osann and E. Schroeder, Temperature measurement with wolfram-molybde¬
+  num thermoelements. Arch. Eisenhiittenw. 7, 89 (1933-4).
+S. F^chida and S. Tanabe, High velocity thermocouple for the measurement of
+  true gas temperature. J. Soc. Chem. Ind. (Japan) 37, 552B (1934).
+Temperature measurement of flowing gases. Glass Ind. 15, 154 (1934).
+
+4
+W. A. Gatward, Chromel and aluinel; alloys for thermocouples. Metal Progress
+   37, 31 (1935).
+G. Keinath, Non-metallic thermoelements for extremely high temperatures.
+   Arch. tech. Messen No. 46, 55T (1935).
+H. Klammroth, Chemical studies of silicon carbide heating elements. Elektro-
+   tech. Z. 56, 515 (1935).
+F. T. Barr and R. F. Berger, A radiant convection pyrometer. Ind. Eng. Chem.,
+   Anal. Ed. 8, 393 (1936).
+H. Euler and K. Guthmann, Errors in temperature measurement with thermo¬
+   couples. Arch. Eisenhlittenw. 9, 73 (1935-6).
+G. A. Gaffert, Measuring high steam temperatures. Power Plant Eng. 40, 273
+   (1936).
+J. C. W. Swart, Errors in the measurement of temperature of hot gases. Hot
+   Gas 56, 147 (1936).
+G. R. Fitterer, The Fitterer pyrometer—for measuring liquid steel temperature.
+   Iron Age 140, 1 (July 1937).
+R. Hase, Methods and mistakes in the measurement of gas temperature. Z. Ver.
+   dent. Ing. 81, 571 (1937).
+N. A. Kozdov, Errors in the measurement of the temperature of gases and methods
+   to eliminate them. Sintet. Kauchuk 1936 No. 6, 21.
+D. Quiggle, C. O. Tonberg, and M. R. Fenske, Reliability of common types of
+   thermocouples. Ind. Eng. Chem. 39, 827 (1937).
+W. L. Severinghaus, Reducing radiation errors in gas temperature measurement.
+   Mech. Eng. 59, 334 (1937).
+M. Tanaka and K. Okada, Three-element thermocouple for precision temperature
+   measurement. Electrotech. Lab. (Tokyo), No. 404, 82 (1937).
+G. R. Fitterer, Thermocouples and protection tubes. Metal Progress 34, 403
+   (1938).
+H. Jager, The measurement of gas temperatures. Arch. Warmewirt. 19, 23
+   (1938).
+V. Joukowsky, On the measurement of the temperature of gases flowing at very
+   high speeds. J. Tech. Phys. (USSR) 5, 968 (1938).
+M. R. Mandlekar and H. N. Banerjea, Base metal thermocouples; their charac¬
+   teristics. J. Soc. Chem. Ind. (London) 57, 276 (1938).
+W. Meissner, Measurement of temperature in rapidly flowing gases. Forsch.
+   Gebiete Ingenieurw. 9, 213 (1938).
+A. Schulze, The use of thermoelements at high temperatures. Chem.-Ztg. 63,
+   285, 309 (1938).
+W. Tewes, Errors in temperature measurement in flowing gases because of heat
+   radiation and conduction from the point of measurement. Arch. Warmewirt.
+   19, 189 (1938).
+F. Birch, Thermoelectric measurement of high temperatures in pressure apparatus.
+   Rev. Sci. Instruments 19, 137 (1939).
+C. H. Bosanquet, The wall effect in gas temperature measurement. J. Inst, of
+   Fuel (London), Special Issue 13, 14 (Mar. 1939).
+M. Fishenden and O. Saunders, Errors in gas temperature measurement and their
+   calculation. J. Inst, of Fuel (London) Special Issue 13, 5 (Mar. 1939).
+S. S. Held, The measurement of temperature by thermocouples. Chaleur et
+   Ind. 30, 387 (1939).
+H. F. Mullikin, Gas temperature measurement and the high velocity thermo¬
+   couple. Glass Ind. 3®, 441 (1939).
+G. Rosenthal, Thermo-elements of high sensitivity for radiation measurements.
+   Z. Instrumentenk. 59, 439 (1939).
+A. Schulze, Metallic materials for thermocouples. J. Inst. Fuel (London) Special
+   Issue 13, 541 (Mar. 1939).
+S. S. Stack, Vacuum thermocouples of the radiation type. Gen. Elec. Rev. 43,
+   365 (Aug. 1939).
+Temperature measurement. J. Inst, of Fuel (London), Special Issue 13, (Mar.
+    1939).
+Thermoelements for high temperatures. Z. Ver. deut. Ing. 83, 702 (1939).
+H. H. Berg, Methods for measuring operating temperatures in gas turbines. Z.
+   Ver. deut. Ing. 84, 329 (1940).
+A. I. Dahl, Stability of base-metal thermocouples in air from 800-2200° F. J.
+                                   ,
+   Research Nat. Bur. Standards 34 205 (1940).
+H. Emmons, Theory and application of extended surface thermocouples. J.
+   Franklin Inst. 339, 29 (1940).
+A. Franz, Pressure and temperature measurement in supercharger investigations.
+   NAG A Tech. Memo. No. 953 (1940).
+
+
+    954010—51-2                                                               5
+G. E. Moore and H. W. Webb, Vacuum thermocouple. Rev. Sci. Instruments
+^ 11, 101 (1940).
+W. F. Roeser, Thermoelectric thermometry. J. Applied Rhys. 11, 388 (1940).
+R. Beck, Thermometric time lag. Trans. Am. Soc. Mech. Engrs. 63, 531 (1941).
+A. Blackie, New type of pyrometer for measuring gas temperatures. J. Sci.
+   Instruments 18, 113 (1941).
+E. Eckert, Temperature recording in high-speed gases. NAG A Tech. Memo.
+   No. 983 (1941).
+E. Eckert and 5V. Weise, Temperature of unheated bodies in a high-speed gas
+   stream. NACA Tech. Memo. No. 1000 (1941).
+L. H. Nichols, Gas sampling and temperature measurement in fuel beds. Gas J.
+   (London) 233, 109 (1941).
+E. L. Patton and R. A. Feagan, Method of installing tube-wall thermocouples.
+   Ind. Eng. Ghem., Anal. Ed. 13, 823 (1941).
+V. A. Schwab, Relation between temperature and velocity fields of a gaseous
+   torch. Cornell Aeronaut. Lab. Translation from Zhur. Tekhi. Fiz. (USSR) 2,
+  ^431 (1941).
+W. Tewes, Error in temperature measurements of flowing gases and vapors.
+   Z. tech. Physik. 22, 160 (1941).
+W. Wimmer, Stagnation temperature recording. NACA Tech. Memo. No. 967
+   (1941).
+Thermometry in swift gas currents. Ghem. and Met. Eng. 48, 147 (1941).
+P. Llovd, Thermocouple designs for use in high-speed streams of hot gases.
+   R. A. E. I. C. T. Memo. No. 23 (Mar. 1942).
+W. J. King, Measurement of high temperatures in high-velocity gas streams.
+   Trans. Am. Soc. Mech. Engrs. 65, 421 (1943).
+R. P. Probert, Thermocouples for use in high-speed gas streams. R. A. E.
+   Tech. Note No. Eng. 155 (May 1943).
+R. P. Probert, The radiation errors of thermocouples for use in combustion
+   chambers. R. A. E. Tech. Note No. Eng. 253 (Feb. 1944).
+L. Gurevich, Thermoelectric properties of conductors. J. Phys. (USSR) 9, 477
+   (1945).
+U. C. Ilottel and A. Kalitinsky, Temperature measurements in high-velocity air
+   streams. J. Applied Mechanics 12, A-25 (1945).
+W. H. McAdams, L. A. Nicolai, and J. H. Keenan, Measurements of recovery
+   factors and coefficients of heat transfer in a tube for subsonic flow of air.
+   NAG A Tech. Note No. 985 (1945).
+L. G. Roess and E. N. Dacus, Design and construction of rapid-response thermo¬
+   couples for use as radiation detectors in infrared spectrographs. Rev. Sci.
+   Instruments 16, 164 (1945).
+F. W. Smith and G. C Williams, Measurement of exhaust gas temperatures for a
+   subsonic ram jet.    Jet Propulsion Gombustion Chamber Research, Navy
+   Contract No. a(s)5152 (June 1945).
+L. Bastings, A cold-junction box for thermocouples. J. Sci. Instruments 23,
+   132 (1946).
+G. R. Feeley, Design of thermocouple and thermometer wells. Petroleum Process¬
+   ing 1, 222 (1946).
+G. Fieissner and H. Viebmann, Method for measurement of very small electro¬
+   motive forces through slip rings.   Trans. No. F-TS-483-RE, Air Materiel
+   Command, AAF (Oct. 1946).
+H. Groff, Exhaust gas measurements with thermocouples. Air Materiel Command
+   Trans. No. F-TS-631-RE (1946).
+F. J. Hartwig, Jr., Comparative effectiveness of a convection-type and a radia-
+   tion-tvpe cooling cap on a turbosupercharger. NACA Tech. Note No. 1082
+   (1946).
+G. V. Parmelee and R. G. Huebscher, Shielding of thermocouples from the effects
+   of radiation. Heating, Piping and Air Conditioning 18, 144 (Feb. 1946).
+R. Probert and J. R. Singham, The measurement of gas temperatures in turbine
+   engines. J. Sci. Instruments 23, 72 (1946).
+H. Robinson and M. C. Flanagan, Thermocouple vacuum gage.            Gen. Elec.
+   Rev. 49, 42 (May 1946).
+W. M. Rohsenow, A graphical determination of unshielded thermocouple thermal
+   correction. Trans. Am. Soc. Mech. Engrs. 68, 195 (1946).
+C. T. Weller, Characteristics of thermocouples. Gen. Elec. Rev. 49, 50 (Nov.
+   1946).
+H. J. White and G. L. Gammon, Correlation of mixture-temperature data ob¬
+   tained from bare intake-manifold thermocouples.      NACA Wartime Rept.
+   No. E-273 (1946).
+
+6
+A. W. Brewer, Distant reading electrical air temperature thermometer for use in
+   aircraft. J. Sci. Instruments 34, No. 2, 47 (1947).
+T. Land, Symposium on the contamination of platinum thermocouples. J. Iron
+   Steel Inst. (London) 155, 213 (Feb. 1947).
+A. W. Lawson and R. Fano, Note on the efficiency of radiation shields. Rev.
+   Sci. Instruments 18, 727 (1947).
+W. F. Lindsey, Calibration of three temperature probes and a pressure probe at
+   high speeds. NACA Wartime Rept. No. L-273 (1947).
+S. J. Markowski and E. M. Moffatt, Good design reduces thermocouple errors.
+   SAE Journal 55, 60 (Sept. 1947).
+W. I. Pumphrey, Embrittlement of chromel and alumel thermocouple wires.
+   J. Iron and Steel Inst. (London) 157, 513 (1947).
+W. M. Rohsenow and J. P. Hunsaker, Determination of the thermal correction
+   for a single-shielded thermocouple. Trans. Am. Soc. Mech. Engrs. 69, 699
+   (1947).
+New pyrometer for gas turbines. J. Franklin Inst. 343, 428 (May 1947).
+New pyrometer for gas turbines and jet engines. Product Eng. 18, 140 (May
+   1947).
+Radiation thermocouple. Rev. Sci. Instruments 18, 373 (1947).
+Thermocouple leadwires. Steel 131, 91 (Aug. 1947).
+Thermocouple protecting tubes. Materials and Methods 35, 143 (Apr. 1947).
+Use of protecting tubes and wells. Ceram. Ind. 48, 51 (1947).
+W. L. Bolles, Measurement of gas temperatures by means of thermocouples.
+   Petroleum Refiner 37, 120 (Feb. 1948).
+M. T. Cichelli, Design of temperature-measuring elements. Ind. Eng. Chem. 40,
+   1032 (1948).
+J. E. Farmer, Relation of nozzle-blade and turbine-bucket temperatures to gas
+   temperature in a turbo-jet engine. NACA Res. Memo. No. E7L12 (1948).
+E. F. Fiock and A. I. Dahl, The use of thermocouples in high velocity gas streams.
+   J. Am. Soc. Naval Engrs. 60, 139 (1948).
+Y. B. Kagan and A. N. Bashkirov, Use of the differential thermocouple for kinetic
+   measurements. Izvest. Akad. Nauk. (USSR), Otdel. Tekh. Nauk. No. 3, 349
+   (Mar. 1948).
+L. Malmquist, Temperature measurement in high-velocity gas streams. Trans.
+   Roy. Inst. Technology (Stockholm) No. 15 (1948).
+R. Munch, Instrumentation. Ind. Eng. Chem. 40, 83A (1948).
+W. T. Olson and E. Bernardo, Temperature measurements and combustion effi¬
+   ciency in combustors for gas turbine engines. Trans. Am. Soc. Mech. Engrs.
+   70, 329 (1948).
+P. A. Shchukin and L. V. Pegushina, Wolfram-graphite thermocouple. Zavod-
+                ,
+   skaya Lab. 14 632 (1948).
+W. H. Steinkamp, Fundamentals of pyrometry.            Finish 5, 23 (June 1948).
+H. J. White and Cl. L. Gammon, Correlation of mixture temperature data ob¬
+   tained with bare intake-manifold thermocouples. NACA Wartime Rept. No.
+   E-273 (1948).
+P. Bastien and J. Bleton, Investigations on the measurement of the temperature of
+   liquid steel by means of the Pt/PtRh thermocouple. Rev. Met. 46, 807 (1949).
+C. R. Bingham and C. C. Roberts, Design and application of thermocouples for
+                                     ,
+   specific needs. Instrumentation 4 25 (1949).
+A. I. Dahl and E. F. Fiock, Shielded thermocouples for gas turbines. Trans.
+   Am. Soc. Mech. Engrs. 71, 153 (1949).
+P. G. Ecker, J. Blum, and C. W. Hiatt, A device for the measurement of rotor
+   temperature in the air driven ultracentrifuge. Rev. Sci. Instruments 30, 799
+   (1949).
+G. L. Farrar and A. M. Platt, Some fundamentals of temperature measurement
+   with thermocouples. Petroleum Engr. 31, 5 (Dec. 1949).
+P. B. Fellgett, Dynamic impedance and sensitivity of radiation thermocouples,
+   Proc. Phys. Soc. (London) 63, 351 (June 1949).
+D. L. Goldstein and R. Scherrer, Design and calibration of a total-temperature
+   probe for use at supersonic speeds. NACA Tech. Note No. 1885 (1949).
+K. Guthmann, Temperature measurement of molten metals. Arch. lYch. Messen
+   No. 166, 96T (1949).
+E. M. Moffatt, Methods of minimizing errors in the measurement of high tem¬
+   peratures. Instruments 33, 122 (Feb. 1949).
+M. K. McQuillan, Behavior of platinum platinum-rhodium thermocouples at
+   high temperatures. J. Sci. Instruments 36, 329 (1949).
+C. C. Roberts and C. A. Vogelsang, Some basic concepts of thermoelectric py¬
+   rometry. Peltier and Thomson effects, laws of intermediate temperature, and
+                              ,
+   metals. Instrumentation 4 25 (1949).
+
+
+                                                                                7
+R. Starmer, An investigation of the temperature and velocity distribution in          '
+   the hot jet from jet-propulsion engines. Ministry of Supply (British), National    '
+    Gas Turbine Establishment. Alemo. No.' M50 (Ma}’ 1949).
+W. C. Troy and G. Steven, The tungsten-iridium thermocouple for very high             ,
+   temperatures. Am. Soc. for Metals 17, 21 (Oct. 1949).                              '
+W. R. Wimbrovr, Experimental investigation of temperature recovery factors of         .
+   bodies of revolution at supersonic speeds. NACA Tech. Note No. 1975 (1949).         ,
+J. G. Ziegler and N. B. Nichols, Dynamic accuracy in temperature measurement.
+   Taylor Technology        11 (Autumn 1949); Proc. Instrument Soc. Am. 4, 24         >
+    (1950); Instruments 23, 66 (Jan. 1950).
+New pvrometer for measuring high temperatures in high velocitv gas streams.           ■
+    Mecii. Eng. 69, 239 (1949).                                                       ,
+S. A. Allen and J. Hamm, A p3'rometer for measuring total temperature in low-         '
+   densit\’ gas streams. Trans. Am. Soc. Mech. Engrs. 72, 851 (1950).                 |
+C. R. Barber, The emf-temperature calibration of Pt, 10% RhPt and Pt, 13%             j
+    RhPt thermocouples over the range 0° to 1,760°C. Proc. Phvs. Soc. (London)            I
+   63,492 (1950).
+A. Barthel, Changes in indications of temperature-measuring instruments. Werk-
+   statt u. Betrieb 83, 274 (1950).
+M. W. Carbon, H. J. Kutsch, and G. A. Hawkins, The response of thermocouples
+   to rapid gas temperature changes. Trans. Am. Soc. Mech. Engrs. 72, 655
+   (1950).
+A. I. Dahl, IVIeasurement of high temperatures in gas streams. Petroleum Refiner
+   29, 115 (Mar. 1950).
+A. J. Francescan and E. A. Nitz, Thermocouple junctions are improved b\" arc
+   welding in inert atmospheres. Petroleum Processing 5, 1205 (1950).
+R. Jackson, The measurement of gas temperature b\" thermocouples. Bull.
+                                            ,
+   Brit. Coal Utilization Research Assoc. 14 33 (Feb. 1950).
+F. H. Morgan and W. E. Danforth, Thermocouples of the refractory- metals.
+   J. Applied Phy-s. 21, 112 (1950).
+J, W. Murdock and E. F. Fiock, Measurement of temperatures in high-velocity
+   steam. Trans. Am. Soc. Mech. Engrs. 72, 1155 (1950).
+J. M. Pertierra, Errors in the determination of gas temperatures with thermo¬
+   couples 10, 395 (1950).
+A. Searby-, Split thermocouples. J. Iron and Steel Inst. (London) 164, 36 (1950).
+J. R. St alder, M. W. Rubesin and T. Tendeland, A determination of the laminar-,
+   transitional-, and turbulent-boundary-lay-er recovery factors on a flat plate in
+   supersonic flow. NACA Tech. Note No. 2077 (1950).
+B. Vonnecut, Vortex thermometer for measuring true air temperatures and true
+   air speeds in flight. Rev. Sci. Instruments 21, 136 (1950).
+M. D. Scadron, C. C. Gettleman, and G. J. Pack, Performance of three high-
+   recovery--factor thermocouple probes for room-temperature operation. NACA
+   Research Memo. E50I29 (Dec. 21, 1950).
+Temperature measurement. Electrician 145, 1370 (1950).
+F. W. Jensen and K. Anderson, Temperature gradients and temperatures in
+   carbon black flames. Ind. Eng. Chem. 43, 176 (1951).
+P. R. Tarr, Methods for connection to revolving thermocouples. NACA Research
+   Memo. E50J23a (Jan. 18, 1951).
+H. Shenker, J. Lauritzen, Jr., and R. Corruccini, Reference tables for thermo¬
+   couples. J. Research Nat. Bur. Standards, Circular 508 (to be published).
+
+
+          202. Resistance Thermometers and Thermistors
+
+C. H. Moser, Temperature measurement with the platinum thermometer up to
+                          ,
+   1,100°C. Ann. Phys. 6 852 (1930).
+F. Stablein and J. Hinniiber, On the influence of atmospheres, temperatures, and
+   materials of protecting tubes on the life of platinum elements. Stahl u. Eisen
+   50, 108 (1930).
+A. T. Starr, Lag in thermometers. Phil. Mag. 9, 901 (1930).
+W. T. David, W. Davies, and J. Jordan, Flame temperatures. Phil. Mag. 12         ,
+   1043 (1931).
+C. H. Mevers, Coiled filament resistance thermometers. J. Research Nat. Bur.
+   Standards 9, 807 G932).
+A. Geldback and W. Muller, The influence of the velocity- of a stream of water
+                                                         ,
+   on the behavior of thermometers. Z. Tech. Phy-sik 14 362 (1933).
+B. Lewis and G. von Elbe, Experimental determinations and theoretical calcula
+  tion of flame temperature and explosion pressures. Phil, Mag. 20, 44 (1935)
+                                                                   ,
+W. T. David, Combustion levels in flame gases. Engineering 144 531 (1937).
+
+8
+E    Eckert, Temperature measurements in high-velocitv gases. Z. Ver. deut.
+         ,
+    Ing. 84 813 (1940).
+F. Lieneweg, The indication lag of thermometers. Wiss. VerofTentl. Siemens-
+    Werken 19, 73 (1940).
+H. J. Van der Maas and S. Wynia, Correction on the thermometer reading in an
+   air stream. NACA Tech. Memo. No. 956 (1940).
+W. N. Goodwin, Jr., Response time and lag of a tbermometer element mounted
+                                               ,
+   in a protecting case. Trans. Elec. Eng. 64 665 (1945).
+R. A. Guild, Automatic temperature control for aircraft. Trans. Am. Inst.
+                     ,
+   Elec. Engrs. 64 730 (1945).
+J. C. Johnson, Thermistor technics. Electronic Inds. 4, 74 (Aug. 1945).
+N. P. Millar, Heat flow effects in a resistance tbermometer. Trans. Am. Inst.
+                     ,
+   Elec. Engrs. 64 678 (1945).
+J. E. Tweeddale, Thermistors. Western Elec. Oscillator, 3 (Dec. 1945).
+J. Becker, C. Green, and G. Pearson, Properties and uses of tbermistors—ther¬
+                                                                  ,
+   mally sensitive resistors. Trans. Am. Inst. Elec. Engrs. 65 711 (1946).
+W. R. Ham and C. H. Samans, Effects on electronic transitions on precision
+                              ,
+   thermometry. Science 104 38 (1946).
+D. R. Stull, Application of platinum resistance thermometry to some industrial
+   physiocochemical problems. Ind. Eng. Chem., Anal. Ed. 18, 234 (1946).
+Thermistors detect temperature variations of one-millionth of a degree. Sci.
+                 ,
+   American 175 126 (Sept. 1946).
+H. W. Sibert, Determination of airplane thermometer recovery factors in flight.
+   J. Aeronaut. Sci. 14, 364 (1947).
+F. E. Butler, Thermistors—A new electronic component. Radio News, 49 (Jan.
+   1948); 15 (May 1948); 7 (June 1948).
+W. B. Hales, Thermistors as instruments of thermometry and aiiemometry. Bull.
+                         ,
+   Am. Meteor. Soc. 39 494 (Dec. 1948).
+E. F. G. Herington and R. Handley, Use of thermistors for the automatic record¬
+   ing of small temperature differences. J. Sci. Instruments 35, 434 (1948).
+                                           ,
+High temperature resistors. Engineer 185 505 (1948).
+A. J. Hornfeck, Response characteristics of thermometer elements. Trans. Am.
+                         ,
+   Soc. Mech. Engrs. 71 121 (1949).
+B. I. Pilipchuk, Interpolation formulae of the platinum resistance thermometer
+  and the platinum-rhodium platinum thermocouple. J. Tech. Phvs. (USSR)
+   19,667 (1949).
+W. E. Danforth and F. H. Morgan, Electrical resistance of thoria. Phvs. Rev.
+    ,
+  79 142 (1950).
+A. S. Leah, C. Rounthwaite, and D. Bradley, Some extensions in the use of
+  resistance thermometrv in the studv of gaseous explosions. Phil. Mag. 41,
+  468 (1950).
+
+                     203. Conventional Optical Pyrometry
+
+A. C. Egerton and M. Milford, Optical pvrometrv. Proc. Rov. Soc. (London) 30     ,
+    111 (Dec. 1930).
+P. Rheinlander, Temperature measurement in an oven. Stahl u. Eisen 50, 205
+   (1930).
+                                                          ,
+M. Riband, Temperature of flames. Chaleur et Ind. 11 587 (1930).
+H. C. Hottel and F. P. Broughton, Determination of true temperature and total
+   radiation from luminous gas flames; use of special two-color optical pvrometer.
+   Ind. Eng. Chem., Anal. Ed. 4, 166 (1932); Gas Age 68, 357 (1931).
+H. H. Lurie and G. W. Sherman, Flame tem])eratures of combustil)le gas-oxygen
+                                  ,
+   mixtures. Ind. Eng. Chem. 35 404 (1933).
+F. Blaurock, Measurement of the temperature of liquid iron and steel by optical
+   methods. Arch. Eisenhiittenw. 8, 517 (1934-5).
+H. T. Wensel, D. B. Judd, and W. F. Roeser, Establishment of a scale of color
+                                                      ,
+   temperature. J. Research Nat. Bur. Standards 13 527 (1934).
+R. S. Whipple, Difficulties of measuring the temperature of molten steel. Engi¬
+             ,
+   neering 138 541 (1934).
+R. H. Heilman, Flmissivities of refractorv materials; influence of color.   Mech.
+ ^ Eng. 58, 291 (1936).
+G. Naeser, A new combination color pvrometer with a comparison lamj). Arch.
+                     ,
+   Eisenhiittenw. 9 483 (1936).
+M. Baeyertz, Optical pyrometers.                     ,
+                                    Metal Progress 36 403 (1939).
+F. Benford, Temperature corrections in optical ])vronietrv. J. Optical Soc. Am.
+    ,
+   39 162 (1939).
+                                                              ,
+W. E. Forsythe, Optical pyrometry. J. Applied Phys. 11 408 (1940).
+
+                                                                                9
+C. F. Lucks and H. W. Russell, Fluorescent mercury vapor lamp as a light source
+   for single-point check on optical pyrometers.- J. Optical Soc. Am. 30, 163
+   (1940).
+H. W. Russell, C. F. Lucks and L. G. Turnbull, New two-color optical pyrom¬
+   eter. J. Optical Soc. Am. 30, 248 (1940).
+E. T. Shobert, Combination visual and automatic method of optical pyrometry.
+   Instruments 14, 69 (Mar. 1941).
+M. Alentsev and N. Sobolev, Optical method for determining the detonation
+   temperature of an explosive. Compt. rend. acad. sci. (USSR) 51, 691 (1946).
+C. R. Barber, The design and performance of some commercial optical pyrom¬
+   eters of the disappearing-filament type. J. Iron and Steel Inst. (London)
+   154, 362 (1946).
+T. R. Harrison, Spectral emissivities of oxidized and unoxidized surfaces. Elec.
+   World 125, 112 (Jan. 1946).
+Q. A. Uyehara, Flame-temperature measurements in internal combustion engines;
+   theory, development and calibration of an electro-optical pyrometer. Trans.
+   Am. Soc. Mech. Engrs. 68, 17 (1946).
+Pressure combustion; optical method for measuring temperature of fuels burning
+   under pressure. Automobile Engr. 36, 349 (Aug. 1946).
+J. A. Hall, Influence of smoke and atmospheric absorption on optical pyrometry
+   in steelworks. J. Iron and Steel Inst. (London) 160, 271 (Nov. 1948).
+Instrument design: an optical pyrometer.      Die Casting 6, 28 (Nov. 1948).
+A. Jagersberger, Accuracy of measurement of technical otpical pvrometers.
+   Bull. Ass. Suisse Elect. 40, 179 (April 2, 1949).
+C. R. Barber and E. C. Pyatt, An optical pyrometer employing an image-converter
+   tube for use in the temperature range 350° to 700° C. J. Sci. Instruments
+   27, 4 (1950).
+F. Hoffman, The optical temperature scale and the radiation constants. Z.
+   angew. Physik 2, 88 (1950).
+
+
+               204. Conventional Radiation Pyrometry
+J. Guild, Compensated thermopile for measurements of to tal radiation. J. Sc
+   Instruments 8, 14 (1931).
+W. Liesegang and W. Winkhaus, On the application of temperature-measuring
+   equipment and flue gas analyzers to Siemens-Martins ovens. Stahl u. Eisen
+   51, 497 (1931).
+J. H. Partridge and A. C. Jeffkins, Note on the measurement of temperature of
+   gases in glass melting furnaces. J. Soc. Chem. Ind. (London) 50, 602 (1931).
+J. Strong, Radiation thermopiles. Rev. Sci. Instruments 3, 65 (1932).
+C. Ramsauer, The temperature of an electric arc. Elektrotech. u. Maschinenbau
+   51, 189 (1933).
+K. Stein, Measurement of high temperature. Naturforscher No. 11, 403 (1934).
+B. B. Ray, Radiation pyrometer—use for measurement of surface temperature in
+   rotating parts of electrical machinery. Electrician 116, 783 (1936).
+P. H. Dike, Radiation pyrometers.      Metal Progress 36, 407 (1939).
+Improved radiation pyrometry. J. Optical Soc. Am. 30, 655 (1940).
+T. R. Harrison and W. H. Wannamaker, Improved radiation pyrometry. Rev.
+   Sci. Instruments 12, 20 (1941).
+V. P. Head, Radiation pyrometry in turbosupercharger testing. Trans. Am.
+   Soc. Mech. Engrs. 66, 265 (1944).
+T. R. Harrison, Industrial use of radiation pyrometers under non-black body
+   conditions. J. Optical Soc. Am. 35, 708 (1945).
+T. R. Harrison, The significance of emittance in radiation pyrometrv. J. Optical
+   Soc. Am. 35, 706 (1945).
+L. Harris, Rapid response thermopiles. J. Optical Soc. Am. 36, 597 (1946).
+T. R. Harrison, Total emissivities of oxidized and unoxidized surfaces. Elec.
+ ^ World 125, 104 (1946).
+E. M. Yard, Flame radiation measuring instrument; efficiency of open hearth
+   furnace checked. Electronics 19, 102 (Nov. 1946).
+L. M. K. Boelter, R. Bromberg, and J. T. Gier, An investigation of aircraft
+   heaters. XV. The emissivitv of several materials. NACA Wartime Rept.
+   No. W-19 (1947).
+L. M. K. Boelter, E. R. Dempster, R. Bromberg, and J. T. Gier, An investiga¬
+   tion of aircraft heaters. XXVI. Development of a sensitive plated-type
+   thermopile for measuring radiation. N^ACA Tech. Note No. 1450 (1948).
+S. S. Penner, Mass emissivity of powder gases in solid fuel rockets. Allegany
+   Ballistics Lab. J. Applied Phys. 19, 278 (1948).
+
+10
+W. Finklenburg, Conditions for blackbody radiation of gases. J. Optical Soc.
+   Am. 39, 185 (1949).
+J. C. Monzon and C. A. Dyer, Low-temperature radiation pvrometry in industry.
+   J. Optical Soc. Am. 39, 203 (1949).
+H. G. Wolf hard and W. G. Parker, Temperature measurements of flames con¬
+   taining incandescent particles. Proc. Pliys. Soc. (London) 62, 523 (1949).
+
+                       205. Spectroscopic Methods
+                                 205.1 Line Reversal
+
+ E. Griffiths and J. H. Awberry, Measurement of flame temperatures. Proc.
+    Roy. Soc. (London) 12, 401 (i929).
+ H. Schmidt, Optical temperature measurement in colored flames. Stahl u.
+    Eisen 50, 106 (1930).
+ G. W. Jones, B. Lewis, J. B. Friauf, and G. St. J. Perrott, Flame temperatures of
+    hydrocarbon gases. J. Am. Chem. Soc. 53, 869 (1931).
+ A. E. Hershey and R. F. Patou, Flame temperatures in an internal combustion
+   engine, measured bv the spectral line reversal method. Univ. Ill. Bull. 262
+    (1933).
+E. F. Richter, Temperature measurement in an alternating current carbon arc.
+    Z. Physik 81, 539 (1933).
+W. T. David, Sodium line-reversal method of determining flame temperatures.
+    Engineer 138, 475 (1934).
+H. C. Hottel and V. C. Smith, Radiation from non-luminous flames. Trans.
+    Am. Soc. Mech. Engrs. 57, 463 (1935).
+ M. J. Brevoort, Combustion engine temperatures by sodium line-reversal method.
+    Rev. Sci. Instruments 7, 342 (1936).
+A. E. Hershey, Flame radiation and temperature measurement of an internal
+   combustion engine. Trans. Am. Soc. Mech. Engrs. 58, 195 (1936).
+H. J. Hubner, Temperature measurement by a method of reversed lines. Ann,
+   Physik 33, 52 (1938).
+A. N. J. van de Poll and T. Westerdijk, Temperature of hydrocarbon flames.
+   Comp. rend. 209, 158 (1939).
+U. Yosida, On the sodium line reversal method of determining the temperature
+   in a gasoline engine. Rept. Aeronaut. Research Inst., Tokyo Imp. Univ. 14,
+    195 (1939).
+W. T. David, Temperature of flame gases. Discussion of the sodium line re¬
+   versal method of measurement. Engineering 149, 241 (1940).
+B. Lewis and G. von Elbe, Flame temperature. J. Applied Phys. 11, 698 (1940).
+W. T. David, Measurement of flame gas temperatures. Engineer (London) 172,
+   186 (1941).
+G. Rosenthall, Measurement of high temperatures by the sodium line reversal
+   method. Arch. tech. Messen No. 127, T2-3 (1942).
+F. W. Smith and G. C. Williams, Measurement of exhaust-gas temperature for
+   a subsonic ramjet. Mass. Inst. Tech. Report, Navy Contract Navord a(s)5152
+   (1945).
+A. C. Collard, Method of coloring flames with salts. Rev. Sci. Instruments 18,
+   451 (1947).
+D. H. Jacobs and S. Scholnick, Absorption-emission pyrometer. North American
+   Aviation, Inc. (Jan 21, 1947 and July 31, 1947).
+H. M. Strong, F. P. Bundy, and A. B. Gregg, Measurement of gas tempera¬
+  tures in the exhaust flames of rocket motors by spectroscopic methods. Phys.
+   Rev. 74, 1221 (1948).
+S. S. Penner, Optical methods for the determination of flame temperatures.
+   Am. J. Phys. 17, 491 (1949).
+N. N. Sobolev, Measurement of flame temperatures by atomic spectral lines.
+  J. Exptl. Theoret. Phys. (USSR) 19, 25 (1949).
+H. M. Strong, The measurement of temperature in complex flame structures
+  by the sodium line reversal method. General Elect. Hermes Report TUI-
+  2000A (Aug. 1949).
+P. Barret, Measurement of flame temperatures. Pubs. sci. et tech., rninistere air
+   (France), Notes tech. No. 33 (1950).
+
+                         205.2 Band and Line Spectra
+L. R. Roller, High-temperature control; photoelectric-tube pvrometrv.        Ind.
+  Eng. Chem. 23, 1379 (1931).
+                                                     ,
+G. Riband, Optical pyrornetry. Rev. d’Opticpie 10 169 (1931).
+
+                                                                              11
+Y. Godron, True temperature of a luminous flame by Kurlbaum's method.
+   Rev. d’Optique 15, 56 (1936).
+G. F. Hubiiig, Portable blocking-laver photocell pyrometer. J. Optical Soc.
+   Am. 36, 260 (1936).
+H. P. Knauss and M. S. McCay, Temperature determinations from band spectral
+   data. Phys. Rev. 52, 1143 (1937).
+K. Guthmann, Determination of high temperatures. Arch. Warmewirt 18,
+   49 (1938).
+P. Xeubert, Measurement of temperatures by photographing objects on plates
+   sensitive to infra-red, by their own radiation. Arch. Warmewirt 19, 29 (1938).
+B. M. Larsen and W. E. Shenk, Temperature with blocking layer photo-cells.
+   J. Applied Phys. 11, 555 (1940).
+H. Brinkman, Measurement of high temperatures in gases from their emission
+   spectra. Xederlandsch Tydschrift voor X’atuurkunde 7, 65 (1940).
+W. Fischer, Determinations of surface temperatures by infrared photography.
+   Phektrowarme 11, 65 (1941).
+J. T. M. Malpica, Blocking laver cell color temperature pyrometer. Gen. Elec.
+   Rev. 44, 439 (Aug. 1941).‘
+M. E. Fogle, Temperature measurement and control with solid photoelectric
+   cells. Trans. Ellectrochem. Soc. 83, 181 (1943).
+D. J. Price and H. Lowery, Emissivity characteristics of hot metals with special
+   reference to the infrared. J. Iron Steel Inst. (London) 149, 523 (1944).
+F. W. Smith and G. C. Williams, Measurement of exhaust gas temperatures for
+   a subsonic ramjet.     M. 1. T. X^’avy X"o. a(s)5152, (June 1945).
+H. T. Wrobel and II. H. Chamberlain, Photometric ecpiipment for blocking-layer
+   light sensitive cells. Gen. Elec. Rev. 49, 25 (Apr. 1946).
+J. A. Curcio and D. V. Estes, A photoelectric pyrometer for the measurement of
+   luminous flame temperatures. X"ACA Research Memo. X^o. X-3319 (July 14,
+   1948).
+S. S. Penner, Radiation from rocket flames and its effect on rocket performance.
+   Am. J. Physics 16, 475 (1948).
+J. Kreuzer, InvestigatioTi of emission of exhaust ga^^es in the near infrared between
+   1 and 3 microns. Air Technical Intelligence X’o. 18949 (1948).
+J. W. Andersen and R. S. P'ein, Measurements of normal burning velocities and
+   flame teinperatures of Bunsen flames. J. Chem. Phys. 17, 1268 (1949).
+I. Bredt, Spectroscopic methods for the determination of the temperatures and
+   velocities of high-temperature high-velocitv combustion gases. Weltraurnfahrt
+   Xo. 2, 2 (1949).
+R. C. Xelson, Direct recording of spectra in the region 1.2 microns to 3 microns
+   using the lead sulfide photo-conductive cells. J. Optical Soc. Am. 39, 68 (1949).
+S. Pakswer, Lead sulfide photo-conductive cells. Electronics 22, 111 (May 1949).
+S. Silverman, Determinations of dame temperatures bv infrared radiation.
+   J. Optical Soc. Am. 39, 275 (1949).
+D. E. Williamson, Infra-red interference filter used in calibration. J. Opt. Soc.
+   Am. 39, 613 (1949).
+R. Vichnievsky and G. Monnot, Combustion studies by means of photo-electric
+   cells.  Rev. inst. franc, petrole 4, 130 (1949).
+M. Grossman, W. S. Tandler, and R. H. Tourin, Infrared monochromatic radia¬
+   tion method. A. F. Tech. Rept. Xo. 6064 (May 1950).
+C. Kentv and W. L. Karash, X-rav determination of Hg-arc temperature. Phvs.
+   Rev. 78, 625 (1950).
+
+
+             206. Pneumatic or Thermodynamic Methods
+
+M. H. Cassan, Pyrometer density-meter for gas. J. usines gaz. 53, 527 (1929).
+IE Schmick, Determination of gas temperatures bv means of pressure differences.
+    Z. tech. Physik 10, 146 (1929).
+M. Radall and B. Long!in. Determination of density differences by the flotation
+   temperature method. Ind. Eng. Chem. Anal. Ed. 11, 44 (1939).
+INI. Mcllvaine, Temperature determinations in orifice meter runs. Petroleum
+    Refiner 24, 153 (Xov. 1945).
+X. Matz and R. S. Cesaro, Pressure-sensitive system for gas-temperature control.
+    XL\CA Research Memo. E8C04 (1948).
+D. W. Moore, Jr., A pneumatic method for measuring high-temperature gases.
+    Aeronaut. Eng. Rev. 7, 30 (May 1948).
+C. S. L. Robinson, Flow of a compressible fluid through a series of identical
+   orifices. J. Applied Mechanics, 308 (Dec. 1948).
+
+12
+J. A. Clark, An analysis and experimental investigation of a method for de¬
+   termining the thermodynamic temperature of high-velocity combustion gases.
+   S. M. Thesis, Dept, of Mechanical Engineering, MIT (May 1949).
+P. L. Blackshear, Sonic-flow-orifice temperature probe for high-gas-temperature
+   measurements. NACA Tech. Note No. 2617 (1950).
+R. S. Cesaro, R. J. Koenig, and G. J. Pack. Experimental analyses of a pressure-
+   sensitive system for sensing gas temperature. NACA Tech. Note No. 2043
+   (1950).
+W. A. Wildhack, A versatile pneumatic instrument based on critical flow. Rev.
+   Sci. Instruments 21, 25 (1950).
+
+
+                         207, Indicating Paints
+
+K. Leist and E. Knornschild, Temperature measurements of high-speed machine
+  parts. Jahrb. Luftfahrtforschung 2, 289 (1937).
+F. Penzig, Temperature-indicating paints. NACA Tech. Memo. No. 905 (1939).
+Temperature-indicating paints. Aircraft Eng. 11, 385 (1939).
+Temperature-sensitive colors; paints which are marketed under the name Thermo¬
+  color. Automotive Ind. 80, 190 (Feb. 1939).
+Temperature-indicating paints; Thermidix. Engineering 152, 416 (1941).
+K. Guthmann, Paints and color pencils for the measurement of temperatures
+  between 40° and 650° C. Stahl u. Eisen 62, 477 (1942).
+E. Brummer, Temperature-measuring pigments. Chem. Zentr. 2, 1826 (1943).
+L. C. Tyte, Temperature-indicating paints. Proc. Inst. Mech. Engrs. (London)
+  152, 226 (1945).
+Thermocolor paints. I. G. Farbenindustrie, Oppau, HM Stationery Office,
+  London, Combined Intelligence Objectives Sub-Corn., CIOS XXVII (1949).
+F. W. Frolich, Temperature control with temperature-indicating substances.
+  Werkstatt u. Betrieb 83, 275 (1950).
+F. Urbach, Thermography. J, Phot. Soc. Am. 90, 109 (July 1950).
+
+
+                           208. Miscellaneous
+L. Muller, Melting points of platinum alloys. Ann. Physik 7, 9 (Oct. 23, 1930).
+C. L. Utterback, Platinum contamination of palladium in palladium point
+  determinations. Rev. Sci. Instruments 1, 39 (1930).
+E. Horn, M. Polanyi, and H. Suttler, Sodium vapor flames. Z. phys. chem. 17,
+  220 (1932).
+R. B. Kennard, Optical method for measuring temperature distribution and con¬
+   vective heat transfer. J. Research Nat. Bur. Standards 8, 787 (1932).
+T. Mori, The measurement of high temperature. J. Fuel Soc. Japan 11, 1748
+   (1932).
+E. Schmidt, Temperature distribution in the vicinity of radiating objects by
+  schlieren photography. Forsch. Gebiete Ingenieurw A3, 181 (1932).
+B. Lewis, H. Seamen, and G. W. Jones. Experimental determination of the flame
+  temperatures of complex mixtures of combustible gases and a method for cal¬
+  culating them. J. Franklin Inst. 215, 149 (1933).
+A. Shirodkar, Measurement of temperature of a coal-gas flame by alpha particle
+  method. Phil. Mag. 15, 426 (1933).
+M. Steenbeck and A. von Engel. Gas and flame temperature measurement.
+  Arch. tech. Messen No. 27, 115T (1933).
+Industrial measurement of temperature; conditions which determine the choice of
+  instruments. Chem. Age (London) 28, 381 (1933).
+                                      ,
+Pyrometer economies. Electrician 111 182 (1933).
+A. Cotton, Temperature measurement and pyrometers. Heat Treating and
+   Forging 21, 193 (1935).
+A. Schulze, Electric resistance metals. Geisserei 22, 312 (1935).
+F. Fairbrother and J. L. Tuck, Photoelectric measurement of the absorption of
+  sodium re.sonance radiation. Trans. Faraday Soc. 32, 624 (1936).
+M. Pirani and R. Rompe. Determination of the temperature of a gas. Trans.
+   Electrochem. Soc. 69, 417 (1936).
+H. Pfriem, Measurement of rapidly changing temperatures. Forsch. Gebiete
+  Ingenieurw 7, 85 (1936).
+L. A. Ramdas and Y. S. Paranjpe, An interferometric method of measuring tem¬
+  peratures and temperature gradients very close to a hot surface. Current
+  Sci. (India) 4, 642 (1936).
+The present status of pyrometry. J. usines gaz 60, 81 (1936).
+
+                                                                             13
+ [Measuring gas temperatures; a resume of the symposium of the Institute of Fuel.
+     Gas J. (London) 224, 775 (1938).
+ J. G. Bennett and M. Pirani, Temperature of gas. Its meaning and measurement.
+     J. Inst. Fuel 12, S-1 (1939).
+ G. Bruni, The precise concept of temperature. Chem. ind. agr. biol. 15, 727
+     (1939).
+ J. S. [Marsh, Temperature measurement and control; report of symposium.
+     Metal Progress 36, 731 (1939).
+ Symposium on temperature; its measurement and control in science. Glass Ind.
+   ‘^0, 439 (1939).
+ C. O. Fairchild, Pvrometrv; as it was in 1915; as it is in 1940.     [Metal Progress
+    37, 287 (1940).
+ E. Eckert and O. Drewitz, Calculation of the temperature field in the laminary
+    boundary of an unheated body exposed to high-speed flow. J. Roy. Aeronaut.
+    Soc. 46, 341 (Oct. 1942).
+ C. O. Fairchild, Pitfalls of temperature measurement. Instruments 15, 498
+     (1942).
+ X. R. Tawde and H. A. L^nyala, Temperature determinations in theory and in
+    practice. J. Uniy. Bombay 11, 166 (X’oy. 1942).
+ A. S. Leah, The photographic determination of flame temperatures in closed-yessel
+    explosions.   Phil. [\Iag. 34, 795 (1943).
+ N. P. Bailey, The thermodynamics of air at high yelocities*. J. Aeronaut. Sci. 11        ,
+    227 (1944).                /                    ^
+ P. S. Myers and O. A. Uyehara, Flame-tempefature measurements—electronic
+    solution of the temperature equations. SAE^Quart.'Trans. 1, 592 (1947).
+P. Proisy and J. Gaueit, [Measurement of color temperature by the method of
+    rotary dispersion. Rey. Opt. (Theor. Instrum.) 26, 1 (1947).
+W. X. Goodwin, Jr., Thermal problems relating to measuring and control devices.
+    Weston Engineering X^otes 2, X'o. 6 (Dec. 1947); 3, X"os. 2, 4 (Apr. 1948).
+R. S. Hutton aiid M. Pirani, High temperatures: their production, measurement
+    and use.    Research 1, 204 (1948).
+C. A. H. Jahn, Platinum metals.        [Metal Inds. (London) 72,^183 (1948).
+V. L. Parsegian, Pyrometry for the ceramic industries.        Am. Ceram. Soc. Bull.
+    27, 1 (1948).
+R. H. Sayage, Poisoning of platinum catalysts at high temperatures. J. Chem.
+    Phys. 16, 237 (1948).
+J. B. Garrison and A. W. Lawson. An absolute noise thermometer for high tem¬
+    peratures and high pressures. Rey. Sei['‘Ittstruments 20, 785 (1949).
+M. W. Johns, Pyrometry and tempefature control. ^"Gan. Metals Met. IndB.''12,
+    20 (Xoy. 19490.                                     A ‘                     ,
+D. G. Marlow, C. R. Xisewanger, and W. X’. Cady, A method of instantaneous
+   measurement of yelocity and temperature in'high-speed'flow. J. Applied Phys.
+   20, 771 (1949). •         ^                                                    ‘
+R. Mayorcas, Gas temperature measurement above 1500° C. J. Inst. 'Fuel 22,
+   251 (1949).
+I. Taback, Response of pressure-measuring systems to oscillating pressures.
+    XACA Tech. Xote Xo. 1819 (1949).
+A. I. Dahl and E. F. Flock, Response characteristics of temperature-sensing ele¬
+   ments for use in the control of jet engines. J. Research Xat. Bur. Standards
+   45, 292 (1950).
+P. Hartman and A. Winter, The equation of heat conduction. Am.’J. Mathe¬
+   matics 72, 367 (1950).
+R. J. Koenig and R. S. Cesaro, Inyestigation of spark-oyer yoltage-density relation
+   for gas temperature sensing. XACA Tech. Xote Xo. 2090 (1950).
+
+
+
+
+14                                               U. S. GOVERNMENT PRINTING OFFICE: 1951
+1   '■           '
+         I
+
+
+
+
+             I
+
+
+
+
+                 I
+

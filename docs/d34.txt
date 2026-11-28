@@ -1,0 +1,151 @@
+CRS INSIGHT
+
+
+The FY2016 Continuing Resolution (H.R. 719)
+September 25, 2015 (IN10148)
+
+|
+
+|
+
+Jessica Tollestrup, Analyst on Congress and the Legislative Process (jtollestrup@crs.loc.gov, 7-0941)
+
+Funding for most federal government departments and agencies is provided in annual appropriations acts. When one or
+more regular appropriations acts have not been enacted by the beginning of the fiscal year (October 1), temporary
+funding to continue the operations of the federal government is typically provided in a continuing appropriations act
+(often referred to as a "continuing resolution" or CR).
+
+No regular appropriations acts for FY2016 have been enacted, or are expected to be enacted, by October 1.
+
+On September 22, Senate Majority Leader Mitch McConnell offered an amendment in the nature of a substitute
+(S.Amdt. 2669) that would provide temporary FY2016 continuing appropriations through December 11, 2015. This
+amendment was offered to an unrelated measure that was pending before the Senate (Hire More Heroes Act of 2015;
+H.J.Res 61). On September 24, the Senate did not achieve the necessary three-fifths vote to invoke cloture on H.J.Res.
+61, 47-52. Subsequently, Majority Leader McConnell made a motion to consider an alternate Senate amendment
+(S.Amdt. 2689) to provide temporary FY2016 continuing appropriations through December 11 in the form of a further
+Senate amendment to a different, unrelated measure pending before the Senate (TSA Office of Inspection
+Accountability Act of 2015, H.R. 719).
+
+As offered, the CR would generally provide budget authority for projects and activities through a formula that
+references the purposes and amounts in the previous fiscal year's regular appropriations acts (Divisions A-K of the
+FY2015 Consolidated and Further Continuing Appropriations Act, P.L. 113-235; and Department of Homeland
+Security Appropriations Act, 2015, P.L. 114-4), with some exceptions.
+
+The CR covers all 12 regular appropriations acts funded therein. The funding in the CR is provided under the same
+authority and conditions, and to the same extent and manner, as was provided in the referenced FY2015 appropriations
+acts (Sections 101, 103, and 104). In addition, many of the FY2015 provisions that stipulated or otherwise placed limits
+on agency authorities during that fiscal year would also apply to the FY2016 funds provided by the CR (Section 104).
+
+Projects and activities covered by the CR would be funded at the rate they were funded in the FY2015 Consolidated
+ Act, minus an across-the-board reduction of less than 1% (0.2108%) (Section 101[b]). This percentage reduction would
+ also apply to FY2016 advance appropriations that were previously enacted (Section 115). It would not apply to funds in
+ the CR designated as Overseas Contingency Operations/Global War on Terrorism, disaster relief (Section 114[b][1]), or
+ an emergency (Section 135). The reduction also does not apply to certain funds in the Social Security Administration—
+Limitation on Administrative Expenses account for continuing disability reviews and redeterminations (Section 114[b]
+[2]) or the Centers for Medicare and Medicaid Services—Health Care Fraud and Abuse Control account (Section 114[b]
+[3]). For entitlement and other mandatory spending that is funded through appropriations acts, the CR provides funding
+ to maintain program levels under current law (Section 111).
+
+According to the Congressional Budget Office, on an annualized basis, the CR provides about $1,016.582 billion in
+budget authority for FY2016 that is subject to the statutory limits on discretionary spending. A total of $83.380 billion
+in additional spending is designated or otherwise provided so as to be effectively exempt from the statutory
+ discretionary spending limits. The vast majority of this spending is designated as for Overseas Contingency
+ Operations/Global War on Terrorism ($74.758 billion). It also includes an additional $700 million in emergency-
+designated spending for wildfire suppression. The total appropriations in the CR are $1,099.962 billion in annualized
+budget authority.
+
+The CR enumerates certain exceptions to the purposes, amount of funds, or other authorities that would be made
+available through its formula. Such exceptions are referred to as "anomalies." The CR also contains provisions that
+would extend expiring statutory provisions in other laws or make other changes to existing law. For information about
+these provisions, please contact the relevant CRS expert listed below.
+
+Table 1. Selected CRS Appropriations Experts
+
+                                                                 CRS Expert Name,
+                                                    CR           Phone Number, and
+  Appropriations Title     Topic                  Section               Email
+ Agriculture, Rural        Commodity             116          Randy Aussenberg, 7-
+ Development, Food         Assistance                         8641,
+ and Drug                  Program                             raussenberg@crs.loc.gov
+ Administration, and
+ Related Agencies
+                           Rural Housing         117          Maggie McCarty, 7-
+                                                              2163,
+                                                               mmccarty@crs.loc.gov
+ Commerce, Justice,        Department of         118          Harold F. Upton, 7-
+ Science, and Related      Commerce—                          2264,
+ Agencies                  National Oceanic                    hupton@crs.loc.gov
+                           and Atmospheric
+                           Administration
+                           Department of         119          Nathan James, 7-0264,
+                           Justice—United                     njames@crs.loc.gov
+                           States Marshals
+                           Service
+                           Science Agencies—     120          Daniel Morgan, 7-5849,
+                           National                           dmorgan@crs.loc.gov
+                           Aeronautic and
+                           Space
+                           Administration
+                           Broadband             121          Lennard G. Kruger, 7-
+                           Technology                         7070,
+                           Opportunities                       lkruger@crs.loc.gov
+                           Program
+ Department of Defense                           122          Pat Towell, 7-2122,
+                                                              ptowell@crs.loc.gov
+ Energy and Water                                123          Mark Holt, 7-1704,
+ Development and                                              mholt@crs.loc.gov
+ Related Agencies
+ Financial Services and                          124-128      Baird Webel, 7-0652,
+ General Government                                            bwebel@crs.loc.gov
+ Department of                                   129-133      William L. Painter, 7-
+ Homeland Security                                            3335,
+                                                               wpainter@crs.loc.gov
+ Departments of the                              134-138      Carol Hardy Vincent, 7-
+ Interior, Environment,                                       8651,
+ and Related Agencies                                         chvincent@crs.loc.gov
+ Departments of Labor, Department of             139          Sarah A. Lister, 7-7320,
+ Health and Human       Health and Human                      slister@crs.loc.gov
+ Services, and          Services (HHS)—
+ Education, and Related Centers for Disease
+ Agencies               Control and
+                        Prevention
+                        Department of            140          Jeffrey J. Kuenzi, 7-
+                        Education (ED)—                       8645,
+                        Highly Qualified                       jkuenzi@crs.loc.gov
+                        Teachers
+                        HHS—State                141          Alison Mitchell, 7-0152,
+                        Children's Health                     amitchell@crs.loc.gov
+                        Insurance Program
+                        ED—National              142          Alexandra Hegji, 7-
+                        Advisory                              8384,
+                        Committee on                           adhegji@crs.loc.gov
+                        Institutional
+                        Quality and
+                        Integrity
+ Legislative Branch                              143          Ida A. Brudnick, 7-6460,
+                                                               ibrudnick@crs.loc.gov
+ Military Construction     Veterans Affairs      144-146      Sidath Viranga
+ and Veterans Affairs,                                         Panangala, 7-0623,
+ and Related Agencies                                          spanangala@crs.loc.gov
+ Department of State,      International         147          Alex Tiersky, 7-7367,
+ Foreign Operations,        Religious Freedom                  atiersky@crs.loc.gov
+ and Related Programs
+                           Ukraine assistance    148          Susan Epstein, 7-6678,
+                                                              sepstein@crs.loc.gov;
+
+                                                              Marian Lawson, 7-4475,
+                                                               mlawson@crs.loc.gov
+                           Public Diplomacy  149              Matthew Weed, 7-4589,
+                           Commission                          mweed@crs.loc.gov
+ Transportation,           Department of     150              Maggie McCarty, 7-
+ Housing and Urban         Housing and Urban                  2163,
+ Development, and          Development                         mmccarty@crs.loc.gov
+ Related Agencies
+
+For more information on continuing resolutions, including historical data on their duration and frequency of enactment,
+see CRS Report R42647, Continuing Resolutions: Overview of Components and Recent Practices, by Jessica
+Tollestrup.
+
+For more information about the FY2016 appropriations process, see CRS Report R44062, Congressional Action on
+FY2016 Appropriations Measures, by Jessica Tollestrup.
+

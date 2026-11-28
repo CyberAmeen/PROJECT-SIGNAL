@@ -1,0 +1,795 @@
+U.S. Department of Agriculture
+Animal and Plant Health Inspection Service
+Wildlife Services
+
+
+
+
+     Historic document – Content may not reflect
+    current scientific research, policies or practices.
+HUMAN RELATED MORTALITY OF BIRDS
+IN THE UNITED STATES
+
+By Richard C. Banks
+
+
+
+
+                      UNITED STATES DEPARTMENT OF THE INTERIOR
+                                            FISH AND WILDLIFE SERVICE
+                                     Special Scientific Report   — Wildlife No. 215
+                                                     Washington, D.C.      •   1979
+
+              ^Wl^'
+              Human Related Mortality of Birds in the United States
+
+                                                             by
+
+
+                                                    Richard C. Banks
+
+
+                                            U.S. Fish and Wildlife Service
+                                        National Fish and Wildlife Laboratory
+                                         National Museum of Natural History
+                                               Washington, D.C. 20560
+
+
+
+                                                         Abstract
+
+               Modem man serves as both a direct and an indirect cause of the death of birds. In the early
+             1970's, human activity was responsible for the death of approximately 196 million birds per year,
+             or about 1.9% of the wild birds of the continental United States that died each year.
+               Hunting was the largest direct mortality factor and accounted for about 61% of human related
+             bird deaths. Control or prevention of avian depredations took about 1% of the total, and all re-
+             search and propagation about 0.5%. Collision with man-made objects was the greatest indirect
+             human cause of avian deaths, accounting for about 32% of the human related deaths. Pollution
+             and poisoning caused the death of about 2% of the total.
+               A relatively few speciqs account for most of this mortality but continue to maintain large,
+             harvestable populations, suggesting that the numbers of most bird species are essentially unaf-
+             fected by the human activities discussed. Other activities of man that do not necessarily result in
+             the death of birds but rather reduce reproductive potential are more likely to have long-term
+             effects on avian populations.                                 \
+
+
+
+
+  The causes of avian mortality are numerous. Such                  Civilized man, at least in recent years, has taken a
+natural factors as predation by other wild animals, dis-          place as an agent in avian mortality. Despite the
+ease, severe weather, accident, and even old age,                 opportunity for philosophical harangue as to the "nat-
+served for eons as agents controlling the size of bird            uralness" of man as a predator, for the purposes of this
+populations. Mortality caused by these factors, al-               paper I consider modern civilized man as a non-natural
+though difficult to assess, is considered by ecologists           source of avian mortality. Modern man serves as both
+and biologists interested in life history studies and             a direct and an indirect source of mortality. Directly,
+population dynamics.                                              he kills wild birds for food, sport, protection of crops
+  A report by the American Ornithologists' Union                  and health, and a variety of other reasons. Indirectly,
+(1975) presents figures leading to estimates of a total           he places deadly obstacles in flight paths, spreads oil
+breeding season bird population in the United States              on waters, and disseminates poisons or agents of
+(exclusive of Alaska and Hawaii) of nearly 10 billion,            disease. Figures provided in this paper suggest that
+which is probably doubled to 20 billion with the addi-            approximately 1.9% of the normal avian mortality
+tion of young in the autumn. If the total breeding pop-           results directly or indirectly     from human activities.
+ulation remains stable from year to year, it follows              The various activities of man that result in a lack of
+that some 10 billion birds must succumb to one or                 productivity of birds, such as destruction of habitat
+another mortality factor each year. In most bird                  and pollution of the environment, are not considered
+species, the highest mortality takes place in the first           here as mortality factors.
+few months of life; seldom do more than one-third of                Contrary to the situation in natural mortality, man's
+the passerine birds hatched in a given year become                conscience makes it possible to assess, if only in gen-
+part of a later breeding population (Lack 1954:85).               eral terms, the extent of direct human related avian
+Annual adult mortality may be as great as 60% (Lack               mortality. Efforts to protect and manage birds have
+1954:106).                                                        resulted in a system of allotting permits and licenses
+for their controlled killing. Reports required under the     basis for estimation, as does mortality of birds not
+permit and license system provide a reasonably accu-         legally protected and therefore not subject to report.
+rate estimate of the number of birds killed. Observers of
+catastrophic events leading to mass deaths have pro-
+                                                                                    Hunting
+vided a much less accurate measure of indirect
+mortality.
+                                                               Hunting, without question, causes the most direct
+  Even the best data available are not in most in-
+                                                             human related mortality of birds. During much of
+stances sufficiently specific to permit an assessment of
+                                                             man's history, hunting might have been classified with
+mortality among individual species of birds. Figures on
+                                                             other predatory activity directed toward birds, but
+human related mortality have relatively little meaning
+                                                             now it certainly deserves standing as a mortality
+without data on total population size and on other
+                                                             factor in its own right. Although the impact on total
+mortality factors. The effect of human induced mortal-
+                                                             bird populations may be much greater now than in the
+ity on a population, whether of a species or a class,
+                                                             time of lower populations of more primitive man, the
+cannot be evaluated properly without considering the
+                                                             number of species affected has probably decreased. In
+extent to which other human factors have resulted in
+                                                             the United States, legal hunting is restricted now to
+a perhaps artificial increase in the population, either
+                                                             birds in five orders (Anseriformes, Charadriiformes,
+facilitating, permitting, or necessitating a subsequent
+                                                             Gruiformes, Columbiformes, and Galliformes) and one
+reduction of the population (see Murton 1972). Nor can
+                                                             additional family (Corvidae). In 1970 there were 14.3
+one evaluate human related mortality without
+                                                             million hunters in the United States (U. S. Bureau of
+knowing the extent to which it replaces or adds to
+                                                             Sport Fisheries and Wildlife [1972]).
+other mortality.
+  This paper draws together mortality data from
+various sources so that human related factors can be         Anseriformes
+placed in perspective with one another (cf. Lincoln
+1931) and perhaps, eventually, with other mortality            The hunting of ducks and geese in the United States
+factors.                                                     is subject to both Federal and State regulation. Limits
+  Essentially, the present paper presents the picture        are imposed on the regional and total harvest, based
+as it was in the early 1970's. Work on this project was      on surveys of wintering and breeding populations.
+initiated in 1971, but the report was not put into final     Estimates of the harvest of ducks and geese are ob-
+form until 1975. In the final editorial process, excellent   tained from hunter surveys, and species composition
+suggestions were made about new data that could be           (as well as age and sex data for each species) is deter-
+used to update certain portions of the report. I have re-    mined from examination of wings and tails sent by
+frained from acting on these suggestions because not         hunters to the Fish and Wildlife Service. Data on indi-
+all parts of the discussion could be updated equally.        vidual species may be found in the annual waterfowl
+For example, I am aware that data exist on waterfowl         status reports cited in Table 1, During 1966-71 the
+harvest for years beyond 1971, but to my knowledge           average annual harvest including crippling losses in
+none exists on the harvest of galliform birds later than     the United States was 15,271,800 ducks and 1,581,800
+those cited here. Reports on birds taken in depredation      geese.
+control and by special permits were not compiled or            Species composition of the waterfowl harvest varies
+are not available beyond the years given, and no basis       somewhat throughout the years, although the mallard
+exists for modifying some estimates that are little          {Anas platyrhynchos) is most commonly taken. It is
+more than calculated guesses in the first place. I fear      estimated that more than 5 million mallards were har-
+that a distorted picture might appear if all data were       vested in both 1970 and 1971 (Chamberlain et al.
+not based on essentially the same time span. Despite         1972). Other ducks for which the estimate exceeds
+the somewhat dated nature of the paper, it should            1 million in either of those years are the American
+have some value as a first approximation of its stated       wigeon (Anas americana), American green-winged teal
+purpose.                                                     (Anas crecca), northern pintail {Anas acuta), and wood
+                                                             duck (Aix sponsa). The Canada goose (Branta cana-
+                   Direct Mortality                          densis) is the most frequently harvested goose, fol-
+                                                             lowed by the snow goose {Chen caerulescens).
+  In this category I include factors that result in the        The whistling swan (Olor columbianus) was legally
+death of birds by the deliberate action of man. There        hunted in Utah from 1962 to 1970, in part of Nevada in
+are few such factors and most are under some degree of       1969 and 1970, and in part of Montana in 1970. The
+legal control, that is, a permit system. An illegal          number of permits issued each year was 1,000 from
+portion of the direct mortality factors lacks a firm         1962 to 1968, but increased to 2,500 in 1969 and 3,500
+ Table I. Retrieved and unretrieved harvest of ducks,           turkeys from 1952 through 1964, and showed an in-
+    geese, and coots in the United States, 1966-71.             crease from about 46,000 to 90,000 birds. Data com-
+                                                                piled by the U. S. Fish and Wildlife Service (1966-71)
+                                     American                   for years since those reported   by Mosby are: 1965,
+Year         Ducks        Geese        coot      Reference      94,316; 1966, 94,461; 1967, 118,844; 1968, 128,167;
+                                                                1969, 94,778; 1970, 137,533. The average figure for the
+1966        14,334,500   1,627,100   1,278,100   Martinson
+                                                                last 5 years is about 115,000 which may be used as an
+                                                   etal. 1968
+1967        15,077,600   1,315,400   1,041,900   Martinson      approximation of the annual harvest.
+                                                   etal. 1968
+1968        9,959,000    1,084,700    594,700    Martinson
+                                                   etal. 1969   Gruiformes
+1969        15,904,800   1,654,900   1,174,800   Chamberlain
+                                                  etal. 1971
+                                                                  Data for the harvest of American coots (Fulica amer-
+1970        19,215,900   2,101,800   1,603,600   Chamberlain
+                                                   etal. 1972
+                                                                icana) are tabulated   by the U. S. Fish and Wildlife
+                                                                Service along with figures for ducks and geese
+1971        17,108,800   1,707,100   1,119,000   Chamberlain
+                                                  etal. 1972    (Table 1). In 1966-71 an average of 1,135,400 coots
+Average 15,271,800       1,581,800   1,135,400                  were taken by waterfowl hunters in the United States.
+                                                                  Information on the harvest of other game species of
+                                                                gruiform birds is not tabulated with the same pre-
+in 1970. According to data compiled by Martin (1971),           cision or regularity as data on more important migra-
+
+the average annual harvest in          Utah in 1962-68, in-     tory game birds. Questions relating to rails and galli-
+cluding crippling loss, was 452 birds. In 1969 and 1970         nules (as well as to hunted charadriiform and colum-
+the average increased to 1,274. Adding estimates for            biform species) were included in questionnaire surveys
+Nevada and Montana for the latter years, the average            of waterfowl hunters for the hunting seasons of 1964-
+
+harvest was increased to 1,650 birds. More recent fig-          65 through 1968-69. The resulting data, limitations of
+ures (U. S. Fish and Wildlife Service 1975) show an             which have been thoroughly discussed by MacDonald
+average harvest in the three States in 1970-73 of 1,130         and Martin (1971), provide the basis for estimates of
+birds, about one for every three permits issued.                the harvest of these species in those years. A severe
+                                                                Umitation is that the survey covered only hunters who
+                                                                had purchased migratory bird hunting stamps ("duck
+Galliformes                                                     stamps"), and one must estimate the proportions of
+                                                                the harvest taken by those waterfowl hunters and by
+  Johnsgard (1973:147) presented estimates of the               other hunters. Consultation with Duncan MacDonald
+annual harvest of grouse and quails in the United               of the U.S. Fish and Wildlife Service led to estimates
+States exclusive of Hawaii. His total estimate was              that 50% of the sora rails (Porzana Carolina), 60% of
+47,301,000 birds. The bobwhite (Colinus virginianus)            the other rails, and 75% of the gallinules were taken by
+led the list with an estimated kill of 35 million birds a       waterfowl hunters. Thus, total harvest figures given in
+year, giving it the second place among game birds in            Table 2 for these species have been adjusted from
+the country. Other important birds in this group are            those estimates provided by MacDonald and Martin
+scaled quail {Callipepla squamata), ruffed grouse               (1971). Those authors reported that interest in hunting
+(Bonasa umbellus), California quail (Lophortyx cali-            migratory species other than waterfowl was increasing
+fdrnica), and Gambel's quail {Lophortyx gambelii),              several years ago, and it is unfortunate that more
+each with more than a million individuals harvested             recent data, compiled in a more accurate way, are not
+annually.                                                       available.
+  The introduced ring-necked pheasant (Phasianus col-             Estimates of the harvest of sandhill cranes (Grus
+chicus) is a widespread game bird in the United States,         canadensis) in New Mexico and Texas for 1961-70 have
+but harvest estimates are difficult to obtain. Esti-            been compiled by Miller et al. (1972), who also provide
+mates from various States compiled by the National              an estimate for the harvest in other States in 1970.
+Rifle Association of America (Hobart 1972) suggest              The average annual harvest, including a suggested
+that the annual national harvest is at least 1 1 million.       30% crippling factor, is about 4,000 birds. More
+  Although the turkey (Meleagris gallopavo) was                 comprehensive data (U. S. Fish and Wildlife Service
+extirpated from much of its original range in the               1975) that include the Alaska harvest and all years
+United States, it has been reintroduced in many areas           from 1960 through 1972 indicate a harvest, incorpo-
+and has once again become an important game bird.               rating the crippling factor used above, of about 6,500
+Mosby (1967:115) graphed reported harvests of                   birds a year.
+Charadriiformes
+
+
+  Figures representing the annual harvest of the
+common     snipe (Capella gallinago) and American
+woodcock (Philohela minor), the only legally hunted
+birds of this order, are, like those for most gruiform
+species, not as accurate as data for waterfowl. Esti-
+mates are based on responses to questionnaires sub-
+mitted to waterfowl hunters. In estimating the snipe
+harvest (Table 2), I have assumed that waterfowl
+hunters account for 75% of the total, and have modi-
+fied estimates     provided by MacDonald and Martin
+(1971) accordingly
+
+
+
+Table   2.   Estimated harvest of rails,   gallinules,   and
+ snipes in the United States, 1964-69; data modified
+ from MacDonald and Martin (1971).
+
+Hunting
+gaily in accordance with regulations of several States.    Table 4. Selected species of birds reported killed
+Ihave no figures on the harvest of this species, which       under Federal depredation permit, 1969-72; data
+must be insignificant compared with the harvest of the      from permittees' reports compiled by   U.   S.   Fish
+more typical game birds reported above.                     and Wildlife Service.
+
+
+          Control of Avian Depredation
+
+    Birds protected by Federal law may be killed, under
+permit, for the protection of life, crops, or property.
+The greatest utilization of depredation permits is in
+the western States, but a substantial number of
+permits are also issued in the northeastern States. In
+1969-72, an average of 70,469 protected birds were
+taken under authority of these permits (Table 3).
+  Only a few groups of birds are involved under con-
+trol procedures covered by Federal depredation per-
+mits; Table 4 lists those reported as taken in greatest
+numbers. The American coots were taken in the north-
+western States, mainly Washington, as were most of
+the mergansers (both American, Mergus merganser,
+and red-breasted, M. serrator). Approximately one-
+third of the gulls were identified as herring gulls
+{Larus argentatus), the rest being unidentified but
+probably mainly that species or great black-backed
+gulls, Larus marinus. About 60% of the herons were
+reported as great blue heron (Ardea herodias); the rest
+were black-crowned night herons (Nycticorax nycti-
+corax) and green herons (Butorides striatus). A
+number of egrets were also killed, but these are not
+tabulated with herons in the reports available to me. It
+is likely that not all herons were properly identified.
+
+Mourning doves are killed to protect aircraft from col-
+lision, mainly in the Southwest.
+   Federal regulations provide that the Commissioner
+of Agriculture of the State of California may issue
+permits for the killing of certain migratory birds when
+necessary to protect agricultural or horticultural crops
+
+
+
+
+Table     3. Federal depredation permits issued and
+    number of birds    killed, 1969-72; data from per-
+    mittees' reports compiled by U. S. Fish and Wild-
+    life Service.
+
+
+Permits to
+Table 5. Birds killed under depredation permits issued by California, 1965-72; data from reports submitted to U.S.
+                                            Fish and Wildlife Service.
+
+Year
+  Table 6. Analysis of scientific and special purpose permits issued by U.S. Fish and Wildlife Service, 1969-72.
+
+
+Year          Permits       Negative report or                                              No. birds per      No. birds per
+            outstanding          no report       Active permittees   No. birds reported   active permittee 8    permittee
+
+1969
+Table 7. Birds most commonly reported as taken under Federal scientific and special purpose permits," 1969-72.
+
+                                                                     Number of birds reported taken
+                      Species                             1969-70
+                                                                                                                       9
+
+
+avian mortality,    I   include a variety of accidental      Table 8. Birds most frequently reported as casualties
+factors related to human activity. In those instances,         at autumn TV tower kills.' Position in table deter-
+the death of the birds is not deliberate but is a by-          mined by relative frequency of casualties and num-
+product of some other action. Because of the nature of           ber of stations reporting species.
+these deaths, the figures relating to     them are esti-
+                                                                                                           Number of
+mates with much less reliability than those concerning
+                                                                                                            stations
+direct mortality. I have, of course, attempted to make
+                                                                   Species                                  reporting
+the figures realistic, but I would not be surprised if the
+error in some instances exceeded 50%.                        Red-eyed vireo
+                                                                 Vireo olivaceus                                9
+                                                             Ovenbird
+                                                               Seiurus aurocapillus                             9
+                        Collision                            Yellowthroat
+                                                               Geothlypis trichas                               8
+Mortality on Roads                                           Palm warbler
+                                                               Dendroica palmarum                               7
+                                                             Magnolia warbler
+  Many variables affect the rate at which birds are            Dendroica magnolia                               5
+struck by motor vehicles on roadways. The number of          American redstart
+lanes and the nature of the road surface (McClure              Setophaga mticilla                               6
+1951) are in a general way correlated with traffic den-      Yellow-rumped warbler
+sity and traffic speed (Murton 1972). The nature of the        Dendroica coronata b                             5
+habitat through which a road runs, and particularly          Chestnut-sided warbler
+the structure of the adjacent vegetation, plays an             Dendroica pensylvanica                           5
+
+important role in determining what birds are near the        Gray catbird
+road and where they may attempt to cross. Finnis               Dumetella carolinensis                           5
+                                                             Swainson's thrush
+(1960) and Hodson (1962) noted that mortality in
+                                                               Catharus ustulatus                               4
+Britain is high in certain "black spots" where open
+                                                             Bay-breasted warbler
+gates, breaks in hedges or walls, or the proximity of
+                                                               Dendroica castanea                               5
+feeding and resting sites, made natural crossing areas.      Nashville warbler
+Weather factors may determine day-to-day variation             Vermivora ruficapila                             4
+(Scott 1938). Even the time of day at which traffic is       Blackpoll warbler
+heavy may be an important factor; Flickinger and                 Dendroica striata                              4
+King (1972) found that 33% of avian deaths on a Texas        Black-and-white warbler
+road occurred between daybreak and 0800 hours.                   Mniotilta varia                                4
+                                                             Gray-cheeked thrush
+  Seasons when bird populations are high or when
+                                                               Catharus minimus                                 4
+birds tend to congregate along roads because of the          Northern waterthrush
+availability of food or grit are particularly important.       Seiurus noveboracensis                           4
+In Wiltshire, England, Dunforth and Errington (1964)
+                                                             "Data from Taylor and Anderson 1973; Elder and Hansen
+found that 85% of roadside casualties occurred be-
+                                                              1967; Brewer and Ellis 1958; Johnston and Haines 1957;
+tween 1 April and 30 September, and that 38% of
+                                                              Stoddard and Norris 1967; Tordoff and Mengel 1956;
+these were juveniles. Sargeant and Forbes (1973),
+                                                              Bureau Sport Fisheries and Wildlife 1971-74; Caldwell and
+Vestjens (1973), McClure (1951), and others who have          Cuthbert 1963; and Kemper 1959.
+made long-term studies also report an increased rate of      b
+                                                                 Figures are for myrtle warbler only.
+highway mortality during summer months when bird
+populations are at high levels because of the large
+number of young. Buss and Swanson (1950) noted that
+combining in Washington wheat fields forced pheas-               Highway mortality may be significant for certain
+ants to seek other cover during harvest time, and            species whose habitat is concentrated near roadways.
+many were attracted to roadsides where grit and              Road deaths may account for one-eighth of the annual
+spilled grain were plentiful. Mortality was high, but        mortality of adult house sparrows in Britain (Hodson
+juveniles were not more vulnerable to automobiles            and Snow 1965), where a million adult sparrows a year
+than were adults. Dunforth and Errington (1964)              are estimated to be killed in this way. Sutton (1927)
+banded young birds from nests near roads and found           investigated the causes of deaths of 113 screech owls
+that 7.5% of them were killed by traffic. The mortality      (Orus asio) to which the public drew his attention in
+rate from this cause varied greatly between species,         Pennsylvania in a period of about 3 years. Of this
+ranging from 3 to 12% of the banded young where              total, 82 birds (73%) had been killed by autos. This
+samples were of meaningful size.                             sample of birds that were relatively easy to discover
+10
+
+
+                 Table 9. Rates of avian road deaths calculated from various studies.
+
+Study location               Miles of road studied        Birds/mile per year
+                                                                                                                    11
+
+
+the average annual mortality for the preceding 6 years      wise been found dead in residential areas. Many birds
+had been 328 birds. Only three studies have come to         that die in this manner are certainly removed by cats,
+my attention that have been sufficiently methodical         dogs, or other scavengers. The use of reflective glass,
+and long-term to provide useful estimates of mortality      particularly in buildings situated in wooded areas, can
+at tall TV transmission and similar towers. Stoddard        result in considerable mortality of birds at certain
+and Norris (1967) counted 15,200 dead birds (and esti-      seasons of the year (Banks 1976).
+mated 17,000) under a single low television tower in          I am unaware of any information on which an esti-
+
+northern Florida in a period of 5 3A years, an average of   mate of annual mortality resulting from flying into
+2,643 per year. The tower was then replaced by a taller     windows can be based. If we assume the low incidence
+one, and the study continued to a total of 11 years,        of one bird per square mile per year, the figure would
+during which time 29,451 birds were found, an average       be 3.5 million.
+of 2,677 per year. Taylor and Anderson (1973) studied
+mortality at a tower in central Florida for three
+autumn seasons, and found an average of 2,600 birds
+per year. Biologists of the Bureau of Sport Fisheries       Other collisions
+and Wildlife studied year-round mortality in 1972-73
+at a tall navigational aid tower in North Dakota and          Birds occasionally     fly into fences (e.g.,   McCarthy
+estimated mortality at 2,121 in 1972 and 2,177 in 1973,     1973; Edeburn 1973), electrical transmission wires, air-
+or 2,150 per year. The similarity of these three inde-      craft   (Solman 1974), and almost anything else that
+pendently achieved figures is striking, and suggests        man places in the air. A newspaper article (Wash-
+that the rounded average of 2,500 birds per tower per       ington Star-News, 26 July 1973) told of a sparrow
+year is a usable estimate.                                  killed by a tennis ball during tournament play. Bands
+    According to the Federal Communications Commis-         have been returned from birds hit by golf balls (Lincoln
+sion (personal communication) there were 1,010 tele-        1931). Annual mortality from all these factors must be
+vision transmitting stations in the United States on        rather low.
+1   February 1975; no statistical breakdown on height,
+location, power, and other possibly pertinent factors is
+                                                                              Pollution and Poisoning
+available.    I   have no information on the number of
+airport      ceilometers,       transmitting towers,
+                            radio
+obelisks, and other similar obstacles that exist. Inter-    Lead Poisoning
+estingly, the many reports of mass mortality that I
+have scanned or studied are all for incidents in the          Waterfowl hunters scatter tons of lead shot over
+central or eastern United States; I know of no such         wetlands each year. Some of this is ingested by water-
+reports for phenomena in or west of the Rocky Moun-         fowl, and undoubtedly by other organisms, with lead
+
+tains. Still, if only half the television transmitting      poisoning an often fatal result. Bellrose (1959) esti-
+towers in the country are so situated that a hazard is      mated that nearly 25% of the North American mallard
+presented to migrating birds, annual mortality re-          population ingests some lead shot, and that 4% of the
+sulting from birds flying into such obstacles at the        mallard population in the Mississippi Flyway annually
+rate of 2,500 per year may reasonably be estimated at       dies from lead poisoning. Bellrose (1959:286) estimated
+
+1,250,000.                                                  that lead poisoning annually kills between 2 and 3% of
+    Mortality resulting from flying into obstacles such     the North American waterfowl population. The post-
+as those discussed here is concentrated mainly on noc-      hunting season waterfowl population can be placed at
+turnal migrants. Analysis of a series of reports that       about 80 million birds. A mortality of 2.5% would
+covered long periods of time and large numbers of           provide an estimate of 2 million lead poisoning deaths.
+birds shows that the families Vireonidae, Parulidae,          I have no information to indicate the number of
+
+and Fringillidae are most frequently affected (Table 8).    birds that may succumb to other mortality factors be-
+Of the 39 species included in the lists of 10 most fre-     cause they are weakened by nonfatal lead poisoning,
+quently killed birds in 9 separate studies, only 6          but it seems likely that such deaths must occur. Bell-
+species were in families other than those mentioned.        rose (1959) noted that weakness and fatigue in poi-
+                                                            soned mallards reduced their ability to migrate, and
+                                                            that afflicted ducks were more likely to be bagged by
+                                                            hunters than were healthy birds.
+Picture Windows                                               Lewis and Legler (1968) noted that 1% of a sample of
+                                                            mourning doves taken in Tennessee had ingested lead
+    Anyone whose interest in birds is known to neigh-       shot. These birds had been harvested on fields man-
+bors sooner or later becomes the recipient of birds that    aged for public hunting. Soil samples revealed the
+have flown into windows of homes or that have other-        presence of more than 43,500 lead shot per acre in the
+12
+
+
+upper 3/8 inch of soil; an additional 52,000 shot per        square feet to several acres. Typically they are filled
+acre were found in the next 3 inches of soil. Suscep-        with waste water covered with a layer of oil, from a
+tibility of doves to lead poisoning is not known; this       thin skim to several inches in depth. Such sumps occur
+amount of lead in the soil may pose a hazard to all          in oil fields throughout the country. Because they have
+ground-feeding birds. Individual cases of lead poison-       the general appearance of ponds, these sumps are par-
+ing have been reported in a number of species of game        ticularly attractive to water birds (and also to other
+birds, and may be a much more important mortality            wildlife),     many of which become fatally oiled or en-
+factor than is presently suspected.                          trapped.
+                                                               Wildlife losses have undoubtedly occurred in          oil
+                                                             sumps since oil fields came into existence. The extent
+Oil Spills
+                                                             of the problem first became apparent in California
+                                                             shortly after World War II, but it was not until the
+  Oil spills are most often considered marine or coastal     mid-1960's that significant corrective action was
+events, resulting from accidental or deliberate dis-         taken (unpublished reports, California Department of
+charge of oil from ships, or occasionally, from offshore     Fish and Game). By the mid-1970's, legal and legis-
+production facilities. Similar results can occur on          lative action at both State and Federal levels had some
+inland waters or on land, however, when tank trains or       effect in reducing the number of sumps and their at-
+trucks overturn and when pipelines rupture or are van-       tractiveness to wildlife, and thus reduced the mortal-
+dalized. Depending on location, time, weather, and           ity resulting from them.
+type of oil product spilled, avian mortality may range         Avian mortality in oil sumps in the San Joaquin
+from none or only a few birds to many thousands. Ac-         Valley of California has been estimated at 150,000
+tual mortality on water is seldom determined because         birds per year (Anon. 1973a). Data or estimates for
+of the difficulty of recovering dead birds, which may        other areas are not available, but similar sumps occur
+drift away. If oiling is light, some birds may fly a con-    in many other States. Somewhat similar hazards may
+siderable distance before death occurs.                      occur as a result of certain methods of coke produc-
+  The Smithsonian Institution's Center for Short-            tion, as well.     The extent of the overall mortality has
+Lived Phenomena recorded 9 oil spill events in the           not, to   my knowledge, been documented, but certainly
+United States in 1970, 9 in 1971, 11 in 1972, 14 in          it is greater nationwide by a factor of 10 than that esti-
+1973, and 29 in 1974. Estimates of avian mortality,          mated for the San Joaquin Valley. Thus for present
+when available, ranged from none to 30,000-50,000 for        purposes the figure of 1.5 million may be used as a low,
+individual events. The latter estimate was for bird          and probably very conservative, estimate.
+deaths caused by an oil spill off the Alaska Peninsula
+in April 1970. Other large estimates were 10,000 birds
+killed near Kodiak Island, Alaska, in February 1970,
+and 5,000-10,000 birds at Soda Lake, Wyoming, in             Other Poisoning and Contamination
+April 1973, the result of a pipeline rupture. An oil spill
+in San Francisco Bay, California, caused the death of          The use of pesticides and herbicides has had drastic
+an estimated 20,000 birds in January 1971 (Smail et al.      effects       on certain local bird populations in the past
+1972).                                                       2 decades, and has been linked to reproductive failures
+  Large oil spills that kill large numbers of birds can      that further reduce populations (Hickey 1966; Stickel
+have drastic effects on local populations, but most          1968).    I   am unaware of data that can be used for ex-
+spills produce relatively low levels of mortality that is    trapolation to an annual mortality of birds directly re-
+often spread among many species. The fortunate fact          lated to pesticides and similar materials. Birds occa-
+that large spills, until now, have been infrequent in our    sionally are attracted to poisoned baits placed for
+waters makes an estimate of annual mortality rather          control of mammalian predators. Avian predators and
+tenuous. If small spills take a total of 5,000 birds per     scavengers may occasionally die as a result of feeding
+year and large spills occur about every 2nd year, an         on the carcasses of poisoned mammals.
+annual average figure of 15,000 deaths is probably rea-
+sonable.
+
+
+                                                                                   Banding Casualties
+
+Oil Sumps                                                      About 1 million birds are banded each year. Officials
+                                                             of the Bird Banding Laboratory of the U. S. Fish and
+  An oil sump is a pit or excavation in which fluids pro-    Wildlife Service (personal communication) estimate
+duced attendant to oil or gas field operations are col-      that there is about 1% mortality among birds cap-
+lected or stored. Sumps vary in surface area from a few      tured for banding, or approximately 10,000 birds.
+                                                                                                                          13
+
+
+                Other Indirect Mortality
+
+     One can easily think of a number of ways in which
+man or his activities causes the death of birds. Electro-
+cution by power transmission lines results in the death
+of large birds of prey in western States (Laycock 1973),
+and an amazingly large number of birds may be killed
+by electric fences (Stewart 1973). Birds may become
+entangled in commercial fishing nets (Tull et al. 1972)
+or sport fishing lines (Tarshis 1971) or may be trapped
+in  buildings. Domestic pets probably take large
+numbers of birds, especially of ground-nesting species;
+George (1974) documented that domestic cats may be
+effective competitors of rodent-eating hawks, and sug-
+gested that they may remove 2.5 billion non-mam-
+malian vertebrates from U. S. populations each year.
+Undoubtedly nests and their contents, and some
+sitting birds, are destroyed during haying and logging
+operations. Small mammal traps set by mammalogists
+(personal observation) and steel traps set by profes-
+sional fur trappers (Laycock 1973) occasionally catch
+birds. Lincoln (1931) discussed several of these factors.
+  If one assumes again an average annual incidence of
+                                                             Fig. 1. Diagrammatic representation of relative importance of
+one bird death per square mile for all these miscel-
+                                                               human   activities   to bird   mortality.   Individual factors
+laneous factors combined, the estimate is 3.5 million in       grouped as "all other direct" and "all other indirect"
+the United States.                                             project wedges too small for separate plotting.
+
+
+
+                                                               The least important human related mortality factors
+             Discussion and Summary                          are removal from the wild for propagation purposes
+                                                             (which obviously is mortality only relative to the wild
+     Estimates of avian mortality resulting from various     population), accidental death related to banding ac-
+human activities discussed above are summarized in           tivities, spillage of oil, and the taking of birds for scien-
+Table 10 and Fig. 1, from which the relative impor-          tific research and other permitted purposes which
+
+tance of the factors can be determined. Hunting, for         cannot be separated at present.
+which the data are most nearly accurate, is the                 The fact that just a few species account for most of
+primary human related mortality factor for birds (al-        this mortality and yet continue to maintain large, har-
+though the completeness of hunting data may result in        vestable populations suggests that populations of
+overemphasis of this factor). Collision with man-made        most bird species are essentially unaffected by the
+objects, for which fairly firm bases of estimation exist,    human activities discussed. Other activities of man
+is second in importance. These two factors account for       that do not necessarily result in the death of birds but
+about 90% of the avian mortality documented here.            rather reduce reproductive potential, such as habitat
+   It is evident from Table 10 and figures given earlier     alteration and environmental contamination, are much
+that human related bird mortality is unevenly dis-           more likely to have long-term effects on avian popula-
+tributed among the species of birds in the United            tions.
+States. Hunting is concentrated on members of three
+orders and a few species in three other orders, but ac-
+counts for about 60% of the total mortality. Even                            Acknowledgments
+among the hunted birds, four species— mourning dove,
+bobwhite, ring-necked pheasant, and mallard— ac-               Many colleagues have directed me to references on
+count for about 40% of the total mortality and 75% of        avian mortality factors and have otherwise been help-
+the hunting mortality. Further, these and other              ful and forbearing during the rather long time involved
+hunted species are also affected by the other mortality      in preparation of this paper. I am especially indebted
+factors listed.   The nongame bird most subject         to   to B. W. Pallas who initiated compilation of data re-
+human      related mortality   is   probably the starling,   lating to birds taken under permits when he was with
+taken in depredation control and control research; the       the Bureau of Sport Fisheries and Wildlife. I am also
+red-winged blackbird is a close second.                      indebted to the Office of Migratory Bird Management
+14
+
+
+                    Table 10. Summary of estimates of annual avian mortality related to human activity.
+
+                                                                     Number of birds and           Number and % (in parentheses)
+                           Mortality factor                               % of total deaths               of total deaths 8
+
+Hunting
+  Anseriformes                                                            16,854,730   (   8.60)
+  Galliformes                                                         58,416,000(29.81)
+  Gruiformes                                                               1,327,580   (   0.67)
+  Charadriiformes                                                          1,818,190( 0.92)
+  Columbiformes                                                       42,123,000(21.49)
+
+     Subtotal                                                                                            120,539,500(61.50)
+
+Depredation control                                                                                        2,000,000   (   1.02)
+
+Research and propagation
+  Depredation control research                                              871,000    (   0.44)
+  Propagation                                                                  1,820   (   0.00)
+  Scientific research and other permit purposes                              21,190    (   0.01)
+
+     Subtotal                                                                                                894,010   (   0.46)
+
+Other direct mortality                                                                                     3,500,000   (   1.79)
+
+Pollution and poisoning
+  Lead poisoning                                                          2,000,000    (   1.02)
+  Oil spills                                                                 15,000    (   0.00)
+  Oil sumps                                                               1,500,000    (   0.77)
+
+     Subtotal                                                                                              3,515,000   (   1.79)
+
+Collision
+  Roads                                                               57,179,300(29.18)
+  TV towers, etc.                                                         1,250,000    (   0.64)
+  Picture windows                                                         3,500,000( 1.79)
+
+     Subtotal                                                                                             61,929,300(31.60)
+
+Banding casualties                                                                                            10,000   (   0.00)
+
+Other indirect mortality                                                                                   3,500,000   (   1.79)
+
+      Total                                                                                               196,887,810(100)
+
+'Percentages do not total exactly because of rounding.
+
+
+
+
+and the Directors of the Denver Wildlife Research                Anonymous. 19736. Wildlife roadkills. N.Y. State Environ.
+Center, the Patuxent Wildlife Research Center, and                 2:2.
+                                                                 Banks, R. C. 1976. Reflective plate glass— a hazard to mi-
+the Northern Prairie Wildlife Research Center, all in
+                                                                   grating birds. Bioscience 26(6):414.
+the U. S. Fish and Wildlife Service, for permission to           Bellrose, F. C. 1959. Lead poisoning as a mortality factor in
+use unpublished data. The many reviewers and editors              waterfowl populations. Bull. 111. Nat. Hist. Surv. 27(3):235-
+of the manuscript were more than generous in their                 288.
+                                                                 Brewer,   R., and J. A. Ellis. 1958. An analysis of migrating
+profferred comments.
+                                                                   birds killed at a television tower in east-central Illinois,
+                                                                   September 1955-May 1957. Auk 75(4):400-414.
+                                                                 Buss, I. O., andC. V. Swanson. 1950. Some effects of weather
+                                                                   on pheasant reproduction     in southeastern Washington.
+                           References                              Trans. N. Am. Wildl. Conf. 15:364-378.
+                                                                 Caldwell, L. D., and N. L. Cuthbert. 1963. Bird mortality at
+American Ornithologists' Union. 1957. Check-list of North          television towers near Cadillac, Michigan. Jack-Pine
+  American birds. 5th ed. American Ornithologists' Union,          Warbler 41:80-89.
+  Baltimore. 691 pp.                                             Chamberlain,     E. B., D. S. Benning, E. L. Ferguson,
+American Ornithologists' Union. 1975. Report of the Amer-          M. M. Smith, and J. L. Hall. 1972. Waterfowl status
+  ican Ornithologists' Union ad hoc committee on the scien-        report, 1972. U.S. Bur. Sport Fish. Wildl., Spec. Sci. Rep.-
+  tific and educational use of wild birds. Auk 92 (3, Suppl.):     Wildl. 166. 146 pp.
+  1A-27A.                                                        Chamberlain, E. B., R. K. Martinson, and S. L. Clark. 1971.
+Anonymous. 1973a. Oil sump cleanup stuck in tar while thou-        Waterfowl status report, 1970. U.S. Bur. Sport Fish.
+  sands of animals die. Audubon 75(3): 114-1 15.                   Wildl., Spec. Sci. Rep.-Wildl. 138. 157 pp.
+                                                                                                                             15
+
+
+Channing, C. H. 1958. Highway casualties of birds and            Martinson, R. K.,    J. F. Voelzer, and M. R. Hudgins. 1968.
+  animals for one year period. Murrelet 39:41.                     Waterfowl status report 1968. U.S. Bur. Sport Fish. Wildl.,
+Clark, E. R. 1970. Woodcock status report, 1969. U.S. Bur.         Spec. Sci. Rep.-Wildl. 122. 158 pp.
+  Sport Fish. Wildl., Spec. Sci. Rep.-Wildl. 133. 35 pp.         Martinson, R. K., J. F. Voelzer, and S. L. Meuller. 1969.
+Clark, E. R. 1972. Woodcock status report, 1971. U.S. Bur.         Waterfowl status report 1969. U.S. Bur. Sport Fish. Wildl.,
+  Sport Fish. Wildl., Spec. Sci. Rep.-Wildl. 153. 47 pp.           Spec. Sci. Rep.-Wildl. 128. 153 pp.
+Clark, E. R. 1973. Woodcock status report, 1972. U.S. Bur.       McCarthy, T. 1973. Ocular impalement of a great horned owl.
+  Sport Fish. Wildl., Spec. Sci. Rep.-Wildl. 169. 50 pp.           Wilson Bull. 85(4):477-478.
+Cottam, C, and J. B. Trefethen, eds. 1968. Whitewings. D.        McClure, H. E. 1951. An analysis of animal victims on Ne-
+  Van Nostrand Co., Inc., Princeton, N. J. 348 pp.                 braska's highways. J. Wildl. Manage. 15(4):410-420.
+Dunforth, A. A., and F. P. Errington. 1964. Casualties           Miller, R. S., G. S. Hochbaum, and D. B. Botkin. 1972. A
+  among birds along a selected road in Wiltshire. Bird Study       simulation model for the management of sandhill cranes.
+  11:168-182.                                                      Yale Univ. Sch. For. Environ. Stud. Bull. 80. 49 pp.
+Edeburn, R. M. 1973. Great horned owl impaled on barbed          Mosby, H. S. 1967. Population dynamics. Chapter 6 in
+  wire. Wilson Bull. 85(4):478.                                    O. H. Hewitt, ed. The wild turkey and its management.
+Elder, W. H., and J. Hansen. 1967. Bird mortality at KOMU-         Wildlife Society, Washington, D.C. 589 pp.
+  TV tower, Columbia, Missouri, fall 1965 and 1966. Bluebird     Murton, R. K. 1972. Man and birds. Taplinger Publ. Co., New
+  34:3-6.                                                          York. 364 pp.
+Evenden, F. G. 1971. Animal road kills. Atl. Nat. 26(l):36-37.   Orr, R. T. 1970. Animals in migration. The MacMillan Co.,
+Federal Highway Administration. 1973. Highway statistics           New York. 303 pp.
+  1972. U.S. Department of Transportation, Washington,           Overing, R. 1938. High mortality at the Washington Monu-
+  D.C. 216 pp.                                                     ment. Auk 55(4):679.
+Finnis, R. G. 1960. Road casualties among birds. Bird Study      Ruos, J. L., and R. E. Tomlinson. 1968. Mourning dove
+  7:21-32.                                                         status report, 1966. U.S. Bur. Sport Fish. Wildl., Spec. Sci.
+Flickinger, G. L., and K. A. King. 1972. Survey of highway         Rep.-Wildl. 115.49 pp.
+  bird kills. Highlights report, Wildl. Res., Bur. Sport Fish.   Sargeant, A. B., and J. E. Forbes. 1973. Mortality among
+  Wildl. (Unpubl. rep.)                                            birds, mammals and certain snakes on 17 miles of Minne-
+George, W. G. 1974. Domestic cats as predators and factors         sota roads. Loon 45:4-7.
+  in winter shortages of raptor prey. Wilson Bull. 86(4):384-    Scott, T. G. 1938. Wildlife mortality on Iowa highways. Am.
+  396.                                                             Midi. Nat. 20(31:527-539.
+Glue, D. E., J. J. M. Flegg, and J. N. Dymond. 1971. When        Sheldon, W. G. 1967. The book of the American woodcock.
+  do birds die? Ibis 113:417.                                      University of Massachusetts Press, Amherst.
+Goudy, W. H. 1967. Woodcock management and research,             Smail, J., D. G. Ainley, and H. Strong. 1972. Notes on birds
+  1966. U.S. Bur. Sport Fish. Wildl., Spec. Sci. Rep.-Wildl.        killed in the 1971 San Francisco oil spill. Calif. Birds
+  101.40 pp.                                                        3:25-32.
+Hickey, J. J. 1966. Birds and pesticides. Pages 318-329 in       Solman, V. E. F. 1974. Aircraft and wildlife. Pages 137-141 in
+  A. Stefferud, ed. Birds in our lives. U.S. Bur. Sport Fish.      J. H. Noyes and D. R. Progulske, eds. Wildlife in an urban-
+  Wildl., Washington, D.C.                                         izing environment. Cooperative Extension Service, Univer-
+Hobart, W. L„ ed. 1972. 1973 North American hunting direc-         sity of Massachusetts, Amherst. 182 pp.
+  tory. National Rifle Association of America, Washington,       Stewart, P. A. 1973. Electrocution of birds by an electric
+  D.C.                                                             fence. Wilson Bull. 85<4):476-477.
+Hodson, N. L. 1960. A survey of vertebrate road mortality.
+                                                                 Stickel, L. F. 1968. Organochlorine pesticides in the environ-
+  Bird Study 7:224-231.
+                                                                   ment. U.S. Bur. Sport Fish. Wildl., Spec. Sci. Rep.-Wildl.
+Hodson, N. L. 1962. Some notes on the causes of bird road
+                                                                   119.32 pp.
+  casualties. Bird Study 9:168-173.
+                                                                 Stoddard, H. L., Sr., and R. A. Norris. 1967. Bird casualties
+Hodson, N. L., and D. W. Snow. 1965. The road deaths               at a Leon County, Florida, TV tower: an eleven year study.
+  enquiry, 1960-61. Bird Study 12:90-99.
+                                                                   Tall Timbers Res. Stn. Bull. 8. 104 pp.
+Johnsgard, P. A. 1973. Grouse and quails of North America.
+                                                                 Sutton, G. M. 1927. Mortality among screech owls of Penn-
+  University of Nebraska Press, Lincoln. 553 pp.
+                                                                   sylvania. Auk 44:563-564.
+Johnston, D. W., and T. P. Haines. 1957. Analysis of mass
+                                                                 Tarshis, I. B. 1971. An unusual fatality of a yearling Canada
+  bird mortality in October, 1954. Auk 74(4):447-458.
+                                                                   goose. Jack-Pine Warbler 49:128.
+Kemper, C. A. 1959. More TV tower destruction. Passenger
+                                                                 Taylor, W. K., and B. H. Anderson. 1973. Nocturnal mi-
+  Pigeon 21:135-142.
+                                                                   grants killed at a central Florida TV tower; autumns 1969-
+Lack, D. 1954. The natural regulation of animal numbers.
+                                                                   1971. Wilson Bull. 85:42-51.
+  Clarendon Press, Oxford. 343 pp.
+                                                                 Tordoff, H. B., and R. M. Mengel. 1956. Studies of birds
+Laycock, G. 1973. Saving western eagles from traps and
+                                                                   killed in nocturnal migration. Univ. Kans. Publ. Mus. Nat.
+  zaps. Audubon 75(5):133.
+                                                                    Hist. 10(l):l-44.
+Lewis, J. £, and E. Legler, Jr. 1968. Lead shot ingestion by
+                                                                 Tull, C. E., P. Germain, and A. W. May. 1972. Mortality of
+  mourning doves and incidence in soil. J. Wildl. Manage.
+                                                                   thick-billed murres in the West Greenland salmon fishery.
+  32(31:476-482.
+Lincoln, F. C. 1931. Some causes of mortality among birds.
+                                                                   Nature 237:42-44.
+  Auk 48:538-546.                                                U.S. Bureau of Sport Fisheries and Wildlife. 1970. Effects of
+MacDonald, D., and E. Martin. 1971. Trends in harvest of           aerially-applied surfactant solutions on roosting blackbirds
+  migratory game birds other than waterfowl 1964-65 to             and starlings, January-March, 1969. Special Report,
+  1968-69. U.S. Bur. Sport Fish, and Wildl., Spec. Sci. Rep.-      Patuxent Wildlife Research Center. 55 pp. (Mimeo.)
+  Wildl. 142. 29 pp.                                             U.S. Bureau of Sport Fisheries and Wildlife. 1971. Effects of
+Martin, E. M. 1971. Results of the 1970 whistling swan             low-volume, aerially-applied surfactant solutions on roost-
+  season. Migratory Bird Populations Station, U.S. Bur.            ing blackbirds and starlings, January-April 1970. Special
+  Sport Fish. Wildl. Admin. Rep. 200. 3 pp. (Mimeo.)               Report, Patuxent Wildlife Research Center. 43 pp. (Mimeo.)
+16
+
+
+U.S. Bureau of Sport Fisheries and Wildlife. 1971-74. Inves-     U.S. Fish and Wildlife Service. 1975. Issuance of annual reg-
+  tigations of bird migration and losses associated with the       ulations permitting the sport hunting of migratory birds.
+  Omega Navigation Station, LaMoure, North Dakota.                 Draft Environmental Statement DES 75-7.
+  Northern Prairie Wildlife Research Center. (Unpubl. rep.)      Velie, E. D. 1963. Report of a survey of bird casualties at tele-
+U.S. Bureau of Sport Fisheries and Wildlife. [1972]. 1970          vision towers, ceilometers, and other obstructions. Flicker
+  national survey of fishing and hunting. U.S. Fish Wildl.         35(3):79-84.
+  Serv., Resour. Publ. 95. 108 pp.                               Vestjens, W. J. M. 1973. Wildlife mortality on a road in New
+U.S. Fish and Wildlife Service. 1966-1971. Big game inven-         South Wales. Emu 73:107-112.
+  tory for [individual years] 1965-1970. U.S. Fish Wildl.        Zimmerman, D. A. 1954. Bird mortality on Michigan high-
+  Serv., Wildl. Leaflets 473, 477, 481, 487, 492, 497, respec-     ways. Jack-Pine Warbler 32:60-66.
+  tively.
+
+
+
+
+                                                                                                                    GPO 848   -   972
+                           As the Nation's principal conservation agency, the Department of the
+                         Interior has responsibility for most of our nationally owned public lands
+                         and natural resources. This includes fostering the wisest use of our land
+                         and water resources, protecting our fish and wildlife, preserving the
+                         environmental and cultural values of our national parks and historical
+                         places, and providing for the enjoyment of life through outdoor
+                         recreation. The Department assesses our energy and mineral resources
+                         and works to assure that their development is in the best interests of all
+                         our people. The Department also has a major responsibility for American
+                         Indian reservation communities and for people who live in island
+                         territories   under U.S. administration.
+
+
+
+
+                                                                                                                   GPO 848 -468
+
+
+
+
+       UNITED STATES
+ DEPARTMENT OF THE INTERIOR
+  FISH AND WILDLIFE SERVICE                                                            POSTAGE AND FEES PAID
+      EDITORIAL OFFICE                                                             US DEPARTMENT OF THE INTERIOR
+    AYLESWORTH HALL. CSU
+                                                                                            INT 423
+FORT COLLINS. COLORADO 80523
+
+
+
+
+            NOTE: Mailing lists are computerized. Please return address label with change of address.
+
