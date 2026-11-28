@@ -1,4 +1,4 @@
-# Research only: fetch public-domain Natural Earth populated places and keep US cities. Never deploys.
+# Research only (HOOKED): fetch public-domain US government UFO/UAP documents and a public-domain word list. Never deploys.
 name: prism-research
 on: { push: { branches: [prism-research] } }
 permissions: { contents: write }
@@ -7,12 +7,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          curl -sL -o ne.json https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_populated_places_simple.geojson
-          node -e '
-            const g=JSON.parse(require("fs").readFileSync("ne.json","utf8"));
-            const us=g.features.map(f=>f.properties).filter(p=>p.adm0_a3==="USA"||p.sov_a3==="US1"&&p.adm0name==="United States of America")
-              .map(p=>({n:p.name,s:p.adm1name,lat:+(+p.latitude).toFixed(3),lon:+(+p.longitude).toFixed(3),pop:p.pop_max||p.pop_min||0}))
-              .filter(p=>p.pop>0).sort((a,b)=>b.pop-a.pop);
-            require("fs").writeFileSync("us-places.json",JSON.stringify({source:"Natural Earth 10m populated places (public domain), nvkelso/natural-earth-vector",count:us.length,places:us}));
-            console.log(us.length, us.slice(0,5));'
-          git init -q out && cd out && cp ../us-places.json . && git checkout -q -b prism-research-results && git add . && git -c user.name=bot -c user.email=bot@example.com commit -qm "US places" && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" prism-research-results
+          sudo apt-get install -y -qq poppler-utils >/dev/null 2>&1 || true
+          mkdir -p out/docs && cd out
+          get() { curl -sL -A "Mozilla/5.0 (research; Project Signal)" --max-time 120 -o "docs/$1.pdf" "$2"; s=$(stat -c%s "docs/$1.pdf" 2>/dev/null || echo 0); h=$(head -c 5 "docs/$1.pdf" | tr -d '\0'); echo "$1 $s $h $2" >> docs/manifest.txt; if [ "$h" = "%PDF-" ]; then pdftotext -layout "docs/$1.pdf" "docs/$1.txt" || true; pdfinfo "docs/$1.pdf" | grep -i "pages" >> docs/manifest.txt || true; else rm -f "docs/$1.pdf"; fi; }
+          get odni2021 "https://www.dni.gov/files/ODNI/documents/assessments/Prelimary-Assessment-UAP-20210625.pdf"
+          get odni2022 "https://www.dni.gov/files/ODNI/documents/assessments/Unclassified-2022-Annual-Report-UAP.pdf"
+          get aaro_hrr1 "https://media.defense.gov/2024/Mar/08/2003409233/-1/-1/0/DOPSR-CLEARED-508-COMPLIANT-HRRV1-08-MAR-2024-FINAL.PDF"
+          get aaro_fy23 "https://media.defense.gov/2023/Oct/18/2003322402/-1/-1/0/FY2023-CONSOLIDATED-ANNUAL-REPORT-ON-UAP-508.PDF"
+          get aaro_fy24 "https://media.defense.gov/2024/Nov/14/2003583603/-1/-1/0/FY2024-CONSOLIDATED-ANNUAL-REPORT-ON-UAP-508.PDF"
+          get nasa2023 "https://smd-cms.nasa.gov/wp-content/uploads/2023/09/uap-independent-study-team-final-report.pdf"
+          get fbi_hottel "https://vault.fbi.gov/hottel_guy/Guy%20Hottel%20Part%201%20of%201/at_download/file"
+          get cia_robertson "https://www.cia.gov/readingroom/docs/CIA-RDP81R00560R000100030027-0.pdf"
+          get cia_chadwell "https://www.cia.gov/readingroom/docs/CIA-RDP81R00560R000100030004-5.pdf"
+          get usaf_grudge "https://www.cia.gov/readingroom/docs/CIA-RDP81R00560R000100010001-0.pdf"
+          curl -sL -o words.txt https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt; wc -l words.txt >> docs/manifest.txt
+          curl -sL -o enable.txt https://raw.githubusercontent.com/dolph/dictionary/master/enable1.txt; wc -l enable.txt >> docs/manifest.txt
+          cat docs/manifest.txt
+          git init -q . && git checkout -q -b hooked-research-results && git add . && git -c user.name=bot -c user.email=bot@example.com commit -qm "HOOKED docs" && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" hooked-research-results
