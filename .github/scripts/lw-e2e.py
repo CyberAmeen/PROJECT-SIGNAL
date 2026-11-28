@@ -11,6 +11,7 @@ socketserver.TCPServer.allow_reuse_address = True
 srv = socketserver.ThreadingTCPServer(('127.0.0.1', 8795), Q); threading.Thread(target=srv.serve_forever, daemon=True).start()
 BASE = 'http://127.0.0.1:8795/index.html?hubq=1'
 R = {'errors': [], 'perf': {}, 'memory': {}, 'images': {}, 'reduced': {}, 'checks': {}}
+def save(): json.dump(R, open(f'{OUT}/lw-results.json', 'w'), indent=1)
 CHROME = '/usr/bin/google-chrome'
 ARGS = ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--enable-precise-memory-info', '--js-flags=--expose-gc']
 
@@ -91,14 +92,14 @@ with sync_playwright() as p:
         pg.click('.lw-card[data-i="20"]'); time.sleep(1); pg.click('.lw-atlas'); time.sleep(3.5)
         R['checks'][name + '_atlasHandoff'] = pg.evaluate("[!document.getElementById('atlas-shell').hidden, !!document.querySelector('.ax-dossier:not([hidden])'), (document.querySelector('#ax-dossier-title')||{}).textContent]")
         pg.screenshot(path=f'{OUT}/{name}-atlas-handoff.png')
-        ctx.close()
+        ctx.close(); save()
     # reduced motion
     ctx, pg = new(b, 393, 852, rm=True); boot(pg)
     pg.evaluate("document.getElementById('lw-launch').scrollIntoView({block:'center'})"); pg.click('#lw-launch'); time.sleep(1.4)
     R['reduced'] = pg.evaluate("({open:LongWatch.isOpen, entranceGone:!document.querySelector('.lw-entrance:not(.out)'), visibleCards:[...document.querySelectorAll('.lw-item')].filter(e=>getComputedStyle(e).opacity==='1').length, ambientCanvas:document.querySelector('.lw-amb').width})")
     pg.screenshot(path=f'{OUT}/reduced-open.png')
     pg.evaluate("document.querySelector('.lw-scroll').scrollTo(0,document.querySelector('.lw-era[data-era=bluebook]').offsetTop)"); time.sleep(.6); pg.screenshot(path=f'{OUT}/reduced-bluebook.png')
-    ctx.close()
+    ctx.close(); save()
     # images: every Long Watch image (card thumb + full) must load
     if not OFFLINE:
         ctx, pg = new(b, 1280, 800); boot(pg)
@@ -106,7 +107,7 @@ with sync_playwright() as p:
         R['images'] = pg.evaluate("""async()=>{const D=window.LW_DATA,urls=[];for(const e of D.events){let im=e.image;if(!im&&e.atlas&&window.__atlas){const a=window.__atlas.archive.find(r=>r.id===e.atlas);if(a&&a.image)im={src:a.image.thumb,full:a.image.full}}if(im){urls.push([e.id,'src',im.src]);urls.push([e.id,'full',im.full])}}
           const res=await Promise.all(urls.map(([id,k,u])=>new Promise(r=>{const i=new Image();i.referrerPolicy='no-referrer';const t=setTimeout(()=>r([id,k,u,'timeout']),25000);i.onload=()=>{clearTimeout(t);r([id,k,u,i.naturalWidth])};i.onerror=()=>{clearTimeout(t);r([id,k,u,'error'])};i.src=u})));
           return {total:res.length, ok:res.filter(x=>typeof x[3]==='number').length, failed:res.filter(x=>typeof x[3]!=='number'), withImage:D.events.filter(e=>e.image||e.img==='atlas').length}}""")
-        ctx.close()
+        ctx.close(); save()
     # recordings: the whole journey, entrance → eras → ending → hub
     for name, W, H, v in [('iphone', 393, 852, 520), ('desktop', 1440, 900, 700)]:
         vd = f'{OUT}/vid-{name}'; ctx, pg = new(b, W, H, video=vd); boot(pg)

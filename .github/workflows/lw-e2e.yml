@@ -20,14 +20,14 @@ jobs:
         run: |
           mkdir -p _site && rsync -a --exclude '.git' --exclude '.github' --exclude 'sentinel' --exclude 'tools' --exclude '_site' ./ _site/
           node tools/sw-stamp.mjs _site
-      - run: pip install playwright==1.49.0 && which google-chrome && ffmpeg -version | head -1
+      - run: pip install playwright==1.49.0 && python -m playwright install ffmpeg && which google-chrome && ffmpeg -version | head -1
       - name: Run
         run: python .github/scripts/lw-e2e.py "$PWD/_site" /tmp/lw
       - name: Publish results to the lw-results branch
         if: always()
         run: |
           cd /tmp/lw && rm -rf vid-* && ls -la
-          git init -q r && cp -r *.png *.mp4 lw-results.json r/ 2>/dev/null; cd r
+          git init -q r && (cp *.png *.mp4 lw-results.json r/ 2>/dev/null || true); cd r
           git config user.name "lw-e2e"; git config user.email "actions@users.noreply.github.com"
           git checkout -q -b lw-results && git add -A && git commit -qm "lw e2e ${{ github.sha }}"
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" lw-results
