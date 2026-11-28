@@ -18,7 +18,7 @@ await ctx.grantPermissions(['notifications'], { origin: 'http://localhost:8080' 
 await ctx.addInitScript("Object.defineProperty(navigator,'standalone',{get:()=>true});");
 const page = await ctx.newPage(); const errors = [];
 page.on('pageerror', e => errors.push(String(e)));
-page.on('console', m => { if (m.type() === 'error' && !/Failed to load resource|net::|fonts\.g/.test(m.text())) errors.push(m.text()); });
+page.on('console', m => { if (m.type() !== 'log' || /push|sw|subscri/i.test(m.text())) log('  [console.' + m.type() + '] ' + m.text().slice(0, 300)); if (m.type() === 'error' && !/Failed to load resource|net::|fonts\.g/.test(m.text())) errors.push(m.text()); });
 
 try {
   const key = await (await fetch(S + '/v1/push/key')).json();
@@ -32,7 +32,13 @@ try {
   await page.evaluate(() => PocketSignal.offerAlerts()); await sleep(900);
   await page.screenshot({ path: 'e2e-optin.png' });
   await page.click('.ps-sheet [data-go]');
-  await page.waitForFunction(() => PocketSignal.state && PocketSignal.state.id, null, { timeout: 30000 });
+  const ok = await page.waitForFunction(() => PocketSignal.state && PocketSignal.state.id, null, { timeout: 40000 }).then(() => true).catch(() => false);
+  if (!ok) {
+    log('  opt-in message:', await page.evaluate(() => document.querySelector('.ps-sheet .ps-msg')?.textContent));
+    log('  direct subscribe attempt:', await page.evaluate(async () => { try { const r = await navigator.serviceWorker.ready; const k = (await (await fetch(sentinel + '/v1/push/key')).json()).publicKey; const b = Uint8Array.from(atob(k.replace(/-/g, '+').replace(/_/g, '/') + '='), c => c.charCodeAt(0)); const s = await r.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b }); return 'ok ' + s.endpoint.slice(0, 60); } catch (e) { return 'ERR ' + e.name + ': ' + e.message; } }));
+    await page.screenshot({ path: 'e2e-optin-fail.png' });
+    throw new Error('subscription did not complete');
+  }
   const st = await page.evaluate(() => PocketSignal.state);
   const endpoint = await page.evaluate(async () => (await (await navigator.serviceWorker.ready).pushManager.getSubscription()).endpoint);
   check('real push subscription created through the opt-in UI', /^https:\/\/(fcm\.googleapis\.com|.*push)/.test(endpoint), new URL(endpoint).host);

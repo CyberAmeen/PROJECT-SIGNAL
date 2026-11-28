@@ -11,6 +11,9 @@ concurrency:
   group: sentinel-staging
   cancel-in-progress: false
 
+permissions:
+  contents: write
+
 jobs:
   e2e:
     runs-on: ubuntu-latest
@@ -40,9 +43,9 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           tok=$(openssl rand -hex 24); echo "::add-mask::$tok"; echo "STAGING_ADMIN=$tok" >> "$GITHUB_ENV"
-          printf '%s' "$tok" | npx wrangler secret put SENTINEL_ADMIN_TOKEN --env staging > /dev/null
+          printf '%s' "$tok" | npx --yes wrangler@3 secret put SENTINEL_ADMIN_TOKEN --env staging > /dev/null
           node ../.github/scripts/vapid-gen.mjs > /tmp/vapid.json
-          npx wrangler secret put VAPID_JWK --env staging < /tmp/vapid.json > /dev/null; rm -f /tmp/vapid.json
+          npx --yes wrangler@3 secret put VAPID_JWK --env staging < /tmp/vapid.json > /dev/null; rm -f /tmp/vapid.json
           echo "staging secrets set"
       - name: Serve the site locally (stamped service worker)
         run: |
@@ -58,6 +61,14 @@ jobs:
           mkdir -p /tmp/e2e && cp .github/scripts/pocket-e2e.mjs /tmp/e2e/ && cd /tmp/e2e
           npm init -y > /dev/null && npm i playwright@1.49 > /dev/null
           xvfb-run -a node pocket-e2e.mjs
+      - name: Publish screenshots + results to the e2e-results branch (artifact downloads are not reachable from the build agent)
+        if: always()
+        run: |
+          cd /tmp/e2e && ls *.png e2e-results.json 2>/dev/null || exit 0
+          git init -q r && cp *.png e2e-results.json r/ 2>/dev/null; cd r
+          git config user.name "pocket-e2e"; git config user.email "actions@users.noreply.github.com"
+          git checkout -q -b e2e-results && git add -A && git commit -qm "e2e ${{ github.sha }}"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" e2e-results
       - uses: actions/upload-artifact@v4
         if: always()
         with: { name: pocket-e2e, path: "/tmp/e2e/*.png\n/tmp/e2e/e2e-results.json" }
