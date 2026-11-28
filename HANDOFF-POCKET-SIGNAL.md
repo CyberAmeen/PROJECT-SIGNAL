@@ -39,10 +39,14 @@ story comes in.
 Safari on iPhone/iPad only, never in the installed app, shown once ever (about 15 s after reaching the hub), dismissible.
 
 ## How to revert
-- **Whole feature**: `git revert -m 1 <merge commit>` on main and push. Pages redeploys; SENTINEL redeploys v5.1 (the `VAPID_JWK` secret and `push:*` KV keys remain harmless; delete them in Cloudflare if wanted).
+- **Whole feature**: `git revert -m 1 bc54252` on main and push. Pages redeploys; SENTINEL redeploys v5.1 (the `VAPID_JWK` secret and `push:*` KV keys remain harmless; delete them in Cloudflare if wanted).
 - **Service worker only** (if an installed app ever misbehaves): replace `sw.js` with a self-removing worker and deploy:
   ```js
   self.addEventListener('install', () => self.skipWaiting());
   self.addEventListener('activate', e => e.waitUntil((async () => { for (const k of await caches.keys()) await caches.delete(k); await self.registration.unregister(); for (const c of await self.clients.matchAll()) c.navigate(c.url); })()));
   ```
 - **Alerts only**: remove the `pushCheck` call in `scheduled()` (worker) — subscriptions stop receiving anything.
+
+## Release record (Nov 27, 2026)
+- PR #22, merge `bc54252`. Pages build `d2600be484b0`; SENTINEL v5.2 live; `VAPID_JWK` created by the deploy workflow.
+- Staging e2e (real Chrome, FCM): 13/13 — subscribe via the opt-in UI, KV save, scheduled check sends, encrypted push shown, deep link opens the story, no duplicate on the next check, test endpoint works and refuses a bad token, off switch deletes the subscription, no console errors. An earlier run with a UTC subscriber at 00:20 UTC correctly held the alert for quiet hours.
