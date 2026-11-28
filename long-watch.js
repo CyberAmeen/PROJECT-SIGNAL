@@ -40,7 +40,7 @@
   function preloadAround(i) {
     if (avifOK === null) { avifTest.then(() => preloadAround(i)); return; }
     for (let k = i - 1; k <= i + 2; k++) { const e = EV[k], v = e && heroOf(e); if (!v || pre.has(k)) continue; const im = new Image(); im.decoding = 'async'; im.src = urlOf(v, 1280); if (im.decode) im.decode().catch(() => {}); pre.set(k, im); }
-    for (const [k, im] of pre) if (k < i - 3 || k > i + 4) { im.removeAttribute('src'); pre.delete(k); }
+    for (const k of [...pre.keys()]) if (k < i - 3 || k > i + 4) pre.delete(k); // just drop the reference: clearing src mid-decode kept the element alive
   }
 
   /* ================================================================ DOM */
@@ -59,7 +59,7 @@
         <header class="lw-era-card"><div class="ghost" aria-hidden="true">${esc(era.name.split(' ').pop())}</div>
           <div class="span">${esc(yearLabel(era.from))} — ${era.to >= 2026 ? 'TODAY' : esc(yearLabel(era.to))}</div>
           <h2 id="lw-era-${era.id}">${esc(era.title)}</h2><div class="name">${esc(era.name)}</div><p>${esc(era.line)}</p></header>
-        <div class="lw-list">${list.map(e => cardHTML(e)).join('')}</div></section>`;
+        <div class="lw-list">${list.map(e => cardHTML(e) + (MIR_AFTER[e.id] ? mirrorHTML(MIR_AFTER[e.id]) : '')).join('')}</div></section>`;
     }).join('');
     shell.innerHTML = `
       <div class="lw-bgs" aria-hidden="true"></div>
@@ -105,7 +105,7 @@
     shell.querySelectorAll('.lw-item').forEach(el => { const i = +el.dataset.i; items.push({ e: EV[i], el, card: el.querySelector('.lw-card'), img: el.querySelector('img'), top: 0, h: 0, cy: 0 }); });
     // motif chips with counts
     shell.querySelector('.lw-motifs .chips').innerHTML = Object.entries(MOT).map(([k, v]) => `<button class="lw-chip" type="button" data-m="${k}" aria-pressed="false">${esc(v)}<b>${EV.filter(e => e.motifs.includes(k)).length}</b></button>`).join('');
-    buildOdo(); buildTimeline(); wire();
+    buildOdo(); buildTimeline(); wire(); mmWire();
   }
   function cardHTML(e) {
     const i = EV.indexOf(e), v = heroOf(e), b = BAD[e.badge];
@@ -321,7 +321,7 @@
 
   /* ================================================================ CARD REVEAL + IMAGE WINDOW */
   let revealIO = null, imgIO = null;
-  function observe() {
+  function observe() { mmObserve();
     revealIO = new IntersectionObserver(es => { for (const en of es) if (en.isIntersecting) { const el = en.target; el.classList.add('in'); revealIO.unobserve(el); setTimeout(() => el.classList.add('done'), 1000); } }, { root: scroller, rootMargin: '0px 0px -8% 0px', threshold: .08 });
     imgIO = new IntersectionObserver(es => { for (const en of es) { const pc = en.target.querySelector('.lw-card-media picture'); if (!pc) continue; const img = pc.querySelector('img');
       if (en.isIntersecting) { if (!img.getAttribute('src')) { pc.querySelectorAll('source').forEach(x => x.srcset = x.dataset.srcset); img.onload = () => img.classList.add('ok'); if (!img.dataset.fbw) { img.dataset.fbw = 1; picFallback(img); } img.src = img.dataset.src; } }
@@ -329,7 +329,7 @@
     for (const it of items) { if (reduced()) it.el.classList.add('in'); else revealIO.observe(it.el); imgIO.observe(it.card); }
   }
   function detachPic(pc) { const img = pc.querySelector('img'); img.classList.remove('ok'); pc.querySelectorAll('source').forEach(x => x.removeAttribute('srcset')); img.removeAttribute('src'); }
-  function unobserve() { revealIO && revealIO.disconnect(); imgIO && imgIO.disconnect(); shell.querySelectorAll('.lw-card-media picture').forEach(pc => { if (pc.querySelector('img').getAttribute('src')) detachPic(pc); }); }
+  function unobserve() { mmRelease(); revealIO && revealIO.disconnect(); imgIO && imgIO.disconnect(); shell.querySelectorAll('.lw-card-media picture').forEach(pc => { if (pc.querySelector('img').getAttribute('src')) detachPic(pc); }); }
 
   /* ================================================================ ENTRY SHEET */
   let sheetOpen = false, sheetIx = -1, lastFocus = null, visIx = 0, rvTimer = 0, revealing = false, sheetYearShown = null;
@@ -438,6 +438,145 @@
     if (i < 0 || i >= EV.length) return; openSheet(i);
     const it = items[i]; const y = clamp(it.top - vh * .3, 0, contentH);
     scroller.scrollTo({ top: y, behavior: reduced() ? 'auto' : 'smooth' });
+  }
+
+  /* ================================================================ MIRROR MOMENTS (CONVERGENCE part 3)
+     An older account melts into a modern one whose description matches, then the frame splits at a seam the reader
+     can drag. One WebGL canvas is shared and moved into whichever moment is on screen; textures are released when it
+     leaves. Reduced motion (or no WebGL) shows a clean side-by-side with a crossfade. */
+  const EVI = Object.fromEntries(EV.map((e, i) => [e.id, i]));
+  const MIR = ((window.LW_DATA && window.LW_DATA.mirrors) || []).filter(m => EVI[m.a] != null && EVI[m.b] != null && VIS[m.a] && VIS[m.b]);
+  const MIR_AFTER = Object.fromEntries(MIR.map(m => [m.a, m]));
+  const yr = y => y < 0 ? `${-y} BCE` : String(y);
+  function mirrorHTML(m) {
+    const A = EV[EVI[m.a]], B = EV[EVI[m.b]], va = VIS[m.a][0], vb = VIS[m.b][0], k = MIR.indexOf(m);
+    const tag = v => v.real ? `◉ ${esc(v.kind)}` : esc(v.label || "ARTIST'S RENDERING — based on the recorded account");
+    const side = (E, v, c, src, cls) => { const b = BAD[E.badge]; return `<article class="lw-mm-card ${cls}"><div class="when">${esc(yr(E.year))} · ${esc(E.place)}</div><b>${esc(E.title)}</b>
+      <span class="lw-badge lw-badge--${E.badge}">${esc(b.label)}</span><p>${esc(c)}</p><cite>${esc(src)}</cite>
+      <div class="acts"><button type="button" class="lw-mm-open" data-mm-open="${EVI[E.id]}">Open record</button>${E.sources[0] ? `<a href="${esc(E.sources[0].url)}" target="_blank" rel="noopener noreferrer">${esc(E.sources[0].label)} ↗</a>` : ''}</div>
+      <small class="vis">${v.real ? 'Image: ' + esc(v.credit) + ' · ' + esc(v.license) : "Artist's rendering — based on the recorded account"}</small></article>`; };
+    return `<section class="lw-mirror" data-mm="${k}" aria-label="Mirror moment: ${esc(A.title)} and ${esc(B.title)}">
+      <div class="lw-mm-head"><span class="k">◈ Mirror moment · time folds</span><h3>${esc(m.line)}</h3><p>Matching detail: ${esc(m.match)}</p></div>
+      <div class="lw-mm-stage" style="--lqa:url('${va.lqip}');--lqb:url('${vb.lqip}')">
+        <div class="lw-mm-static" aria-hidden="true"><div class="a">${pic(va, 1280)}</div><div class="b">${pic(vb, 1280)}</div></div>
+        <i class="lw-mm-ring" aria-hidden="true"></i>
+        <span class="lw-mm-tag a${va.real ? ' real' : ''}">${tag(va)}</span><span class="lw-mm-tag b${vb.real ? ' real' : ''}">${tag(vb)}</span>
+        <span class="lw-mm-yr a">${esc(yr(A.year))}</span><span class="lw-mm-yr b">${esc(yr(B.year))}</span>
+        <div class="lw-mm-seam" role="slider" tabindex="0" aria-label="Sweep between ${esc(yr(A.year))} and ${esc(yr(B.year))}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><i></i></div>
+        <button type="button" class="lw-mm-replay" aria-label="Play the fold again">↺</button>
+      </div>
+      <div class="lw-mm-cards">${side(A, va, m.ca, m.sa, 'a')}${side(B, vb, m.cb, m.sb, 'b')}</div>
+      <p class="lw-mm-honest">Pairing shows similar descriptions across time, not a proven link.</p></section>`;
+  }
+  const MMV = `attribute vec2 p;varying vec2 v;void main(){v=vec2(p.x*.5+.5,.5-p.y*.5);gl_Position=vec4(p,0.,1.);}`;
+  const MMF = `precision mediump float;varying vec2 v;uniform sampler2D ta,tb;uniform vec4 ma,mb;uniform float pr,w,md,t,asp;uniform vec2 fc;
+float h(vec2 q){return fract(sin(dot(q,vec2(127.1,311.7)))*43758.5453);}
+float n(vec2 q){vec2 i=floor(q),f=fract(q);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1.,0.)),f.x),mix(h(i+vec2(0.,1.)),h(i+1.),f.x),f.y);}
+float fb(vec2 q){float s=0.,a=.5;for(int k=0;k<4;k++){s+=a*n(q);q*=2.07;a*=.5;}return s;}
+void main(){vec2 q=vec2(v.x*asp,v.y);float r=length((v-fc)*vec2(asp,1.));
+float N=fb(q*3.2+vec2(0.,t*.06))*.75+r*.35;float th=pr*1.45-.2;
+float e=pr>0.&&pr<1.?exp(-pow((th-N)/.045,2.)):0.;
+float k=smoothstep(N-.03,N+.03,th);
+vec2 ua=v*ma.xy+ma.zw+vec2(0.,e*.012+(1.-k)*pr*.01);vec2 ub=v*mb.xy+mb.zw-vec2(0.,(1.-k)*.006);
+float m=md<.5?k:smoothstep(w-.0016,w+.0016,v.x);
+vec3 A=texture2D(ta,ua).rgb,B=texture2D(tb,ub).rgb;
+vec3 c=mix(A,B,m);c+=vec3(.45,1.,.75)*e*.9;
+if(md>.5){float s=exp(-pow((v.x-w)*asp*260.,2.));c=mix(c,vec3(.85,1.,.92),s*.9);}
+gl_FragColor=vec4(c,1.);}`;
+  const mm = { io: null, gl: null, cv: null, pr: null, u: {}, tex: [null, null], el: null, m: null, raf: 0, st: null, imgs: [null, null], dpr: 1 };
+  function mmGL() {
+    if (mm.gl !== null) return mm.gl;
+    const cv = document.createElement('canvas'); cv.className = 'lw-mm-cv'; cv.setAttribute('aria-hidden', 'true');
+    const gl = cv.getContext('webgl', { alpha: false, antialias: false, premultipliedAlpha: false, powerPreference: 'low-power' });
+    if (!gl) { mm.gl = false; return false; }
+    const sh = (t, src) => { const o = gl.createShader(t); gl.shaderSource(o, src); gl.compileShader(o); return o; };
+    const pr = gl.createProgram(); gl.attachShader(pr, sh(gl.VERTEX_SHADER, MMV)); gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, MMF)); gl.linkProgram(pr);
+    if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) { mm.gl = false; return false; }
+    gl.useProgram(pr); const b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+    const loc = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    for (const k of ['ta', 'tb', 'ma', 'mb', 'pr', 'w', 'md', 't', 'asp', 'fc']) mm.u[k] = gl.getUniformLocation(pr, k);
+    gl.uniform1i(mm.u.ta, 0); gl.uniform1i(mm.u.tb, 1);
+    mm.cv = cv; mm.gl = gl; mm.pr = pr; return gl;
+  }
+  // uv window that crops an image to the stage around its matching detail (fx, fy) at zoom z
+  function fit(iw, ih, cw, ch, f) {
+    const ia = iw / ih, ca = cw / ch, z = f[2] || 1; let sx, sy;
+    if (ia > ca) { sy = 1 / z; sx = ca / ia / z; } else { sx = 1 / z; sy = ia / ca / z; }
+    const ox = clamp(f[0] - sx / 2, 0, 1 - sx), oy = clamp(f[1] - sy / 2, 0, 1 - sy);
+    return { sx, sy, ox, oy, px: (f[0] - ox) / sx, py: (f[1] - oy) / sy };
+  }
+  function mmTex(i, img) { const gl = mm.gl; if (mm.tex[i]) gl.deleteTexture(mm.tex[i]); const t = gl.createTexture(); gl.activeTexture(gl.TEXTURE0 + i); gl.bindTexture(gl.TEXTURE_2D, t);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, img); mm.tex[i] = t; }
+  const loadImg = (v, w) => new Promise((res, rej) => { const im = new Image(); im.decoding = 'async'; im.onload = () => (im.decode ? im.decode().catch(() => {}) : Promise.resolve()).then(() => res(im)); im.onerror = () => { if (/\.avif$/.test(im.src)) im.src = im.src.replace(/\.avif$/, '.webp'); else rej(); }; im.src = urlOf(v, w); });
+  function mmSize() {
+    const el = mm.el, st = el.querySelector('.lw-mm-stage'), r = { width: st.offsetWidth, height: st.offsetHeight }; mm.dpr = Math.min(2, devicePixelRatio || 1); // layout size: the stage may still be mid-unfold
+    const W = Math.max(2, Math.round(r.width * mm.dpr)), H = Math.max(2, Math.round(r.height * mm.dpr));
+    if (mm.cv.width !== W || mm.cv.height !== H) { mm.cv.width = W; mm.cv.height = H; mm.gl.viewport(0, 0, W, H); }
+    const m = mm.m, a = fit(mm.imgs[0].naturalWidth, mm.imgs[0].naturalHeight, W, H, m.fa), b = fit(mm.imgs[1].naturalWidth, mm.imgs[1].naturalHeight, W, H, m.fb);
+    mm.fa = a; mm.fb = b; const g = mm.gl;
+    g.uniform4f(mm.u.ma, a.sx, a.sy, a.ox, a.oy); g.uniform4f(mm.u.mb, b.sx, b.sy, b.ox, b.oy); g.uniform1f(mm.u.asp, W / H); g.uniform2f(mm.u.fc, a.px, a.py);
+    st.style.setProperty('--rx', (a.px * 100).toFixed(2) + '%'); st.style.setProperty('--ry', (a.py * 100).toFixed(2) + '%');
+    st.style.setProperty('--rbx', (b.px * 100).toFixed(2) + '%'); st.style.setProperty('--rby', (b.py * 100).toFixed(2) + '%');
+  }
+  function mmDraw(p, w, md, t) { const g = mm.gl; if (!g || !mm.tex[1]) return; g.uniform1f(mm.u.pr, p); g.uniform1f(mm.u.w, w); g.uniform1f(mm.u.md, md); g.uniform1f(mm.u.t, t); g.drawArrays(g.TRIANGLE_STRIP, 0, 4); }
+  const ease = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+  // the fold: 0.5 s hold on the old account, 2.8 s melt into the new, 0.9 s for the frame to split
+  function mmPlay(fromStart) {
+    cancelAnimationFrame(mm.raf); const el = mm.el, st = el.querySelector('.lw-mm-stage'); const t0 = performance.now();
+    el.classList.remove('split'); el.classList.add('folding'); mm.st = { w: .5, done: false };
+    const fr = now => {
+      const s = (now - t0) / 1000; let p, w = 0, md = 0;
+      if (!fromStart || s >= 4.2) { p = 1; md = 1; w = .5; }
+      else if (s < .5) p = 0; else if (s < 3.3) p = ease((s - .5) / 2.8); else { p = 1; md = 1; w = .5 * ease(Math.min(1, (s - 3.3) / .9)); }
+      el.classList.toggle('late', p > .5);
+      mmDraw(p, w, md, s);
+      if (md && w >= .5) { mm.st.done = true; el.classList.remove('folding'); el.classList.add('split'); mmSeam(.5); return; }
+      mm.raf = requestAnimationFrame(fr);
+    };
+    mm.raf = requestAnimationFrame(fr);
+  }
+  function mmSeam(w) { if (!mm.el) return; mm.st.w = w; const st = mm.el.querySelector('.lw-mm-stage'); st.style.setProperty('--w', (w * 100).toFixed(2) + '%');
+    const sm = mm.el.querySelector('.lw-mm-seam'); sm.setAttribute('aria-valuenow', String(Math.round(w * 100))); sm.setAttribute('aria-valuetext', w < .35 ? 'Mostly modern' : w > .65 ? 'Mostly the older account' : 'Split evenly');
+    mmDraw(1, w, 1, 0); }
+  async function mmActivate(el) {
+    if (mm.el === el) return; mmDeactivate();
+    const m = MIR[+el.dataset.mm]; mm.el = el; mm.m = m;
+    if (reduced() || !mmGL()) { mmStatic(el); return; }
+    const st = el.querySelector('.lw-mm-stage'); st.prepend(mm.cv); el.classList.add('gl', 'in');
+    try { const ims = await Promise.all([loadImg(VIS[m.a][0], 1280), loadImg(VIS[m.b][0], 1280)]); if (mm.el !== el) return; mm.imgs = ims; }
+    catch { el.classList.remove('gl'); mmStatic(el); return; }
+    mmTex(0, mm.imgs[0]); mmTex(1, mm.imgs[1]); mmSize(); el.classList.add('ready');
+    if (el.dataset.played) { el.classList.add('split'); mmSeam(mm.st ? mm.st.w : .5); mm.st = { w: .5, done: true }; mmSeam(.5); }
+    else { el.dataset.played = '1'; mmPlay(true); }
+  }
+  function mmStatic(el) { el.classList.add('static', 'in');
+    el.querySelectorAll('.lw-mm-static picture').forEach((pc, i) => { const img = pc.querySelector('img'); if (img.getAttribute('src')) return; const f = MIR[+el.dataset.mm][i ? 'fb' : 'fa'];
+      img.style.objectPosition = `${(f[0] * 100).toFixed(1)}% ${(f[1] * 100).toFixed(1)}%`; picFallback(img); pc.querySelectorAll('source').forEach(x => x.srcset = x.dataset.srcset); img.onload = () => img.classList.add('ok'); img.src = img.dataset.src; }); }
+  function mmDeactivate() {
+    cancelAnimationFrame(mm.raf); mm.raf = 0;
+    if (mm.gl) { for (let i = 0; i < 2; i++) if (mm.tex[i]) { mm.gl.deleteTexture(mm.tex[i]); mm.tex[i] = null; } }
+    if (mm.el) { mm.el.classList.remove('ready', 'folding', 'gl'); if (mm.cv && mm.cv.parentNode) mm.cv.remove(); }
+    mm.imgs = [null, null]; mm.el = null; mm.m = null;
+  }
+  function mmObserve() {
+    const els = [...shell.querySelectorAll('.lw-mirror')]; if (!els.length) return;
+    mm.io = new IntersectionObserver(es => { for (const en of es) {
+      if (en.isIntersecting && en.intersectionRatio >= .45) mmActivate(en.target);
+      else if (!en.isIntersecting && mm.el === en.target) mmDeactivate(); } }, { root: scroller, threshold: [0, .45] });
+    els.forEach(el => mm.io.observe(el));
+  }
+  function mmRelease() { mm.io && mm.io.disconnect(); mm.io = null; mmDeactivate(); if (mm.gl) { try { const x = mm.gl.getExtension('WEBGL_lose_context'); x && x.loseContext(); } catch {} } mm.gl = null; mm.cv = null; }
+  function mmWire() {
+    let drag = null;
+    shell.addEventListener('pointerdown', e => { const st = e.target.closest('.lw-mirror.gl .lw-mm-stage'); if (!st || e.target.closest('button') || !mm.el || !mm.el.contains(st) || !mm.tex[1]) return;
+      cancelAnimationFrame(mm.raf); mm.el.classList.remove('folding'); mm.el.classList.add('split'); drag = { id: e.pointerId, r: st.getBoundingClientRect(), x: e.clientX, y: e.clientY, on: false }; });
+    shell.addEventListener('pointermove', e => { if (!drag || e.pointerId !== drag.id) return; if (!drag.on) { if (Math.abs(e.clientX - drag.x) < 6) return; if (Math.abs(e.clientY - drag.y) > Math.abs(e.clientX - drag.x)) { drag = null; return; } drag.on = true; }
+      mmSeam(clamp((e.clientX - drag.r.left) / drag.r.width, .02, .98)); }, { passive: true });
+    const up = e => { if (drag && e.pointerId === drag.id) { if (!drag.on && mm.st && !mm.st.done) mmSeam(.5); if (mm.st) mm.st.done = true; drag = null; } };
+    shell.addEventListener('pointerup', up); shell.addEventListener('pointercancel', up);
+    shell.addEventListener('keydown', e => { const sm = e.target.closest && e.target.closest('.lw-mm-seam'); if (!sm || !mm.st || !mm.el || !mm.el.contains(sm)) return; const d = { ArrowLeft: -.05, ArrowRight: .05 }[e.key]; if (d) { e.preventDefault(); e.stopPropagation(); mmSeam(clamp(mm.st.w + d, .02, .98)); } });
+    addEventListener('resize', () => { if (mm.el && mm.tex[1]) { mmSize(); mmSeam(mm.st ? mm.st.w : .5); } }, { passive: true });
   }
 
   /* ================================================================ FULL-SCREEN VIEWER (pinch / pan / double-tap / wheel) */
@@ -622,7 +761,7 @@
   async function open(opts = {}) {
     if (opened || busy) return; busy = true; build();
     try { window.SignalAudio && window.SignalAudio.unlock && audible() && window.SignalAudio.unlock(); } catch {}
-    const mode = reduced() ? 'reduced' : (opts.instant ? 'none' : (ss.get('ps-lw-intro') ? 'short' : 'full'));
+    const mode = reduced() ? 'reduced' : (opts.instant ? 'none' : (opts.quick || ss.get('ps-lw-intro') ? 'short' : 'full'));
     ss.set('ps-lw-intro', '1');
     const showShell = () => {
       shell.hidden = false; document.body.classList.add('lw-open'); opened = true;
@@ -645,12 +784,22 @@
     if (pushed && !opts.fromPop) { pushed = false; try { history.back(); } catch {} } else pushed = false;
     busy = false;
     const b = document.getElementById('lw-launch'); if (b && !opts.toAtlas) b.focus({ preventScroll: true });
+    try { window.dispatchEvent(new CustomEvent('lw:closed', { detail: { toAtlas: !!opts.toAtlas } })); } catch {}
+  }
+  /* CONVERGENCE: open straight onto one entry (used by Intel ECHOES) */
+  async function openEntry(id) {
+    const i = EV.findIndex(e => e.id === id);
+    if (!opened) await open({ quick: true }); if (i < 0 || !opened) return;
+    measure(); const it = items[i];
+    scroller.scrollTop = clamp(it.top - vh * .3, 0, Math.max(0, scroller.scrollHeight - vh)); sTop = scroller.scrollTop; dirtyScroll = true;
+    it.el.classList.add('in');
+    setTimeout(() => openSheet(i, it.card), reduced() ? 0 : 160);
   }
   function hideShell() {
     if (!opened) return; opened = false; stopLoop(); unobserve();
     // release everything heavy: backdrops, particle pools, canvas backing stores
     for (const el of bgLayers.values()) el.remove(); bgLayers.clear(); pools.clear();
-    for (const im of pre.values()) im.removeAttribute('src'); pre.clear();
+    pre.clear();
     amb.width = amb.height = 1; actx = null; gState.ctx = null; gState.visited.clear(); gState.cur = -1;
     if (fctx) { const cv = finale.querySelector('canvas'); cv.width = cv.height = 1; fctx = null; } finaleLit = false; finale.classList.remove('lit'); shell.querySelector('.lw-tl').classList.remove('lit');
     for (const it of items) it.el.classList.remove('in', 'done');
@@ -682,6 +831,8 @@
     shell.addEventListener('click', ev => {
       const t = ev.target;
       if (revealing && t.closest('.lw-sheet')) { finishReveal(); if (!t.closest('button,a')) return; }
+      const mo = t.closest('[data-mm-open]'); if (mo) { openSheet(+mo.dataset.mmOpen, mo); return; }
+      const rp = t.closest('.lw-mm-replay'); if (rp) { if (mm.el && mm.tex[1]) mmPlay(true); return; }
       const hsb = t.closest('.lw-hs'); if (hsb) { showTip(+hsb.dataset.h, 5000); return; }
       const gal = t.closest('[data-vis]'); if (gal) { renderHero(EV[sheetIx], +gal.dataset.vis, false); return; }
       if (t.closest('.lw-hero-zoom') || (t.closest('.lw-hero-frame') && !t.closest('.lw-tip'))) { const v = (VIS[EV[sheetIx].id] || [])[visIx]; if (v) openLightbox(v); return; }
@@ -714,5 +865,5 @@
   }
   function jumpEra(i) { const s = eraSecs[i]; if (!s) return; scroller.scrollTo({ top: Math.max(0, s.top - vh * .1), behavior: reduced() ? 'auto' : 'smooth' }); }
 
-  window.LongWatch = { open, close, get isOpen() { return opened; }, _debug: () => ({ era: ERAS[curEra] && ERAS[curEra].id, item: curItem, year: lastYearShown, bgLayers: bgLayers.size, pools: pools.size, imgsAttached: shell.querySelectorAll('.lw-card img[src]').length, imgsLoaded: shell.querySelectorAll('.lw-card img.ok').length, preloaded: pre.size, revealing, budget }) };
+  window.LongWatch = { open, openEntry, close, get isOpen() { return opened; }, _debug: () => ({ era: ERAS[curEra] && ERAS[curEra].id, item: curItem, year: lastYearShown, bgLayers: bgLayers.size, pools: pools.size, imgsAttached: shell.querySelectorAll('.lw-card img[src]').length, imgsLoaded: shell.querySelectorAll('.lw-card img.ok').length, preloaded: pre.size, revealing, budget }) };
 })();

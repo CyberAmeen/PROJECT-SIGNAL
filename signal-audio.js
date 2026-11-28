@@ -110,10 +110,14 @@
       const b = document.createElement('button'); b.type = 'button'; b.className = className;
       const paint = () => { const on = this.enabled; b.textContent = on ? '🔊 SOUND' : '🔈 MUTED'; b.setAttribute('aria-pressed', String(on)); b.setAttribute('aria-label', on ? 'Mute loader sound' : 'Turn loader sound on'); };
       b.addEventListener('click', e => { e.stopPropagation(); this.unlock(); this.enabled = !this.enabled; paint(); }); paint();
-      window.addEventListener('signal-audio-change', paint);
+      // held weakly: a loader removed from the page takes its button with it (a per-button window listener kept every loader alive)
+      b.__paint = paint; muteRefs.add(typeof WeakRef === 'function' ? new WeakRef(b) : { deref: () => (b.isConnected ? b : null) });
       return b;
     }
   };
+
+  const muteRefs = new Set();
+  window.addEventListener('signal-audio-change', () => { for (const r of muteRefs) { const b = r.deref(); if (!b) { muteRefs.delete(r); continue; } if (b.isConnected) b.__paint(); } });
 
   /* ============================================================ INTEL — SIGNAL LOCK */
   const D = 73.42; // tonal centre: D

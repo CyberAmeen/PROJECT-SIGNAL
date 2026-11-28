@@ -325,5 +325,36 @@ const EVENTS = [
   motifs: ['military'], sources: [{ label: 'United States UFO files (Wikipedia)', url: W('United_States_UFO_files') }, { label: 'PURSUE portal', url: 'https://www.war.gov/ufo/' }, { label: 'ABC News: Pentagon releases declassified UFO files', url: 'https://abcnews.com/Politics/pentagon-begins-release-decades-unresolved-ufo-files/story?id=132780534' }, { label: 'EarthSky: Pentagon UAP files part 8', url: 'https://earthsky.org/human-world/pentagon-uap-files-part-8-radar-track-analysis/' }] }
 ];
 
-window.LW_DATA = { eras: ERAS, motifs: MOTIFS, badges: BADGES, events: EVENTS, built: '2026-11-27' };
+
+/* CONVERGENCE · MIRROR MOMENTS — an older account and a modern one whose DESCRIPTIONS match. Pairing shows similar
+   descriptions across time, never a proven link. a/b = entry ids; fa/fb = the matching detail in each hero visual
+   (fraction of the image) and a zoom, so the two line up; ca/cb paraphrase (or briefly quote) each entry's own record. */
+const MIRRORS = [
+  { a: 'livy', b: 'phoenix', line: 'Same sky. 2,214 years apart.', match: 'Shining shapes over a city, reported by many',
+    fa: [0.5375, 0.24, 1.35], fb: [0.5, 0.31, 1.35],
+    ca: 'Among the omens reported in Rome that winter: “the appearance of ships had shone from the sky.”', sa: 'Livy, Ab Urbe Condita 21.62',
+    cb: 'Thousands reported a V-shaped formation of lights crossing Arizona early that evening.', sb: 'Phoenix Lights, 13 March 1997' },
+  { a: 'azuma', b: 'hessdalen', line: 'Same night. 746 years apart.', match: 'Lights that would not keep still, watched for hours',
+    fa: [0.3125, 0.32, 1.45], fb: [0.5625, 0.5, 1.45],
+    ca: 'Lights in the southwest sky “swinging and circling” in loops until early morning; court astrologers blamed the wind.', sa: 'Azuma Kagami, Kamakura shogunate, 1235',
+    cb: 'Residents described bright lights hovering, drifting or racing along the valley slopes, at times many nights a week.', sb: 'Hessdalen, Norway, early 1980s' },
+  { a: 'nuremberg', b: 'nimitz', line: 'Same sky. 443 years apart.', match: 'Long, tube-like shapes seen in the daytime sky',
+    fa: [0.78, 0.34, 2], fb: [0.48, 0.52, 1.3],
+    ca: 'At sunrise, townspeople saw globes, crosses and tube-like shapes around the Sun, appearing to fight for an hour.', sa: 'Hans Glaser broadsheet, Nuremberg 1561',
+    cb: 'Pilots described a white, wingless, Tic Tac-shaped object about 40 feet long; the encounter was by day.', sb: 'USS Nimitz group, November 2004' },
+  { a: 'basel', b: 'foo', line: 'Same chase. 378 years apart.', match: 'Spheres that race across the sky and glow red',
+    fa: [0.32, 0.16, 1.5], fb: [0.7, 0.48, 1.5],
+    ca: 'Many dark spheres moving rapidly in the dawn sky, some turning red and fiery before vanishing.', sa: 'Samuel Coccius broadsheet, Basel 1566',
+    cb: 'Crews reported glowing orange, red or white balls of light that followed their aircraft, then vanished.', sb: '415th Night Fighter Squadron, 1944' },
+  { a: 'joseon', b: 'ohare', line: 'Same stillness. 397 years apart.', match: 'A round object hanging in the sky, reported by officials',
+    fa: [0.5375, 0.36, 1.5], fb: [0.525, 0.46, 1.5],
+    ca: 'Officials in five districts reported a bright object in a clear sky “like a washbasin” that moved and flashed.', sa: 'Annals of King Gwanghaegun, 1609',
+    cb: 'About a dozen United Airlines employees reported a dark, disc-shaped object hovering silently over Gate C17.', sb: "O'Hare International Airport, 2006" },
+  { a: 'airship', b: 'belgium', line: 'Same town lights. 93 years apart.', match: 'A large lighted craft over town, watched by crowds',
+    fa: [0.52, 0.27, 1.35], fb: [0.5375, 0.34, 1.35],
+    ca: 'Sacramento crowds reported a lighted craft overhead; many later airship reports described a searchlight.', sb: 'Belgian wave, 1989–90', sa: 'Mystery airship wave, 1896',
+    cb: 'Police and thousands of residents reported large, silent, triangular craft with lights on the corners.' },
+];
+
+window.LW_DATA = { eras: ERAS, motifs: MOTIFS, badges: BADGES, events: EVENTS, mirrors: MIRRORS, built: '2026-11-28' };
 })();
