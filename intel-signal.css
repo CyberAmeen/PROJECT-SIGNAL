@@ -563,3 +563,25 @@ body.stream-active > .wrap{content-visibility:hidden}
 @media (max-width:859px) and (max-height:760px){.ix-echo-th{aspect-ratio:3.2/1}.ix-echo-tx small{-webkit-line-clamp:1}.ix-echo-h small{display:none}.ix-echo-h:after{content:'Similar, not proven';font:500 9.5px/1 'Space Grotesk',sans-serif;color:rgba(200,255,228,.6)}}
 body.lw-open .ps-return{top:calc(72px + env(safe-area-inset-top,0px))}
 body:has(.lw-sheet.on) .ps-return,body:has(.lw-lb) .ps-return{opacity:0;pointer-events:none}
+
+/* ═══════════════ PRISM · HOLOGRAPHIC FOIL (behind the text; transform-only motion) ═══════════════ */
+.ix-panel{isolation:isolate}
+.ix-foil{position:absolute;inset:0;z-index:-1;overflow:hidden;border-radius:inherit;pointer-events:none;animation:none!important}
+.ix-foil i{position:absolute;display:block;pointer-events:none;will-change:transform}
+/* iridescent sheen: the region's own colours, blended as COLOUR only (hue shifts, brightness kept), so text contrast is
+   exactly what it was without the foil */
+.ix-foil .fs{left:-50%;top:-50%;width:200%;height:200%;opacity:.26;mix-blend-mode:color;
+  background:linear-gradient(112deg,transparent 30%,var(--rg-c,#9fd8ff) 40%,var(--rg-b,#3d8bff) 46%,var(--rg-acc,#9ccaff) 52%,transparent 64%),
+  linear-gradient(112deg,transparent 40%,rgba(120,255,220,.6) 45%,rgba(150,130,255,.6) 48%,rgba(255,210,130,.5) 51%,transparent 56%)}
+/* specular glare runs along the card's top edge, above the text (padding zone), following the light */
+.ix-foil .fp{left:20%;top:-36px;width:60%;height:64px;opacity:.55;background:radial-gradient(50% 50% at 50% 50%,rgba(255,255,255,.9),rgba(255,255,255,.25) 40%,transparent 72%)}
+/* bevelled glass edge: a fixed ring with light running round it */
+.ix-foil .fe{inset:0;border-radius:inherit;padding:1.5px;will-change:auto;display:none;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+.ix-foil .fe b{position:absolute;left:50%;top:50%;width:160%;aspect-ratio:1;margin:-80% 0 0 -80%;display:block;will-change:transform;
+  background:conic-gradient(from 0deg,transparent 0,rgba(255,255,255,.85) 7%,var(--rg-c,#9fd8ff) 13%,transparent 24%,transparent 52%,var(--rg-acc,#9ccaff) 62%,transparent 74%)}
+@media (min-width:860px){.ix-foil .fe{display:block}}
+/* phones: the panel fades in from the scene, so does its foil */
+@media (max-width:859px){.ix-foil .fs{-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 110px);mask-image:linear-gradient(180deg,transparent 0,#000 110px)}.ix-foil .fp{top:-8px;height:40px}}
+/* reduced motion: a still, elegant foil finish */
+@media (prefers-reduced-motion:reduce){.ix-foil .fs{opacity:.5;transform:translate3d(-6%,-4%,0)}.ix-foil .fp{opacity:.35}}

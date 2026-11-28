@@ -148,7 +148,44 @@
     for (const s of eraSecs) s.top = off(s.el)[1];
     for (const it of items) { const [x, y] = off(it.card); it.top = y; it.h = it.card.offsetHeight; it.cy = y + it.h * 0.5; it.left = x; it.right = x + it.card.offsetWidth; }
     finaleTop = off(finale)[1]; contentH = track.scrollHeight;
-    sizeAmb(); if (thread.motif) drawThreads(thread.motif, false);
+    sizeAmb(); dioFrame(); for (const el of bgLayers.values()) dioLayout(el); if (thread.motif) drawThreads(thread.motif, false);
+  }
+
+  /* ================================================================ LIVING DIORAMAS (PRISM part 3)
+     Five painted depth layers per era (sky, distant land, midground, near, foreground), original art, bottom-anchored
+     in a 2.4:1 frame that is cropped to the centre on phones. Only the current and next era hold images; parallax and
+     the layer-by-layer era change write transform/opacity only. Reduced motion: still dioramas, no lights. */
+  const DIO = {"deep":{"h":[1.0,0.806,0.441,0.496,0.215],"lights":[{"k":"fire","layer":3,"x":0.7916666666666666,"y":0.93}]},"ancient":{"h":[1.0,0.458,0.608,0.332,0.281],"lights":[{"k":"torch","layer":3,"x":0.23333333333333334,"y":0.68},{"k":"torch","layer":3,"x":0.7666666666666667,"y":0.68}]},"medieval":{"h":[1.0,0.344,0.708,0.308,0.722],"lights":[]},"woodblock":{"h":[1.0,0.663,0.45,0.228,0.184],"lights":[]},"press":{"h":[1.0,0.488,0.618,0.128,0.188],"lights":[]},"bluebook":{"h":[1.0,0.368,0.448,0.191,0.366],"lights":[{"k":"head","layer":3,"x":0.575,"y":0.895}]},"broadcast":{"h":[1.0,0.468,0.481,0.342,0.178],"lights":[{"k":"street","layer":3,"x":0.215,"y":0.686},{"k":"street","layer":3,"x":0.8316666666666667,"y":0.686},{"k":"head","layer":3,"x":0.55,"y":0.935}]},"sensor":{"h":[1.0,0.348,0.628,0.199,0.158],"lights":[{"k":"blink","layer":2,"x":0.6829166666666666,"y":0.382},{"k":"blink","layer":1,"x":0.1925,"y":0.662},{"k":"blink","layer":4,"x":0.895,"y":0.856}]}};
+  const DEPTH = [0.03, 0.08, 0.15, 0.24, 0.36], dioSize = () => (vw >= 900 || devicePixelRatio > 2.5 && vw > 600) ? 2400 : 1200;
+  let dioF = { fw: 0, fh: 0 };
+  function dioFrame() { const fh = Math.max(vw / 2.4, vh * .62); dioF = { fw: fh * 2.4, fh }; }
+  function dioMount(el, i) {
+    if (el._dio || !DIO[ERAS[i].id]) return; const id = ERAS[i].id, m = DIO[id], w = dioSize();
+    const box = document.createElement('div'); box.className = 'lw-dio';
+    box.innerHTML = m.h.map((h, k) => `<img class="dl d${k}" alt="" decoding="async" src="lw/dio/${id}-${k}-${w}.webp">`).join('') +
+      m.lights.map(l => `<i class="lt lt-${l.k}" data-l="${l.layer}" data-x="${l.x}" data-y="${l.y}"></i>`).join('') + `<i class="atm atm-${id}"></i>`;
+    el.appendChild(box); el._dio = { box, imgs: [...box.querySelectorAll('.dl')], lights: [...box.querySelectorAll('.lt')], h: m.h, op: [], tf: [] };
+    dioLayout(el);
+  }
+  function dioUnmount(el) { if (!el._dio) return; el._dio.box.remove(); el._dio = null; }
+  function dioLayout(el) {
+    const D = el._dio; if (!D) return; const { fw, fh } = dioF;
+    D.imgs.forEach((im, k) => { if (k === 0) return; im.style.width = fw + 'px'; im.style.marginLeft = (-fw / 2) + 'px'; });
+    D.lights.forEach(l => { l._x = (+l.dataset.x - .5) * fw; l._y = -(1 - +l.dataset.y) * fh; l._k = +l.dataset.l; });
+    D.tf = [];
+  }
+  // p: progress through this era (0..1); w: how present the era is (1 = current, 0 = gone); dir: +1 arriving, -1 leaving
+  function dioPose(el, p, w, dir) {
+    const D = el._dio; if (!D) return; const still = reduced();
+    for (let k = 0; k < 5; k++) {
+      const stage = dir > 0 ? clamp(w * 1.7 - k * .16, 0, 1) : clamp(w * 1.7 - (4 - k) * .16, 0, 1);  // arrive far→near, leave near→far
+      const op = k === 0 ? 1 : stage, rise = still ? 0 : (1 - stage) * (24 + k * 14);
+      const y = still ? 0 : (.5 - p) * vh * DEPTH[k] + rise;
+      const tf = k === 0 ? `translate3d(0,${(y * .6).toFixed(1)}px,0)` : `translate3d(0,${y.toFixed(1)}px,0)`;
+      if (D.tf[k] !== tf) { D.tf[k] = tf; D.imgs[k].style.transform = tf; }
+      const o = op.toFixed(2); if (D.op[k] !== o) { D.op[k] = o; D.imgs[k].style.opacity = o; }
+      for (const l of D.lights) if (l._k === k) { const t2 = `translate3d(${l._x.toFixed(1)}px,${(l._y + y).toFixed(1)}px,0)`; if (l._tf !== t2) { l._tf = t2; l.style.transform = t2; } if (l._o !== o) { l._o = o; l.style.opacity = o; } }
+    }
   }
 
   /* ================================================================ ERA BACKDROPS (mount window: current ±1) */
@@ -159,11 +196,11 @@
     bgs.appendChild(el); bgLayers.set(i, el); return el;
   }
   const setOp = (el, v) => { const s = v <= 0 ? '0' : v >= 1 ? '1' : v.toFixed(2); if (el._op === s) return; el._op = s; el.style.opacity = s; el.classList.toggle('off', s === '0'); };
-  function setBackdrops(cur, blend) {
+  function setBackdrops(cur, blend, p) {
     for (const [i, el] of bgLayers) if (i < cur - 1 || i > cur + 1) { el.remove(); bgLayers.delete(i); }
-    setOp(bgLayer(cur), 1);
-    if (cur > 0) setOp(bgLayer(cur - 1), 0);
-    if (cur < ERAS.length - 1) setOp(bgLayer(cur + 1), blend);
+    const c = bgLayer(cur); setOp(c, 1); dioMount(c, cur); dioPose(c, p, 1 - blend, -1);
+    if (cur > 0) { const pr = bgLayer(cur - 1); setOp(pr, 0); dioUnmount(pr); }
+    if (cur < ERAS.length - 1) { const n = bgLayer(cur + 1); setOp(n, blend); if (blend > .001 || p > .4) { dioMount(n, cur + 1); dioPose(n, 0, Math.sqrt(blend), 1); } else dioUnmount(n); /* loads ahead, while the era is still on its way */ }
   }
 
   /* ================================================================ AMBIENT PARTICLES (one canvas, era-specific motion) */
@@ -181,7 +218,7 @@
     woodblock: { n: 44, add: false, spawn: p => { p.x = -10 + R() * aw * .4; p.y = ah * (.45 + R() * .55); p.vx = 30 + R() * 50; p.vy = -(4 + R() * 10); p.r = .8 + R() * 1.7; p.c = '241,233,216'; p.life = 4 + R() * 5; }, step: (p, dt, t) => { p.x += p.vx * dt; p.y += (p.vy + Math.sin(t * 2 + p.r * 5) * 8) * dt; p.a = .6 * Math.sin(Math.PI * p.age / p.life); } },
     press: { n: 30, add: false, spawn: p => { p.x = R() * aw; p.y = R() * ah; p.vx = (R() - .5) * 5; p.vy = 4 + R() * 5; p.r = .6 + R() * 1.2; p.c = '235,220,190'; p.life = 6 + R() * 6; }, step: (p, dt) => { p.x += p.vx * dt; p.y += p.vy * dt; p.a = .4 * Math.sin(Math.PI * p.age / p.life); } },
     bluebook: { n: 38, add: true, spawn: p => { p.x = aw * (.3 + R() * .4); p.y = R() * ah; p.vx = (R() - .5) * 8; p.vy = (R() - .5) * 8; p.r = .5 + R() * 1.3; p.c = '240,228,190'; p.life = 3 + R() * 5; }, step: (p, dt, t) => { p.x += (p.vx + Math.sin(t + p.r * 40) * 6) * dt; p.y += (p.vy + Math.cos(t * .8 + p.r * 30) * 6) * dt; p.a = .55 * Math.sin(Math.PI * p.age / p.life); } },
-    broadcast: { n: 50, add: true, spawn: p => { p.x = R() * aw; p.y = R() * ah; p.vx = 0; p.vy = 0; p.r = .6 + R(); p.c = '220,230,255'; p.life = .05 + R() * .12; }, step: p => { p.a = .5; } },
+    broadcast: { n: 70, add: false, streak: true, spawn: p => { p.x = R() * aw; p.y = -20 - R() * ah; p.vx = -40; p.vy = 520 + R() * 260; p.r = 1; p.l = 10 + R() * 12; p.c = '210,200,255'; p.life = 3; }, step: (p, dt) => { p.x += p.vx * dt; p.y += p.vy * dt; p.a = .22; } },
     sensor: { n: 70, add: true, star: true, spawn: p => { p.x = R() * aw; p.y = R() * ah * 3; p.r = .4 + R() * 1.3; p.d = .05 + R() * .25; p.c = R() < .2 ? '61,255,176' : '230,255,245'; p.life = 1e9; p.tw = R() * 6; }, step: (p, dt, t) => { p.a = .35 + .45 * (0.5 + 0.5 * Math.sin(t * (1 + p.d * 6) + p.tw)); } }
   };
   function pool(i) {
@@ -203,7 +240,7 @@
         else if (x < -20 || x > aw + 20 || y < -20 || y > ah + 20) { p.age = p.life + 1; continue; }
         const a = clamp(p.a * w, 0, 1); if (a < .02) continue;
         actx.fillStyle = `rgba(${p.c},${a.toFixed(3)})`;
-        if (p.r < 1.1) actx.fillRect(x, y, p.r * 1.6, p.r * 1.6); else { actx.beginPath(); actx.arc(x, y, p.r, 0, 6.283); actx.fill(); }
+        if (st.streak) actx.fillRect(x, y, 1.2, p.l); else if (p.r < 1.1) actx.fillRect(x, y, p.r * 1.6, p.r * 1.6); else { actx.beginPath(); actx.arc(x, y, p.r, 0, 6.283); actx.fill(); }
       }
     };
     pass(cur, 1 - blend); if (cur + 1 < ERAS.length) pass(cur + 1, blend);
@@ -272,7 +309,8 @@
       const nextTop = e + 1 < eraSecs.length ? eraSecs[e + 1].top : Infinity;
       const blend = sstep(nextTop - vh * .95, nextTop, c);
       if (e !== curEra) { curEra = e; eraChanged(); }
-      setBackdrops(curEra, blend);
+      const eTop = eraSecs[e].top, eEnd = nextTop === Infinity ? contentH : nextTop;
+      setBackdrops(curEra, blend, clamp((c - eTop) / Math.max(1, eEnd - eTop), 0, 1));
       const shown = blend > .5 && e + 1 < ERAS.length ? e + 1 : e; if (shell.dataset.era !== ERAS[shown].id) { shell.dataset.era = ERAS[shown].id; odoEra.textContent = ERAS[shown].name + ' · ' + ERAS[shown].title; railOn(shown); }
       backdropBlend = blend;
       // year: interpolate between card centres, with a plateau on each card

@@ -248,6 +248,7 @@
 
   /* ---------------------------------------------------------------- CARDS */
   function isNew(c) { const since = prevVisit || (Date.now() - 24 * 3600e3); return c.newest > since; }
+  const FOIL = '<div class="ix-foil" aria-hidden="true"><i class="fs"></i><i class="fp"></i><i class="fe"><b></b></i></div>';
   function slideHTML(c, i, total, sotd) {
     const at = atlasTarget(c), reports = c.memberIds.length;
     const meter = Array.from({ length: 5 }, (_, k) => `<i class="${k < Math.min(5, c.count) ? 'on' : ''}"></i>`).join('');
@@ -259,7 +260,7 @@
     const cred = `<span class="ix-cred c-${h(c.tier || 'web')}" title="Credibility describes the publisher, not whether the claim is true">◇ ${h(tierText(c.tier))}${c.topTier && c.topTier !== c.tier && C.TIERS && C.TIERS[c.topTier] && C.TIERS[c.topTier].rank > C.TIERS[c.tier || 'web'].rank ? ` · also ${h(tierText(c.topTier))}` : ''}</span>`;
     return `<article ${rgAttr(i)} class="stream-slide${c.echoes && c.echoes.length ? ' has-echo' : ''} ix-slide${sotd ? ' ix-sotd' : ''}" data-index="${i}" data-cluster="${h(c.id)}" aria-label="Transmission ${i + 1} of ${total}">
       <div class="ix-scene-slot" data-slot="${i}"></div>
-      <div class="ix-panel">
+      <div class="ix-panel">${FOIL}
         ${sotd ? `<div class="ix-sotd-banner"><span>◆ SIGNAL OF THE DAY</span><small>${c.count > 1 ? 'Most-covered story in this scan' : 'Lead transmission'}</small></div>` : ''}
         <div class="ix-kicker"><span class="ix-label t-${c.label.tone}">◆ ${h(c.label.text)}</span>${isNew(c) ? `<span class="ix-new" title="${prevVisit ? 'New since your last visit' : 'Published in the last 24 hours'}">${prevVisit ? 'NEW SINCE LAST VISIT' : 'NEW · 24H'}</span>` : ''}<span class="ix-num">TX ${pad(i + 1)}/${pad(total)}</span></div>
         <h2 class="ix-title" aria-label="${h(c.title)}"><span aria-hidden="true">${h(c.title)}</span></h2>
@@ -488,7 +489,7 @@
   function setIndex(i, initial) {
     const s = slides(); if (!s.length) return; i = Math.max(0, Math.min(i, s.length - 1)); if (i === idx) return;
     const prev = idx; idx = i; try { streamIndex = i; } catch {}
-    mountScenes(i); saveResume();
+    mountScenes(i); saveResume(); foilKick();
     s.forEach((el, k) => el.classList.toggle('is-visible', k === i));
     const el = s[i];
     if (!initial && !reduced()) { burst(i > prev ? 1 : -1, regionOf(i), Math.abs(swipeV) > 1.6); Sound.play('whoosh', { dir: i > prev ? 1 : -1 }); el.classList.remove('ix-arrive'); void el.offsetWidth; el.classList.add('ix-arrive'); }
@@ -577,22 +578,51 @@
     burstRaf = requestAnimationFrame(frame);
   }
 
+  /* ---------------------------------------------------------------- HOLOGRAPHIC FOIL (PRISM part 1)
+     Light moves across the visible card: an iridescent sheen tinted by the slide's region, a specular highlight and a
+     bevelled-glass edge, all behind the text. Input: tilt (the site-wide motion grant), else finger/cursor, else a slow
+     idle shimmer. Only the visible card's four elements get a transform, once per frame; nothing else is touched. */
+  const foil = { x: 0, y: 0, tx: 0, ty: 0, last: 0, raf: 0, el: null, parts: null, t0: performance.now(), wide: false };
+  function foilBind() {
+    const el = slides()[idx], panel = el && $('.ix-panel', el); if (!panel || foil.el === panel) return;
+    if (foil.el) { foil.el.style.transform = ''; foil.parts && foil.parts.forEach(p => p.style.transform = ''); }
+    foil.el = panel; foil.parts = [panel.querySelector('.ix-foil .fs'), panel.querySelector('.ix-foil .fp'), panel.querySelector('.ix-foil .fe b')]; foil.wide = innerWidth >= 860;
+  }
+  function foilAim(x, y) { foil.tx = Math.max(-1, Math.min(1, x)); foil.ty = Math.max(-1, Math.min(1, y)); foil.last = performance.now(); foilKick(); }
+  function foilKick() { if (!foil.raf && !shell.hidden && !reduced()) foil.raf = requestAnimationFrame(foilFrame); }
+  function foilFrame(now) {
+    foil.raf = 0; if (shell.hidden || reduced() || document.hidden) return;
+    foilBind(); if (!foil.el) return;
+    if (now - foil.last > 2600) { const t = (now - foil.t0) / 1000; foil.tx = Math.sin(t * .31) * .7; foil.ty = Math.cos(t * .23) * .45; } // idle shimmer
+    foil.x += (foil.tx - foil.x) * .12; foil.y += (foil.ty - foil.y) * .12;
+    const x = foil.x, y = foil.y, [sheen, spec, edge] = foil.parts;
+    sheen.style.transform = `translate3d(${(-x * 22).toFixed(2)}%,${(-y * 14).toFixed(2)}%,0) rotate(${(x * 8).toFixed(2)}deg)`;
+    spec.style.transform = `translate3d(${(x * 62).toFixed(2)}%,0,0) scaleX(${(1 + Math.abs(y) * .5).toFixed(2)})`;
+    if (edge) edge.style.transform = `rotate(${(Math.atan2(y, x || .001) * 57.3).toFixed(1)}deg)`;
+    // the card floats a little above the scene: it moves more than the scene's parallax layers do
+    foil.el.style.transform = foil.wide ? `translateY(-50%) perspective(1200px) rotateY(${(x * 3.2).toFixed(2)}deg) rotateX(${(-y * 2.4).toFixed(2)}deg) translate3d(${(x * 9).toFixed(1)}px,${(y * 6).toFixed(1)}px,0)` : `translate3d(${(x * 5).toFixed(1)}px,${(y * 3).toFixed(1)}px,0)`;
+    foil.raf = requestAnimationFrame(foilFrame);
+  }
+  shell.addEventListener('pointermove', e => { if (e.pointerType !== 'mouse' || !foil.el) return; foilAim((e.clientX / innerWidth - .5) * 2, (e.clientY / innerHeight - .5) * 2); }, { passive: true });
+  shell.addEventListener('touchmove', e => { if (tiltOn || !foil.el) return; const t = e.touches[0], r = foil.el.getBoundingClientRect(); foilAim((t.clientX - r.left) / r.width * 2 - 1, (t.clientY - r.top) / r.height * 2 - 1); }, { passive: true });
+
   /* tilt / pointer parallax */
   let tiltOn = false, tx = 0, ty = 0, pend = false;
   const applyTilt = () => { pend = false; shell.style.setProperty('--tx', tx.toFixed(2)); shell.style.setProperty('--ty', ty.toFixed(2)); };
   const queue = () => { if (!pend) { pend = true; requestAnimationFrame(applyTilt); } };
-  function onOrient(e) { if (shell.hidden) return; const g = e.gamma || 0, b = (e.beta || 0) - 45; tx = Math.max(-1, Math.min(1, g / 25)) * 14; ty = Math.max(-1, Math.min(1, b / 25)) * 14; queue(); }
-  function enableTilt(fromTap) {
+  function onOrient(e) { if (shell.hidden) return; const g = e.gamma || 0, b = (e.beta || 0) - 45; foilAim(g / 25, b / 25); tx = Math.max(-1, Math.min(1, g / 25)) * 14; ty = Math.max(-1, Math.min(1, b / 25)) * 14; queue(); }
+  function enableTilt(fromTap, already) {
     const D = window.DeviceOrientationEvent;
-    const start = () => { if (tiltOn) return; tiltOn = true; addEventListener('deviceorientation', onOrient); store.set('ps-intel-tilt', true); const b = $('[data-ix-tilt]', shell); if (b) { b.classList.add('on'); b.setAttribute('aria-pressed', 'true'); } if (fromTap) toast('◎ Tilt parallax on'); };
-    if (D && typeof D.requestPermission === 'function') { if (!fromTap) return; D.requestPermission().then(s => { if (s === 'granted') start(); else toast('Motion access was declined'); }).catch(() => toast('Motion access unavailable')); }
+    const start = () => { if (tiltOn) return; tiltOn = true; try { window.PSMotion && window.PSMotion.markGranted(); } catch {} addEventListener('deviceorientation', onOrient); store.set('ps-intel-tilt', true); const b = $('[data-ix-tilt]', shell); if (b) { b.classList.add('on'); b.setAttribute('aria-pressed', 'true'); } if (fromTap) toast('◎ Tilt parallax on'); };
+    if (D && typeof D.requestPermission === 'function' && !already) { if (!fromTap) return; D.requestPermission().then(s => { if (s === 'granted') start(); else toast('Motion access was declined'); }).catch(() => toast('Motion access unavailable')); }
     else start();
   }
   function setupTilt() {
     const coarse = matchMedia('(pointer: coarse)').matches, D = window.DeviceOrientationEvent;
     if (coarse && D) {
       const b = $('[data-ix-tilt]', shell);
-      if (typeof D.requestPermission === 'function') { if (b) b.hidden = false; }
+      if (window.PSMotion && window.PSMotion.granted) enableTilt(false, true);
+      else if (typeof D.requestPermission === 'function') { if (b) b.hidden = false; }
       else enableTilt(false);
     }
     if (!coarse) shell.addEventListener('pointermove', e => { if (reduced()) return; tx = ((e.clientX / innerWidth) - 0.5) * 2 * 12; ty = ((e.clientY / innerHeight) - 0.5) * 2 * 10; queue(); }, { passive: true });
@@ -607,7 +637,7 @@
     shell.hidden = false; document.body.classList.add('stream-active');
     view.scrollTop = 0; idx = -1; setIndex(0, true);
     const first = slides()[0]; if (first && !reduced()) { first.classList.remove('ix-arrive'); void first.offsetWidth; first.classList.add('ix-arrive'); }
-    refreshTools(); startTicker();
+    refreshTools(); startTicker(); foilKick(); if (!tiltOn && window.PSMotion && window.PSMotion.granted) enableTilt(false, true);
     store.set('ps-intel-lastvisit', Date.now());
     const fresh = prevVisit ? list.filter(c => c.kind !== 'community' && isNew(c)).length : 0;
     if (fresh) setTimeout(() => toast(`◆ <b>${fresh}</b> new ${fresh === 1 ? 'story' : 'stories'} since your last visit`), 900);

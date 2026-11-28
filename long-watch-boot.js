@@ -2,7 +2,7 @@
    the button press (or an idle-time prefetch after the first touch/hover) pulls in CSS + data + engine once. */
 (() => {
   'use strict';
-  const V = '20261128c1';
+  const V = '20261128p1';
   const btn = document.getElementById('lw-launch'); if (!btn) return;
   let loading = null;
   const css = () => new Promise(res => { if (document.getElementById('lw-css')) return res(); const l = document.createElement('link'); l.id = 'lw-css'; l.rel = 'stylesheet'; l.href = 'long-watch.css?v=' + V; l.onload = l.onerror = res; document.head.appendChild(l); });
